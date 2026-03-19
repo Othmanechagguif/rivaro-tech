@@ -582,6 +582,161 @@ input.lr::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;ba
   .kv{font-size:1.3rem!important;}
   .aifab{bottom:4.5rem;width:48px;height:48px;font-size:1.1rem;}
 }
+
+/* ── MENU CARDS ── */
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem;}
+.menu-card{background:#FDFAF4;border:1px solid #E8E3D8;border-radius:18px;overflow:hidden;transition:all .3s;cursor:pointer;}
+.menu-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.1);}
+.menu-card-img{height:180px;object-fit:cover;width:100%;background:#F5F0E8;display:flex;align-items:center;justify-content:center;font-size:5rem;}
+.menu-card-img img{width:100%;height:100%;object-fit:cover;}
+.menu-card-body{padding:1.1rem;}
+.menu-card-name{font-family:'Clash Display',sans-serif;font-size:1rem;font-weight:600;color:#1A1A18;margin-bottom:.35rem;}
+.menu-card-macros{display:flex;gap:.35rem;flex-wrap:wrap;margin-bottom:.75rem;}
+.menu-card-price{font-family:'Clash Display',sans-serif;font-size:1.15rem;font-weight:700;color:#C8A96E;}
+.menu-tag{font-size:.62rem;font-weight:700;padding:.18rem .5rem;border-radius:100px;letter-spacing:.06em;}
+.menu-tag.hp{background:#E6EDE0;color:#3A4A30;}
+.menu-tag.lc{background:#FFF3DC;color:#7A5A10;}
+.menu-tag.vg{background:#E8F4E8;color:#2A6E2A;}
+.menu-tag.new{background:#E8F0FE;color:#2A5AC2;}
+.add-btn{width:100%;padding:.6rem;border:none;border-radius:10px;background:#1A1A18;color:#FDFAF4;font-size:.82rem;font-weight:600;cursor:pointer;transition:all .2s;font-family:'Instrument Sans',sans-serif;}
+.add-btn:hover{background:#4A5240;}
+.menu-filter-tabs{display:flex;gap:.45rem;flex-wrap:wrap;margin-bottom:1.5rem;}
+/* ── ONBOARDING QUIZ ── */
+.quiz-ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:3000;align-items:center;justify-content:center;backdrop-filter:blur(8px);}
+.quiz-ov.open{display:flex;}
+.quiz-box{background:#FDFAF4;border-radius:24px;width:90%;max-width:480px;padding:2.5rem;position:relative;max-height:90vh;overflow-y:auto;}
+.quiz-step{display:none;}.quiz-step.active{display:block;}
+.quiz-progress{display:flex;gap:.35rem;margin-bottom:2rem;}
+.quiz-prog-dot{height:4px;border-radius:2px;flex:1;background:#E8E3D8;transition:background .3s;}
+.quiz-prog-dot.done{background:#C8A96E;}
+.quiz-title{font-family:'Clash Display',sans-serif;font-size:1.5rem;font-weight:600;color:#1A1A18;margin-bottom:.5rem;}
+.quiz-sub{font-size:.88rem;color:#7A7870;margin-bottom:1.75rem;line-height:1.6;}
+.quiz-options{display:flex;flex-direction:column;gap:.65rem;}
+.quiz-opt{padding:1rem 1.25rem;border:1.5px solid #E8E3D8;border-radius:14px;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:.875rem;font-size:.88rem;font-weight:500;color:#1A1A18;background:#FDFAF4;}
+.quiz-opt:hover{border-color:#C8A96E;background:#FFF8EC;}
+.quiz-opt.selected{border-color:#C8A96E;background:#FFF8EC;color:#8A6220;}
+.quiz-opt-icon{font-size:1.4rem;flex-shrink:0;}
+.quiz-input{width:100%;padding:.75rem 1rem;border:1.5px solid #E8E3D8;border-radius:12px;font-size:.9rem;font-family:'Instrument Sans',sans-serif;color:#1A1A18;background:#F5F0E8;outline:none;margin-bottom:1rem;}
+.quiz-input:focus{border-color:#1A1A18;}
+.quiz-next{width:100%;padding:.85rem;border:none;border-radius:12px;background:#1A1A18;color:#FDFAF4;font-family:'Clash Display',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;margin-top:1.25rem;transition:all .2s;}
+.quiz-next:hover{background:#4A5240;}
+/* ── CHECKOUT FLOW ── */
+.checkout-ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:3000;align-items:center;justify-content:center;backdrop-filter:blur(6px);}
+.checkout-ov.open{display:flex;}
+.checkout-box{background:#FDFAF4;border-radius:24px;width:90%;max-width:520px;max-height:92vh;overflow-y:auto;}
+.checkout-hdr{padding:1.5rem 1.75rem;border-bottom:1px solid #E8E3D8;display:flex;align-items:center;justify-content:space-between;}
+.checkout-hdr-t{font-family:'Clash Display',sans-serif;font-size:1.2rem;font-weight:600;color:#1A1A18;}
+.checkout-body{padding:1.75rem;}
+.checkout-step{display:none;}.checkout-step.active{display:block;}
+.checkout-plan-card{border:2px solid #E8E3D8;border-radius:16px;padding:1.25rem;cursor:pointer;transition:all .2s;margin-bottom:.75rem;display:flex;align-items:center;gap:1rem;}
+.checkout-plan-card:hover,.checkout-plan-card.selected{border-color:#C8A96E;background:#FFF8EC;}
+.checkout-plan-em{font-size:2rem;}
+.checkout-plan-name{font-family:'Clash Display',sans-serif;font-size:1rem;font-weight:600;color:#1A1A18;}
+.checkout-plan-desc{font-size:.78rem;color:#7A7870;margin-top:.15rem;}
+.checkout-plan-price{font-family:'Clash Display',sans-serif;font-size:1.1rem;font-weight:700;color:#C8A96E;margin-left:auto;white-space:nowrap;}
+.checkout-label{font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#7A7870;margin-bottom:.45rem;display:block;}
+.checkout-input{width:100%;padding:.7rem .95rem;border:1.5px solid #E8E3D8;border-radius:11px;font-size:.88rem;font-family:'Instrument Sans',sans-serif;color:#1A1A18;background:#F5F0E8;outline:none;margin-bottom:1rem;transition:border-color .2s;}
+.checkout-input:focus{border-color:#1A1A18;}
+.time-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin-bottom:1.25rem;}
+.time-slot{padding:.6rem;border:1.5px solid #E8E3D8;border-radius:10px;text-align:center;font-size:.82rem;font-weight:600;color:#7A7870;cursor:pointer;transition:all .2s;}
+.time-slot:hover,.time-slot.selected{border-color:#C8A96E;background:#FFF8EC;color:#8A6220;}
+.checkout-total{background:#F5F0E8;border-radius:14px;padding:1.1rem 1.25rem;margin-bottom:1.25rem;}
+.checkout-row{display:flex;justify-content:space-between;font-size:.85rem;color:#7A7870;margin-bottom:.4rem;}
+.checkout-row.total{font-size:1rem;font-weight:700;color:#1A1A18;margin-top:.5rem;padding-top:.5rem;border-top:1px solid #E8E3D8;margin-bottom:0;}
+.checkout-btn{width:100%;padding:.9rem;border:none;border-radius:13px;background:linear-gradient(135deg,#C8A96E,#A8813E);color:#1A1A18;font-family:'Clash Display',sans-serif;font-size:1.05rem;font-weight:600;cursor:pointer;transition:all .2s;}
+.checkout-btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(200,169,110,.3);}
+.checkout-back{background:none;border:none;font-size:.82rem;color:#7A7870;cursor:pointer;font-family:'Instrument Sans',sans-serif;margin-right:1rem;}
+/* ── RATING MODAL ── */
+.rating-ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:3000;align-items:center;justify-content:center;}
+.rating-ov.open{display:flex;}
+.rating-box{background:#FDFAF4;border-radius:22px;width:90%;max-width:400px;padding:2.25rem;text-align:center;}
+.rating-meal{font-size:3rem;margin-bottom:.5rem;}
+.rating-title{font-family:'Clash Display',sans-serif;font-size:1.3rem;font-weight:600;color:#1A1A18;margin-bottom:.35rem;}
+.rating-sub{font-size:.84rem;color:#7A7870;margin-bottom:1.5rem;}
+.stars{display:flex;justify-content:center;gap:.5rem;margin-bottom:1.25rem;}
+.star{font-size:2.2rem;cursor:pointer;transition:transform .15s;filter:grayscale(1)opacity(.4);}
+.star.active,.star:hover{filter:none;transform:scale(1.2);}
+.rating-tags{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-bottom:1.25rem;}
+.rtag{padding:.35rem .85rem;border:1.5px solid #E8E3D8;border-radius:100px;font-size:.75rem;font-weight:500;color:#7A7870;cursor:pointer;transition:all .2s;}
+.rtag.active{border-color:#C8A96E;background:#FFF8EC;color:#8A6220;}
+.rating-textarea{width:100%;padding:.75rem;border:1.5px solid #E8E3D8;border-radius:12px;font-size:.84rem;font-family:'Instrument Sans',sans-serif;color:#1A1A18;background:#F5F0E8;resize:none;height:80px;outline:none;margin-bottom:1.25rem;}
+/* ── LOYALTY ── */
+.loyalty-card{background:linear-gradient(135deg,#1A1A18 0%,#4A5240 100%);border-radius:20px;padding:1.75rem;color:#FDFAF4;margin-bottom:1.35rem;position:relative;overflow:hidden;}
+.loyalty-card::before{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;background:rgba(200,169,110,.1);}
+.loyalty-pts{font-family:'Clash Display',sans-serif;font-size:3rem;font-weight:700;color:#C8A96E;margin-bottom:.25rem;}
+.loyalty-lbl{font-size:.78rem;color:rgba(255,255,255,.5);letter-spacing:.08em;text-transform:uppercase;}
+.loyalty-tier{display:inline-flex;align-items:center;gap:.4rem;background:rgba(200,169,110,.2);border:1px solid rgba(200,169,110,.3);border-radius:100px;padding:.3rem .85rem;font-size:.72rem;font-weight:700;color:#C8A96E;margin-top:.75rem;letter-spacing:.06em;text-transform:uppercase;}
+.rewards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;}
+.reward-card{background:#FDFAF4;border:1px solid #E8E3D8;border-radius:16px;padding:1.25rem;text-align:center;}
+.reward-icon{font-size:2.2rem;margin-bottom:.65rem;}
+.reward-name{font-size:.88rem;font-weight:600;color:#1A1A18;margin-bottom:.25rem;}
+.reward-pts{font-size:.75rem;color:#C8A96E;font-weight:700;margin-bottom:.75rem;}
+.reward-btn{width:100%;padding:.55rem;border:1.5px solid #C8A96E;border-radius:9px;background:transparent;color:#C8A96E;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .2s;font-family:'Instrument Sans',sans-serif;}
+.reward-btn:hover{background:#C8A96E;color:#1A1A18;}
+.referral-box{background:#F5F0E8;border:1px solid #E8E3D8;border-radius:16px;padding:1.5rem;}
+.ref-code{font-family:'Clash Display',sans-serif;font-size:1.75rem;font-weight:700;color:#1A1A18;letter-spacing:.1em;background:#FDFAF4;border:2px dashed #C8A96E;border-radius:12px;padding:.75rem 1.25rem;text-align:center;margin:1rem 0;}
+/* ── ADMIN: REAL-TIME ORDERS ── */
+.order-kanban{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;}
+.kanban-col{background:#F5F0E8;border-radius:16px;padding:1rem;}
+.kanban-col-hdr{font-family:'Clash Display',sans-serif;font-size:.88rem;font-weight:600;color:#1A1A18;margin-bottom:.875rem;display:flex;align-items:center;justify-content:space-between;}
+.kanban-col-count{background:#1A1A18;color:#FDFAF4;font-size:.65rem;font-weight:700;padding:.18rem .5rem;border-radius:100px;}
+.kanban-card{background:#FDFAF4;border:1px solid #E8E3D8;border-radius:12px;padding:.875rem;margin-bottom:.65rem;cursor:grab;}
+.kanban-card:active{cursor:grabbing;}
+.kc-id{font-size:.65rem;font-weight:700;color:#7A7870;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.3rem;}
+.kc-meal{font-size:.84rem;font-weight:600;color:#1A1A18;margin-bottom:.2rem;}
+.kc-cust{font-size:.75rem;color:#7A7870;margin-bottom:.65rem;}
+.kc-actions{display:flex;gap:.4rem;}
+.kc-btn{flex:1;padding:.38rem;border:none;border-radius:8px;font-size:.7rem;font-weight:600;cursor:pointer;font-family:'Instrument Sans',sans-serif;transition:all .2s;}
+.kc-btn.next{background:#1A1A18;color:#FDFAF4;}
+.kc-btn.next:hover{background:#4A5240;}
+.kc-btn.wa{background:#25D366;color:#fff;}
+.kc-btn.wa:hover{background:#1DA851;}
+/* ── ADMIN: INVENTORY ── */
+.inv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;}
+.inv-item{background:#FDFAF4;border:1px solid #E8E3D8;border-radius:14px;padding:1.1rem;}
+.inv-name{font-weight:600;font-size:.88rem;color:#1A1A18;margin-bottom:.35rem;}
+.inv-stock{font-size:.8rem;color:#7A7870;margin-bottom:.65rem;}
+.inv-bar-wrap{margin-bottom:.65rem;}
+.inv-level{height:8px;background:#F0ECE4;border-radius:4px;overflow:hidden;}
+.inv-fill{height:100%;border-radius:4px;transition:width 1s ease;}
+.inv-fill.ok{background:linear-gradient(90deg,#6BAE6B,#8ACA8A);}
+.inv-fill.low{background:linear-gradient(90deg,#C8A96E,#E0C080);}
+.inv-fill.critical{background:linear-gradient(90deg,#C24B3A,#D86050);}
+/* ── ADMIN: STAFF ── */
+.staff-card{background:#FDFAF4;border:1px solid #E8E3D8;border-radius:16px;padding:1.25rem;display:flex;align-items:center;gap:1rem;margin-bottom:.75rem;}
+.staff-av{width:44px;height:44px;border-radius:50%;background:#1A1A18;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
+.staff-name{font-weight:600;font-size:.9rem;color:#1A1A18;}
+.staff-role{font-size:.75rem;color:#7A7870;margin-top:.1rem;}
+.staff-status{margin-left:auto;display:flex;flex-direction:column;align-items:flex-end;gap:.35rem;}
+.staff-hours{font-size:.75rem;color:#7A7870;}
+/* ── VOICE INPUT ── */
+.voice-btn{width:38px;height:38px;border-radius:50%;border:1.5px solid #E8E3D8;background:#F5F0E8;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;transition:all .2s;flex-shrink:0;}
+.voice-btn:hover{border-color:#1A1A18;}
+.voice-btn.listening{background:#FDECEA;border-color:#C24B3A;animation:voicePulse 1s infinite;}
+@keyframes voicePulse{0%,100%{box-shadow:0 0 0 0 rgba(194,75,58,.3);}50%{box-shadow:0 0 0 8px rgba(194,75,58,0);}}
+/* ── NOTIFICATION BANNER ── */
+.notif-toast{position:fixed;top:80px;right:1.5rem;z-index:4000;background:#1A1A18;color:#FDFAF4;border-radius:14px;padding:1rem 1.25rem;display:flex;align-items:flex-start;gap:.875rem;max-width:340px;box-shadow:0 8px 32px rgba(0,0,0,.2);transform:translateX(120%);transition:transform .35s cubic-bezier(.4,0,.2,1);}
+.notif-toast.show{transform:translateX(0);}
+.notif-toast-ic{font-size:1.35rem;flex-shrink:0;}
+.notif-toast-t{font-size:.84rem;font-weight:600;margin-bottom:.18rem;}
+.notif-toast-s{font-size:.75rem;color:rgba(255,255,255,.5);}
+.notif-toast-close{margin-left:auto;background:none;border:none;color:rgba(255,255,255,.4);cursor:pointer;font-size:1rem;padding:0;flex-shrink:0;}
+/* ── AI MEAL PLAN ── */
+.meal-plan-ai-card{background:linear-gradient(135deg,#1A1A18,#2A2A28);border-radius:18px;padding:1.5rem;margin-bottom:1.35rem;}
+.mp-ai-day{margin-bottom:1rem;}
+.mp-ai-day-lbl{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.5rem;}
+.mp-ai-meals{display:flex;flex-direction:column;gap:.4rem;}
+.mp-ai-meal{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:.65rem .875rem;display:flex;align-items:center;gap:.65rem;}
+.mp-ai-em{font-size:1.25rem;}
+.mp-ai-name{font-size:.82rem;font-weight:500;color:rgba(255,255,255,.82);}
+.mp-ai-macros{font-size:.7rem;color:rgba(255,255,255,.35);margin-top:.08rem;}
+@media(max-width:640px){
+  .order-kanban{grid-template-columns:1fr!important;}
+  .inv-grid{grid-template-columns:1fr!important;}
+  .menu-grid{grid-template-columns:1fr!important;}
+  .rewards-grid{grid-template-columns:1fr!important;}
+  .time-grid{grid-template-columns:repeat(2,1fr)!important;}
+}
 </style>
 </head>
 <body>
@@ -727,8 +882,11 @@ input.lr::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;ba
         <div class="ni" onclick="sp('cust','c-macros',this)"><span class="nic">📊</span><span>Macro Tracker</span></div>
         <div class="ni" onclick="sp('cust','c-orders',this)"><span class="nic">📦</span><span>Orders & Delivery</span></div>
         <div class="ni" onclick="sp('cust','c-bills',this)"><span class="nic">💳</span><span>Billing</span><span class="bd"></span></div>
+        <div class="ni" onclick="sp('cust','c-menu',this)"><span class="nic">🍽️</span><span>Menu</span></div>
+        <div class="ni" onclick="sp('cust','c-loyalty',this)"><span class="nic">⭐</span><span>Loyalty & Rewards</span></div>
         <span class="sbsec">AI Tools</span>
         <div class="ni" onclick="sp('cust','c-ai',this)"><span class="nic">🤖</span><span>AI Nutritionist</span></div>
+        <div class="ni" onclick="sp('cust','c-aiplan',this)"><span class="nic">📅</span><span>AI Meal Plan</span></div>
         <div class="ni" onclick="openAI('gen')"><span class="nic">✨</span><span>Meal Generator</span></div>
         <span class="sbsec">Account</span>
         <div class="ni" onclick="sp('cust','c-settings',this)"><span class="nic">⚙️</span><span>Settings</span></div>
@@ -741,7 +899,8 @@ input.lr::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;ba
         <div class="tbt" id="ctbt">Good morning, Othmane 👋</div>
         <div class="tbr">
           <button class="tbtn ac" onclick="openAI('chat')"><span class="gdot"></span> Ask AI</button>
-          <button class="tbtn pr" onclick="openModal()">+ New Order</button>
+          <button class="tbtn" onclick="openCheckout()" style="border-color:#C8A96E;color:#C8A96E">📋 Subscribe</button>
+          <button class="tbtn pr" onclick="openModal()">+ Order</button>
         </div>
       </div>
       <div class="dcontent">
@@ -883,7 +1042,7 @@ input.lr::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;ba
               </div>
               <div class="acprow">
                 <input class="acpinp" id="acpinp" placeholder="Ask your nutrition question..." onkeydown="if(event.key==='Enter')sendAcp()">
-                <button class="acpsend" id="acpsend" onclick="sendAcp()"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
+                <button class="voice-btn" id="voiceBtnAcp" onclick="toggleVoice('acpinp',this)" title="Voice input">🎤</button><button class="acpsend" id="acpsend" onclick="sendAcp()"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
               </div>
             </div>
             <div class="acpside">
@@ -897,6 +1056,70 @@ input.lr::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;ba
                 <div class="acptipt">📊 Your Stats</div>
                 <div class="pbar"><div class="pbl"><span>Today's protein</span><span style="color:var(--gn);font-weight:700">89%</span></div><div class="pbt"><div class="pbf pfs" style="width:89%"></div></div></div>
                 <div class="pbar"><div class="pbl"><span>Weekly consistency</span><span style="color:var(--ac);font-weight:700">78%</span></div><div class="pbt"><div class="pbf pfg" style="width:78%"></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- MENU PANEL -->
+        <div class="panel" id="c-menu">
+          <div class="card">
+            <div class="cardh"><span class="cardt">Today's Menu — Fresh Daily</span><button class="tbtn pr" onclick="openCheckout()">📋 Subscribe to order</button></div>
+            <div class="menu-filter-tabs">
+              <button class="gt active" onclick="filterMenu('all',this)">All</button>
+              <button class="gt" onclick="filterMenu('hp',this)">🏋️ High Protein</button>
+              <button class="gt" onclick="filterMenu('lc',this)">🔥 Low Carb</button>
+              <button class="gt" onclick="filterMenu('vg',this)">🌿 Vegetarian</button>
+            </div>
+            <div class="menu-grid" id="menuGrid"></div>
+          </div>
+        </div>
+
+        <!-- LOYALTY PANEL -->
+        <div class="panel" id="c-loyalty">
+          <div class="loyalty-card">
+            <div class="loyalty-lbl">Your Points</div>
+            <div class="loyalty-pts">2,840</div>
+            <div style="font-size:.82rem;color:rgba(255,255,255,.45);margin-top:.2rem">Streak: 14 days — keep going! 🔥</div>
+            <div class="loyalty-tier">🥇 Gold Member</div>
+          </div>
+          <div class="row r3">
+            <div class="kpi"><div class="klb">Points Earned</div><div class="kv">2,840</div><div class="ks">This month: +420</div></div>
+            <div class="kpi"><div class="klb">Meals Ordered</div><div class="kv">47</div><div class="ks">All time</div></div>
+            <div class="kpi"><div class="klb">Rewards Redeemed</div><div class="kv">3</div><div class="ks">Value: 390 MAD</div></div>
+          </div>
+          <div class="card">
+            <div class="cardh"><span class="cardt">Available Rewards</span></div>
+            <div class="rewards-grid">
+              <div class="reward-card"><div class="reward-icon">🎁</div><div class="reward-name">Free Meal</div><div class="reward-pts">500 pts</div><button class="reward-btn" onclick="redeemReward('Free Meal',500)">Redeem</button></div>
+              <div class="reward-card"><div class="reward-icon">🥗</div><div class="reward-name">Free Side Salad</div><div class="reward-pts">150 pts</div><button class="reward-btn" onclick="redeemReward('Free Side Salad',150)">Redeem</button></div>
+              <div class="reward-card"><div class="reward-icon">📦</div><div class="reward-name">Free Delivery Week</div><div class="reward-pts">300 pts</div><button class="reward-btn" onclick="redeemReward('Free Delivery Week',300)">Redeem</button></div>
+              <div class="reward-card"><div class="reward-icon">💪</div><div class="reward-name">Macro Analysis</div><div class="reward-pts">200 pts</div><button class="reward-btn" onclick="redeemReward('Macro Analysis',200)">Redeem</button></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="cardh"><span class="cardt">Refer a Friend</span></div>
+            <div class="referral-box">
+              <div style="font-size:.85rem;color:#7A7870;line-height:1.6;margin-bottom:.5rem">Share your code and earn <strong style="color:#C8A96E">200 points</strong> for every friend who subscribes.</div>
+              <div class="ref-code" id="refCode">RIVARO-OB14</div>
+              <div style="display:flex;gap:.65rem">
+                <button class="tbtn pr" style="flex:1" onclick="copyRefCode()">📋 Copy Code</button>
+                <button class="tbtn" style="flex:1;border-color:#25D366;color:#25D366" onclick="shareWhatsApp()">💬 Share on WhatsApp</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI MEAL PLAN PANEL -->
+        <div class="panel" id="c-aiplan">
+          <div class="card">
+            <div class="cardh"><span class="cardt">AI Personalized Weekly Meal Plan</span><button class="tbtn pr" id="genPlanBtn" onclick="generateWeeklyPlan()">✨ Generate My Plan</button></div>
+            <div style="font-size:.84rem;color:#7A7870;line-height:1.6;margin-bottom:1.25rem">Based on your profile: <strong style="color:#1A1A18">High Protein · 2,100 kcal/day · Muscle Gain goal</strong>. Our AI builds a full 7-day plan optimized for your targets.</div>
+            <div id="weeklyPlanResult">
+              <div style="text-align:center;padding:3rem 1rem;color:#7A7870">
+                <div style="font-size:3rem;margin-bottom:1rem">📅</div>
+                <div style="font-size:.9rem">Click "Generate My Plan" to create your personalized weekly meal plan</div>
               </div>
             </div>
           </div>
@@ -930,7 +1153,10 @@ input.lr::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;ba
         <div class="ni active" onclick="sp('admin','a-home',this)"><span class="nic">📊</span><span>Overview</span></div>
         <div class="ni" onclick="sp('admin','a-kitchen',this)"><span class="nic">🍳</span><span>Kitchen Queue</span></div>
         <div class="ni" onclick="sp('admin','a-orders',this)"><span class="nic">📦</span><span>All Orders</span><span class="bd"></span></div>
+        <div class="ni" onclick="sp('admin','a-realorders',this)"><span class="nic">🎯</span><span>Live Order Mgmt</span></div>
         <div class="ni" onclick="sp('admin','a-customers',this)"><span class="nic">👥</span><span>Customers</span></div>
+        <div class="ni" onclick="sp('admin','a-inventory',this)"><span class="nic">🥦</span><span>Inventory</span></div>
+        <div class="ni" onclick="sp('admin','a-staff',this)"><span class="nic">👨‍🍳</span><span>Staff</span></div>
         <span class="sbsec">Analytics</span>
         <div class="ni" onclick="sp('admin','a-revenue',this)"><span class="nic">💰</span><span>Revenue</span></div>
         <div class="ni" onclick="sp('admin','a-activity',this)"><span class="nic">📡</span><span>Live Activity</span></div>
@@ -951,6 +1177,47 @@ input.lr::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;ba
         </div>
       </div>
       <div class="dcontent">
+
+
+        <!-- REAL-TIME ORDER MANAGEMENT -->
+        <div class="panel" id="a-realorders">
+          <div class="row r4">
+            <div class="kpi"><div class="klb">New Orders</div><div class="kv" id="kn-new">12</div><div class="ks">Waiting to start</div></div>
+            <div class="kpi"><div class="klb">In Preparation</div><div class="kv" id="kn-prep">8</div><div class="ks">Being cooked now</div></div>
+            <div class="kpi"><div class="klb">Ready to Ship</div><div class="kv" id="kn-ready">5</div><div class="ks">Awaiting pickup</div></div>
+            <div class="kpi"><div class="klb">En Route</div><div class="kv" id="kn-route">18</div><div class="ks">Out for delivery</div></div>
+          </div>
+          <div class="card">
+            <div class="cardh"><span class="cardt">Live Order Board</span><div style="display:flex;gap:.5rem"><button class="tbtn" onclick="exportOrders()">📊 Export</button><button class="tbtn pr" onclick="showToast('Auto-refresh active ✓')">🔄 Auto-refresh</button></div></div>
+            <div class="order-kanban" id="orderKanban"></div>
+          </div>
+        </div>
+
+        <!-- INVENTORY TRACKING -->
+        <div class="panel" id="a-inventory">
+          <div class="row r3">
+            <div class="kpi"><div class="klb">Total Items Tracked</div><div class="kv">28</div><div class="ks">8 categories</div></div>
+            <div class="kpi"><div class="klb">Low Stock Alerts</div><div class="kv" style="color:#C8A96E">3</div><div class="ks">Need reorder</div></div>
+            <div class="kpi"><div class="klb">Critical Items</div><div class="kv" style="color:#C24B3A">1</div><div class="ks">Order immediately</div></div>
+          </div>
+          <div class="card">
+            <div class="cardh"><span class="cardt">Ingredient Stock Levels</span><div style="display:flex;gap:.5rem"><button class="tbtn" onclick="exportInventory()">📥 Export CSV</button><button class="tbtn pr" onclick="showToast('Purchase order sent! 📦')">+ Reorder Low Stock</button></div></div>
+            <div class="inv-grid" id="inventoryGrid"></div>
+          </div>
+        </div>
+
+        <!-- STAFF MANAGEMENT -->
+        <div class="panel" id="a-staff">
+          <div class="row r3">
+            <div class="kpi"><div class="klb">Total Staff</div><div class="kv">8</div><div class="ks">Kitchen + Delivery</div></div>
+            <div class="kpi"><div class="klb">On Shift Today</div><div class="kv">6</div><div class="ks">2 on day off</div></div>
+            <div class="kpi"><div class="klb">Avg Hours/Week</div><div class="kv">44h</div><div class="ks">Within target</div></div>
+          </div>
+          <div class="card">
+            <div class="cardh"><span class="cardt">Team Overview</span><button class="tbtn pr" onclick="showToast('Staff report exported!')">Export Schedule</button></div>
+            <div id="staffList"></div>
+          </div>
+        </div>
 
         <!-- ADMIN HOME -->
         <div class="panel active" id="a-home">
@@ -1138,7 +1405,7 @@ input.lr::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;ba
     </div>
     <div class="aiinrow">
       <input class="aiinp" id="cust-inp" placeholder="Ask anything about your account or nutrition..." onkeydown="if(event.key==='Enter')sendCustMsg()">
-      <button class="aisb" id="cust-send" onclick="sendCustMsg()"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
+      <button class="voice-btn" id="voiceBtnCust" onclick="toggleVoice('cust-inp',this)" title="Voice input">🎤</button><button class="aisb" id="cust-send" onclick="sendCustMsg()"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
     </div>
   </div>
   <!-- MEAL GENERATOR -->
@@ -1285,6 +1552,201 @@ input.lr::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;ba
   </div>
 </div>
 
+
+<!-- ONBOARDING QUIZ -->
+<div class="quiz-ov" id="quizOv">
+  <div class="quiz-box">
+    <div class="quiz-progress" id="quizProgress"></div>
+    <!-- Step 1: Goal -->
+    <div class="quiz-step active" id="qs1">
+      <div class="quiz-title">What's your main goal? 🎯</div>
+      <div class="quiz-sub">We'll personalize your meal plan around this.</div>
+      <div class="quiz-options">
+        <div class="quiz-opt" onclick="selectOpt(this,'goal','lose')"><span class="quiz-opt-icon">🔥</span><div><strong>Lose Weight</strong><div style="font-size:.78rem;color:#7A7870;margin-top:.1rem">Caloric deficit, lean meals</div></div></div>
+        <div class="quiz-opt" onclick="selectOpt(this,'goal','gain')"><span class="quiz-opt-icon">💪</span><div><strong>Gain Muscle</strong><div style="font-size:.78rem;color:#7A7870;margin-top:.1rem">High protein, caloric surplus</div></div></div>
+        <div class="quiz-opt" onclick="selectOpt(this,'goal','maintain')"><span class="quiz-opt-icon">⚖️</span><div><strong>Maintain Weight</strong><div style="font-size:.78rem;color:#7A7870;margin-top:.1rem">Balanced macros, healthy eating</div></div></div>
+        <div class="quiz-opt" onclick="selectOpt(this,'goal','perform')"><span class="quiz-opt-icon">⚡</span><div><strong>Athletic Performance</strong><div style="font-size:.78rem;color:#7A7870;margin-top:.1rem">Optimized for training</div></div></div>
+      </div>
+      <button class="quiz-next" onclick="nextQuizStep(2)">Continue →</button>
+    </div>
+    <!-- Step 2: Body Stats -->
+    <div class="quiz-step" id="qs2">
+      <div class="quiz-title">Your body stats 📊</div>
+      <div class="quiz-sub">Used to calculate your ideal daily macros.</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem">
+        <div><label class="checkout-label">Age</label><input class="quiz-input" id="q-age" type="number" placeholder="28" min="16" max="80"></div>
+        <div><label class="checkout-label">Weight (kg)</label><input class="quiz-input" id="q-weight" type="number" placeholder="75" min="40" max="200"></div>
+        <div><label class="checkout-label">Height (cm)</label><input class="quiz-input" id="q-height" type="number" placeholder="178" min="140" max="220"></div>
+        <div><label class="checkout-label">Gender</label>
+          <select class="quiz-input" id="q-gender" style="cursor:pointer">
+            <option value="male">Male</option><option value="female">Female</option>
+          </select>
+        </div>
+      </div>
+      <button class="quiz-next" onclick="nextQuizStep(3)">Continue →</button>
+    </div>
+    <!-- Step 3: Activity -->
+    <div class="quiz-step" id="qs3">
+      <div class="quiz-title">Activity level 🏃</div>
+      <div class="quiz-sub">How active are you on a typical week?</div>
+      <div class="quiz-options">
+        <div class="quiz-opt" onclick="selectOpt(this,'activity','sedentary')"><span class="quiz-opt-icon">🪑</span><strong>Sedentary</strong> — Desk job, little exercise</div>
+        <div class="quiz-opt" onclick="selectOpt(this,'activity','light')"><span class="quiz-opt-icon">🚶</span><strong>Light</strong> — 1–3 days/week exercise</div>
+        <div class="quiz-opt" onclick="selectOpt(this,'activity','moderate')"><span class="quiz-opt-icon">🏋️</span><strong>Moderate</strong> — 3–5 days/week</div>
+        <div class="quiz-opt" onclick="selectOpt(this,'activity','active')"><span class="quiz-opt-icon">🔥</span><strong>Very Active</strong> — 6–7 days/week</div>
+      </div>
+      <button class="quiz-next" onclick="nextQuizStep(4)">Continue →</button>
+    </div>
+    <!-- Step 4: Allergies -->
+    <div class="quiz-step" id="qs4">
+      <div class="quiz-title">Any food restrictions? 🚫</div>
+      <div class="quiz-sub">Select all that apply — we'll never include these.</div>
+      <div class="quiz-options">
+        <div class="quiz-opt" onclick="this.classList.toggle('selected')"><span class="quiz-opt-icon">🥜</span> Nuts & Peanuts</div>
+        <div class="quiz-opt" onclick="this.classList.toggle('selected')"><span class="quiz-opt-icon">🦐</span> Shellfish & Seafood</div>
+        <div class="quiz-opt" onclick="this.classList.toggle('selected')"><span class="quiz-opt-icon">🥛</span> Dairy</div>
+        <div class="quiz-opt" onclick="this.classList.toggle('selected')"><span class="quiz-opt-icon">🌾</span> Gluten</div>
+        <div class="quiz-opt" onclick="this.classList.toggle('selected')"><span class="quiz-opt-icon">✅</span> None — I eat everything</div>
+      </div>
+      <button class="quiz-next" onclick="finishQuiz()">🚀 Build My Meal Plan</button>
+    </div>
+    <!-- Step 5: Done -->
+    <div class="quiz-step" id="qs5">
+      <div style="text-align:center;padding:1rem 0">
+        <div style="font-size:4rem;margin-bottom:1rem">🎉</div>
+        <div class="quiz-title" style="text-align:center">Your plan is ready!</div>
+        <div class="quiz-sub" style="text-align:center;margin:0 auto">Your personalized macro targets have been calculated and your first week's meals are ready.</div>
+        <div id="quizResult" style="background:#F5F0E8;border-radius:16px;padding:1.25rem;margin:1.5rem 0;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap"></div>
+        <button class="quiz-next" onclick="closeQuiz();showView('customer')">Go to My Dashboard →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CHECKOUT FLOW -->
+<div class="checkout-ov" id="checkoutOv">
+  <div class="checkout-box">
+    <div class="checkout-hdr">
+      <div class="checkout-hdr-t" id="checkoutTitle">Choose Your Plan</div>
+      <button class="aiclose" onclick="closeCheckout()">✕</button>
+    </div>
+    <div class="checkout-body">
+      <!-- Step 1: Plan selection -->
+      <div class="checkout-step active" id="co1">
+        <div style="font-size:.82rem;color:#7A7870;margin-bottom:1.25rem">All plans include daily fresh delivery, macro tracking, and AI nutritionist access.</div>
+        <div class="checkout-plan-card selected" onclick="selectPlan(this,'High Protein',1560)">
+          <div class="checkout-plan-em">🥩</div>
+          <div><div class="checkout-plan-name">High Protein</div><div class="checkout-plan-desc">50%+ protein · Muscle gain · 500–600 kcal/meal</div></div>
+          <div class="checkout-plan-price">1,560 MAD/mo</div>
+        </div>
+        <div class="checkout-plan-card" onclick="selectPlan(this,'Balanced',1320)">
+          <div class="checkout-plan-em">🍱</div>
+          <div><div class="checkout-plan-name">Balanced</div><div class="checkout-plan-desc">35% protein · Maintain · 500–600 kcal/meal</div></div>
+          <div class="checkout-plan-price">1,320 MAD/mo</div>
+        </div>
+        <div class="checkout-plan-card" onclick="selectPlan(this,'Fat Loss',1200)">
+          <div class="checkout-plan-em">🥗</div>
+          <div><div class="checkout-plan-name">Fat Loss</div><div class="checkout-plan-desc">45% protein · Cut fat · 350–450 kcal/meal</div></div>
+          <div class="checkout-plan-price">1,200 MAD/mo</div>
+        </div>
+        <div class="checkout-plan-card" onclick="selectPlan(this,'Vegetarian',1080)">
+          <div class="checkout-plan-em">🌿</div>
+          <div><div class="checkout-plan-name">Vegetarian</div><div class="checkout-plan-desc">Plant-based · 28% protein · 400–500 kcal/meal</div></div>
+          <div class="checkout-plan-price">1,080 MAD/mo</div>
+        </div>
+        <button class="checkout-btn" onclick="goCheckout(2)">Continue →</button>
+      </div>
+      <!-- Step 2: Delivery time -->
+      <div class="checkout-step" id="co2">
+        <label class="checkout-label">Delivery Address</label>
+        <input class="checkout-input" id="co-addr" placeholder="e.g. 12 Rue Ibn Batouta, Tanger">
+        <label class="checkout-label">Preferred Delivery Time</label>
+        <div class="time-grid" id="timeGrid">
+          <div class="time-slot" onclick="selectTime(this)">12:00 PM</div>
+          <div class="time-slot" onclick="selectTime(this)">1:00 PM</div>
+          <div class="time-slot" onclick="selectTime(this)">6:00 PM</div>
+          <div class="time-slot selected" onclick="selectTime(this)">7:30 PM</div>
+          <div class="time-slot" onclick="selectTime(this)">8:00 PM</div>
+          <div class="time-slot" onclick="selectTime(this)">9:00 PM</div>
+        </div>
+        <label class="checkout-label">Start Date</label>
+        <input class="checkout-input" id="co-date" type="date">
+        <div style="display:flex;align-items:center;gap:.5rem">
+          <button class="checkout-back" onclick="goCheckout(1)">← Back</button>
+          <button class="checkout-btn" onclick="goCheckout(3)">Continue →</button>
+        </div>
+      </div>
+      <!-- Step 3: Payment -->
+      <div class="checkout-step" id="co3">
+        <div class="checkout-total" id="checkoutTotal">
+          <div class="checkout-row"><span>Plan</span><span id="ct-plan">High Protein</span></div>
+          <div class="checkout-row"><span>Duration</span><span>1 month · 30 meals</span></div>
+          <div class="checkout-row"><span>Delivery</span><span style="color:#6BAE6B">Free</span></div>
+          <div class="checkout-row total"><span>Total</span><span id="ct-price">1,560 MAD</span></div>
+        </div>
+        <label class="checkout-label">Payment Method</label>
+        <div style="display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.25rem">
+          <div class="quiz-opt selected" onclick="document.querySelectorAll('#co3 .quiz-opt').forEach(e=>e.classList.remove('selected'));this.classList.add('selected')"><span class="quiz-opt-icon">💵</span> Cash on Delivery</div>
+          <div class="quiz-opt" onclick="document.querySelectorAll('#co3 .quiz-opt').forEach(e=>e.classList.remove('selected'));this.classList.add('selected')"><span class="quiz-opt-icon">💳</span> Bank Transfer (CIH/Attijariwafa)</div>
+          <div class="quiz-opt" onclick="document.querySelectorAll('#co3 .quiz-opt').forEach(e=>e.classList.remove('selected'));this.classList.add('selected')"><span class="quiz-opt-icon">📱</span> Wave / Orange Money</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:.5rem">
+          <button class="checkout-back" onclick="goCheckout(2)">← Back</button>
+          <button class="checkout-btn" onclick="confirmCheckout()">✅ Confirm Subscription</button>
+        </div>
+      </div>
+      <!-- Step 4: Confirmed -->
+      <div class="checkout-step" id="co4">
+        <div style="text-align:center;padding:1rem 0">
+          <div style="font-size:4rem;margin-bottom:1rem">🎉</div>
+          <div style="font-family:'Clash Display',sans-serif;font-size:1.4rem;font-weight:600;color:#1A1A18;margin-bottom:.5rem">Subscription Confirmed!</div>
+          <div style="font-size:.85rem;color:#7A7870;line-height:1.6;margin-bottom:1.5rem">Your first delivery is scheduled. You'll receive a WhatsApp confirmation shortly.</div>
+          <button class="checkout-btn" onclick="closeCheckout();showToast('Welcome to RIVARO! 🎉')">Go to Dashboard →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MEAL RATING MODAL -->
+<div class="rating-ov" id="ratingOv">
+  <div class="rating-box">
+    <div class="rating-meal" id="ratingEmoji">🥗</div>
+    <div class="rating-title">How was your meal?</div>
+    <div class="rating-sub" id="ratingMealName">Chicken Power Bowl</div>
+    <div class="stars" id="starRow">
+      <span class="star" onclick="rateStar(1)">⭐</span>
+      <span class="star" onclick="rateStar(2)">⭐</span>
+      <span class="star" onclick="rateStar(3)">⭐</span>
+      <span class="star" onclick="rateStar(4)">⭐</span>
+      <span class="star" onclick="rateStar(5)">⭐</span>
+    </div>
+    <div class="rating-tags">
+      <span class="rtag" onclick="this.classList.toggle('active')">🔥 Delicious</span>
+      <span class="rtag" onclick="this.classList.toggle('active')">💪 High Protein</span>
+      <span class="rtag" onclick="this.classList.toggle('active')">⚡ Good Portions</span>
+      <span class="rtag" onclick="this.classList.toggle('active')">🌿 Fresh</span>
+      <span class="rtag" onclick="this.classList.toggle('active')">📦 Well Packed</span>
+      <span class="rtag" onclick="this.classList.toggle('active')">🚚 On Time</span>
+    </div>
+    <textarea class="rating-textarea" placeholder="Additional comments (optional)..."></textarea>
+    <div style="display:flex;gap:.65rem">
+      <button class="mbtn ol" style="flex:1" onclick="closeRating()">Skip</button>
+      <button class="mbtn pr" style="flex:1" onclick="submitRating()">Submit Rating</button>
+    </div>
+  </div>
+</div>
+
+<!-- PUSH NOTIFICATION BANNER -->
+<div class="notif-toast" id="notifToast">
+  <div class="notif-toast-ic" id="notifIco">📦</div>
+  <div>
+    <div class="notif-toast-t" id="notifTitle">Order Update</div>
+    <div class="notif-toast-s" id="notifSub">Your meal is on the way!</div>
+  </div>
+  <button class="notif-toast-close" onclick="hideNotif()">✕</button>
+</div>
+
 <!-- ORDER MODAL -->
 <div class="modov" id="modov"><div class="modbox"><div class="modem">🍽️</div><div class="modt">Place New Order</div><div class="mods">Your meal will be prepared fresh and delivered tomorrow at your scheduled time.</div><div class="modbtns"><button class="mbb ol" onclick="closeModal()">Cancel</button><button class="mbb pr" onclick="closeModal();showToast('Order placed! Delivery tomorrow 7:30 PM 🎉')">Confirm Order</button></div></div></div>
 <div id="toast"></div>
@@ -1355,7 +1817,7 @@ const ACTS=[
 ];
 
 // ── NAVIGATION ──
-const TITLES={'c-home':'Good morning, Othmane 👋','c-meals':'My Meal Plan','c-macros':'Macro Tracker','c-orders':'Orders & Delivery','c-bills':'Billing & Payments','c-ai':'AI Nutritionist','c-settings':'Account Settings','a-home':'Operations Overview','a-kitchen':'Kitchen Queue','a-orders':'All Orders','a-customers':'Customer Directory','a-revenue':'Revenue & Analytics','a-activity':'Live Activity','a-ai':'AI Insights'};
+const TITLES={'c-home':'Good morning, Othmane 👋','c-meals':'My Meal Plan','c-macros':'Macro Tracker','c-orders':'Orders & Delivery','c-bills':'Billing & Payments','c-menu':'Menu 🍽️','c-loyalty':'Loyalty & Rewards ⭐','c-aiplan':'AI Meal Planner 📅','c-ai':'AI Nutritionist','c-settings':'Account Settings','a-home':'Operations Overview','a-kitchen':'Kitchen Queue','a-orders':'All Orders','a-realorders':'Live Order Management 🎯','a-inventory':'Inventory Tracking 🥦','a-staff':'Staff Management 👨‍🍳','a-customers':'Customer Directory','a-revenue':'Revenue & Analytics','a-activity':'Live Activity','a-ai':'AI Insights'};
 function showView(v){
   document.querySelectorAll('.view').forEach(e=>e.classList.remove('active'));
   document.getElementById('view-'+v).classList.add('active');
@@ -1839,6 +2301,517 @@ renderChart('cmacro-chart',[1900,2050,2100,1980,2080,2200,1750,2100,1900,2050,21
 renderChart('arev-chart',[38000,42000,35000,51000,48000,62000,45000],['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],true);
 renderChart('amonth-chart',[190000,214000,228000,201000,255000,284200],['Oct','Nov','Dec','Jan','Feb','Mar'],true);
 renderKQ();renderAdminPrev();renderAllOrders();renderCusts();renderActs();
+
+// ════════════════════════════════════════════
+// MENU DATA & RENDER
+// ════════════════════════════════════════════
+var MENU_ITEMS = [
+  {id:1,name:'Grilled Chicken Power Bowl',em:'🥗',tag:'hp',tagName:'High Protein',kcal:480,p:52,c:38,f:14,price:52,img:'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&q=80'},
+  {id:2,name:'Beef Steak Low-Carb Plate',em:'🥩',tag:'lc',tagName:'Low Carb',kcal:560,p:58,c:18,f:28,price:65,img:'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&q=80'},
+  {id:3,name:'Salmon Quinoa Macro Bowl',em:'🐟',tag:'hp',tagName:'High Protein',kcal:520,p:44,c:42,f:18,price:68,img:'https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=400&q=80'},
+  {id:4,name:'Turkey Meatball Bowl',em:'🦃',tag:'hp',tagName:'High Protein',kcal:490,p:49,c:40,f:16,price:55,img:'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&q=80'},
+  {id:5,name:'Veggie Buddha Bowl',em:'🌿',tag:'vg',tagName:'Vegetarian',kcal:420,p:28,c:55,f:16,price:48,img:'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=400&q=80'},
+  {id:6,name:'Greek Yogurt Protein Bowl',em:'🥣',tag:'hp',tagName:'High Protein',kcal:320,p:38,c:28,f:8,price:38,img:'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400&q=80'},
+  {id:7,name:'Tuna Poke Bowl',em:'🐠',tag:'lc',tagName:'Low Carb',kcal:440,p:42,c:22,f:18,price:62,img:'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&q=80'},
+  {id:8,name:'Egg White Omelette Plate',em:'🍳',tag:'hp',tagName:'High Protein',kcal:380,p:45,c:12,f:14,price:42,img:'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&q=80'},
+  {id:9,name:'Lentil & Chickpea Stew',em:'🫘',tag:'vg',tagName:'Vegetarian',kcal:460,p:24,c:62,f:10,price:44,img:'https://images.unsplash.com/photo-1547592180-85f173990554?w=400&q=80'},
+];
+
+var menuFilter = 'all';
+function renderMenu(filter) {
+  menuFilter = filter || menuFilter;
+  const items = menuFilter === 'all' ? MENU_ITEMS : MENU_ITEMS.filter(m => m.tag === menuFilter);
+  document.getElementById('menuGrid').innerHTML = items.map(m => `
+    <div class="menu-card">
+      <div class="menu-card-img">
+        <img src="${m.img}" alt="${m.name}" onerror="this.style.display='none';this.parentElement.textContent='${m.em}'" loading="lazy">
+      </div>
+      <div class="menu-card-body">
+        <span class="menu-tag ${m.tag}">${m.tagName}</span>
+        <div class="menu-card-name" style="margin-top:.5rem">${m.name}</div>
+        <div class="menu-card-macros" style="margin-top:.4rem">
+          <span class="badge ba">${m.kcal} kcal</span>
+          <span class="badge" style="background:#E6EDE0;color:#3A4A30">${m.p}g prot</span>
+          <span class="badge bgr">${m.c}g carbs</span>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:.75rem">
+          <div class="menu-card-price">${m.price} MAD</div>
+          <button class="add-btn" style="width:auto;padding:.45rem 1rem" onclick="addToCart(${m.id})">Add to Order</button>
+        </div>
+      </div>
+    </div>`).join('');
+}
+function filterMenu(f, btn) {
+  document.querySelectorAll('#c-menu .gt').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderMenu(f);
+}
+function addToCart(id) {
+  const m = MENU_ITEMS.find(x => x.id === id);
+  showToast('✓ ' + m.name + ' added to order!');
+  setTimeout(() => openRatingModal(m.em, m.name), 3000);
+}
+
+// ════════════════════════════════════════════
+// MEAL RATING
+// ════════════════════════════════════════════
+var currentRating = 0;
+function openRatingModal(em, name) {
+  document.getElementById('ratingEmoji').textContent = em;
+  document.getElementById('ratingMealName').textContent = name;
+  document.querySelectorAll('.star').forEach(s => s.classList.remove('active'));
+  currentRating = 0;
+  document.getElementById('ratingOv').classList.add('open');
+}
+function rateStar(n) {
+  currentRating = n;
+  document.querySelectorAll('.star').forEach((s, i) => s.classList.toggle('active', i < n));
+}
+function closeRating() { document.getElementById('ratingOv').classList.remove('open'); }
+function submitRating() {
+  closeRating();
+  showToast('⭐ Thanks for your feedback! +10 loyalty points');
+}
+document.getElementById('ratingOv').addEventListener('click', e => { if(e.target === e.currentTarget) closeRating(); });
+
+// ════════════════════════════════════════════
+// ONBOARDING QUIZ
+// ════════════════════════════════════════════
+var quizData = {}, currentQuizStep = 1, totalQuizSteps = 5;
+function initQuizProgress() {
+  const prog = document.getElementById('quizProgress');
+  prog.innerHTML = Array.from({length: totalQuizSteps - 1}, (_, i) =>
+    `<div class="quiz-prog-dot ${i < currentQuizStep - 1 ? 'done' : ''}" id="qpd${i}"></div>`
+  ).join('');
+}
+function selectOpt(el, key, val) {
+  el.closest('.quiz-options').querySelectorAll('.quiz-opt').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  quizData[key] = val;
+}
+function nextQuizStep(step) {
+  document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
+  document.getElementById('qs' + step).classList.add('active');
+  currentQuizStep = step;
+  initQuizProgress();
+}
+function finishQuiz() {
+  const age = parseInt(document.getElementById('q-age').value) || 28;
+  const weight = parseInt(document.getElementById('q-weight').value) || 75;
+  const height = parseInt(document.getElementById('q-height').value) || 178;
+  const gender = document.getElementById('q-gender').value;
+  const actMultiplier = {sedentary:1.2,light:1.375,moderate:1.55,active:1.725}[quizData.activity] || 1.55;
+  const bmr = gender === 'male' ? 10*weight + 6.25*height - 5*age + 5 : 10*weight + 6.25*height - 5*age - 161;
+  const tdee = Math.round(bmr * actMultiplier);
+  const goalCals = quizData.goal === 'lose' ? tdee - 400 : quizData.goal === 'gain' ? tdee + 300 : tdee;
+  const protein = Math.round(weight * (quizData.goal === 'gain' ? 2.2 : quizData.goal === 'lose' ? 1.8 : 1.6));
+  const carbs = Math.round((goalCals * 0.4) / 4);
+  const fat = Math.round((goalCals * 0.25) / 9);
+  document.getElementById('quizResult').innerHTML = `
+    <div style="text-align:center"><div style="font-size:1.5rem;font-weight:700;color:#1A1A18">${goalCals}</div><div style="font-size:.72rem;color:#7A7870">kcal/day</div></div>
+    <div style="text-align:center"><div style="font-size:1.5rem;font-weight:700;color:#8A9A7A">${protein}g</div><div style="font-size:.72rem;color:#7A7870">protein</div></div>
+    <div style="text-align:center"><div style="font-size:1.5rem;font-weight:700;color:#C8A96E">${carbs}g</div><div style="font-size:.72rem;color:#7A7870">carbs</div></div>
+    <div style="text-align:center"><div style="font-size:1.5rem;font-weight:700;color:#C4A882">${fat}g</div><div style="font-size:.72rem;color:#7A7870">fat</div></div>`;
+  nextQuizStep(5);
+}
+function openQuiz() {
+  currentQuizStep = 1; quizData = {};
+  document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
+  document.getElementById('qs1').classList.add('active');
+  initQuizProgress();
+  document.getElementById('quizOv').classList.add('open');
+}
+function closeQuiz() { document.getElementById('quizOv').classList.remove('open'); }
+document.getElementById('quizOv').addEventListener('click', e => { if(e.target === e.currentTarget) closeQuiz(); });
+
+// ════════════════════════════════════════════
+// CHECKOUT FLOW
+// ════════════════════════════════════════════
+var selectedPlan = {name:'High Protein', price:1560};
+function openCheckout() {
+  document.querySelectorAll('.checkout-step').forEach(s => s.classList.remove('active'));
+  document.getElementById('co1').classList.add('active');
+  document.getElementById('checkoutTitle').textContent = 'Choose Your Plan';
+  document.getElementById('co-date').value = new Date(Date.now()+86400000).toISOString().split('T')[0];
+  document.getElementById('checkoutOv').classList.add('open');
+}
+function closeCheckout() { document.getElementById('checkoutOv').classList.remove('open'); }
+function selectPlan(el, name, price) {
+  document.querySelectorAll('.checkout-plan-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  selectedPlan = {name, price};
+}
+function goCheckout(step) {
+  document.querySelectorAll('.checkout-step').forEach(s => s.classList.remove('active'));
+  document.getElementById('co'+step).classList.add('active');
+  const titles = {1:'Choose Your Plan',2:'Delivery Details',3:'Confirm & Pay',4:'Order Confirmed!'};
+  document.getElementById('checkoutTitle').textContent = titles[step];
+  if(step === 3) {
+    document.getElementById('ct-plan').textContent = selectedPlan.name;
+    document.getElementById('ct-price').textContent = selectedPlan.price.toLocaleString() + ' MAD';
+  }
+}
+function selectTime(el) {
+  document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
+  el.classList.add('selected');
+}
+function confirmCheckout() {
+  goCheckout(4);
+  setTimeout(() => showNotif('🎉', 'Subscription Confirmed!', selectedPlan.name + ' · ' + selectedPlan.price.toLocaleString() + ' MAD/month'), 500);
+  setTimeout(() => {
+    const wa = encodeURIComponent('Hello RIVARO! I just subscribed to the ' + selectedPlan.name + ' plan. My delivery is confirmed. 🎉');
+    window.open('https://wa.me/212600000000?text=' + wa, '_blank');
+  }, 1500);
+}
+document.getElementById('checkoutOv').addEventListener('click', e => { if(e.target === e.currentTarget) closeCheckout(); });
+
+// ════════════════════════════════════════════
+// LOYALTY & REFERRAL
+// ════════════════════════════════════════════
+function redeemReward(name, pts) {
+  showToast('🎁 ' + name + ' redeemed! -' + pts + ' points');
+}
+function copyRefCode() {
+  const code = document.getElementById('refCode').textContent;
+  navigator.clipboard.writeText(code).then(() => showToast('📋 Code copied: ' + code));
+}
+function shareWhatsApp() {
+  const code = document.getElementById('refCode').textContent;
+  const msg = encodeURIComponent('Try RIVARO — precision nutrition dark kitchen in Tanger! Use my code ' + code + ' and get 200 loyalty points. 🍽️ Check it out: https://othmanechagguif.github.io/rivaro-tech');
+  window.open('https://wa.me/?text=' + msg, '_blank');
+}
+
+// ════════════════════════════════════════════
+// PUSH NOTIFICATIONS
+// ════════════════════════════════════════════
+function showNotif(ico, title, sub) {
+  document.getElementById('notifIco').textContent = ico;
+  document.getElementById('notifTitle').textContent = title;
+  document.getElementById('notifSub').textContent = sub;
+  const t = document.getElementById('notifToast');
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 5000);
+  if(Notification.permission === 'granted') {
+    new Notification('RIVARO — ' + title, {body: sub, icon: '🍽️'});
+  }
+}
+function hideNotif() { document.getElementById('notifToast').classList.remove('show'); }
+function requestNotifPermission() {
+  if('Notification' in window) {
+    Notification.requestPermission().then(p => {
+      if(p === 'granted') showToast('🔔 Notifications enabled!');
+    });
+  }
+}
+
+// ════════════════════════════════════════════
+// VOICE INPUT (Web Speech API)
+// ════════════════════════════════════════════
+var recognition = null;
+var isListening = false;
+function toggleVoice(inputId, btn) {
+  if(!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+    showToast('Voice not supported in this browser. Try Chrome.');
+    return;
+  }
+  if(isListening) {
+    recognition && recognition.stop();
+    return;
+  }
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  recognition = new SR();
+  recognition.lang = 'en-US';
+  recognition.continuous = false;
+  recognition.interimResults = false;
+  recognition.onstart = () => { isListening = true; btn.classList.add('listening'); btn.textContent = '🔴'; };
+  recognition.onresult = (e) => {
+    const transcript = e.results[0][0].transcript;
+    document.getElementById(inputId).value = transcript;
+    showToast('🎤 "' + transcript + '"');
+  };
+  recognition.onend = () => { isListening = false; btn.classList.remove('listening'); btn.textContent = '🎤'; };
+  recognition.onerror = () => { isListening = false; btn.classList.remove('listening'); btn.textContent = '🎤'; };
+  recognition.start();
+}
+
+// ════════════════════════════════════════════
+// ADMIN: REAL-TIME ORDER KANBAN
+// ════════════════════════════════════════════
+var KANBAN_ORDERS = {
+  new: [
+    {id:'#2852',meal:'Chicken Bowl',cust:'Ahmed K.',time:'12 min ago'},
+    {id:'#2851',meal:'Beef Steak Plate',cust:'Sara M.',time:'18 min ago'},
+    {id:'#2850',meal:'Veggie Buddha Bowl',cust:'Yassir T.',time:'22 min ago'},
+  ],
+  prep: [
+    {id:'#2849',meal:'Salmon Quinoa Bowl',cust:'Nadia B.',time:'Started 8 min ago'},
+    {id:'#2848',meal:'Turkey Meatball Bowl',cust:'Karim A.',time:'Started 15 min ago'},
+  ],
+  ready: [
+    {id:'#2847',meal:'Grilled Chicken Bowl',cust:'Youssef M.',time:'Ready 3 min ago'},
+    {id:'#2846',meal:'Tuna Poke Bowl',cust:'Lina H.',time:'Ready 6 min ago'},
+  ],
+  delivered: [
+    {id:'#2845',meal:'Greek Yogurt Bowl',cust:'Omar T.',time:'Delivered 1h ago'},
+    {id:'#2844',meal:'Beef Low-Carb',cust:'Sofia L.',time:'Delivered 2h ago'},
+    {id:'#2843',meal:'Salmon Plate',cust:'Fatima R.',time:'Delivered 2h ago'},
+  ]
+};
+var KANBAN_NEXT = {new:'prep',prep:'ready',ready:'delivered'};
+var KANBAN_LABELS = {new:'🆕 New Orders',prep:'🍳 Preparing',ready:'✅ Ready',delivered:'🏠 Delivered'};
+function renderKanban() {
+  const el = document.getElementById('orderKanban');
+  if(!el) return;
+  el.innerHTML = Object.entries(KANBAN_ORDERS).map(([col, orders]) => `
+    <div class="kanban-col">
+      <div class="kanban-col-hdr">${KANBAN_LABELS[col]}<span class="kanban-col-count">${orders.length}</span></div>
+      ${orders.map(o => `
+        <div class="kanban-card">
+          <div class="kc-id">${o.id}</div>
+          <div class="kc-meal">${o.meal}</div>
+          <div class="kc-cust">👤 ${o.cust} · ${o.time}</div>
+          <div class="kc-actions">
+            ${col !== 'delivered' ? `<button class="kc-btn next" onclick="advanceOrder('${col}','${o.id}')">→ ${col==='new'?'Start':col==='prep'?'Ready':'Deliver'}</button>` : ''}
+            <button class="kc-btn wa" onclick="waOrder('${o.cust}','${o.meal}','${col}')">💬</button>
+          </div>
+        </div>`).join('')}
+    </div>`).join('');
+  // Update KPIs
+  ['new','prep','ready','delivered'].forEach((k,i) => {
+    const el = document.getElementById(['kn-new','kn-prep','kn-ready','kn-route'][i]);
+    if(el) el.textContent = KANBAN_ORDERS[k].length;
+  });
+}
+function advanceOrder(fromCol, orderId) {
+  const toCol = KANBAN_NEXT[fromCol];
+  if(!toCol) return;
+  const idx = KANBAN_ORDERS[fromCol].findIndex(o => o.id === orderId);
+  if(idx === -1) return;
+  const order = KANBAN_ORDERS[fromCol].splice(idx, 1)[0];
+  const msgs = {prep:'🍳 Now being prepared',ready:'✅ Ready for pickup!',delivered:'🚚 Out for delivery!'};
+  order.time = msgs[toCol] || order.time;
+  KANBAN_ORDERS[toCol].unshift(order);
+  renderKanban();
+  showToast(order.id + ' moved to ' + KANBAN_LABELS[toCol]);
+  showNotif('📦', 'Order Update', order.meal + ' for ' + order.cust + ' — ' + msgs[toCol]);
+}
+function waOrder(cust, meal, status) {
+  const msgs = {new:'Your order has been received! 📦',prep:'Your meal is being prepared! 🍳',ready:'Your meal is ready and will be delivered soon! ✅',delivered:'Your order is on the way! 🚚'};
+  const msg = encodeURIComponent('Hello ' + cust.split(' ')[0] + '! ' + (msgs[status] || 'Update on your order.') + '\n\n*Meal:* ' + meal + '\n\n— RIVARO Kitchen 🍽️');
+  window.open('https://wa.me/212600000000?text=' + msg, '_blank');
+}
+function exportOrders() {
+  let csv = 'ID,Customer,Meal,Status\n';
+  Object.entries(KANBAN_ORDERS).forEach(([status, orders]) => {
+    orders.forEach(o => { csv += `${o.id},${o.cust},${o.meal},${status}\n`; });
+  });
+  downloadCSV(csv, 'rivaro-orders.csv');
+}
+
+// ════════════════════════════════════════════
+// ADMIN: INVENTORY
+// ════════════════════════════════════════════
+var INVENTORY = [
+  {name:'Chicken Breast',unit:'kg',stock:12,min:10,max:50,status:'ok'},
+  {name:'Salmon Fillet',unit:'kg',stock:4,min:5,max:20,status:'low'},
+  {name:'Beef Tenderloin',unit:'kg',stock:8,min:5,max:25,status:'ok'},
+  {name:'Quinoa',unit:'kg',stock:6,min:8,max:30,status:'low'},
+  {name:'Extra Virgin Olive Oil',unit:'L',stock:2,min:5,max:20,status:'critical'},
+  {name:'Greek Yogurt',unit:'kg',stock:15,min:8,max:40,status:'ok'},
+  {name:'Mixed Greens',unit:'kg',stock:9,min:6,max:25,status:'ok'},
+  {name:'Brown Rice',unit:'kg',stock:18,min:10,max:50,status:'ok'},
+  {name:'Eggs (free range)',unit:'units',stock:84,min:60,max:200,status:'ok'},
+  {name:'Chickpeas',unit:'kg',stock:7,min:5,max:20,status:'ok'},
+  {name:'Avocado',unit:'units',stock:18,min:20,max:60,status:'low'},
+  {name:'Protein Powder',unit:'kg',stock:4,min:3,max:15,status:'ok'},
+];
+function renderInventory() {
+  const el = document.getElementById('inventoryGrid');
+  if(!el) return;
+  el.innerHTML = INVENTORY.map(item => {
+    const pct = Math.round((item.stock / item.max) * 100);
+    const statusColor = {ok:'#6BAE6B',low:'#C8A96E',critical:'#C24B3A'}[item.status];
+    return `<div class="inv-item">
+      <div class="inv-name">${item.name}</div>
+      <div class="inv-stock" style="color:${statusColor}">${item.stock} ${item.unit} ${item.status==='critical'?'⚠️ CRITICAL':item.status==='low'?'⚠️ Low Stock':''}</div>
+      <div class="inv-bar-wrap"><div class="inv-level"><div class="inv-fill ${item.status}" style="width:${pct}%"></div></div></div>
+      <div style="display:flex;gap:.4rem">
+        <button class="tbtn" style="flex:1;font-size:.7rem" onclick="showToast('Reorder request sent for ${item.name}!')">+ Reorder</button>
+        <button class="tbtn" style="font-size:.7rem" onclick="showToast('Updated!')">Edit</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+function exportInventory() {
+  let csv = 'Item,Stock,Unit,Min,Max,Status\n';
+  INVENTORY.forEach(i => { csv += `${i.name},${i.stock},${i.unit},${i.min},${i.max},${i.status}\n`; });
+  downloadCSV(csv, 'rivaro-inventory.csv');
+}
+
+// ════════════════════════════════════════════
+// ADMIN: STAFF
+// ════════════════════════════════════════════
+var STAFF = [
+  {name:'Mohammed A.',role:'Head Chef',em:'👨‍🍳',status:'bg',stTxt:'On Shift',hours:'6:00–14:00'},
+  {name:'Fatima Z.',role:'Prep Cook',em:'👩‍🍳',status:'bg',stTxt:'On Shift',hours:'6:00–14:00'},
+  {name:'Youssef K.',role:'Prep Cook',em:'👨‍🍳',status:'bg',stTxt:'On Shift',hours:'14:00–22:00'},
+  {name:'Aicha B.',role:'Nutritionist QA',em:'👩‍💼',status:'bg',stTxt:'On Shift',hours:'8:00–16:00'},
+  {name:'Omar S.',role:'Delivery Driver',em:'🚚',status:'bg',stTxt:'On Shift',hours:'16:00–22:00'},
+  {name:'Sara M.',role:'Delivery Driver',em:'🚚',status:'bg',stTxt:'On Shift',hours:'16:00–22:00'},
+  {name:'Hamid L.',role:'Kitchen Assistant',em:'👨‍🍳',status:'ba',stTxt:'Day Off',hours:'Off today'},
+  {name:'Khadija R.',role:'Customer Support',em:'💬',status:'ba',stTxt:'Remote',hours:'9:00–17:00'},
+];
+function renderStaff() {
+  const el = document.getElementById('staffList');
+  if(!el) return;
+  el.innerHTML = STAFF.map(s => `
+    <div class="staff-card">
+      <div class="staff-av">${s.em}</div>
+      <div><div class="staff-name">${s.name}</div><div class="staff-role">${s.role}</div></div>
+      <div class="staff-status">
+        <span class="badge ${s.status}">${s.stTxt}</span>
+        <span class="staff-hours">${s.hours}</span>
+        <button class="tbtn" style="font-size:.68rem;padding:.22rem .65rem" onclick="waStaff('${s.name}')">💬 Message</button>
+      </div>
+    </div>`).join('');
+}
+function waStaff(name) {
+  const msg = encodeURIComponent('Hello ' + name.split(' ')[0] + '! Message from RIVARO Kitchen management.');
+  window.open('https://wa.me/212600000000?text=' + msg, '_blank');
+}
+
+// ════════════════════════════════════════════
+// AI WEEKLY MEAL PLAN GENERATOR
+// ════════════════════════════════════════════
+const weekPlanH = [];
+async function generateWeeklyPlan() {
+  const btn = document.getElementById('genPlanBtn');
+  const result = document.getElementById('weeklyPlanResult');
+  btn.disabled = true;
+  btn.innerHTML = '<div class="spin" style="border-top-color:#FDFAF4;display:inline-block"></div> Generating...';
+  result.innerHTML = '<div style="text-align:center;padding:2rem;color:#7A7870"><div style="font-size:2rem;margin-bottom:.5rem">✨</div>AI is building your personalized 7-day plan...</div>';
+  try {
+    const r = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST', headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514', max_tokens: 1200,
+        messages: [{role:'user', content:`Create a 7-day personalized meal plan for: Goal: Muscle Gain, Calories: 2100/day, Protein: 160g/day, Plan: High Protein. For each day give breakfast, lunch, dinner with emoji, name, calories, protein. Respond ONLY valid JSON no backticks: {"days":[{"day":"Monday","meals":[{"type":"Breakfast","emoji":"...","name":"...","calories":0,"protein":0},{"type":"Lunch","emoji":"...","name":"...","calories":0,"protein":0},{"type":"Dinner","emoji":"...","name":"...","calories":0,"protein":0}]}]}`}]
+      })
+    });
+    const data = await r.json();
+    const plan = JSON.parse(data.content[0].text.replace(/\`\`\`json|\`\`\`/g,'').trim());
+    result.innerHTML = `<div class="meal-plan-ai-card">${plan.days.map(d => `
+      <div class="mp-ai-day">
+        <div class="mp-ai-day-lbl">${d.day}</div>
+        <div class="mp-ai-meals">${d.meals.map(m => `
+          <div class="mp-ai-meal">
+            <div class="mp-ai-em">${m.emoji}</div>
+            <div><div class="mp-ai-name">${m.type}: ${m.name}</div><div class="mp-ai-macros">${m.calories} kcal · ${m.protein}g protein</div></div>
+          </div>`).join('')}
+        </div>
+      </div>`).join('')}
+    </div>
+    <div style="display:flex;gap:.75rem;margin-top:1rem">
+      <button class="tbtn pr" style="flex:1" onclick="showToast('Plan saved to your account! 📅')">Save This Plan</button>
+      <button class="tbtn" style="flex:1" onclick="exportPlan()">📥 Export PDF</button>
+    </div>`;
+  } catch(e) {
+    result.innerHTML = '<div style="color:#C24B3A;font-size:.85rem;padding:1rem">Could not generate plan. Please try again.</div>';
+  }
+  btn.disabled = false;
+  btn.innerHTML = '✨ Generate My Plan';
+}
+function exportPlan() {
+  window.print();
+  showToast('Printing meal plan... 📄');
+}
+
+// ════════════════════════════════════════════
+// EXPORT UTILITIES
+// ════════════════════════════════════════════
+function downloadCSV(csv, filename) {
+  const blob = new Blob([csv], {type:'text/csv'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = filename; a.click();
+  URL.revokeObjectURL(url);
+  showToast('📥 ' + filename + ' downloaded!');
+}
+function exportAllData() {
+  let csv = 'Type,ID,Customer,Meal,Status,Revenue\n';
+  KANBAN_ORDERS && Object.entries(KANBAN_ORDERS).forEach(([s,orders]) => {
+    orders.forEach(o => { csv += `Order,${o.id},${o.cust},${o.meal},${s},52 MAD\n`; });
+  });
+  downloadCSV(csv, 'rivaro-report-' + new Date().toISOString().split('T')[0] + '.csv');
+}
+
+// ════════════════════════════════════════════
+// AUTO-TRIGGER QUIZ ON FIRST LOGIN
+// ════════════════════════════════════════════
+var quizShown = false;
+const _origShowView = showView;
+// Override doLogin to trigger quiz on first customer login
+const _origDoLogin = doLogin;
+function doLogin() {
+  const email = document.getElementById('login-email').value.trim().toLowerCase();
+  const pass = document.getElementById('login-pass').value;
+  const match = ACCOUNTS.find(a => a.email === email && a.pass === pass);
+  if(match) {
+    closeLoginModal();
+    if(match.role === 'admin') {
+      showView('admin');
+      showToast('Welcome back, ' + match.name + ' 🔐');
+    } else {
+      showView('customer');
+      showToast('Welcome back, ' + match.name + ' 👋');
+      if(!quizShown && !localStorage.getItem('rivaro_quiz_done')) {
+        quizShown = true;
+        setTimeout(() => {
+          openQuiz();
+          requestNotifPermission();
+        }, 800);
+      }
+      // Show delivery notification after 3s
+      setTimeout(() => showNotif('🚚', 'Order Update', 'Your Beef & Quinoa Plate is on the way! ETA 28 min'), 3000);
+    }
+  } else {
+    const err = document.getElementById('login-error');
+    err.style.display = 'block';
+    err.textContent = '❌ Incorrect email or password. Please try again.';
+    document.getElementById('login-pass').value = '';
+    document.getElementById('login-pass').focus();
+  }
+}
+
+// Save quiz completion
+function closeQuiz() {
+  document.getElementById('quizOv').classList.remove('open');
+  localStorage.setItem('rivaro_quiz_done', '1');
+}
+
+// ════════════════════════════════════════════
+// WHATSAPP ORDER NOTIFICATION
+// ════════════════════════════════════════════
+function notifyWhatsApp(customerName, meal, status) {
+  const msgs = {
+    confirmed: 'Hello ' + customerName + '! ✅ Your RIVARO order has been confirmed.',
+    preparing: 'Hello ' + customerName + '! 🍳 Your ' + meal + ' is being prepared.',
+    ready: 'Hello ' + customerName + '! 📦 Your ' + meal + ' is ready for delivery.',
+    delivered: 'Hello ' + customerName + '! 🎉 Your ' + meal + ' has been delivered. Bon appétit!'
+  };
+  var msg = encodeURIComponent((msgs[status] || msgs.confirmed) + '\n\n— RIVARO Kitchen 🍽️');
+  window.open('https://wa.me/212600000000?text=' + msg, '_blank');
+}
+
+// ── DEFERRED INIT — runs after ALL data & functions are defined ──
+window.addEventListener('DOMContentLoaded', function() {
+  renderMenu('all');
+  renderKanban();
+  renderInventory();
+  renderStaff();
+  initQuizProgress();
+});
+
 </script>
 </body>
 </html>
