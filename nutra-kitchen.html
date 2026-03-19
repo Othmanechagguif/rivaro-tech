@@ -1,0 +1,1660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RIVARO — Precision Nutrition Kitchen</title>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600;700&family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--w:#FDFAF4;--c:#F5F0E8;--ch:#1A1A18;--ol:#4A5240;--ac:#C8A96E;--acl:#EEE0C4;--bd:#E8E3D8;--mu:#7A7870;--gn:#6BAE6B;--rd:#C24B3A;}
+body{font-family:'Instrument Sans',sans-serif;background:#FDFAF4;color:#1A1A18;overflow-x:hidden;}
+.view{display:none;}.view.active{display:block;}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;align-items:center;justify-content:space-between;padding:0 4rem;height:68px;background:rgba(253,250,244,.97);backdrop-filter:blur(20px);border-bottom:1px solid #E8E3D8;}
+.logo{font-family:'Clash Display',sans-serif;font-size:1.4rem;font-weight:700;color:#1A1A18;cursor:pointer;text-decoration:none;}
+.logo span{color:#C8A96E;}
+.logo .atag{font-size:.55rem;font-family:'Instrument Sans',sans-serif;font-weight:700;letter-spacing:.08em;background:rgba(200,169,110,.2);color:#C8A96E;padding:.12rem .45rem;border-radius:4px;margin-left:.35rem;vertical-align:middle;}
+.nl{display:flex;gap:2.5rem;list-style:none;}
+.nl a{font-size:.85rem;font-weight:500;color:#7A7870;text-decoration:none;cursor:pointer;transition:color .2s;}
+.nl a:hover{color:#1A1A18;}
+.ncta{display:flex;gap:.65rem;align-items:center;}
+.bno{padding:.45rem 1.1rem;border:1.5px solid #1A1A18;border-radius:100px;font-size:.82rem;font-weight:500;background:transparent;color:#1A1A18;cursor:pointer;font-family:'Instrument Sans',sans-serif;transition:all .2s;}
+.bno:hover{background:#1A1A18;color:#FDFAF4;}
+.bnp{padding:.45rem 1.3rem;border:none;border-radius:100px;font-size:.82rem;font-weight:600;background:#1A1A18;color:#FDFAF4;cursor:pointer;font-family:'Instrument Sans',sans-serif;transition:all .2s;}
+.bnp:hover{background:#4A5240;}
+
+/* HERO */
+.hero{min-height:100vh;padding-top:68px;display:grid;grid-template-columns:1fr 1fr;background:#FDFAF4;}
+.hero-l{display:flex;flex-direction:column;justify-content:center;padding:5rem 4rem 3rem;position:relative;background:#FDFAF4;}
+.hero-l::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 5% 80%,rgba(200,169,110,.07),transparent 55%);pointer-events:none;}
+.htag{display:inline-flex;align-items:center;gap:.45rem;background:#EEE0C4;color:#5A4A2A;font-size:.7rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;padding:.38rem .9rem;border-radius:100px;margin-bottom:1.75rem;width:fit-content;border:1px solid #DDD0B0;}
+.htag::before{content:'';width:6px;height:6px;background:#C8A96E;border-radius:50%;flex-shrink:0;animation:bl 2s infinite;}
+@keyframes bl{0%,100%{opacity:1;}50%{opacity:.35;}}
+h1{font-family:'Clash Display',sans-serif;font-size:clamp(2.8rem,4.5vw,4.5rem);font-weight:600;line-height:1.05;letter-spacing:-.03em;color:#1A1A18;margin-bottom:1.4rem;}
+h1 em{font-family:'Instrument Serif',serif;font-style:italic;color:#C8A96E;}
+.hsub{font-size:1rem;color:#7A7870;line-height:1.75;max-width:440px;margin-bottom:2.25rem;}
+.hacts{display:flex;gap:.875rem;margin-bottom:3rem;flex-wrap:wrap;}
+.bhl{padding:.8rem 1.875rem;border:none;border-radius:100px;font-size:.95rem;font-weight:600;background:#1A1A18;color:#FDFAF4;cursor:pointer;transition:all .25s;font-family:'Instrument Sans',sans-serif;}
+.bhl:hover{background:#4A5240;transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,.14);}
+.bhg{padding:.8rem 1.875rem;border:1.5px solid #D8D3CA;border-radius:100px;font-size:.95rem;font-weight:500;background:#fff;color:#1A1A18;cursor:pointer;transition:all .25s;font-family:'Instrument Sans',sans-serif;}
+.bhg:hover{border-color:#1A1A18;}
+.hstats{display:flex;gap:2.25rem;}
+.sn{font-family:'Clash Display',sans-serif;font-size:1.65rem;font-weight:600;color:#1A1A18;display:block;}
+.sl{font-size:.78rem;color:#7A7870;}
+.hero-r{position:relative;background:#F5F0E8;border-left:1px solid #E8E3D8;overflow:hidden;}
+.hero-r::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 55%,rgba(200,169,110,.14),transparent 50%),radial-gradient(circle at 78% 20%,rgba(138,154,122,.09),transparent 45%);}
+.hshow{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:.875rem;padding:2rem;}
+.ailive{display:inline-flex;align-items:center;gap:.45rem;background:#fff;border:1px solid #E0D8C8;border-radius:100px;padding:.38rem .95rem;color:#4A5240;font-size:.68rem;font-weight:700;letter-spacing:.07em;box-shadow:0 2px 14px rgba(0,0,0,.06);}
+.gdot{width:7px;height:7px;background:#6BAE6B;border-radius:50%;animation:bl 1.5s infinite;flex-shrink:0;}
+.fc{background:#fff;border:1px solid #E8E3D8;border-radius:18px;padding:1.1rem 1.4rem;display:flex;align-items:center;gap:.875rem;width:100%;max-width:350px;box-shadow:0 3px 24px rgba(0,0,0,.07);animation:fci .6s ease both;}
+.fc:nth-child(2){animation-delay:.15s;}.fc:nth-child(3){animation-delay:.3s;}.fc:nth-child(4){animation-delay:.45s;}
+@keyframes fci{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+.fe{font-size:2.2rem;}.fn{font-family:'Clash Display',sans-serif;font-size:.9rem;font-weight:600;color:#1A1A18;margin-bottom:.28rem;}
+.fp{display:flex;gap:.38rem;flex-wrap:wrap;}
+.pill{font-size:.64rem;font-weight:700;padding:.18rem .5rem;border-radius:100px;}
+.pk{background:#F0E4CC;color:#8A6220;border:1px solid #E0CFA8;}
+.pp{background:#E6EDE0;color:#3A4A30;border:1px solid #C8D8B8;}
+.pc{background:#F0EDE8;color:#6A6660;border:1px solid #DDD8D0;}
+
+/* SECTIONS */
+section{padding:5.5rem 4rem;}
+.stag{font-size:.67rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#C8A96E;margin-bottom:.875rem;}
+.sh2{font-family:'Clash Display',sans-serif;font-size:clamp(1.8rem,3vw,2.75rem);font-weight:600;line-height:1.1;letter-spacing:-.025em;color:#1A1A18;margin-bottom:1.1rem;}
+.ssub{font-size:.95rem;font-weight:400;color:#7A7870;line-height:1.7;max-width:540px;}
+
+/* PLANS */
+.splans{background:#F5F0E8;}
+.ph{text-align:center;margin-bottom:2.75rem;}.ph .ssub{margin:0 auto;}
+.gtabs{display:flex;justify-content:center;gap:.45rem;flex-wrap:wrap;margin-bottom:2.75rem;}
+.gt{padding:.5rem 1.3rem;border-radius:100px;border:1.5px solid #E8E3D8;background:#FDFAF4;font-size:.82rem;font-weight:500;color:#7A7870;cursor:pointer;transition:all .2s;font-family:'Instrument Sans',sans-serif;}
+.gt.active,.gt:hover{background:#1A1A18;border-color:#1A1A18;color:#FDFAF4;}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1.25rem;max-width:1160px;margin:0 auto;}
+.pcard{border-radius:22px;overflow:hidden;border:1px solid #E8E3D8;background:#FDFAF4;transition:all .3s;cursor:pointer;position:relative;}
+.pcard:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,.1);}
+.pcard.feat{border-color:#C8A96E;}
+.pimg{height:170px;display:flex;align-items:center;justify-content:center;font-size:4.5rem;background:linear-gradient(135deg,#F5F0E8,#EEE0C4);}
+.pbdy{padding:1.35rem;}
+.pn{font-family:'Clash Display',sans-serif;font-size:1.1rem;font-weight:600;color:#1A1A18;margin-bottom:.35rem;}
+.pk2{font-size:.73rem;color:#7A7870;margin-bottom:.875rem;}
+.mb{margin-bottom:.45rem;}
+.mbl{display:flex;justify-content:space-between;font-size:.66rem;color:#7A7870;margin-bottom:.22rem;font-weight:600;}
+.mbt{height:4px;background:#E8E3D8;border-radius:2px;overflow:hidden;}
+.mbf{height:100%;border-radius:2px;}
+.fpp{background:#8A9A7A;}.fcc{background:#C8A96E;}.fff{background:#C4A882;}
+.pbadge{position:absolute;top:.8rem;right:.8rem;background:#C8A96E;color:#1A1A18;font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.2rem .55rem;border-radius:100px;}
+.pcta{width:100%;padding:.62rem;border:1.5px solid #1A1A18;border-radius:10px;background:transparent;font-size:.82rem;font-weight:600;color:#1A1A18;cursor:pointer;transition:all .2s;margin-top:.875rem;font-family:'Instrument Sans',sans-serif;}
+.pcta:hover{background:#1A1A18;color:#FDFAF4;}
+
+/* BUILDER */
+.sbuild{background:#1A1A18;color:#FDFAF4;}
+.bin{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:start;}
+.bl .sh2{color:#FDFAF4;}
+.bl .ssub{color:rgba(255,255,255,.42);}
+.slids{display:flex;flex-direction:column;gap:1.6rem;margin-top:2rem;}
+.sr{display:flex;flex-direction:column;gap:.5rem;}
+.srh{display:flex;justify-content:space-between;align-items:center;}
+.slbl{font-size:.82rem;font-weight:500;color:rgba(255,255,255,.6);}
+.sval{font-family:'Clash Display',sans-serif;font-size:1.35rem;font-weight:600;color:#C8A96E;}
+.su{font-size:.65rem;color:rgba(255,255,255,.32);font-weight:400;}
+input[type=range]{-webkit-appearance:none;width:100%;height:5px;border-radius:3px;background:rgba(255,255,255,.12);outline:none;cursor:pointer;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:19px;height:19px;background:#C8A96E;border-radius:50%;border:3px solid #1A1A18;box-shadow:0 0 0 2px #C8A96E;cursor:pointer;}
+.br2{display:flex;flex-direction:column;gap:1.1rem;}
+.prev{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:1.35rem;}
+.prev.shim{animation:shm 1.5s infinite;}
+@keyframes shm{0%,100%{border-color:rgba(255,255,255,.1);}50%{border-color:rgba(200,169,110,.4);}}
+.prevh{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.875rem;}
+.prevt{font-family:'Clash Display',sans-serif;font-size:1rem;font-weight:500;color:#fff;}
+.prevs{font-size:.76rem;color:rgba(255,255,255,.38);margin-top:.12rem;}
+.ppills{display:flex;gap:.45rem;flex-wrap:wrap;}
+.ppill{padding:.25rem .65rem;border-radius:100px;font-size:.7rem;font-weight:600;border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.6);}
+.ppill.kk{border-color:rgba(200,169,110,.3);color:#C8A96E;}
+.gbtn{width:100%;padding:.9rem;border-radius:13px;border:none;background:linear-gradient(135deg,#C8A96E,#A8813E);color:#1A1A18;font-family:'Clash Display',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;transition:all .25s;display:flex;align-items:center;justify-content:center;gap:.6rem;}
+.gbtn:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(200,169,110,.28);}
+.gbtn:disabled{opacity:.6;cursor:not-allowed;transform:none;}
+.spin{width:16px;height:16px;border:2px solid rgba(0,0,0,.2);border-top-color:#1A1A18;border-radius:50%;animation:rot .7s linear infinite;}
+@keyframes rot{to{transform:rotate(360deg);}}
+.gr{background:rgba(255,255,255,.04);border:1px solid rgba(200,169,110,.22);border-radius:12px;padding:1.1rem;margin-top:.5rem;}
+.grn{font-family:'Clash Display',sans-serif;font-size:1rem;color:#fff;margin-bottom:.4rem;}
+.grd{font-size:.78rem;color:rgba(255,255,255,.48);line-height:1.55;margin-bottom:.75rem;}
+.gri{font-size:.73rem;color:rgba(255,255,255,.35);margin-bottom:.75rem;}
+.grms{display:flex;gap:.6rem;flex-wrap:wrap;}
+.grm{text-align:center;background:rgba(255,255,255,.06);border-radius:9px;padding:.4rem .75rem;}
+.grmv{font-family:'Clash Display',sans-serif;font-size:.95rem;font-weight:600;color:#C8A96E;}
+.grmk{font-size:.58rem;color:rgba(255,255,255,.28);text-transform:uppercase;letter-spacing:.08em;}
+.grob{width:100%;margin-top:.75rem;padding:.65rem;border-radius:9px;border:1px solid rgba(200,169,110,.28);background:transparent;color:#C8A96E;font-size:.82rem;font-weight:600;cursor:pointer;transition:all .2s;font-family:'Instrument Sans',sans-serif;}
+.grob:hover{background:rgba(200,169,110,.1);}
+.dchip{padding:.28rem .75rem;border-radius:100px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.07);font-size:.7rem;font-weight:500;color:rgba(255,255,255,.58);cursor:pointer;transition:all .15s;white-space:nowrap;font-family:'Instrument Sans',sans-serif;}
+.dchip:hover{background:rgba(255,255,255,.14);color:#fff;}
+
+/* HOW */
+.show{background:#FDFAF4;}
+.hin{max-width:940px;margin:0 auto;}
+.hhd{text-align:center;margin-bottom:3.5rem;}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;}
+.stepn{width:44px;height:44px;border-radius:13px;background:#F5F0E8;border:1.5px solid #E8E3D8;display:flex;align-items:center;justify-content:center;font-family:'Clash Display',sans-serif;font-size:1.1rem;font-weight:700;color:#1A1A18;margin-bottom:.8rem;}
+.stept{font-family:'Clash Display',sans-serif;font-size:1.15rem;font-weight:600;color:#1A1A18;margin-bottom:.6rem;}
+.stepd{font-size:.86rem;color:#7A7870;line-height:1.7;}
+
+/* TESTIMONIALS */
+.stest{background:#FDFAF4;overflow:hidden;}
+.thd{text-align:center;margin-bottom:2.75rem;}
+.ttrack{display:flex;gap:1.25rem;animation:scx 32s linear infinite;width:max-content;}
+.ttrack:hover{animation-play-state:paused;}
+@keyframes scx{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.tcard{width:295px;background:#F5F0E8;border:1px solid #E8E3D8;border-radius:18px;padding:1.35rem;flex-shrink:0;}
+.tstar{color:#C8A96E;font-size:.82rem;margin-bottom:.6rem;}
+.ttxt{font-size:.85rem;color:#7A7870;line-height:1.6;margin-bottom:.8rem;}
+.tauth{display:flex;align-items:center;gap:.65rem;}
+.tav{width:32px;height:32px;border-radius:50%;background:#1A1A18;display:flex;align-items:center;justify-content:center;font-size:.85rem;}
+.tnm{font-size:.8rem;font-weight:600;color:#1A1A18;}
+.tgl{font-size:.7rem;color:#7A7870;}
+
+/* FAQ */
+.sfaq{background:#F5F0E8;}
+.fin{max-width:720px;margin:0 auto;}
+.fhd{text-align:center;margin-bottom:2.75rem;}
+.fi{border-bottom:1px solid #E8E3D8;}
+.fq{width:100%;text-align:left;padding:1.1rem 0;background:none;border:none;display:flex;justify-content:space-between;align-items:center;font-family:'Instrument Sans',sans-serif;font-size:.92rem;font-weight:600;color:#1A1A18;cursor:pointer;gap:1rem;}
+.fic{width:22px;height:22px;border-radius:50%;background:#1A1A18;color:#fff;display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0;transition:transform .3s;}
+.fi.op .fic{transform:rotate(45deg);}
+.fa{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.fi.op .fa{max-height:180px;padding-bottom:1.1rem;}
+.fa p{font-size:.84rem;color:#7A7870;line-height:1.75;}
+
+/* FOOTER */
+.sfcta{background:#1A1A18;padding:5.5rem 4rem;text-align:center;}
+.sfcta h2{font-family:'Clash Display',sans-serif;font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:600;letter-spacing:-.03em;color:#FDFAF4;margin-bottom:1.35rem;line-height:1.05;}
+.sfcta h2 em{font-family:'Instrument Serif',serif;font-style:italic;color:#C8A96E;}
+.sfcta p{color:rgba(255,255,255,.38);margin-bottom:2.25rem;}
+footer{background:#1A1A18;border-top:1px solid rgba(255,255,255,.07);padding:2.75rem 4rem 1.75rem;}
+.fg{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2.75rem;margin-bottom:2.5rem;}
+.fbl p{font-size:.78rem;color:rgba(255,255,255,.3);line-height:1.7;margin-top:.65rem;}
+.fco h4{font-size:.65rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:.875rem;}
+.fco ul{list-style:none;display:flex;flex-direction:column;gap:.5rem;}
+.fco ul a{font-size:.82rem;color:rgba(255,255,255,.45);text-decoration:none;cursor:pointer;transition:color .2s;}
+.fco ul a:hover{color:#FDFAF4;}
+.fb2{display:flex;justify-content:space-between;padding-top:1.75rem;border-top:1px solid rgba(255,255,255,.07);}
+.fb2 p{font-size:.75rem;color:rgba(255,255,255,.2);}
+.fadu{opacity:1;transform:translateY(0);}
+.fadu.vis{opacity:1;}
+
+/* DASHBOARD */
+.dlayout{display:flex;min-height:100vh;}
+.sidebar{width:248px;background:#1A1A18;display:flex;flex-direction:column;position:fixed;top:0;left:0;bottom:0;z-index:200;overflow-y:auto;}
+.sblogo{font-family:'Clash Display',sans-serif;font-size:1.3rem;font-weight:700;color:#FDFAF4;padding:1.5rem 1.4rem;border-bottom:1px solid rgba(255,255,255,.08);cursor:pointer;display:flex;align-items:center;gap:.45rem;}
+.sblogo span{color:#C8A96E;}
+.sblogo .at{font-size:.55rem;font-family:'Instrument Sans',sans-serif;font-weight:700;letter-spacing:.08em;background:rgba(200,169,110,.18);color:#C8A96E;padding:.12rem .42rem;border-radius:4px;}
+.sbnav{display:flex;flex-direction:column;padding:.45rem;flex:1;}
+.sbsec{font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.2);padding:.8rem .82rem .32rem;}
+.ni{display:flex;align-items:center;gap:.7rem;padding:.62rem .82rem;border-radius:10px;cursor:pointer;transition:all .2s;color:rgba(255,255,255,.42);font-size:.82rem;font-weight:500;margin-bottom:1px;}
+.ni:hover{background:rgba(255,255,255,.07);color:rgba(255,255,255,.85);}
+.ni.active{background:rgba(200,169,110,.15);color:#C8A96E;}
+.nic{font-size:.9rem;width:17px;text-align:center;flex-shrink:0;}
+.ni .bd{width:7px;height:7px;background:#C8A96E;border-radius:50%;margin-left:auto;animation:bl 2s infinite;}
+.sbuser{padding:.82rem 1.1rem;border-top:1px solid rgba(255,255,255,.08);display:flex;align-items:center;gap:.8rem;margin-top:auto;}
+.suav{width:34px;height:34px;border-radius:10px;background:#C8A96E;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;color:#1A1A18;flex-shrink:0;}
+.suav.rd{background:#C24B3A;}
+.sunm{font-size:.8rem;font-weight:600;color:#FDFAF4;}
+.surole{font-size:.65rem;color:rgba(255,255,255,.3);}
+.dmain{margin-left:248px;flex:1;background:#F5F0E8;min-height:100vh;}
+.topbar{background:#FDFAF4;border-bottom:1px solid #E8E3D8;padding:.82rem 2.25rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+.tbt{font-family:'Clash Display',sans-serif;font-size:1.15rem;font-weight:600;color:#1A1A18;}
+.tbr{display:flex;align-items:center;gap:.6rem;}
+.tbtn{padding:.4rem .9rem;border-radius:100px;border:1.5px solid #E8E3D8;background:#FDFAF4;font-size:.76rem;font-weight:500;color:#7A7870;cursor:pointer;transition:all .2s;font-family:'Instrument Sans',sans-serif;display:flex;align-items:center;gap:.38rem;}
+.tbtn:hover{border-color:#1A1A18;color:#1A1A18;}
+.tbtn.pr{background:#1A1A18;border-color:#1A1A18;color:#FDFAF4;}
+.tbtn.pr:hover{background:#4A5240;}
+.tbtn.ac{background:#C8A96E;border-color:#C8A96E;color:#1A1A18;}
+.tbtn.ac:hover{background:#D4BA7E;}
+.dcontent{padding:1.75rem 2.25rem;}
+.panel{display:none;}.panel.active{display:block;}
+
+/* CARDS */
+.row{display:grid;gap:1.1rem;margin-bottom:1.35rem;}
+.r4{grid-template-columns:repeat(4,1fr);}
+.r3{grid-template-columns:repeat(3,1fr);}
+.r2{grid-template-columns:repeat(2,1fr);}
+.kpi{background:#FDFAF4;border:1px solid #E8E3D8;border-radius:16px;padding:1.3rem;}
+.kic{font-size:1.3rem;margin-bottom:.6rem;}
+.klb{font-size:.65rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#7A7870;margin-bottom:.45rem;}
+.kv{font-family:'Clash Display',sans-serif;font-size:1.75rem;font-weight:600;color:#1A1A18;margin-bottom:.22rem;}
+.ks{font-size:.75rem;color:#7A7870;}
+.up{color:#6BAE6B;font-weight:700;}.dn{color:#C24B3A;font-weight:700;}
+.card{background:#FDFAF4;border:1px solid #E8E3D8;border-radius:16px;padding:1.4rem;margin-bottom:1.35rem;}
+.cardh{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.1rem;}
+.cardt{font-family:'Clash Display',sans-serif;font-size:.95rem;font-weight:600;color:#1A1A18;}
+.cardlk{font-size:.73rem;font-weight:600;color:#C8A96E;cursor:pointer;}
+table{width:100%;border-collapse:collapse;}
+th{text-align:left;font-size:.64rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#7A7870;padding:0 .8rem .6rem;border-bottom:1px solid #E8E3D8;}
+td{padding:.75rem .8rem;border-bottom:1px solid #F0ECE4;font-size:.82rem;color:#1A1A18;vertical-align:middle;}
+tr:last-child td{border-bottom:none;}
+.badge{display:inline-flex;align-items:center;padding:.2rem .55rem;border-radius:100px;font-size:.68rem;font-weight:700;}
+.bg{background:#E6F4E6;color:#2A6E2A;}.ba{background:#FFF3DC;color:#7A5A10;}
+.br3{background:#FDECEA;color:#C24B3A;}.bb{background:#E8F0FE;color:#2A5AC2;}.bgr{background:#F0EDE8;color:#5A5650;}
+.pbar{margin-bottom:.7rem;}
+.pbl{display:flex;justify-content:space-between;font-size:.76rem;color:#7A7870;margin-bottom:.25rem;}
+.pbt{height:7px;background:#F0ECE4;border-radius:4px;overflow:hidden;}
+.pbf{height:100%;border-radius:4px;}
+.pfg{background:linear-gradient(90deg,#C8A96E,#E0C080);}
+.pfs{background:linear-gradient(90deg,#8A9A7A,#AAB88A);}
+.pfo{background:linear-gradient(90deg,#4A5240,#6A7260);}
+.pfr{background:linear-gradient(90deg,#C24B3A,#D86050);}
+.mi{display:flex;align-items:center;gap:.8rem;padding:.75rem .82rem;background:#F5F0E8;border-radius:12px;border:1px solid #E8E3D8;margin-bottom:.6rem;}
+.mie{font-size:1.75rem;flex-shrink:0;}
+.mii{flex:1;}.min2{font-weight:600;font-size:.84rem;color:#1A1A18;margin-bottom:.15rem;}
+.mim{font-size:.73rem;color:#7A7870;}
+.mips{display:flex;gap:.32rem;}
+.mipi{font-size:.65rem;font-weight:600;padding:.15rem .42rem;border-radius:100px;background:#FDFAF4;color:#4A5240;border:1px solid #E8E3D8;}
+.swb{font-size:.7rem;font-weight:600;color:#C8A96E;cursor:pointer;padding:.28rem .65rem;border:1px solid #E0CFA8;border-radius:7px;background:#FFF8EC;transition:all .2s;white-space:nowrap;font-family:'Instrument Sans',sans-serif;flex-shrink:0;}
+.swb:hover{background:#F5E8C0;}
+.tl{display:flex;flex-direction:column;position:relative;}
+.tl::before{content:'';position:absolute;left:16px;top:0;bottom:0;width:2px;background:#E8E3D8;}
+.tlev{display:flex;gap:1rem;align-items:flex-start;padding-bottom:1rem;position:relative;}
+.tldot{width:34px;height:34px;border-radius:50%;border:2px solid #E8E3D8;background:#FDFAF4;display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0;z-index:1;}
+.tldot.done{background:#E6F4E6;border-color:#6BAE6B;}
+.tldot.cur{background:#FFF3DC;border-color:#C8A96E;}
+.tlb{flex:1;padding-top:.18rem;}
+.tlt{font-size:.82rem;font-weight:600;color:#1A1A18;}
+.tls{font-size:.7rem;color:#7A7870;margin-top:.08rem;}
+.chart-area{height:145px;display:flex;align-items:flex-end;padding:.5rem 0;gap:4px;}
+.bw{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;}
+.bv{font-size:.58rem;color:#C8A96E;font-weight:700;}
+.bb2{width:100%;border-radius:4px 4px 0 0;}
+.bl2{font-size:.58rem;color:#7A7870;}
+.qi{display:flex;align-items:center;gap:.8rem;padding:.75rem .82rem;background:#F5F0E8;border-radius:12px;border:1px solid #E8E3D8;margin-bottom:.6rem;transition:all .2s;}
+.qi:hover{border-color:#C8A96E;}
+.qin{font-family:'Clash Display',sans-serif;font-size:1rem;font-weight:700;color:#C8A96E;width:24px;text-align:center;flex-shrink:0;}
+.qii{flex:1;}.qim{font-weight:600;font-size:.82rem;color:#1A1A18;}.qis{font-size:.7rem;color:#7A7870;margin-top:.08rem;}
+.qir{display:flex;flex-direction:column;align-items:flex-end;gap:.28rem;}
+.qit{font-size:.68rem;font-weight:600;color:#7A7870;}
+.billc{background:#F5F0E8;border:1px solid #E8E3D8;border-radius:12px;padding:1rem 1.1rem;display:flex;align-items:center;justify-content:space-between;margin-bottom:.65rem;}
+.billl{display:flex;align-items:center;gap:.8rem;}
+.billic{width:36px;height:36px;border-radius:11px;background:#EEE0C4;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+.billn{font-weight:600;font-size:.84rem;color:#1A1A18;}
+.billd{font-size:.72rem;color:#7A7870;margin-top:.1rem;}
+.billa{font-family:'Clash Display',sans-serif;font-size:1.05rem;font-weight:600;color:#1A1A18;}
+.billas{font-size:.68rem;font-weight:600;}
+.billas.paid{color:#6BAE6B;}.billas.due{color:#C8A96E;}.billas.ov{color:#C24B3A;}
+.nbar{background:linear-gradient(135deg,rgba(200,169,110,.1),rgba(200,169,110,.05));border:1px solid rgba(200,169,110,.28);border-radius:13px;padding:.9rem 1.1rem;display:flex;align-items:flex-start;gap:.8rem;margin-bottom:1.35rem;}
+.nbic{font-size:1.15rem;flex-shrink:0;margin-top:.08rem;}
+.nbt{font-weight:600;font-size:.84rem;color:#1A1A18;}
+.nbs{font-size:.75rem;color:#7A7870;margin-top:.12rem;line-height:1.5;}
+.actitem{display:flex;align-items:flex-start;gap:.8rem;padding:.8rem;background:#F5F0E8;border-radius:11px;border:1px solid #E8E3D8;margin-bottom:.5rem;}
+.actic{width:32px;height:32px;border-radius:9px;background:#FDFAF4;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0;border:1px solid #E8E3D8;}
+.actb{flex:1;}.actt{font-size:.8rem;font-weight:600;color:#1A1A18;}
+.acts{font-size:.7rem;color:#7A7870;margin-top:.08rem;}
+.acttime{font-size:.67rem;color:#7A7870;white-space:nowrap;margin-top:.22rem;}
+/* Ring */
+.rw{display:flex;gap:1.35rem;align-items:center;flex-wrap:wrap;}
+.rbox{text-align:center;}
+.rsvg{transform:rotate(-90deg);}
+.rbg{fill:none;stroke:#F0ECE4;stroke-width:8;}
+.rfg{fill:none;stroke-width:8;stroke-linecap:round;}
+.rv{font-family:'Clash Display',sans-serif;font-size:.9rem;font-weight:600;color:#1A1A18;display:block;margin-top:.38rem;}
+.rl{font-size:.65rem;color:#7A7870;}
+/* AI coach full page */
+.acp-ban{background:#1A1A18;padding:2.25rem 2.25rem 3.25rem;position:relative;overflow:hidden;}
+.acp-ban::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 50%,rgba(200,169,110,.1),transparent 60%);}
+.acp-ban h2{font-family:'Clash Display',sans-serif;font-size:1.85rem;font-weight:600;color:#FDFAF4;margin-bottom:.4rem;position:relative;}
+.acp-ban p{font-size:.87rem;color:rgba(255,255,255,.42);position:relative;}
+.acp-body{padding:1.75rem 2.25rem;display:grid;grid-template-columns:1fr 340px;gap:1.35rem;margin-top:-1.35rem;}
+.acpchat{background:#FDFAF4;border:1px solid #E8E3D8;border-radius:18px;display:flex;flex-direction:column;overflow:hidden;height:520px;}
+.acpmsgs{flex:1;overflow-y:auto;padding:1.1rem;display:flex;flex-direction:column;gap:.75rem;}
+.acpmsgs::-webkit-scrollbar{width:3px;}
+.acpmsgs::-webkit-scrollbar-thumb{background:#E8E3D8;}
+.acpchips{display:flex;flex-wrap:wrap;gap:.35rem;padding:.6rem 1.1rem;border-top:1px solid #E8E3D8;}
+.acprow{padding:.8rem 1.1rem;border-top:1px solid #E8E3D8;display:flex;gap:.55rem;}
+.acpinp{flex:1;padding:.6rem .85rem;border:1.5px solid #E8E3D8;border-radius:11px;font-family:'Instrument Sans',sans-serif;font-size:.82rem;color:#1A1A18;background:#F5F0E8;outline:none;transition:border-color .2s;}
+.acpinp:focus{border-color:#1A1A18;}
+.acpsend{width:40px;height:40px;border-radius:11px;border:none;background:#1A1A18;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;}
+.acpsend:hover{background:#4A5240;}
+.acpsend:disabled{opacity:.45;cursor:not-allowed;}
+.acpside{display:flex;flex-direction:column;gap:.875rem;}
+.acptip{background:#FDFAF4;border:1px solid #E8E3D8;border-radius:16px;padding:1.1rem;}
+.acptipt{font-family:'Clash Display',sans-serif;font-size:.9rem;font-weight:600;color:#1A1A18;margin-bottom:.65rem;}
+.tipitem{display:flex;align-items:flex-start;gap:.65rem;padding:.65rem;background:#F5F0E8;border-radius:10px;border:1px solid #E8E3D8;margin-bottom:.5rem;}
+.tipit{font-size:1rem;flex-shrink:0;}
+.tiptt{font-size:.78rem;font-weight:600;color:#1A1A18;}
+.tipss{font-size:.7rem;color:#7A7870;margin-top:.08rem;line-height:1.5;}
+/* Admin AI grid */
+.aaig{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-bottom:1.35rem;}
+
+/* AI FLOATING PANEL */
+.aifab{position:fixed;bottom:2rem;right:2rem;z-index:1000;width:58px;height:58px;border-radius:50%;background:#1A1A18;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 28px rgba(0,0,0,.28),0 0 0 0 rgba(200,169,110,.4);transition:all .3s;font-size:1.5rem;animation:fabPulse 3s ease-in-out infinite;}
+@keyframes fabPulse{0%,100%{box-shadow:0 8px 28px rgba(0,0,0,.28),0 0 0 0 rgba(200,169,110,.4);}50%{box-shadow:0 8px 28px rgba(0,0,0,.28),0 0 0 10px rgba(200,169,110,0);}}
+.aifab:hover{transform:scale(1.1);animation:none;box-shadow:0 12px 36px rgba(0,0,0,.32);}
+.aifab.open{background:#C24B3A;animation:none;}
+.fabb{position:absolute;top:-3px;right:-3px;width:18px;height:18px;background:#C8A96E;border-radius:50%;font-size:.58rem;font-weight:700;color:#1A1A18;display:flex;align-items:center;justify-content:center;border:2px solid #FDFAF4;animation:bl 2s infinite;}
+.aipanel{position:fixed;right:0;top:0;bottom:0;width:400px;background:#FDFAF4;border-left:1px solid #E8E3D8;z-index:999;display:flex;flex-direction:column;transform:translateX(110%);transition:transform .38s cubic-bezier(.4,0,.2,1);box-shadow:-8px 0 44px rgba(0,0,0,.09);}
+.aipanel.open{transform:translateX(0);}
+.aiph{padding:1.1rem 1.3rem;border-bottom:1px solid #E8E3D8;background:#FDFAF4;}
+.aiphtop{display:flex;align-items:center;justify-content:space-between;margin-bottom:.22rem;}
+.ainm{font-family:'Clash Display',sans-serif;font-size:1rem;font-weight:600;color:#1A1A18;display:flex;align-items:center;gap:.5rem;}
+.aiavs{width:28px;height:28px;border-radius:8px;background:#1A1A18;display:flex;align-items:center;justify-content:center;font-size:.88rem;}
+.aist{font-size:.68rem;color:#7A7870;display:flex;align-items:center;gap:.32rem;}
+.aist::before{content:'';width:6px;height:6px;background:#6BAE6B;border-radius:50%;animation:bl 2s infinite;}
+.aiclose{width:27px;height:27px;border-radius:50%;border:1px solid #E8E3D8;background:#F5F0E8;cursor:pointer;font-size:.82rem;display:flex;align-items:center;justify-content:center;color:#7A7870;transition:all .2s;}
+.aiclose:hover{background:#E8E3D8;color:#1A1A18;}
+.aitabs{display:flex;gap:.38rem;padding:.65rem 1.05rem;border-bottom:1px solid #E8E3D8;}
+.aitab{flex:1;padding:.36rem;border-radius:100px;border:1.5px solid #E8E3D8;background:transparent;font-size:.7rem;font-weight:600;color:#7A7870;cursor:pointer;transition:all .2s;font-family:'Instrument Sans',sans-serif;text-align:center;}
+.aitab.active{background:#1A1A18;border-color:#1A1A18;color:#FDFAF4;}
+.aimsgs{flex:1;overflow-y:auto;padding:1.05rem;display:flex;flex-direction:column;gap:.7rem;scroll-behavior:smooth;}
+.aimsgs::-webkit-scrollbar{width:3px;}
+.aimsgs::-webkit-scrollbar-thumb{background:#E8E3D8;}
+.am{display:flex;gap:.5rem;max-width:88%;}
+.am.user{align-self:flex-end;flex-direction:row-reverse;}
+.amav{width:25px;height:25px;border-radius:8px;background:#F5F0E8;border:1px solid #E8E3D8;display:flex;align-items:center;justify-content:center;font-size:.72rem;flex-shrink:0;}
+.am.bot .amav{background:#1A1A18;}
+.amb{padding:.62rem .88rem;border-radius:12px;font-size:.8rem;line-height:1.6;}
+.am.bot .amb{background:#F5F0E8;border:1px solid #E8E3D8;color:#1A1A18;border-top-left-radius:4px;}
+.am.user .amb{background:#1A1A18;color:#FDFAF4;border-top-right-radius:4px;}
+.typing{display:flex;gap:4px;align-items:center;padding:.12rem 0;}
+.td{width:6px;height:6px;background:#7A7870;border-radius:50%;animation:tb 1.2s infinite;}
+.td:nth-child(2){animation-delay:.2s;}.td:nth-child(3){animation-delay:.4s;}
+@keyframes tb{0%,60%,100%{transform:translateY(0);}30%{transform:translateY(-5px);}}
+.aichips{display:flex;flex-wrap:wrap;gap:.35rem;padding:.6rem 1.05rem;border-top:1px solid #E8E3D8;}
+.ach{padding:.26rem .72rem;border-radius:100px;border:1px solid #E8E3D8;background:#F5F0E8;font-size:.68rem;font-weight:500;color:#4A5240;cursor:pointer;transition:all .15s;white-space:nowrap;font-family:'Instrument Sans',sans-serif;}
+.ach:hover{background:#EEE0C4;border-color:#C8A96E;color:#5A4A2A;}
+.aiinrow{padding:.82rem 1.05rem;border-top:1px solid #E8E3D8;display:flex;gap:.5rem;background:#FDFAF4;}
+.aiinp{flex:1;padding:.58rem .85rem;border:1.5px solid #E8E3D8;border-radius:10px;font-family:'Instrument Sans',sans-serif;font-size:.8rem;color:#1A1A18;background:#F5F0E8;outline:none;transition:border-color .2s;}
+.aiinp:focus{border-color:#1A1A18;}
+.aisb{width:37px;height:37px;border-radius:10px;border:none;background:#1A1A18;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0;}
+.aisb:hover{background:#4A5240;}
+.aisb:disabled{opacity:.45;cursor:not-allowed;}
+.gp{flex:1;overflow-y:auto;padding:1.05rem;display:flex;flex-direction:column;gap:.82rem;}
+.gpsl{display:flex;flex-direction:column;gap:.35rem;}
+.gph{display:flex;justify-content:space-between;font-size:.76rem;}
+.gplb{color:#7A7870;font-weight:500;}.gpv{font-family:'Clash Display',sans-serif;font-weight:600;color:#C8A96E;}
+input.lr{-webkit-appearance:none;width:100%;height:4px;border-radius:3px;background:#E8E3D8;outline:none;cursor:pointer;}
+input.lr::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;background:#C8A96E;border-radius:50%;border:2px solid #FDFAF4;box-shadow:0 0 0 2px #C8A96E;cursor:pointer;}
+.pgbtn{width:100%;padding:.75rem;border-radius:12px;border:none;background:#1A1A18;color:#FDFAF4;font-family:'Clash Display',sans-serif;font-size:.92rem;font-weight:600;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:.52rem;}
+.pgbtn:hover{background:#4A5240;}
+.pgbtn:disabled{opacity:.55;cursor:not-allowed;}
+.prbox{background:#F5F0E8;border:1px solid #E8E3D8;border-radius:13px;padding:1.05rem;}
+.prbox.ld{animation:shl 1.5s infinite;}
+@keyframes shl{0%,100%{border-color:#E8E3D8;}50%{border-color:#C8A96E;}}
+/* Modal */
+.modov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:2000;align-items:center;justify-content:center;}
+.modov.open{display:flex;}
+.modbox{background:#FDFAF4;border-radius:20px;padding:2.1rem;max-width:380px;width:90%;text-align:center;}
+.modem{font-size:2.6rem;margin-bottom:.8rem;}
+.modt{font-family:'Clash Display',sans-serif;font-size:1.32rem;font-weight:600;color:#1A1A18;margin-bottom:.42rem;}
+.mods{font-size:.83rem;color:#7A7870;margin-bottom:1.6rem;line-height:1.6;}
+.modbtns{display:flex;gap:.6rem;justify-content:center;}
+.mbb{padding:.62rem 1.35rem;border-radius:100px;font-size:.83rem;font-weight:600;cursor:pointer;transition:all .2s;font-family:'Instrument Sans',sans-serif;}
+.mbb.pr{background:#1A1A18;color:#FDFAF4;border:none;}.mbb.pr:hover{background:#4A5240;}
+.mbb.ol{background:transparent;color:#1A1A18;border:1.5px solid #E8E3D8;}.mbb.ol:hover{border-color:#1A1A18;}
+#toast{position:fixed;bottom:6rem;left:50%;transform:translateX(-50%) translateY(14px);background:#1A1A18;color:#FDFAF4;padding:.6rem 1.35rem;border-radius:100px;font-size:.82rem;font-weight:500;opacity:0;transition:all .3s;z-index:9999;white-space:nowrap;pointer-events:none;}
+
+@media(max-width:960px){
+  .nav{padding:0 1.5rem;}.nl{display:none;}
+  section{padding:4rem 1.5rem;}
+  .hero{grid-template-columns:1fr;}.hero-r{min-height:320px;}
+  .bin,.r4,.r3,.r2,.steps,.fg,.acp-body,.aaig{grid-template-columns:1fr!important;}
+  .hero-l{padding:4rem 1.5rem 2rem;}
+  .sidebar{width:52px;}.dmain{margin-left:52px;}
+  .sblogo .at,.sbsec,.sbuser,.ni span:not(.nic){display:none;}
+  .aipanel{width:100%;}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ LANDING ═══ -->
+<div class="view active" id="view-landing">
+  <nav class="nav">
+    <a class="logo" onclick="logoClick()" id="main-logo">RIV<span>ARO</span></a>
+    <ul class="nl">
+      <li><a onclick="goTo('plans')">Plans</a></li>
+      <li><a onclick="goTo('build')">Build My Meal</a></li>
+      <li><a onclick="goTo('faq')">FAQ</a></li>
+    </ul>
+    <div class="ncta">
+      <button class="bnp" onclick="openLoginModal()">Login</button>
+    </div>
+  </nav>
+
+  <section class="hero" style="padding:0">
+    <div class="hero-l">
+      <div class="htag">AI-Powered Dark Kitchen</div>
+      <h1>Food built for<br><em>your macros.</em><br>Not just taste.</h1>
+      <p class="hsub">Enter your calories, protein, and carbs. Our kitchen cooks exactly what your body needs — fresh, daily, delivered.</p>
+      <div class="hacts">
+        <button class="bhl" onclick="openLoginModal()">My Dashboard</button>
+        <button class="bhg" onclick="goTo('plans')">See Plans</button>
+      </div>
+      <div class="hstats">
+        <div><span class="sn">12K+</span><span class="sl">Happy customers</span></div>
+        <div><span class="sn">2M+</span><span class="sl">Meals delivered</span></div>
+        <div><span class="sn">4.9★</span><span class="sl">Average rating</span></div>
+      </div>
+    </div>
+    <div class="hero-r">
+      <div class="hshow">
+        <div class="ailive"><span class="gdot"></span> AI Meal Matching Active</div>
+        <div class="fc"><div class="fe">🥗</div><div><div class="fn">Grilled Chicken Power Bowl</div><div class="fp"><span class="pill pk">480 kcal</span><span class="pill pp">52g protein</span><span class="pill pc">38g carbs</span></div></div></div>
+        <div class="fc"><div class="fe">🐟</div><div><div class="fn">Salmon Quinoa Macro Plate</div><div class="fp"><span class="pill pk">520 kcal</span><span class="pill pp">44g protein</span><span class="pill pc">42g carbs</span></div></div></div>
+        <div class="fc"><div class="fe">🥩</div><div><div class="fn">Beef Steak Low-Carb Bowl</div><div class="fp"><span class="pill pk">560 kcal</span><span class="pill pp">58g protein</span><span class="pill pc">18g carbs</span></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="splans fadu" id="plans">
+    <div class="ph"><div class="stag">Meal Plans</div><h2 class="sh2">Find your perfect plan</h2><p class="ssub">Crafted by nutritionists, cooked fresh daily, personalized to your goals.</p></div>
+    <div class="gtabs">
+      <button class="gt active" onclick="filterPlans('all',this)">All Plans</button>
+      <button class="gt" onclick="filterPlans('lose',this)">Lose Weight</button>
+      <button class="gt" onclick="filterPlans('gain',this)">Gain Muscle</button>
+      <button class="gt" onclick="filterPlans('maintain',this)">Maintain</button>
+      <button class="gt" onclick="filterPlans('veg',this)">Vegetarian</button>
+    </div>
+    <div class="pgrid" id="plansGrid"></div>
+  </section>
+
+  <section class="sbuild fadu" id="build">
+    <div class="bin">
+      <div class="bl">
+        <div class="stag" style="color:var(--ac)">AI Meal Generator</div>
+        <h2 class="sh2" style="color:var(--w)">Set your macros.<br>We generate your meal.</h2>
+        <p class="ssub">Tell us your exact targets and our AI crafts a precision meal for our kitchen.</p>
+        <div class="slids">
+          <div class="sr"><div class="srh"><span class="slbl">Calories</span><span class="sval" id="svk">500<span class="su"> kcal</span></span></div><input type="range" id="rk" min="200" max="1200" value="500" step="25" oninput="updateS()"></div>
+          <div class="sr"><div class="srh"><span class="slbl">Protein</span><span class="sval" id="svp">40<span class="su"> g</span></span></div><input type="range" id="rp" min="10" max="120" value="40" oninput="updateS()"></div>
+          <div class="sr"><div class="srh"><span class="slbl">Carbohydrates</span><span class="sval" id="svc">45<span class="su"> g</span></span></div><input type="range" id="rc" min="10" max="200" value="45" oninput="updateS()"></div>
+          <div class="sr"><div class="srh"><span class="slbl">Fat</span><span class="sval" id="svf">20<span class="su"> g</span></span></div><input type="range" id="rf" min="5" max="80" value="20" oninput="updateS()"></div>
+        </div>
+      </div>
+      <div class="br2">
+        <div class="prev" id="prevcard">
+          <div class="prevh"><div><div class="prevt" id="prevt">Your Custom Meal</div><div class="prevs" id="prevs">Adjust sliders then generate</div></div><div id="prevem" style="font-size:1.9rem">🍽️</div></div>
+          <div class="ppills" style="margin-top:.75rem">
+            <span class="ppill kk" id="ppk">500 kcal</span><span class="ppill" id="ppp">40g protein</span>
+            <span class="ppill" id="ppc">45g carbs</span><span class="ppill" id="ppf">20g fat</span>
+          </div>
+          <div id="genresult"></div>
+        </div>
+        <button class="gbtn" id="genbtn" onclick="genMeal()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Generate AI Meal
+        </button>
+        <div class="prev" style="background:rgba(255,255,255,.03)">
+          <div style="font-size:.65rem;color:rgba(255,255,255,.3);margin-bottom:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase">Quick Presets</div>
+          <div style="display:flex;gap:.38rem;flex-wrap:wrap">
+            <button class="dchip" onclick="applyPreset(500,50,40,15)">🏋️ Muscle</button>
+            <button class="dchip" onclick="applyPreset(350,35,20,12)">🔥 Fat Loss</button>
+            <button class="dchip" onclick="applyPreset(600,45,70,20)">⚡ Performance</button>
+            <button class="dchip" onclick="applyPreset(450,30,50,18)">🌱 Balanced</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="show fadu">
+    <div class="hin">
+      <div class="hhd"><div class="stag">Process</div><h2 class="sh2">Hit your goals in 3 steps</h2><p class="ssub" style="margin:0 auto">No guesswork, no meal prep stress.</p></div>
+      <div class="steps">
+        <div><div class="stepn">01</div><div class="stept">Enter Your Macros</div><p class="stepd">Set your target calories, protein, carbs and fat. Our AI finds the perfect meal matching your exact goals.</p></div>
+        <div><div class="stepn">02</div><div class="stept">We Cook It Fresh</div><p class="stepd">Our chefs prepare your macro-precise meal daily with whole ingredients. No seed oils. No fillers.</p></div>
+        <div><div class="stepn">03</div><div class="stept">Heat & Track Progress</div><p class="stepd">Receive your meal, heat in minutes, and track your progress with our AI nutritionist.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stest fadu">
+    <div class="thd"><div class="stag">Real Results</div><h2 class="sh2">What our customers say</h2></div>
+    <div style="overflow:hidden"><div class="ttrack" id="ttrack"></div></div>
+  </section>
+
+  <section class="sfaq fadu" id="faq">
+    <div class="fin">
+      <div class="fhd"><div class="stag">FAQ</div><h2 class="sh2">Common questions</h2></div>
+      <div id="faqList"></div>
+    </div>
+  </section>
+
+  <div class="sfcta fadu">
+    <h2>Ready to eat for<br>your <em>exact goals?</em></h2>
+    <p>Join 12,000+ people who eat precisely with RIVARO.</p>
+    <button class="bhl" style="background:var(--ac);color:var(--ch)" onclick="openLoginModal()">Open My Dashboard</button>
+  </div>
+  <footer>
+    <div class="fg">
+      <div class="fbl"><div class="logo" style="display:block">RIV<span>ARO</span></div><p>Precision nutrition from our dark kitchen to your door. Fresh daily.</p></div>
+      <div class="fco"><h4>Menu</h4><ul><li><a>High Protein</a></li><li><a>Low Carb</a></li><li><a>Balanced</a></li><li><a>Vegetarian</a></li></ul></div>
+      <div class="fco"><h4>Company</h4><ul><li><a>About</a></li><li><a>Blog</a></li><li><a>Careers</a></li></ul></div>
+      <div class="fco"><h4>Support</h4><ul><li><a>FAQ</a></li><li><a>Contact</a></li><li><a>Privacy</a></li></ul></div>
+    </div>
+    <div class="fb2"><p>© 2026 RIVARO Kitchen Inc.</p><p>Powered by AI Nutrition Science</p></div>
+  </footer>
+</div>
+
+<!-- ═══ CUSTOMER DASHBOARD ═══ -->
+<div class="view" id="view-customer">
+  <div class="dlayout">
+    <aside class="sidebar">
+      <div class="sblogo" onclick="showView('landing')">RIV<span>ARO</span></div>
+      <div class="sbnav">
+        <span class="sbsec">Main</span>
+        <div class="ni active" onclick="sp('cust','c-home',this)"><span class="nic">🏠</span><span>Overview</span></div>
+        <div class="ni" onclick="sp('cust','c-meals',this)"><span class="nic">🍽️</span><span>My Meal Plan</span></div>
+        <div class="ni" onclick="sp('cust','c-macros',this)"><span class="nic">📊</span><span>Macro Tracker</span></div>
+        <div class="ni" onclick="sp('cust','c-orders',this)"><span class="nic">📦</span><span>Orders & Delivery</span></div>
+        <div class="ni" onclick="sp('cust','c-bills',this)"><span class="nic">💳</span><span>Billing</span><span class="bd"></span></div>
+        <span class="sbsec">AI Tools</span>
+        <div class="ni" onclick="sp('cust','c-ai',this)"><span class="nic">🤖</span><span>AI Nutritionist</span></div>
+        <div class="ni" onclick="openAI('gen')"><span class="nic">✨</span><span>Meal Generator</span></div>
+        <span class="sbsec">Account</span>
+        <div class="ni" onclick="sp('cust','c-settings',this)"><span class="nic">⚙️</span><span>Settings</span></div>
+        <div class="ni" onclick="showView('landing');showToast('Logged out successfully')" style="color:rgba(255,255,255,.35)"><span class="nic">↩️</span><span>Log Out</span></div>
+      </div>
+      <div class="sbuser"><div class="suav">OB</div><div><div class="sunm">Othmane B.</div><div class="surole">High Protein Plan</div></div></div>
+    </aside>
+    <main class="dmain">
+      <div class="topbar">
+        <div class="tbt" id="ctbt">Good morning, Othmane 👋</div>
+        <div class="tbr">
+          <button class="tbtn ac" onclick="openAI('chat')"><span class="gdot"></span> Ask AI</button>
+          <button class="tbtn pr" onclick="openModal()">+ New Order</button>
+        </div>
+      </div>
+      <div class="dcontent">
+
+        <!-- HOME -->
+        <div class="panel active" id="c-home">
+          <div class="nbar"><span class="nbic">🔔</span><div><div class="nbt">Your Beef & Quinoa Plate is on the way!</div><div class="nbs">Estimated delivery in 28 min · Track in Orders & Delivery</div></div></div>
+          <div class="row r4">
+            <div class="kpi"><div class="kic">🔥</div><div class="klb">Today's Calories</div><div class="kv">1,840</div><div class="ks">Target: <strong>2,100</strong></div></div>
+            <div class="kpi"><div class="kic">💪</div><div class="klb">Protein Today</div><div class="kv">142g</div><div class="ks"><span class="up">↑ On track</span> — 160g target</div></div>
+            <div class="kpi"><div class="kic">📦</div><div class="klb">Active Order</div><div class="kv">En route</div><div class="ks">Arrives ~7:30 PM</div></div>
+            <div class="kpi"><div class="kic">⭐</div><div class="klb">Streak</div><div class="kv">14 days</div><div class="ks"><span class="up">↑ Personal best!</span></div></div>
+          </div>
+          <div class="row r2">
+            <div class="card">
+              <div class="cardh"><span class="cardt">Today's Macros</span><span class="cardlk" onclick="sp('cust','c-macros',null)">Full tracker →</span></div>
+              <div class="rw">
+                <div class="rbox">
+                  <svg class="rsvg" width="80" height="80" viewBox="0 0 80 80"><circle class="rbg" cx="40" cy="40" r="32"/><circle class="rfg" cx="40" cy="40" r="32" stroke="var(--ac)" stroke-dasharray="201" stroke-dashoffset="44"/></svg>
+                  <span class="rv">1840</span><span class="rl">/ 2100 kcal</span>
+                </div>
+                <div style="flex:1;display:flex;flex-direction:column;gap:.65rem">
+                  <div class="pbar"><div class="pbl"><span>Protein</span><span>142/160g</span></div><div class="pbt"><div class="pbf pfs" style="width:89%"></div></div></div>
+                  <div class="pbar"><div class="pbl"><span>Carbs</span><span>180/220g</span></div><div class="pbt"><div class="pbf pfg" style="width:82%"></div></div></div>
+                  <div class="pbar"><div class="pbl"><span>Fat</span><span>52/65g</span></div><div class="pbt"><div class="pbf pfo" style="width:80%"></div></div></div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="cardh"><span class="cardt">Today's Meals</span><span class="cardlk" onclick="sp('cust','c-meals',null)">View plan →</span></div>
+              <div class="mi"><div class="mie">🥣</div><div class="mii"><div class="min2">Greek Yogurt Protein Bowl</div><div class="mim">Breakfast · 7:30 AM</div></div><span class="badge bg">Done</span></div>
+              <div class="mi"><div class="mie">🥗</div><div class="mii"><div class="min2">Chicken Power Bowl</div><div class="mim">Lunch · 1:00 PM</div></div><span class="badge bg">Done</span></div>
+              <div class="mi"><div class="mie">🥩</div><div class="mii"><div class="min2">Beef & Quinoa Macro Plate</div><div class="mim">Dinner · 7:30 PM</div></div><span class="badge ba">En route</span></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="cardh"><span class="cardt">Weekly Calorie Intake</span></div>
+            <div class="chart-area" id="chome-chart"></div>
+          </div>
+        </div>
+
+        <!-- MEALS -->
+        <div class="panel" id="c-meals">
+          <div class="card">
+            <div class="cardh"><span class="cardt">This Week — High Protein Plan</span><button class="tbtn pr" onclick="openAI('gen')">✨ Generate New Meal</button></div>
+            <div id="meallist"></div>
+          </div>
+        </div>
+
+        <!-- MACROS -->
+        <div class="panel" id="c-macros">
+          <div class="row r4">
+            <div class="kpi"><div class="kic">🔥</div><div class="klb">Avg Calories</div><div class="kv">2,040</div><div class="ks"><span class="up">↑ 3%</span> vs last week</div></div>
+            <div class="kpi"><div class="kic">💪</div><div class="klb">Avg Protein</div><div class="kv">148g</div><div class="ks">Target: 160g/day</div></div>
+            <div class="kpi"><div class="kic">🌾</div><div class="klb">Avg Carbs</div><div class="kv">195g</div><div class="ks">Target: 220g/day</div></div>
+            <div class="kpi"><div class="kic">🫒</div><div class="klb">Avg Fat</div><div class="kv">58g</div><div class="ks">Target: 65g/day</div></div>
+          </div>
+          <div class="card">
+            <div class="cardh"><span class="cardt">30-Day Macro Compliance</span></div>
+            <div style="display:flex;flex-direction:column;gap:.875rem;margin-top:.5rem">
+              <div class="pbar"><div class="pbl"><span style="font-weight:600">Protein target hit</span><span style="color:var(--gn);font-weight:700">92%</span></div><div class="pbt" style="height:11px"><div class="pbf pfs" style="width:92%"></div></div></div>
+              <div class="pbar"><div class="pbl"><span style="font-weight:600">Calorie goal reached</span><span style="color:var(--gn);font-weight:700">87%</span></div><div class="pbt" style="height:11px"><div class="pbf pfg" style="width:87%"></div></div></div>
+              <div class="pbar"><div class="pbl"><span style="font-weight:600">Meal consistency</span><span style="color:var(--ac);font-weight:700">78%</span></div><div class="pbt" style="height:11px"><div class="pbf pfo" style="width:78%"></div></div></div>
+              <div class="pbar"><div class="pbl"><span style="font-weight:600">Hydration days</span><span style="color:var(--gn);font-weight:700">95%</span></div><div class="pbt" style="height:11px"><div class="pbf pfs" style="width:95%"></div></div></div>
+            </div>
+          </div>
+          <div class="card"><div class="cardh"><span class="cardt">Daily Calories — This Month</span></div><div class="chart-area" id="cmacro-chart"></div></div>
+        </div>
+
+        <!-- ORDERS -->
+        <div class="panel" id="c-orders">
+          <div class="row r2">
+            <div class="card">
+              <div class="cardh"><span class="cardt">Current Order</span><span class="badge ba">En Route</span></div>
+              <div class="tl">
+                <div class="tlev"><div class="tldot done">✓</div><div class="tlb"><div class="tlt">Order Confirmed</div><div class="tls">Today, 6:00 AM</div></div></div>
+                <div class="tlev"><div class="tldot done">🍳</div><div class="tlb"><div class="tlt">Kitchen Prepared</div><div class="tls">Today, 11:30 AM</div></div></div>
+                <div class="tlev"><div class="tldot cur">🚚</div><div class="tlb"><div class="tlt">Out for Delivery</div><div class="tls">Expected 7:30 PM</div></div></div>
+                <div class="tlev"><div class="tldot">🏠</div><div class="tlb"><div class="tlt">Delivered</div><div class="tls">Pending</div></div></div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="cardh"><span class="cardt">Order Contents</span></div>
+              <div class="mi"><div class="mie">🥩</div><div class="mii"><div class="min2">Beef & Quinoa Macro Plate</div><div class="mim">560 kcal · 58g protein · 42g carbs</div></div></div>
+              <div class="mi"><div class="mie">🥗</div><div class="mii"><div class="min2">Side Green Salad</div><div class="mim">80 kcal · 4g protein</div></div></div>
+              <div class="mi"><div class="mie">💧</div><div class="mii"><div class="min2">Electrolyte Water</div><div class="mim">0 kcal · Hydration boost</div></div></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="cardh"><span class="cardt">Order History</span></div>
+            <table><thead><tr><th>Date</th><th>Meal</th><th>Calories</th><th>Protein</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>Mar 14</td><td>Chicken Power Bowl</td><td>480</td><td>52g</td><td><span class="badge bg">Delivered</span></td></tr>
+              <tr><td>Mar 13</td><td>Salmon Quinoa Plate</td><td>520</td><td>44g</td><td><span class="badge bg">Delivered</span></td></tr>
+              <tr><td>Mar 12</td><td>Turkey Meatball Bowl</td><td>490</td><td>49g</td><td><span class="badge bg">Delivered</span></td></tr>
+              <tr><td>Mar 11</td><td>Beef Steak Low-Carb</td><td>560</td><td>58g</td><td><span class="badge bg">Delivered</span></td></tr>
+              <tr><td>Mar 10</td><td>Tuna Poke Bowl</td><td>440</td><td>42g</td><td><span class="badge bg">Delivered</span></td></tr>
+            </tbody></table>
+          </div>
+        </div>
+
+        <!-- BILLING -->
+        <div class="panel" id="c-bills">
+          <div class="row r3">
+            <div class="kpi"><div class="kic">💳</div><div class="klb">Next Bill</div><div class="kv">1,560 MAD</div><div class="ks">Due April 1, 2026</div></div>
+            <div class="kpi"><div class="kic">📋</div><div class="klb">Current Plan</div><div class="kv" style="font-size:1.2rem">High Protein</div><div class="ks">30 meals / month</div></div>
+            <div class="kpi"><div class="kic">✅</div><div class="klb">Paid in 2026</div><div class="kv">4,680 MAD</div><div class="ks">3 months active</div></div>
+          </div>
+          <div class="card">
+            <div class="cardh"><span class="cardt">Upcoming Bills</span><span class="badge ba">1 Due Soon</span></div>
+            <div class="billc"><div class="billl"><div class="billic">📅</div><div><div class="billn">April Subscription — High Protein</div><div class="billd">Due: April 1, 2026 · 30 meals</div></div></div><div style="text-align:right"><div class="billa">1,560 MAD</div><div class="billas due">Due in 18 days</div></div></div>
+            <div class="billc"><div class="billl"><div class="billic">📅</div><div><div class="billn">May Subscription — High Protein</div><div class="billd">Due: May 1, 2026 · 30 meals</div></div></div><div style="text-align:right"><div class="billa">1,560 MAD</div><div class="billas" style="color:var(--mu)">Upcoming</div></div></div>
+          </div>
+          <div class="card">
+            <div class="cardh"><span class="cardt">Payment History</span></div>
+            <div class="billc"><div class="billl"><div class="billic">✅</div><div><div class="billn">March Subscription</div><div class="billd">Paid: March 1, 2026</div></div></div><div style="text-align:right"><div class="billa">1,560 MAD</div><div class="billas paid">Paid</div></div></div>
+            <div class="billc"><div class="billl"><div class="billic">✅</div><div><div class="billn">February Subscription</div><div class="billd">Paid: Feb 1, 2026</div></div></div><div style="text-align:right"><div class="billa">1,560 MAD</div><div class="billas paid">Paid</div></div></div>
+            <div class="billc"><div class="billl"><div class="billic">✅</div><div><div class="billn">January Subscription</div><div class="billd">Paid: Jan 1, 2026</div></div></div><div style="text-align:right"><div class="billa">1,560 MAD</div><div class="billas paid">Paid</div></div></div>
+          </div>
+        </div>
+
+        <!-- AI NUTRITIONIST FULL PAGE -->
+        <div class="panel" id="c-ai" style="padding:0;margin:-1.75rem -2.25rem">
+          <div class="acp-ban">
+            <h2>🤖 Your AI Nutritionist</h2>
+            <p>Ask me anything about nutrition, macros, meal timing, or your plan. I'm here 24/7.</p>
+          </div>
+          <div class="acp-body">
+            <div class="acpchat">
+              <div class="acpmsgs" id="acpmsgs">
+                <div class="am bot"><div class="amav">🤖</div><div class="amb"><strong>Hi Othmane! 👋</strong><br>I'm your personal RIVARO AI Nutritionist. I can help with macro calculations, meal timing, body composition goals, and nutrition strategy. What's on your mind?</div></div>
+              </div>
+              <div class="acpchips" id="acpchips">
+                <button class="ach" onclick="sendAcpChip(this)">Calculate my TDEE</button>
+                <button class="ach" onclick="sendAcpChip(this)">Am I hitting enough protein?</button>
+                <button class="ach" onclick="sendAcpChip(this)">Best pre-workout foods</button>
+                <button class="ach" onclick="sendAcpChip(this)">How to break a plateau?</button>
+                <button class="ach" onclick="sendAcpChip(this)">Meal timing tips</button>
+              </div>
+              <div class="acprow">
+                <input class="acpinp" id="acpinp" placeholder="Ask your nutrition question..." onkeydown="if(event.key==='Enter')sendAcp()">
+                <button class="acpsend" id="acpsend" onclick="sendAcp()"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
+              </div>
+            </div>
+            <div class="acpside">
+              <div class="acptip">
+                <div class="acptipt">💡 Daily Nutrition Tips</div>
+                <div class="tipitem"><span class="tipit">🥚</span><div><div class="tiptt">Start with protein at breakfast</div><div class="tipss">30g+ protein at breakfast reduces cravings by 40% through the day.</div></div></div>
+                <div class="tipitem"><span class="tipit">💧</span><div><div class="tiptt">Hydration boosts metabolism</div><div class="tipss">500ml water before meals can boost metabolism up to 30%.</div></div></div>
+                <div class="tipitem"><span class="tipit">⏱️</span><div><div class="tiptt">Post-workout window</div><div class="tipss">Consume 40g protein + 60g carbs within 90 min of training for best results.</div></div></div>
+              </div>
+              <div class="acptip">
+                <div class="acptipt">📊 Your Stats</div>
+                <div class="pbar"><div class="pbl"><span>Today's protein</span><span style="color:var(--gn);font-weight:700">89%</span></div><div class="pbt"><div class="pbf pfs" style="width:89%"></div></div></div>
+                <div class="pbar"><div class="pbl"><span>Weekly consistency</span><span style="color:var(--ac);font-weight:700">78%</span></div><div class="pbt"><div class="pbf pfg" style="width:78%"></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SETTINGS -->
+        <div class="panel" id="c-settings">
+          <div class="card"><div class="cardh"><span class="cardt">My Profile & Goals</span></div>
+            <div class="row r3" style="margin-bottom:0">
+              <div class="kpi"><div class="klb">Current Plan</div><div class="kv" style="font-size:1.2rem">High Protein</div></div>
+              <div class="kpi"><div class="klb">Daily Calories</div><div class="kv" style="font-size:1.2rem">2,100 kcal</div></div>
+              <div class="kpi"><div class="klb">Delivery Time</div><div class="kv" style="font-size:1.2rem">7:30 PM</div></div>
+            </div>
+          </div>
+          <div class="card"><div class="cardh"><span class="cardt">Allergies & Exclusions</span></div>
+            <div style="display:flex;gap:.65rem;flex-wrap:wrap"><span class="badge br3">🥜 Nuts</span><span class="badge br3">🦐 Shellfish</span><button class="tbtn" onclick="showToast('Feature coming soon!')">+ Add exclusion</button></div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- ═══ ADMIN DASHBOARD ═══ -->
+<div class="view" id="view-admin">
+  <div class="dlayout">
+    <aside class="sidebar">
+      <div class="sblogo" onclick="showView('landing')">RIV<span>ARO</span><span class="at">ADMIN</span></div>
+      <div class="sbnav">
+        <span class="sbsec">Operations</span>
+        <div class="ni active" onclick="sp('admin','a-home',this)"><span class="nic">📊</span><span>Overview</span></div>
+        <div class="ni" onclick="sp('admin','a-kitchen',this)"><span class="nic">🍳</span><span>Kitchen Queue</span></div>
+        <div class="ni" onclick="sp('admin','a-orders',this)"><span class="nic">📦</span><span>All Orders</span><span class="bd"></span></div>
+        <div class="ni" onclick="sp('admin','a-customers',this)"><span class="nic">👥</span><span>Customers</span></div>
+        <span class="sbsec">Analytics</span>
+        <div class="ni" onclick="sp('admin','a-revenue',this)"><span class="nic">💰</span><span>Revenue</span></div>
+        <div class="ni" onclick="sp('admin','a-activity',this)"><span class="nic">📡</span><span>Live Activity</span></div>
+        <span class="sbsec">AI</span>
+        <div class="ni" onclick="sp('admin','a-ai',this)"><span class="nic">🤖</span><span>AI Insights</span></div>
+        <span class="sbsec">System</span>
+        <div class="ni" onclick="showView('landing')"><span class="nic">↩️</span><span>Back to Site</span></div>
+        <div class="ni" onclick="showView('customer')"><span class="nic">👤</span><span>Customer View</span></div>
+      </div>
+      <div class="sbuser"><div class="suav rd">AD</div><div><div class="sunm">Admin</div><div class="surole">Kitchen Manager</div></div></div>
+    </aside>
+    <main class="dmain">
+      <div class="topbar">
+        <div class="tbt" id="atbt">Operations Overview</div>
+        <div class="tbr">
+          <button class="tbtn ac" onclick="sp('admin','a-ai',null);openAI('admin')">🤖 AI Insights</button>
+          <button class="tbtn pr" onclick="showToast('Report exported!')">Export Report</button>
+        </div>
+      </div>
+      <div class="dcontent">
+
+        <!-- ADMIN HOME -->
+        <div class="panel active" id="a-home">
+          <div class="row r4">
+            <div class="kpi"><div class="kic">📦</div><div class="klb">Today's Orders</div><div class="kv">247</div><div class="ks"><span class="up">↑ 18%</span> vs yesterday</div></div>
+            <div class="kpi"><div class="kic">💰</div><div class="klb">Today's Revenue</div><div class="kv">12,840 MAD</div><div class="ks"><span class="up">↑ 22%</span> vs yesterday</div></div>
+            <div class="kpi"><div class="kic">👥</div><div class="klb">Active Customers</div><div class="kv">1,204</div><div class="ks"><span class="up">↑ 34</span> new this week</div></div>
+            <div class="kpi"><div class="kic">⚡</div><div class="klb">Kitchen Capacity</div><div class="kv">78%</div><div class="ks"><span style="color:var(--ac);font-weight:700">High load</span></div></div>
+          </div>
+          <div class="row r2">
+            <div class="card">
+              <div class="cardh"><span class="cardt">Revenue This Week</span><span class="cardlk" onclick="sp('admin','a-revenue',null)">Full report →</span></div>
+              <div class="chart-area" id="arev-chart"></div>
+            </div>
+            <div class="card">
+              <div class="cardh"><span class="cardt">Kitchen Status</span><span class="cardlk" onclick="sp('admin','a-kitchen',null)">View queue →</span></div>
+              <div style="display:flex;flex-direction:column;gap:.65rem">
+                <div class="pbar"><div class="pbl"><span>Preparing (42 orders)</span><span style="color:var(--ac);font-weight:700">Active</span></div><div class="pbt"><div class="pbf pfg" style="width:70%"></div></div></div>
+                <div class="pbar"><div class="pbl"><span>Ready to ship (18)</span><span style="color:var(--gn);font-weight:700">Ready</span></div><div class="pbt"><div class="pbf pfs" style="width:30%"></div></div></div>
+                <div class="pbar"><div class="pbl"><span>En route (87)</span><span style="font-weight:700">Delivering</span></div><div class="pbt"><div class="pbf pfo" style="width:100%"></div></div></div>
+                <div class="pbar"><div class="pbl"><span>Delivered today (100)</span><span style="color:var(--gn);font-weight:700">Done ✓</span></div><div class="pbt"><div class="pbf pfs" style="width:100%"></div></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="cardh"><span class="cardt">Recent Orders</span><span class="cardlk" onclick="sp('admin','a-orders',null)">View all →</span></div>
+            <table><thead><tr><th>ID</th><th>Customer</th><th>Meal</th><th>Plan</th><th>Status</th></tr></thead><tbody id="aordersprev"></tbody></table>
+          </div>
+        </div>
+
+        <!-- KITCHEN -->
+        <div class="panel" id="a-kitchen">
+          <div class="row r3">
+            <div class="kpi"><div class="klb">In Kitchen</div><div class="kv">42</div><div class="ks">Avg 18 min/order</div></div>
+            <div class="kpi"><div class="klb">Ready to Ship</div><div class="kv">18</div><div class="ks"><span class="up">↑ On schedule</span></div></div>
+            <div class="kpi"><div class="klb">Avg Prep Time</div><div class="kv">22 min</div><div class="ks"><span class="dn">↓ 3min</span> vs 25min target</div></div>
+          </div>
+          <div class="card"><div class="cardh"><span class="cardt">Live Kitchen Queue</span><span class="badge ba">42 Active</span></div><div id="kitchenq"></div></div>
+        </div>
+
+        <!-- ALL ORDERS -->
+        <div class="panel" id="a-orders">
+          <div class="row r3" style="margin-bottom:1.35rem">
+            <div class="kpi"><div class="klb">Total Today</div><div class="kv">247</div></div>
+            <div class="kpi"><div class="klb">Delivered</div><div class="kv">100 <span style="font-size:.9rem;color:var(--gn)">✓</span></div></div>
+            <div class="kpi"><div class="klb">Pending</div><div class="kv">147</div></div>
+          </div>
+          <div class="card">
+            <div class="cardh"><span class="cardt">All Orders Today</span><div style="display:flex;gap:.45rem"><button class="tbtn">Filter</button><button class="tbtn" onclick="showToast('CSV exported!')">Export CSV</button></div></div>
+            <table><thead><tr><th>ID</th><th>Customer</th><th>Meal</th><th>Plan</th><th>kcal</th><th>Protein</th><th>Status</th></tr></thead><tbody id="allorders"></tbody></table>
+          </div>
+        </div>
+
+        <!-- CUSTOMERS -->
+        <div class="panel" id="a-customers">
+          <div class="row r3">
+            <div class="kpi"><div class="klb">Total Customers</div><div class="kv">1,204</div><div class="ks"><span class="up">↑ 34</span> this week</div></div>
+            <div class="kpi"><div class="klb">Retention Rate</div><div class="kv">84%</div><div class="ks"><span class="up">↑ 2%</span> vs last month</div></div>
+            <div class="kpi"><div class="klb">Avg Orders/Month</div><div class="kv">18.4</div><div class="ks">meals per customer</div></div>
+          </div>
+          <div class="card">
+            <div class="cardh"><span class="cardt">Customer Directory</span></div>
+            <table><thead><tr><th>Name</th><th>Plan</th><th>Goal</th><th>Orders</th><th>Streak</th><th>Next Bill</th><th>Status</th></tr></thead><tbody id="custtable"></tbody></table>
+          </div>
+        </div>
+
+        <!-- REVENUE -->
+        <div class="panel" id="a-revenue">
+          <div class="row r3">
+            <div class="kpi"><div class="klb">This Month</div><div class="kv">284,200 MAD</div><div class="ks"><span class="up">↑ 28%</span> vs last month</div></div>
+            <div class="kpi"><div class="klb">Avg Order Value</div><div class="kv">52 MAD</div><div class="ks">Per meal delivered</div></div>
+            <div class="kpi"><div class="klb">Best Seller</div><div class="kv" style="font-size:1.1rem">High Protein</div><div class="ks">38% of orders</div></div>
+          </div>
+          <div class="card">
+            <div class="cardh"><span class="cardt">Revenue by Plan</span></div>
+            <div style="display:flex;flex-direction:column;gap:.875rem;margin-top:.5rem">
+              <div class="pbar"><div class="pbl"><span>High Protein</span><span style="font-weight:700">107,996 MAD · 38%</span></div><div class="pbt" style="height:11px"><div class="pbf pfg" style="width:38%"></div></div></div>
+              <div class="pbar"><div class="pbl"><span>Balanced</span><span style="font-weight:700">73,892 MAD · 26%</span></div><div class="pbt" style="height:11px"><div class="pbf pfs" style="width:26%"></div></div></div>
+              <div class="pbar"><div class="pbl"><span>Fat Loss</span><span style="font-weight:700">56,840 MAD · 20%</span></div><div class="pbt" style="height:11px"><div class="pbf pfo" style="width:20%"></div></div></div>
+              <div class="pbar"><div class="pbl"><span>Custom Macros</span><span style="font-weight:700">45,472 MAD · 16%</span></div><div class="pbt" style="height:11px"><div class="pbf pfr" style="width:16%"></div></div></div>
+            </div>
+          </div>
+          <div class="card"><div class="cardh"><span class="cardt">Monthly Revenue (6 months)</span></div><div class="chart-area" id="amonth-chart"></div></div>
+        </div>
+
+        <!-- LIVE ACTIVITY -->
+        <div class="panel" id="a-activity">
+          <div class="row r2">
+            <div class="card">
+              <div class="cardh"><span class="cardt">Live App Activity</span><span class="badge bg">● Live</span></div>
+              <div id="livefeed"></div>
+            </div>
+            <div class="card">
+              <div class="cardh"><span class="cardt">System Health</span></div>
+              <div style="display:flex;flex-direction:column;gap:.75rem">
+                <div class="pbar"><div class="pbl"><span>API Response</span><span style="color:var(--gn);font-weight:700">98ms · Excellent</span></div><div class="pbt"><div class="pbf pfs" style="width:98%"></div></div></div>
+                <div class="pbar"><div class="pbl"><span>App Uptime</span><span style="color:var(--gn);font-weight:700">99.9%</span></div><div class="pbt"><div class="pbf pfs" style="width:99%"></div></div></div>
+                <div class="pbar"><div class="pbl"><span>Payment Gateway</span><span style="color:var(--gn);font-weight:700">Online</span></div><div class="pbt"><div class="pbf pfs" style="width:100%"></div></div></div>
+                <div class="pbar"><div class="pbl"><span>AI Agent Load</span><span style="color:var(--ac);font-weight:700">64%</span></div><div class="pbt"><div class="pbf pfg" style="width:64%"></div></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="cardh"><span class="cardt">Active Sessions Right Now</span></div>
+            <table><thead><tr><th>Customer</th><th>Page</th><th>Action</th><th>Time</th><th>Device</th></tr></thead>
+            <tbody>
+              <tr><td>Youssef M.</td><td>Dashboard</td><td>Viewing macro tracker</td><td>Just now</td><td>📱 Mobile</td></tr>
+              <tr><td>Nadia B.</td><td>Meal Plan</td><td>Swapping a meal</td><td>1 min ago</td><td>💻 Desktop</td></tr>
+              <tr><td>Karim A.</td><td>AI Chat</td><td>Asking nutritionist</td><td>2 min ago</td><td>📱 Mobile</td></tr>
+              <tr><td>Sofia L.</td><td>Orders</td><td>Tracking delivery</td><td>3 min ago</td><td>💻 Desktop</td></tr>
+              <tr><td>Omar T.</td><td>Billing</td><td>Viewing invoice</td><td>5 min ago</td><td>📱 Mobile</td></tr>
+            </tbody></table>
+          </div>
+        </div>
+
+        <!-- ADMIN AI -->
+        <div class="panel" id="a-ai">
+          <div class="aaig">
+            <div class="card" style="margin:0">
+              <div class="cardh"><span class="cardt">🤖 AI Operations Chat</span></div>
+              <div style="display:flex;flex-direction:column;height:420px">
+                <div class="acpmsgs" id="aaimsgs" style="flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:.7rem;padding:.25rem 0">
+                  <div class="am bot"><div class="amav">🤖</div><div class="amb"><strong>Admin AI Assistant</strong><br>I can analyze your kitchen operations, customer behavior, revenue trends, and give strategic recommendations. What would you like to explore?</div></div>
+                </div>
+                <div id="aaichips" style="display:flex;flex-wrap:wrap;gap:.35rem;padding:.6rem 0;border-top:1px solid var(--bd)">
+                  <button class="ach" onclick="sendAaiChip(this)">Today's performance summary</button>
+                  <button class="ach" onclick="sendAaiChip(this)">Why is kitchen at 78%?</button>
+                  <button class="ach" onclick="sendAaiChip(this)">Revenue optimization tips</button>
+                  <button class="ach" onclick="sendAaiChip(this)">Which customers are at churn risk?</button>
+                </div>
+                <div style="display:flex;gap:.5rem;padding-top:.6rem;border-top:1px solid var(--bd)">
+                  <input class="acpinp" id="aaiinp" placeholder="Ask about operations, revenue, customers..." onkeydown="if(event.key==='Enter')sendAai()">
+                  <button class="acpsend" id="aaisbtn" onclick="sendAai()"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
+                </div>
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:.875rem">
+              <div class="card" style="margin:0">
+                <div class="cardh"><span class="cardt">AI Recommendations</span></div>
+                <div class="tipitem"><span class="tipit">📈</span><div><div class="tiptt">Increase High Protein capacity +15%</div><div class="tipss">Demand grew 22% this week — consider adding a 2nd prep shift Tue/Thu.</div></div></div>
+                <div class="tipitem"><span class="tipit">⚠️</span><div><div class="tiptt">3 customers at churn risk</div><div class="tipss">Customers with &lt;3 orders this month and no app login in 7+ days. Consider outreach.</div></div></div>
+                <div class="tipitem"><span class="tipit">💡</span><div><div class="tiptt">Add Vegetarian lunch option</div><div class="tipss">8 customers requested vegetarian lunch — current menu only covers dinner.</div></div></div>
+              </div>
+              <div class="card" style="margin:0">
+                <div class="cardh"><span class="cardt">AI-Predicted Tomorrow</span></div>
+                <div class="pbar"><div class="pbl"><span>Predicted orders</span><span style="font-weight:700">~268</span></div><div class="pbt"><div class="pbf pfg" style="width:85%"></div></div></div>
+                <div class="pbar"><div class="pbl"><span>Kitchen load</span><span style="color:var(--ac);font-weight:700">~84%</span></div><div class="pbt"><div class="pbf pfr" style="width:84%"></div></div></div>
+                <div class="pbar"><div class="pbl"><span>Predicted revenue</span><span style="font-weight:700">~13,936 MAD</span></div><div class="pbt"><div class="pbf pfs" style="width:92%"></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- ═══ AI FLOATING AGENT ═══ -->
+<button class="aifab" id="aifab" onclick="toggleAI()"><span id="fabico">🤖</span><span class="fabb" id="fabb">1</span></button>
+<!-- ═══ CUSTOMER AI AGENT ═══ -->
+<div class="aipanel" id="cust-aipanel">
+  <div class="aiph">
+    <div class="aiphtop">
+      <div class="ainm"><div class="aiavs" style="background:linear-gradient(135deg,var(--ch),var(--ol))">🤝</div>RIVARO Support Agent</div>
+      <button class="aiclose" onclick="toggleAI()">✕</button>
+    </div>
+    <div class="aist">Online · Support · Nutrition · Meal Generator</div>
+  </div>
+  <div class="aitabs">
+    <button class="aitab active" id="ct-support" onclick="swCustAI('support')">💬 Support</button>
+    <button class="aitab" id="ct-gen" onclick="swCustAI('gen')">✨ Meal Generator</button>
+  </div>
+  <!-- SUPPORT CHAT -->
+  <div id="cm-support" style="display:flex;flex-direction:column;flex:1;overflow:hidden">
+    <div class="aimsgs" id="cust-msgs">
+      <div class="am bot"><div class="amav">🤝</div><div class="amb"><strong>Hi Othmane! 👋 I'm your RIVARO Support Agent.</strong><br><br>I can help you with your <strong>orders, meal plan, billing, macros, nutrition advice</strong>, or any question about RIVARO. What do you need?</div></div>
+    </div>
+    <div class="aichips" id="cust-chips">
+      <button class="ach" onclick="sendCustChip(this)">Where is my order?</button>
+      <button class="ach" onclick="sendCustChip(this)">Change my meal plan</button>
+      <button class="ach" onclick="sendCustChip(this)">When is my next bill?</button>
+      <button class="ach" onclick="sendCustChip(this)">How much protein do I need?</button>
+      <button class="ach" onclick="sendCustChip(this)">Pause my subscription</button>
+    </div>
+    <div class="aiinrow">
+      <input class="aiinp" id="cust-inp" placeholder="Ask anything about your account or nutrition..." onkeydown="if(event.key==='Enter')sendCustMsg()">
+      <button class="aisb" id="cust-send" onclick="sendCustMsg()"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
+    </div>
+  </div>
+  <!-- MEAL GENERATOR -->
+  <div id="cm-gen" style="display:none;flex-direction:column;flex:1;overflow:hidden">
+    <div class="gp">
+      <div style="font-size:.76rem;color:var(--mu);line-height:1.6;background:var(--c);border-radius:10px;padding:.82rem;border:1px solid var(--bd)">Set your macro targets and I'll generate a precision meal for your kitchen order. 🍽️</div>
+      <div class="gpsl"><div class="gph"><span class="gplb">Calories</span><span class="gpv" id="gk">500 kcal</span></div><input class="lr" type="range" min="200" max="1200" value="500" step="25" oninput="upGP(this,'gk',' kcal')"></div>
+      <div class="gpsl"><div class="gph"><span class="gplb">Protein</span><span class="gpv" id="gp">40g</span></div><input class="lr" type="range" min="10" max="120" value="40" oninput="upGP(this,'gp','g')"></div>
+      <div class="gpsl"><div class="gph"><span class="gplb">Carbs</span><span class="gpv" id="gc">45g</span></div><input class="lr" type="range" min="10" max="200" value="45" oninput="upGP(this,'gc','g')"></div>
+      <div class="gpsl"><div class="gph"><span class="gplb">Fat</span><span class="gpv" id="gf">20g</span></div><input class="lr" type="range" min="5" max="80" value="20" oninput="upGP(this,'gf','g')"></div>
+      <div style="display:flex;gap:.38rem;flex-wrap:wrap">
+        <button class="ach" onclick="setGP(500,50,40,15)">🏋️ Muscle</button>
+        <button class="ach" onclick="setGP(350,35,20,12)">🔥 Fat Loss</button>
+        <button class="ach" onclick="setGP(600,45,70,20)">⚡ Performance</button>
+      </div>
+      <button class="pgbtn" id="pgbtn" onclick="panelGen()">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Generate My Meal
+      </button>
+      <div id="pgres" style="display:none" class="prbox"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ ADMIN AI AGENT ═══ -->
+<div class="aipanel" id="admin-aipanel" style="background:#1A1A18">
+  <div class="aiph" style="background:#1A1A18;border-bottom:1px solid rgba(255,255,255,.09)">
+    <div class="aiphtop">
+      <div class="ainm" style="color:var(--w)"><div class="aiavs" style="background:linear-gradient(135deg,#C24B3A,#8A2020)">👨‍🍳</div>RIVARO Ops Intelligence</div>
+      <button class="aiclose" style="background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.12);color:rgba(255,255,255,.5)" onclick="toggleAI()">✕</button>
+    </div>
+    <div class="aist" style="color:rgba(255,255,255,.35)">Online · Senior Chef Operator · Comptabilité & Forecasting</div>
+  </div>
+  <div class="aitabs" style="background:#161614;border-bottom:1px solid rgba(255,255,255,.07)">
+    <button class="aitab active" id="at-chef" onclick="swAdminAI('chef')">👨‍🍳 Chef Operator</button>
+    <button class="aitab" id="at-compta" onclick="swAdminAI('compta')">📊 Comptabilité</button>
+  </div>
+  <!-- CHEF OPERATOR -->
+  <div id="am-chef" style="display:flex;flex-direction:column;flex:1;overflow:hidden;background:#1A1A18">
+    <div class="aimsgs" id="chef-msgs" style="background:#1A1A18">
+      <div class="am bot"><div class="amav" style="background:#C24B3A;border-color:#8A2020">👨‍🍳</div><div class="amb" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1);color:rgba(255,255,255,.82)"><strong>Senior Chef Operator — RIVARO Kitchen.</strong><br><br>I manage <strong>kitchen production, menu engineering, recipe optimization, prep scheduling, and macro precision</strong>. I can plan tomorrow's production, optimize prep flows, calculate ingredient yields, and reduce waste. What do you need?</div></div>
+    </div>
+    <div class="aichips" id="chef-chips" style="background:#1A1A18;border-top:1px solid rgba(255,255,255,.07)">
+      <button class="ach" style="background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.1);color:rgba(255,255,255,.58)" onclick="sendChefChip(this)">Plan tomorrow's production</button>
+      <button class="ach" style="background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.1);color:rgba(255,255,255,.58)" onclick="sendChefChip(this)">Optimize 78% kitchen capacity</button>
+      <button class="ach" style="background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.1);color:rgba(255,255,255,.58)" onclick="sendChefChip(this)">Reduce prep time below 20min</button>
+      <button class="ach" style="background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.1);color:rgba(255,255,255,.58)" onclick="sendChefChip(this)">New high protein recipe idea</button>
+      <button class="ach" style="background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.1);color:rgba(255,255,255,.58)" onclick="sendChefChip(this)">Ingredient waste analysis</button>
+    </div>
+    <div class="aiinrow" style="background:#141412;border-top:1px solid rgba(255,255,255,.07)">
+      <input class="aiinp" id="chef-inp" placeholder="Ask about kitchen, production, recipes..." style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.1);color:rgba(255,255,255,.82)" onkeydown="if(event.key==='Enter')sendChefMsg()">
+      <button class="aisb" id="chef-send" style="background:var(--rd)" onclick="sendChefMsg()"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
+    </div>
+  </div>
+  <!-- COMPTABILITÉ -->
+  <div id="am-compta" style="display:none;flex-direction:column;flex:1;overflow:hidden;background:#1A1A18">
+    <div class="aimsgs" id="compta-msgs" style="background:#1A1A18">
+      <div class="am bot"><div class="amav" style="background:linear-gradient(135deg,#C8A96E,#A8813E);border-color:#8A6230">📊</div><div class="amb" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1);color:rgba(255,255,255,.82)"><strong>Comptabilité & Business Intelligence — RIVARO.</strong><br><br>I analyze your <strong>revenue, costs, margins, cash flow, and business forecasting</strong>. I can generate P&amp;L projections, calculate food cost ratios, spot trends, benchmark KPIs, and forecast next month's performance. What would you like to analyze?</div></div>
+    </div>
+    <div class="aichips" id="compta-chips" style="background:#1A1A18;border-top:1px solid rgba(255,255,255,.07)">
+      <button class="ach" style="background:rgba(200,169,110,.1);border-color:rgba(200,169,110,.22);color:rgba(200,169,110,.88)" onclick="sendComptaChip(this)">Revenue forecast next month</button>
+      <button class="ach" style="background:rgba(200,169,110,.1);border-color:rgba(200,169,110,.22);color:rgba(200,169,110,.88)" onclick="sendComptaChip(this)">Food cost % per plan</button>
+      <button class="ach" style="background:rgba(200,169,110,.1);border-color:rgba(200,169,110,.22);color:rgba(200,169,110,.88)" onclick="sendComptaChip(this)">Gross margin analysis</button>
+      <button class="ach" style="background:rgba(200,169,110,.1);border-color:rgba(200,169,110,.22);color:rgba(200,169,110,.88)" onclick="sendComptaChip(this)">Break-even point calculation</button>
+      <button class="ach" style="background:rgba(200,169,110,.1);border-color:rgba(200,169,110,.22);color:rgba(200,169,110,.88)" onclick="sendComptaChip(this)">Monthly P&amp;L summary</button>
+    </div>
+    <div class="aiinrow" style="background:#141412;border-top:1px solid rgba(255,255,255,.07)">
+      <input class="aiinp" id="compta-inp" placeholder="Ask about revenue, costs, forecasting..." style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.1);color:rgba(255,255,255,.82)" onkeydown="if(event.key==='Enter')sendComptaMsg()">
+      <button class="aisb" id="compta-send" style="background:linear-gradient(135deg,#C8A96E,#A8813E)" onclick="sendComptaMsg()"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<!-- LOGIN MODAL -->
+<div class="modov" id="login-modal">
+  <div class="modbox" style="max-width:420px;text-align:left;padding:2.5rem">
+    <div style="text-align:center;margin-bottom:1.75rem">
+      <div style="font-family:'Clash Display',sans-serif;font-size:1.75rem;font-weight:700;color:var(--ch);margin-bottom:.3rem">RIV<span style="color:var(--ac)">ARO</span></div>
+      <div style="font-size:.85rem;color:var(--mu)">Sign in to your account</div>
+    </div>
+    <div id="login-error" style="display:none;background:#FDECEA;border:1px solid #F5C6C2;border-radius:10px;padding:.65rem .9rem;font-size:.82rem;color:var(--rd);margin-bottom:1rem;text-align:center">
+      ❌ Incorrect email or password
+    </div>
+    <div style="display:flex;flex-direction:column;gap:1rem;margin-bottom:1.5rem">
+      <div>
+        <label style="font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mu);display:block;margin-bottom:.4rem">Email address</label>
+        <input id="login-email" type="email" placeholder="your email address" style="width:100%;padding:.7rem .95rem;border:1.5px solid var(--bd);border-radius:11px;font-family:'Instrument Sans',sans-serif;font-size:.88rem;color:var(--ch);background:var(--c);outline:none;transition:border-color .2s" onfocus="this.style.borderColor='var(--ch)'" onblur="this.style.borderColor='var(--bd)'" onkeydown="if(event.key==='Enter')doLogin()">
+      </div>
+      <div>
+        <label style="font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mu);display:block;margin-bottom:.4rem">Password</label>
+        <div style="position:relative">
+          <input id="login-pass" type="password" placeholder="••••••••" style="width:100%;padding:.7rem .95rem;border:1.5px solid var(--bd);border-radius:11px;font-family:'Instrument Sans',sans-serif;font-size:.88rem;color:var(--ch);background:var(--c);outline:none;transition:border-color .2s" onfocus="this.style.borderColor='var(--ch)'" onblur="this.style.borderColor='var(--bd)'" onkeydown="if(event.key==='Enter')doLogin()">
+          <button onclick="togglePw('login-pass',this)" style="position:absolute;right:.75rem;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--mu);font-size:.82rem">👁</button>
+        </div>
+      </div>
+    </div>
+    <button onclick="doLogin()" style="width:100%;padding:.82rem;border:none;border-radius:12px;background:var(--ch);color:var(--w);font-family:'Clash Display',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;transition:all .2s;margin-bottom:1rem" onmouseover="this.style.background='var(--ol)'" onmouseout="this.style.background='var(--ch)'">Sign In →</button>
+    <div style="text-align:center">
+      <button onclick="closeLoginModal()" style="background:none;border:none;font-size:.82rem;color:var(--mu);cursor:pointer;font-family:'Instrument Sans',sans-serif">Cancel</button>
+    </div>
+    <div style="margin-top:1.25rem;padding:1rem;background:var(--c);border-radius:10px;border:1px solid var(--bd)">
+      <div style="font-size:.68rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--mu);margin-bottom:.65rem">Demo credentials</div>
+      <div style="font-size:.76rem;color:var(--ch);margin-bottom:.4rem;display:flex;align-items:center;gap:.5rem">
+        <span style="background:#E6EDE0;color:#3A4A30;padding:.15rem .5rem;border-radius:4px;font-size:.62rem;font-weight:700;letter-spacing:.06em">CUSTOMER</span>
+        <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2743424a4867554e514655480944484a">[email&#160;protected]</a> · <strong>rivaro2026</strong>
+      </div>
+      <div style="font-size:.76rem;color:var(--ch);display:flex;align-items:center;gap:.5rem">
+        <span style="background:#FDECEA;color:var(--rd);padding:.15rem .5rem;border-radius:4px;font-size:.62rem;font-weight:700;letter-spacing:.06em">ADMIN</span>
+        <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d3b2b7bebabd93a1baa5b2a1bcfdb0bcbe">[email&#160;protected]</a> · <strong>admin2026</strong>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ADMIN SECRET MODAL -->
+<div class="modov" id="admin-modal">
+  <div class="modbox" style="max-width:400px;text-align:left;padding:2.5rem">
+    <div style="text-align:center;margin-bottom:1.75rem">
+      <div style="font-size:2rem;margin-bottom:.5rem">🔐</div>
+      <div style="font-family:'Clash Display',sans-serif;font-size:1.4rem;font-weight:700;color:var(--ch);margin-bottom:.3rem">Admin Access</div>
+      <div style="font-size:.82rem;color:var(--mu)">Restricted — authorized personnel only</div>
+    </div>
+    <div id="admin-error" style="display:none;background:#FDECEA;border:1px solid #F5C6C2;border-radius:10px;padding:.65rem .9rem;font-size:.82rem;color:var(--rd);margin-bottom:1rem;text-align:center">
+      ❌ Invalid admin credentials
+    </div>
+    <div style="display:flex;flex-direction:column;gap:1rem;margin-bottom:1.5rem">
+      <div>
+        <label style="font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mu);display:block;margin-bottom:.4rem">Admin Username</label>
+        <input id="admin-user" type="text" placeholder="admin" style="width:100%;padding:.7rem .95rem;border:1.5px solid var(--bd);border-radius:11px;font-family:'Instrument Sans',sans-serif;font-size:.88rem;color:var(--ch);background:var(--c);outline:none;transition:border-color .2s" onfocus="this.style.borderColor='var(--ch)'" onblur="this.style.borderColor='var(--bd)'" onkeydown="if(event.key==='Enter')doAdminLogin()">
+      </div>
+      <div>
+        <label style="font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mu);display:block;margin-bottom:.4rem">Admin Password</label>
+        <div style="position:relative">
+          <input id="admin-pass" type="password" placeholder="••••••••" style="width:100%;padding:.7rem .95rem;border:1.5px solid var(--bd);border-radius:11px;font-family:'Instrument Sans',sans-serif;font-size:.88rem;color:var(--ch);background:var(--c);outline:none;transition:border-color .2s" onfocus="this.style.borderColor='var(--ch)'" onblur="this.style.borderColor='var(--bd)'" onkeydown="if(event.key==='Enter')doAdminLogin()">
+          <button onclick="togglePw('admin-pass',this)" style="position:absolute;right:.75rem;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--mu);font-size:.82rem">👁</button>
+        </div>
+      </div>
+    </div>
+    <button onclick="doAdminLogin()" style="width:100%;padding:.82rem;border:none;border-radius:12px;background:var(--rd);color:var(--w);font-family:'Clash Display',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;transition:all .2s;margin-bottom:1rem">Enter Admin Panel →</button>
+    <div style="text-align:center">
+      <button onclick="closeAdminModal()" style="background:none;border:none;font-size:.82rem;color:var(--mu);cursor:pointer;font-family:'Instrument Sans',sans-serif">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- ORDER MODAL -->
+<div class="modov" id="modov"><div class="modbox"><div class="modem">🍽️</div><div class="modt">Place New Order</div><div class="mods">Your meal will be prepared fresh and delivered tomorrow at your scheduled time.</div><div class="modbtns"><button class="mbb ol" onclick="closeModal()">Cancel</button><button class="mbb pr" onclick="closeModal();showToast('Order placed! Delivery tomorrow 7:30 PM 🎉')">Confirm Order</button></div></div></div>
+<div id="toast"></div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ── DATA ──
+const PLANS=[
+  {n:'High Protein',e:'🥩',kc:'500–600',goal:'gain',badge:'Most Popular',pP:55,cP:35,fP:20,p:50,c:40,f:15},
+  {n:'Fat Loss',e:'🥗',kc:'350–450',goal:'lose',badge:null,pP:45,cP:25,fP:20,p:35,c:20,f:12},
+  {n:'Balanced',e:'🍱',kc:'500–600',goal:'maintain',badge:null,pP:35,cP:50,fP:25,p:30,c:50,f:18},
+  {n:'Low Carb',e:'🥑',kc:'450–550',goal:'lose',badge:null,pP:40,cP:15,fP:40,p:40,c:15,f:35},
+  {n:'Vegetarian',e:'🌿',kc:'400–500',goal:'veg',badge:null,pP:28,cP:55,fP:22,p:28,c:55,f:18},
+  {n:'Performance',e:'⚡',kc:'650–750',goal:'gain',badge:'New',pP:50,cP:60,fP:22,p:45,c:70,f:20},
+];
+const TEST=[
+  {n:'Youssef M.',g:'Lost 8kg in 3 months',t:'The macro-matching is insane. I tell it 500 kcal, 50g protein and it just works.',e:'😊'},
+  {n:'Nadia B.',g:'Muscle gain journey',t:'RIVARO is the only service where I actually see my protein goals hit every single day.',e:'💪'},
+  {n:'Karim A.',g:'Athlete, 2x per day training',t:'The AI nutritionist explained why I needed more carbs post-workout. Recovery improved massively.',e:'🏋️'},
+  {n:'Sofia L.',g:'Weight maintenance',t:'Stopped counting calories. RIVARO does it for me. The meals taste incredible.',e:'🌟'},
+  {n:'Omar T.',g:'Lean bulk',t:'Custom macro builder is a game changer. Input my TDEE surplus and it builds me a meal.',e:'🙌'},
+  {n:'Lina H.',g:'Postpartum nutrition',t:'The AI nutritionist was so patient about my postpartum macro needs. Highly recommended.',e:'❤️'},
+];
+const FAQS=[
+  {q:'How does the AI meal generator work?',a:'You enter your target calories, protein, carbs and fat. Our AI generates a meal matching your exact macros within ±5%, then sends the recipe to our kitchen.'},
+  {q:'Can I enter my own custom macros?',a:'Absolutely. The macro builder lets you set any combination: calories (200–1200), protein (10–120g), carbs (10–200g), and fat (5–80g).'},
+  {q:'How fresh are the meals?',a:'Every meal is cooked the morning of delivery and lasts up to 3 days refrigerated. We cook exclusively with extra virgin olive oil.'},
+  {q:'Can I pause or cancel my subscription?',a:'Yes, anytime. Go to Account Settings. You can pause for up to 30 days or cancel with no penalty up to 24 hours before delivery.'},
+  {q:'Is the AI nutritionist a real dietitian?',a:'The AI nutritionist is powered by Claude AI and trained on evidence-based nutrition science. Always consult a registered dietitian for medical nutrition therapy.'},
+];
+const MEALS=[
+  {e:'🥣',n:'Greek Yogurt Protein Bowl',kc:320,p:38,c:28,f:8,t:'Breakfast'},
+  {e:'🥗',n:'Chicken Power Bowl',kc:480,p:52,c:38,f:14,t:'Lunch'},
+  {e:'🥩',n:'Beef & Quinoa Macro Plate',kc:560,p:58,c:42,f:18,t:'Dinner'},
+  {e:'🐟',n:'Salmon Quinoa Plate',kc:520,p:44,c:42,f:18,t:'Lunch Alt'},
+  {e:'🦃',n:'Turkey Meatball Bowl',kc:490,p:49,c:40,f:16,t:'Dinner Alt'},
+];
+const KQ=[
+  {n:'01',m:'Grilled Chicken Bowl',c:'Youssef M.',st:'Preparing',t:'18 min',b:'ba'},
+  {n:'02',m:'Salmon Quinoa Plate',c:'Nadia B.',st:'Preparing',t:'22 min',b:'ba'},
+  {n:'03',m:'Beef Steak Low-Carb',c:'Karim A.',st:'Finishing',t:'5 min',b:'bg'},
+  {n:'04',m:'Turkey Meatball Bowl',c:'Sofia L.',st:'Ready',t:'Ship now',b:'bb'},
+  {n:'05',m:'Veggie Buddha Bowl',c:'Omar T.',st:'Queued',t:'10 min',b:'bgr'},
+  {n:'06',m:'Tuna Poke Bowl',c:'Lina H.',st:'Queued',t:'25 min',b:'bgr'},
+];
+const ORDERS=[
+  {id:'#2847',c:'Youssef M.',m:'Chicken Bowl',pl:'High Protein',kc:480,pr:'52g',s:'bg',st:'Delivered'},
+  {id:'#2846',c:'Nadia B.',m:'Salmon Plate',pl:'Balanced',kc:520,pr:'44g',s:'ba',st:'En Route'},
+  {id:'#2845',c:'Karim A.',m:'Beef Low-Carb',pl:'High Protein',kc:560,pr:'58g',s:'ba',st:'Preparing'},
+  {id:'#2844',c:'Sofia L.',m:'Veggie Bowl',pl:'Vegetarian',kc:420,pr:'28g',s:'bg',st:'Delivered'},
+  {id:'#2843',c:'Omar T.',m:'Tuna Poke Bowl',pl:'Fat Loss',kc:440,pr:'42g',s:'bg',st:'Delivered'},
+  {id:'#2842',c:'Lina H.',m:'Turkey Meatball',pl:'Balanced',kc:490,pr:'49g',s:'bb',st:'Queued'},
+];
+const CUSTS=[
+  {n:'Youssef M.',pl:'High Protein',g:'Muscle Gain',ord:24,str:14,bill:'Apr 1',s:'bg',st:'Active'},
+  {n:'Nadia B.',pl:'Balanced',g:'Weight Loss',ord:18,str:8,bill:'Apr 1',s:'bg',st:'Active'},
+  {n:'Karim A.',pl:'Performance',g:'Athletic',ord:31,str:22,bill:'Apr 3',s:'bg',st:'Active'},
+  {n:'Sofia L.',pl:'Vegetarian',g:'Maintain',ord:12,str:5,bill:'Apr 5',s:'ba',st:'Paused'},
+  {n:'Omar T.',pl:'Fat Loss',g:'Lean Bulk',ord:9,str:3,bill:'Apr 1',s:'bg',st:'Active'},
+  {n:'Lina H.',pl:'Balanced',g:'Postpartum',ord:6,str:1,bill:'Apr 2',s:'bb',st:'New'},
+];
+const ACTS=[
+  {ic:'📦',t:'New order placed',s:'Youssef M. — Chicken Power Bowl · 480 kcal',tm:'Just now'},
+  {ic:'🤖',t:'AI Nutritionist session',s:'Karim A. asked about post-workout macros',tm:'1 min ago'},
+  {ic:'💳',t:'Payment processed',s:'Nadia B. — March subscription · 1,560 MAD',tm:'3 min ago'},
+  {ic:'✨',t:'AI Meal generated',s:'Omar T. generated a custom 500 kcal meal',tm:'5 min ago'},
+  {ic:'📦',t:'Order delivered',s:'Sofia L. — Veggie Bowl delivered ✓',tm:'8 min ago'},
+  {ic:'👤',t:'New customer signup',s:'Lina H. — Balanced Plan selected',tm:'12 min ago'},
+];
+
+// ── NAVIGATION ──
+const TITLES={'c-home':'Good morning, Othmane 👋','c-meals':'My Meal Plan','c-macros':'Macro Tracker','c-orders':'Orders & Delivery','c-bills':'Billing & Payments','c-ai':'AI Nutritionist','c-settings':'Account Settings','a-home':'Operations Overview','a-kitchen':'Kitchen Queue','a-orders':'All Orders','a-customers':'Customer Directory','a-revenue':'Revenue & Analytics','a-activity':'Live Activity','a-ai':'AI Insights'};
+function showView(v){
+  document.querySelectorAll('.view').forEach(e=>e.classList.remove('active'));
+  document.getElementById('view-'+v).classList.add('active');
+  window.scrollTo(0,0);
+  currentView = v;
+  aiOpen = false;
+  const fab = document.getElementById('aifab');
+  const fabIco = document.getElementById('fabico');
+  const fabBadge = document.getElementById('fabb');
+  // FAB always visible — change icon/style per view
+  fab.style.display = 'flex';
+  fab.classList.remove('open');
+  if(v === 'admin'){
+    fab.style.background = '#1A1A18';
+    fab.style.boxShadow = '0 8px 28px rgba(194,75,58,.35)';
+    fab.style.border = '2px solid rgba(200,169,110,.3)';
+    fabIco.textContent = '👨‍🍳';
+    fabBadge.style.display = 'none';
+  } else if(v === 'customer'){
+    fab.style.background = '#1A1A18';
+    fab.style.boxShadow = '0 8px 28px rgba(0,0,0,.24)';
+    fab.style.border = 'none';
+    fabIco.textContent = '🤖';
+    fabBadge.textContent = '1';
+    fabBadge.style.display = 'flex';
+  } else {
+    // Landing page — show subtle AI bubble
+    fab.style.background = '#1A1A18';
+    fab.style.boxShadow = '0 8px 28px rgba(0,0,0,.2)';
+    fab.style.border = 'none';
+    fabIco.textContent = '🤖';
+    fabBadge.style.display = 'none';
+  }
+  // Close any open panels
+  document.getElementById('cust-aipanel').classList.remove('open');
+  document.getElementById('admin-aipanel').classList.remove('open');
+}
+function goTo(id){showView('landing');setTimeout(()=>document.getElementById(id)?.scrollIntoView({behavior:'smooth'}),80);}
+function sp(dash,pid,btn){
+  const v='view-'+(dash==='cust'?'customer':'admin');
+  document.querySelectorAll('#'+v+' .panel').forEach(p=>p.classList.remove('active'));
+  const p=document.getElementById(pid);if(p)p.classList.add('active');
+  document.querySelectorAll('#'+v+' .ni').forEach(i=>i.classList.remove('active'));
+  if(btn)btn.classList.add('active');
+  const tid=dash==='cust'?'ctbt':'atbt';
+  const el=document.getElementById(tid);
+  if(el&&TITLES[pid])el.textContent=TITLES[pid];
+}
+
+// ── AI PANEL ──
+let aiOpen = false;
+let currentView = 'landing'; // 'landing' | 'customer' | 'admin'
+
+// Conversation histories
+const custH = [], chefH = [], comptaH = [], acpH = [], aaiH = [];
+
+// ── FAB: show correct panel based on current view ──
+function toggleAI() {
+  aiOpen = !aiOpen;
+  applyAIPanels();
+}
+function openAI(mode) {
+  aiOpen = true;
+  applyAIPanels();
+  if (currentView === 'customer') {
+    swCustAI(mode === 'gen' ? 'gen' : 'support');
+  } else if (currentView === 'admin') {
+    swAdminAI(mode === 'compta' ? 'compta' : 'chef');
+  }
+}
+function closeAIPanel() { aiOpen = false; applyAIPanels(); }
+
+function applyAIPanels() {
+  const custPanel  = document.getElementById('cust-aipanel');
+  const adminPanel = document.getElementById('admin-aipanel');
+  const fab        = document.getElementById('aifab');
+  const fabIco     = document.getElementById('fabico');
+  const fabBadge   = document.getElementById('fabb');
+
+  custPanel.classList.remove('open');
+  adminPanel.classList.remove('open');
+
+  if (aiOpen) {
+    // On landing or customer → open customer panel
+    if (currentView === 'admin') {
+      adminPanel.classList.add('open');
+      fab.style.background = '#C24B3A';
+    } else {
+      custPanel.classList.add('open');
+      fab.style.background = '#C24B3A';
+    }
+    fabIco.textContent = '✕';
+    fabBadge.style.display = 'none';
+    fab.classList.add('open');
+  } else {
+    fab.classList.remove('open');
+    if (currentView === 'admin') {
+      fabIco.textContent = '👨‍🍳';
+      fab.style.background = '#1A1A18';
+    } else {
+      fabIco.textContent = '🤖';
+      fab.style.background = '#1A1A18';
+    }
+  }
+}
+
+// ── CUSTOMER AGENT: tab switcher ──
+function swCustAI(mode) {
+  document.getElementById('cm-support').style.display = mode === 'support' ? 'flex' : 'none';
+  document.getElementById('cm-gen').style.display     = mode === 'gen'     ? 'flex' : 'none';
+  if (mode === 'support') document.getElementById('cm-support').style.flexDirection = 'column';
+  if (mode === 'gen')     document.getElementById('cm-gen').style.flexDirection     = 'column';
+  document.getElementById('ct-support').classList.toggle('active', mode === 'support');
+  document.getElementById('ct-gen').classList.toggle('active', mode === 'gen');
+}
+
+// ── ADMIN AGENT: tab switcher ──
+function swAdminAI(mode) {
+  document.getElementById('am-chef').style.display   = mode === 'chef'   ? 'flex' : 'none';
+  document.getElementById('am-compta').style.display = mode === 'compta' ? 'flex' : 'none';
+  if (mode === 'chef')   document.getElementById('am-chef').style.flexDirection   = 'column';
+  if (mode === 'compta') document.getElementById('am-compta').style.flexDirection = 'column';
+  document.getElementById('at-chef').classList.toggle('active', mode === 'chef');
+  document.getElementById('at-compta').classList.toggle('active', mode === 'compta');
+  // Gold active style for admin tabs
+  ['at-chef','at-compta'].forEach(id => {
+    const btn = document.getElementById(id);
+    if (btn.classList.contains('active')) {
+      btn.style.background = 'var(--ac)'; btn.style.borderColor = 'var(--ac)'; btn.style.color = 'var(--ch)';
+    } else {
+      btn.style.background = 'transparent'; btn.style.borderColor = 'rgba(255,255,255,.12)'; btn.style.color = 'rgba(255,255,255,.45)';
+    }
+  });
+}
+
+// ── MSG HELPER ──
+function addMsg(cid, role, html, dark) {
+  const c = document.getElementById(cid);
+  const d = document.createElement('div');
+  d.className = 'am ' + (role === 'bot' ? 'bot' : 'user');
+  const avStyle = dark ? 'background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.1)' : '';
+  const bubStyle = dark
+    ? (role === 'bot'
+        ? 'background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.82);border-top-left-radius:4px'
+        : 'background:rgba(200,169,110,.18);border:1px solid rgba(200,169,110,.3);color:rgba(255,255,255,.88);border-top-right-radius:4px')
+    : '';
+  const avEmoji = role === 'bot'
+    ? (cid.includes('chef') ? '👨‍🍳' : cid.includes('compta') ? '📊' : cid.includes('aai') ? '🤖' : '🤝')
+    : '👤';
+  d.innerHTML = `<div class="amav" style="${avStyle}">${avEmoji}</div><div class="amb" style="${bubStyle}">${html}</div>`;
+  c.appendChild(d); c.scrollTop = c.scrollHeight; return d;
+}
+
+// ── CLAUDE API CALL ──
+async function callClaude(hist, sys, msgid, sendid, dark) {
+  document.getElementById(sendid).disabled = true;
+  const typ = addMsg(msgid, 'bot', '<div class="typing"><div class="td"></div><div class="td"></div><div class="td"></div></div>', dark);
+  try {
+    const r = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST', headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 600, system: sys, messages: hist })
+    });
+    const data = await r.json();
+    const reply = data.content[0].text;
+    hist.push({role: 'assistant', content: reply});
+    typ.remove();
+    addMsg(msgid, 'bot', reply.replace(/\n\n/g, '<br><br>').replace(/\n/g, '<br>'), dark);
+  } catch(e) {
+    typ.remove();
+    addMsg(msgid, 'bot', 'Connection issue — please try again! 🙏', dark);
+  }
+  document.getElementById(sendid).disabled = false;
+}
+
+// ─────────────────────────────────────
+// CUSTOMER SUPPORT AGENT (RAG-style)
+// ─────────────────────────────────────
+const CUST_SYS = `You are RIVARO's customer support and nutrition agent — warm, expert, and helpful.
+
+CUSTOMER CONTEXT (Othmane B.):
+- Plan: High Protein · 2,100 kcal/day · 160g protein target
+- Active order: Beef & Quinoa Macro Plate — En Route, arrives 7:30 PM
+- Next bill: 1,560 MAD due April 1, 2026
+- Streak: 14 days · Allergens: Nuts, Shellfish excluded
+- Delivery time: 7:30 PM daily
+
+RIVARO KNOWLEDGE BASE:
+- Meals last 3 days refrigerated, heat in 3 minutes
+- Swap/skip/pause: up to 24h before delivery in account settings
+- Cancel: anytime, no penalty, 24h notice
+- Delivery window: 6 PM – 9 PM
+- AI Meal Generator: enter exact macros → kitchen builds the meal
+- All meals cooked with extra virgin olive oil, no seed oils
+- Allergen exclusions saved in account settings
+
+NUTRITION EXPERTISE: You are also a certified sports nutritionist. Answer macro, meal timing, TDEE, muscle gain, fat loss, and hydration questions with evidence-based advice.
+
+Keep responses warm, concise (3–5 sentences), and practical. Use bullet points only when listing steps. Never make up order statuses or prices.`;
+
+function sendCustMsg() {
+  const inp = document.getElementById('cust-inp');
+  const msg = inp.value.trim(); if (!msg) return;
+  inp.value = '';
+  addMsg('cust-msgs', 'user', msg, false);
+  custH.push({role:'user', content: msg});
+  callClaude(custH, CUST_SYS, 'cust-msgs', 'cust-send', false);
+}
+function sendCustChip(btn) { document.getElementById('cust-inp').value = btn.textContent; btn.remove(); sendCustMsg(); }
+
+// ─────────────────────────────────────
+// SENIOR CHEF OPERATOR AGENT
+// ─────────────────────────────────────
+const CHEF_SYS = `You are RIVARO's Senior Chef Operator — an experienced executive chef and kitchen operations manager for a precision dark kitchen in Tanger, Morocco.
+
+KITCHEN DATA:
+- Daily orders: 247 | Capacity: 78% (HIGH LOAD)
+- Avg prep time: 22 min | Target: 20 min
+- Plans: High Protein (38%), Balanced (26%), Fat Loss (20%), Custom Macros (16%)
+- Staff: 2 prep shifts | Cook-to-order model | EVOO only, no seed oils
+- Revenue: 12,840 MAD/day | 284,200 MAD/month
+
+YOUR EXPERTISE:
+- Kitchen production planning & scheduling
+- Batch cooking optimization & station workflow
+- Recipe engineering for macro precision (±5% target)
+- Ingredient yield calculation & waste reduction
+- Food safety (HACCP), shelf life, cold chain management
+- Menu development: new dishes that hit specific macro profiles
+- Staff briefing, prep lists, mise en place
+- Equipment load balancing & throughput optimization
+
+Be direct and operational. Use chef language. Give specific, actionable recommendations. Quantify where possible (times, portions, yields, percentages). Respond in 4–6 sentences or use a short structured list when planning production.`;
+
+function sendChefMsg() {
+  const inp = document.getElementById('chef-inp');
+  const msg = inp.value.trim(); if (!msg) return;
+  inp.value = '';
+  addMsg('chef-msgs', 'user', msg, true);
+  chefH.push({role:'user', content: msg});
+  callClaude(chefH, CHEF_SYS, 'chef-msgs', 'chef-send', true);
+}
+function sendChefChip(btn) { document.getElementById('chef-inp').value = btn.textContent; btn.remove(); sendChefMsg(); }
+
+// ─────────────────────────────────────
+// COMPTABILITÉ & FORECASTING AGENT
+// ─────────────────────────────────────
+const COMPTA_SYS = `You are RIVARO's Chief Financial Analyst & Comptabilité expert — a senior business intelligence specialist for a dark kitchen in Morocco.
+
+FINANCIAL DATA (current):
+- Daily revenue: 12,840 MAD | Monthly: 284,200 MAD (+28% MoM)
+- Active customers: 1,204 | Avg order value: 52 MAD/meal
+- Revenue by plan: High Protein 38% (107,996 MAD), Balanced 26% (73,892 MAD), Fat Loss 20% (56,840 MAD), Custom 16% (45,472 MAD)
+- Customer retention: 84% | Avg meals/customer/month: 18.4
+- Kitchen capacity: 78% (high load = growth constraint)
+- Subscription price: 1,560 MAD/month per customer (30 meals)
+
+YOUR EXPERTISE:
+- P&L analysis, gross margin, contribution margin per plan
+- Food cost ratio (CoGS), labor cost ratio, fixed vs variable costs
+- Monthly & quarterly revenue forecasting (trend analysis)
+- Break-even analysis, CAC, LTV, LTV:CAC ratio
+- Cash flow projection & working capital management
+- Pricing strategy & plan optimization
+- Churn risk modeling & retention economics
+- MAD/EUR currency context (Moroccan market)
+
+Be analytical and precise. Show calculations when relevant. Use financial terminology correctly. Give specific numbers, ratios, and actionable business insights. Respond in 4–6 sentences or use a structured table/list for complex analysis.`;
+
+function sendComptaMsg() {
+  const inp = document.getElementById('compta-inp');
+  const msg = inp.value.trim(); if (!msg) return;
+  inp.value = '';
+  addMsg('compta-msgs', 'user', msg, true);
+  comptaH.push({role:'user', content: msg});
+  callClaude(comptaH, COMPTA_SYS, 'compta-msgs', 'compta-send', true);
+}
+function sendComptaChip(btn) { document.getElementById('compta-inp').value = btn.textContent; btn.remove(); sendComptaMsg(); }
+
+// ── FULL-PAGE ADMIN AI PAGE chats ──
+function sendAai() {
+  const msg = document.getElementById('aaiinp').value.trim(); if (!msg) return;
+  document.getElementById('aaiinp').value = '';
+  addMsg('aaimsgs', 'user', msg, false);
+  aaiH.push({role:'user', content: msg});
+  const sys = CHEF_SYS + ' Also cover strategic business topics when asked (revenue, customers, forecasting).';
+  callClaude(aaiH, sys, 'aaimsgs', 'aaisbtn', false);
+}
+function sendAaiChip(btn) { document.getElementById('aaiinp').value = btn.textContent; btn.remove(); sendAai(); }
+
+// ── FULL-PAGE CUSTOMER NUTRITIONIST ──
+function sendAcp() {
+  const msg = document.getElementById('acpinp').value.trim(); if (!msg) return;
+  document.getElementById('acpinp').value = '';
+  addMsg('acpmsgs', 'user', msg, false);
+  acpH.push({role:'user', content: msg});
+  callClaude(acpH, CUST_SYS, 'acpmsgs', 'acpsend', false);
+}
+function sendAcpChip(btn) { document.getElementById('acpinp').value = btn.textContent; btn.remove(); sendAcp(); }
+
+// Legacy stubs (kept for HTML references)
+function sendFab(mode) { if(mode==='chat') sendCustMsg(); else sendChefMsg(); }
+function sendChip(btn, mode) { if(mode==='chat') sendCustChip(btn); else sendChefChip(btn); }
+function swAI(mode) { if(currentView==='admin') swAdminAI(mode==='admin'?'chef':mode); else swCustAI(mode==='chat'?'support':mode); }
+
+// ── PANEL GENERATOR ──
+function upGP(el,id,u){document.getElementById(id).textContent=el.value+u;}
+function setGP(k,p,c,f){
+  const sl=document.getElementById('m-gen').querySelectorAll('input[type=range]');
+  sl[0].value=k;sl[1].value=p;sl[2].value=c;sl[3].value=f;
+  document.getElementById('gk').textContent=k+' kcal';document.getElementById('gp').textContent=p+'g';
+  document.getElementById('gc').textContent=c+'g';document.getElementById('gf').textContent=f+'g';
+}
+async function panelGen(){
+  const sl=document.getElementById('m-gen').querySelectorAll('input[type=range]');
+  const k=sl[0].value,p=sl[1].value,c=sl[2].value,f=sl[3].value;
+  const btn=document.getElementById('pgbtn'),res=document.getElementById('pgres');
+  btn.disabled=true;btn.innerHTML='<div class="spin" style="border-top-color:var(--w)"></div> Generating...';
+  res.style.display='block';res.className='prbox ld';res.innerHTML='<div style="color:var(--mu);font-size:.78rem">AI is crafting your meal ✨</div>';
+  try{
+    const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:500,messages:[{role:'user',content:'Generate ONE meal matching: '+k+' kcal, '+p+'g protein, '+c+'g carbs, '+f+'g fat. Respond ONLY valid JSON no backticks: {"name":"...","emoji":"...","description":"2 sentences","ingredients":"comma list","prepTime":"X min","calories":'+k+',"protein":'+p+',"carbs":'+c+',"fat":'+f+'}'}]})});
+    const data=await r.json();const meal=JSON.parse(data.content[0].text.replace(/```json|```/g,'').trim());
+    res.className='prbox';
+    res.innerHTML='<div style="font-size:1.7rem;margin-bottom:.38rem">'+meal.emoji+'</div><div style="font-family:\'Clash Display\',sans-serif;font-size:.95rem;font-weight:600;color:var(--ch);margin-bottom:.28rem">'+meal.name+'</div><div style="font-size:.76rem;color:var(--mu);line-height:1.55;margin-bottom:.65rem">'+meal.description+'</div><div style="font-size:.7rem;color:var(--mu);margin-bottom:.65rem"><strong style="color:var(--ol)">Ingredients:</strong> '+meal.ingredients+'</div><div style="display:flex;gap:.38rem;flex-wrap:wrap;margin-bottom:.75rem"><span class="badge ba">'+meal.calories+' kcal</span><span class="badge" style="background:#E6EDE0;color:#3A4A30">'+meal.protein+'g prot</span><span class="badge bgr">'+meal.carbs+'g carbs</span></div><button onclick="showToast(\'Meal added to order! 🎉\');this.textContent=\'✓ Added\';this.style.background=\'#E6F4E6\';this.style.color=\'#2A6E2A\'" style="width:100%;padding:.6rem;border-radius:9px;border:1.5px solid var(--bd);background:var(--c);font-size:.8rem;font-weight:600;color:var(--ch);cursor:pointer;font-family:\'Instrument Sans\',sans-serif">Order This Meal →</button>';
+  }catch(e){res.className='prbox';res.innerHTML='<div style="color:var(--rd);font-size:.8rem">Could not generate. Please try again.</div>';}
+  btn.disabled=false;btn.innerHTML='<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> Generate My Meal';
+}
+
+// ── LANDING GENERATOR ──
+function updateS(){
+  const k=document.getElementById('rk').value,p=document.getElementById('rp').value,c=document.getElementById('rc').value,f=document.getElementById('rf').value;
+  document.getElementById('svk').innerHTML=k+'<span class="su"> kcal</span>';
+  document.getElementById('svp').innerHTML=p+'<span class="su"> g</span>';
+  document.getElementById('svc').innerHTML=c+'<span class="su"> g</span>';
+  document.getElementById('svf').innerHTML=f+'<span class="su"> g</span>';
+  document.getElementById('ppk').textContent=k+' kcal';document.getElementById('ppp').textContent=p+'g protein';
+  document.getElementById('ppc').textContent=c+'g carbs';document.getElementById('ppf').textContent=f+'g fat';
+  document.getElementById('genresult').innerHTML='';
+  document.getElementById('prevt').textContent='Your Custom Meal';
+  document.getElementById('prevs').textContent='Adjust sliders then generate';
+  document.getElementById('prevem').textContent='🍽️';
+}
+function applyPreset(k,p,c,f){document.getElementById('rk').value=k;document.getElementById('rp').value=p;document.getElementById('rc').value=c;document.getElementById('rf').value=f;updateS();}
+async function genMeal(){
+  const k=document.getElementById('rk').value,p=document.getElementById('rp').value,c=document.getElementById('rc').value,f=document.getElementById('rf').value;
+  const btn=document.getElementById('genbtn'),card=document.getElementById('prevcard'),result=document.getElementById('genresult');
+  btn.disabled=true;btn.innerHTML='<div class="spin"></div> Generating...';card.classList.add('shim');result.innerHTML='';
+  document.getElementById('prevt').textContent='AI crafting your meal…';document.getElementById('prevs').textContent='Analyzing macros';document.getElementById('prevem').textContent='✨';
+  try{
+    const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:600,messages:[{role:'user',content:'Generate ONE meal matching: '+k+' kcal, '+p+'g protein, '+c+'g carbs, '+f+'g fat. Respond ONLY valid JSON no backticks: {"name":"...","emoji":"...","description":"2 sentences","ingredients":"comma list","prepTime":"X min","calories":'+k+',"protein":'+p+',"carbs":'+c+',"fat":'+f+'}'}]})});
+    const data=await r.json();const meal=JSON.parse(data.content[0].text.replace(/```json|```/g,'').trim());
+    card.classList.remove('shim');
+    document.getElementById('prevt').textContent=meal.name;
+    document.getElementById('prevs').textContent='⏱ '+meal.prepTime+' · AI Generated';
+    document.getElementById('prevem').textContent=meal.emoji;
+    result.innerHTML='<div class="gr"><div class="grd">'+meal.description+'</div><div class="gri"><strong>Ingredients:</strong> '+meal.ingredients+'</div><div class="grms"><div class="grm"><div class="grmv">'+meal.calories+'</div><div class="grmk">kcal</div></div><div class="grm"><div class="grmv">'+meal.protein+'g</div><div class="grmk">protein</div></div><div class="grm"><div class="grmv">'+meal.carbs+'g</div><div class="grmk">carbs</div></div><div class="grm"><div class="grmv">'+meal.fat+'g</div><div class="grmk">fat</div></div></div><button class="grob" onclick="showToast(\'Meal added to order! 🎉\')">Order This Meal →</button></div>';
+  }catch(e){
+    card.classList.remove('shim');result.innerHTML='<div style="color:rgba(255,255,255,.4);font-size:.8rem;padding:.6rem 0">Could not generate. Try again.</div>';
+    document.getElementById('prevt').textContent='Your Custom Meal';document.getElementById('prevs').textContent='Adjust sliders then generate';document.getElementById('prevem').textContent='🍽️';
+  }
+  btn.disabled=false;btn.innerHTML='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> Generate AI Meal';
+}
+
+// ── RENDER ──
+function renderPlans(f='all'){
+  const filtered=f==='all'?PLANS:PLANS.filter(p=>p.goal===f);
+  document.getElementById('plansGrid').innerHTML=filtered.map(p=>'<div class="pcard '+(p.badge==='Most Popular'?'feat':'')+'" onclick="applyPreset(parseInt(\''+p.kc+'\'.split(\'–\')[0]),'+p.p+','+p.c+','+p.f+');goTo(\'build\')">'+(p.badge?'<div class="pbadge">'+p.badge+'</div>':'')+'<div class="pimg">'+p.e+'</div><div class="pbdy"><div class="pn">'+p.n+'</div><div class="pk2">'+p.kc+' kcal / meal</div><div class="mb"><div class="mbl"><span>Protein</span><span>'+p.pP+'%</span></div><div class="mbt"><div class="mbf fpp" style="width:'+p.pP+'%"></div></div></div><div class="mb"><div class="mbl"><span>Carbs</span><span>'+p.cP+'%</span></div><div class="mbt"><div class="mbf fcc" style="width:'+p.cP+'%"></div></div></div><div class="mb"><div class="mbl"><span>Fat</span><span>'+p.fP+'%</span></div><div class="mbt"><div class="mbf fff" style="width:'+p.fP+'%"></div></div></div><button class="pcta">Select Plan →</button></div></div>').join('');
+}
+function filterPlans(f,btn){document.querySelectorAll('.gt').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderPlans(f);}
+function renderTestimonials(){
+  const d=[...TEST,...TEST];
+  document.getElementById('ttrack').innerHTML=d.map(t=>'<div class="tcard"><div class="tstar">★★★★★</div><p class="ttxt">"'+t.t+'"</p><div class="tauth"><div class="tav">'+t.e+'</div><div><div class="tnm">'+t.n+'</div><div class="tgl">'+t.g+'</div></div></div></div>').join('');
+}
+function renderFAQ(){document.getElementById('faqList').innerHTML=FAQS.map((f,i)=>'<div class="fi" id="fi'+i+'"><button class="fq" onclick="document.getElementById(\'fi'+i+'\').classList.toggle(\'op\')">'+f.q+'<span class="fic">+</span></button><div class="fa"><p>'+f.a+'</p></div></div>').join('');}
+function renderMeals(){document.getElementById('meallist').innerHTML=MEALS.map(m=>'<div class="mi"><div class="mie">'+m.e+'</div><div class="mii"><div class="min2">'+m.n+'</div><div class="mim">'+m.t+' · '+m.kc+' kcal</div></div><div class="mips"><span class="mipi">'+m.p+'g P</span><span class="mipi">'+m.c+'g C</span><span class="mipi">'+m.f+'g F</span></div><button class="swb" onclick="openAI(\'gen\')">Swap ✨</button></div>').join('');}
+function renderChart(id,vals,labels,K){
+  const max=Math.max(...vals);
+  document.getElementById(id).innerHTML=vals.map((v,i)=>'<div class="bw"><div class="bv">'+(K?Math.round(v/1000)+'K':v)+'</div><div class="bb2" style="height:'+(v/max*100)+'%;background:linear-gradient(180deg,var(--ac),#A8813E)"></div><div class="bl2">'+labels[i]+'</div></div>').join('');
+}
+function renderKQ(){document.getElementById('kitchenq').innerHTML=KQ.map(q=>'<div class="qi"><div class="qin">'+q.n+'</div><div class="qii"><div class="qim">'+q.m+'</div><div class="qis">'+q.c+'</div></div><div class="qir"><span class="badge '+q.b+'">'+q.st+'</span><span class="qit">'+q.t+'</span></div></div>').join('');}
+function renderAdminPrev(){document.getElementById('aordersprev').innerHTML=ORDERS.slice(0,5).map(o=>'<tr><td style="font-weight:700">'+o.id+'</td><td>'+o.c+'</td><td>'+o.m+'</td><td><span class="badge bgr">'+o.pl+'</span></td><td><span class="badge '+o.s+'">'+o.st+'</span></td></tr>').join('');}
+function renderAllOrders(){document.getElementById('allorders').innerHTML=ORDERS.map(o=>'<tr><td style="font-weight:700">'+o.id+'</td><td>'+o.c+'</td><td>'+o.m+'</td><td><span class="badge bgr">'+o.pl+'</span></td><td>'+o.kc+'</td><td>'+o.pr+'</td><td><span class="badge '+o.s+'">'+o.st+'</span></td></tr>').join('');}
+function renderCusts(){document.getElementById('custtable').innerHTML=CUSTS.map(c=>'<tr><td style="font-weight:700">'+c.n+'</td><td><span class="badge bgr">'+c.pl+'</span></td><td>'+c.g+'</td><td>'+c.ord+'</td><td>🔥 '+c.str+' days</td><td style="color:var(--ac);font-weight:600">'+c.bill+'</td><td><span class="badge '+c.s+'">'+c.st+'</span></td></tr>').join('');}
+function renderActs(){document.getElementById('livefeed').innerHTML=ACTS.map(a=>'<div class="actitem"><div class="actic">'+a.ic+'</div><div class="actb"><div class="actt">'+a.t+'</div><div class="acts">'+a.s+'</div></div><div class="acttime">'+a.tm+'</div></div>').join('');}
+
+// ── AUTH & LOGIN ──
+// ─────────────────────────────────────────────────────
+//  ACCOUNTS CONFIG
+//  Admin emails → open Admin Dashboard
+//  Customer emails → open Customer Dashboard
+// ─────────────────────────────────────────────────────
+const ACCOUNTS = [
+  // ADMIN ACCOUNTS
+  { email: 'admin' + '@' + 'rivaro.com',    pass: 'admin2026',  name: 'Admin',        role: 'admin'    },
+  { email: 'othmane' + '@' + 'rivaro.com',  pass: 'rivaro2026', name: 'Othmane B.',   role: 'admin'    },
+  // CUSTOMER ACCOUNTS
+  { email: 'demo' + '@' + 'rivaro.com',     pass: 'rivaro2026', name: 'Othmane B.',   role: 'customer' },
+];
+
+let logoClickCount=0, logoClickTimer=null;
+
+function logoClick(){
+  showView('landing');
+  // Easter egg: 5 rapid clicks = open login (for quick admin access)
+  logoClickCount++;
+  clearTimeout(logoClickTimer);
+  logoClickTimer=setTimeout(()=>{ logoClickCount=0; }, 1800);
+  if(logoClickCount>=5){
+    logoClickCount=0;
+    clearTimeout(logoClickTimer);
+    setTimeout(()=>openLoginModal(), 100);
+  }
+}
+
+function openLoginModal(){
+  document.getElementById('login-modal').classList.add('open');
+  document.getElementById('login-error').style.display='none';
+  document.getElementById('login-email').value='';
+  document.getElementById('login-pass').value='';
+  setTimeout(()=>document.getElementById('login-email').focus(), 100);
+}
+function closeLoginModal(){
+  document.getElementById('login-modal').classList.remove('open');
+}
+
+function doLogin(){
+  const email = document.getElementById('login-email').value.trim().toLowerCase();
+  const pass  = document.getElementById('login-pass').value;
+  const match = ACCOUNTS.find(a => a.email === email && a.pass === pass);
+
+  if(match){
+    closeLoginModal();
+    if(match.role === 'admin'){
+      showView('admin');
+      showToast('Welcome back, ' + match.name + ' 🔐');
+    } else {
+      showView('customer');
+      showToast('Welcome back, ' + match.name + ' 👋');
+    }
+  } else {
+    const err = document.getElementById('login-error');
+    err.style.display = 'block';
+    err.textContent = '❌ Incorrect email or password. Please try again.';
+    document.getElementById('login-pass').value = '';
+    document.getElementById('login-pass').focus();
+  }
+}
+
+// Kept for HTML references — now just opens login modal
+function openAdminModal(){ openLoginModal(); }
+function closeAdminModal(){ document.getElementById('admin-modal').classList.remove('open'); }
+function doAdminLogin(){
+  const user=document.getElementById('admin-user').value.trim().toLowerCase();
+  const pass=document.getElementById('admin-pass').value;
+  const match=ACCOUNTS.find(a=>(a.email===user||a.email.split('@')[0]===user)&&a.pass===pass&&a.role==='admin');
+  if(match){closeAdminModal();showView('admin');showToast('Admin access granted 🔐');}
+  else{document.getElementById('admin-error').style.display='block';document.getElementById('admin-pass').value='';document.getElementById('admin-pass').focus();}
+}
+
+function togglePw(id,btn){
+  const inp=document.getElementById(id);
+  if(inp.type==='password'){inp.type='text';btn.textContent='🙈';}
+  else{inp.type='password';btn.textContent='👁';}
+}
+
+document.getElementById('login-modal').addEventListener('click',e=>{ if(e.target===e.currentTarget) closeLoginModal(); });
+document.getElementById('admin-modal').addEventListener('click',e=>{ if(e.target===e.currentTarget) closeAdminModal(); });
+
+// ── MODAL & TOAST ──
+function openModal(){document.getElementById('modov').classList.add('open');}
+function closeModal(){document.getElementById('modov').classList.remove('open');}
+document.getElementById('modov').addEventListener('click',e=>{if(e.target===e.currentTarget)closeModal();});
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.style.opacity='1';t.style.transform='translateX(-50%) translateY(0)';setTimeout(()=>{t.style.opacity='0';t.style.transform='translateX(-50%) translateY(14px)';},3000);}
+
+// ── SCROLL ANIMATIONS ──
+// Scroll animations removed for stability — sections visible by default
+
+// ── INIT ──
+renderPlans();renderTestimonials();renderFAQ();renderMeals();
+renderChart('chome-chart',[1950,2100,1840,2200,1780,2050,1920],['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],false);
+renderChart('cmacro-chart',[1900,2050,2100,1980,2080,2200,1750,2100,1900,2050,2100,1840],['1','3','5','7','9','11','13','15','17','19','21','23'],false);
+renderChart('arev-chart',[38000,42000,35000,51000,48000,62000,45000],['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],true);
+renderChart('amonth-chart',[190000,214000,228000,201000,255000,284200],['Oct','Nov','Dec','Jan','Feb','Mar'],true);
+renderKQ();renderAdminPrev();renderAllOrders();renderCusts();renderActs();
+</script>
+</body>
+</html>
