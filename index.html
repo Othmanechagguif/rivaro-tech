@@ -1206,6 +1206,204 @@ input.lr::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;ba
   .bp-result-stats{grid-template-columns:repeat(2,1fr)!important;}
   #bp-goal-grid{grid-template-columns:repeat(2,1fr)!important;}
 }
+
+/* ════════════════════════════════════════════════════
+   WEARABLE COMMAND CENTER — Full Dashboard
+════════════════════════════════════════════════════ */
+
+/* ── DEVICE STATUS BAR ── */
+.wb-device-bar{
+  background:linear-gradient(135deg,#0A1A0A 0%,#0A0A12 50%,#120A1A 100%);
+  border-radius:20px;padding:1.5rem 1.75rem;
+  display:flex;align-items:center;gap:1.5rem;
+  position:relative;overflow:hidden;margin-bottom:1.25rem;
+}
+.wb-device-bar::before{
+  content:'';position:absolute;top:-50%;right:-80px;
+  width:300px;height:300px;border-radius:50%;
+  background:radial-gradient(circle,rgba(107,174,107,.08),transparent 65%);
+}
+.wb-device-icon{
+  width:56px;height:56px;border-radius:16px;
+  background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.06));
+  border:1px solid rgba(255,255,255,.12);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.6rem;flex-shrink:0;
+}
+.wb-device-name{font-family:'Clash Display',sans-serif;font-size:1.1rem;font-weight:700;color:#FDFAF4;}
+.wb-device-meta{font-size:.72rem;color:rgba(255,255,255,.35);margin-top:.18rem;}
+.wb-sync-pill{
+  display:flex;align-items:center;gap:.4rem;
+  background:rgba(107,174,107,.15);border:1px solid rgba(107,174,107,.25);
+  border-radius:100px;padding:.3rem .875rem;
+  font-size:.68rem;font-weight:700;color:#6BAE6B;white-space:nowrap;
+}
+.wb-sync-dot{width:6px;height:6px;border-radius:50%;background:#6BAE6B;animation:wbPulse 2s infinite;}
+@keyframes wbPulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(1.3);}}
+.wb-battery{display:flex;align-items:center;gap:.5rem;margin-left:auto;}
+.wb-battery-bar{width:36px;height:16px;border:1.5px solid rgba(255,255,255,.25);border-radius:4px;position:relative;overflow:hidden;}
+.wb-battery-bar::after{content:'';position:absolute;right:-5px;top:50%;transform:translateY(-50%);width:4px;height:8px;background:rgba(255,255,255,.25);border-radius:0 2px 2px 0;}
+.wb-battery-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,#6BAE6B,#4A9A4A);width:84%;}
+.wb-battery-pct{font-size:.72rem;font-weight:700;color:rgba(255,255,255,.5);}
+
+/* ── VITAL RINGS — The Hero Element ── */
+.wb-vitals-section{
+  background:#0A0A08;border-radius:20px;
+  padding:2rem;margin-bottom:1.25rem;
+  position:relative;overflow:hidden;
+}
+.wb-vitals-section::before{
+  content:'LIVE';position:absolute;top:1.25rem;right:1.25rem;
+  font-size:.55rem;font-weight:800;letter-spacing:.15em;color:#6BAE6B;
+  background:rgba(107,174,107,.12);border:1px solid rgba(107,174,107,.2);
+  border-radius:100px;padding:.2rem .65rem;
+}
+.wb-vitals-title{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:1.75rem;}
+.wb-rings-wrap{display:flex;align-items:center;justify-content:center;gap:2.5rem;flex-wrap:wrap;}
+.wb-ring{display:flex;flex-direction:column;align-items:center;gap:.65rem;}
+.wb-ring-svg{position:relative;width:100px;height:100px;}
+.wb-ring-svg svg{transform:rotate(-90deg);}
+.wb-ring-center{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+}
+.wb-ring-val{font-family:'Clash Display',sans-serif;font-size:1.25rem;font-weight:700;color:#FDFAF4;line-height:1;}
+.wb-ring-unit{font-size:.55rem;color:rgba(255,255,255,.3);letter-spacing:.06em;margin-top:.1rem;}
+.wb-ring-label{font-size:.65rem;font-weight:700;color:rgba(255,255,255,.45);letter-spacing:.06em;text-transform:uppercase;}
+.wb-ring-status{font-size:.6rem;padding:.18rem .5rem;border-radius:100px;font-weight:700;letter-spacing:.04em;}
+.wb-ring-status.good{background:rgba(107,174,107,.15);color:#6BAE6B;}
+.wb-ring-status.warn{background:rgba(200,169,110,.15);color:#C8A96E;}
+.wb-ring-status.bad{background:rgba(194,75,58,.15);color:#C24B3A;}
+
+/* ── LIVE METRICS GRID ── */
+.wb-metrics-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;
+  margin-bottom:1.25rem;
+}
+.wb-metric{
+  background:#0F0F0D;border:1px solid rgba(255,255,255,.07);
+  border-radius:16px;padding:1.25rem;
+  display:flex;flex-direction:column;gap:.35rem;
+  position:relative;overflow:hidden;transition:all .25s;cursor:default;
+}
+.wb-metric::before{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+  border-radius:0 0 16px 16px;
+}
+.wb-metric.fire::before{background:linear-gradient(90deg,#C24B3A,#E06050);}
+.wb-metric.sleep::before{background:linear-gradient(90deg,#4A5AC8,#6A7AE8);}
+.wb-metric.steps::before{background:linear-gradient(90deg,#6BAE6B,#4A9A4A);}
+.wb-metric.heart::before{background:linear-gradient(90deg,#C24B3A,#D87070);}
+.wb-metric.hrv::before{background:linear-gradient(90deg,#C8A96E,#A8813E);}
+.wb-metric.o2::before{background:linear-gradient(90deg,#4A9AC8,#2A7AA8);}
+.wb-metric.stress::before{background:linear-gradient(90deg,#A84AC8,#882AA8);}
+.wb-metric.temp::before{background:linear-gradient(90deg,#C8884A,#A8682A);}
+.wb-metric-icon{font-size:1.25rem;}
+.wb-metric-val{font-family:'Clash Display',sans-serif;font-size:1.5rem;font-weight:700;color:#FDFAF4;line-height:1;}
+.wb-metric-lbl{font-size:.6rem;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.08em;}
+.wb-metric-delta{font-size:.65rem;font-weight:700;margin-top:auto;}
+.wb-metric-delta.pos{color:#6BAE6B;}
+.wb-metric-delta.neg{color:#C24B3A;}
+.wb-metric-delta.neu{color:rgba(255,255,255,.3);}
+
+/* ── WEEKLY HEATMAP ── */
+.wb-heatmap{background:#0A0A08;border-radius:20px;padding:1.75rem;margin-bottom:1.25rem;}
+.wb-heatmap-title{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:1.25rem;}
+.wb-heatmap-grid{display:grid;grid-template-columns:auto repeat(7,1fr);gap:.4rem;align-items:center;}
+.wb-hm-row-lbl{font-size:.6rem;color:rgba(255,255,255,.2);text-align:right;padding-right:.65rem;white-space:nowrap;}
+.wb-hm-day-lbl{font-size:.6rem;color:rgba(255,255,255,.2);text-align:center;padding-bottom:.35rem;}
+.wb-hm-cell{
+  aspect-ratio:1;border-radius:5px;
+  transition:all .2s;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+}
+.wb-hm-cell:hover{transform:scale(1.15);z-index:1;}
+.wb-hm-0{background:rgba(255,255,255,.04);}
+.wb-hm-1{background:rgba(107,174,107,.18);}
+.wb-hm-2{background:rgba(107,174,107,.38);}
+.wb-hm-3{background:rgba(107,174,107,.62);}
+.wb-hm-4{background:rgba(107,174,107,.88);}
+/* Sleep heatmap */
+.wb-hm-s0{background:rgba(255,255,255,.04);}
+.wb-hm-s1{background:rgba(74,90,200,.2);}
+.wb-hm-s2{background:rgba(74,90,200,.45);}
+.wb-hm-s3{background:rgba(74,90,200,.7);}
+.wb-hm-s4{background:rgba(74,90,200,.9);}
+
+/* ── AI MEAL ADAPTATION PANEL ── */
+.wb-ai-panel{background:linear-gradient(135deg,#0A1A0A,#0A0A14);border-radius:20px;padding:1.75rem;margin-bottom:1.25rem;border:1px solid rgba(107,174,107,.12);}
+.wb-ai-header{display:flex;align-items:center;gap:.875rem;margin-bottom:1.25rem;}
+.wb-ai-badge{background:rgba(107,174,107,.12);border:1px solid rgba(107,174,107,.2);border-radius:100px;padding:.28rem .8rem;font-size:.62rem;font-weight:700;color:#6BAE6B;letter-spacing:.09em;text-transform:uppercase;}
+.wb-ai-title{font-family:'Clash Display',sans-serif;font-size:1rem;font-weight:600;color:#FDFAF4;}
+.wb-ai-adapts{display:flex;flex-direction:column;gap:.75rem;}
+.wb-ai-adapt-row{
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);
+  border-radius:12px;padding:1rem 1.1rem;
+  display:flex;align-items:flex-start;gap:.875rem;
+  position:relative;overflow:hidden;
+}
+.wb-ai-adapt-row::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:3px 0 0 3px;}
+.wb-ai-adapt-row.green::before{background:#6BAE6B;}
+.wb-ai-adapt-row.gold::before{background:#C8A96E;}
+.wb-ai-adapt-row.blue::before{background:#4A7AC8;}
+.wb-ai-adapt-row.red::before{background:#C24B3A;}
+.wb-ai-adapt-icon{font-size:1.25rem;flex-shrink:0;margin-top:.1rem;}
+.wb-ai-adapt-content{flex:1;}
+.wb-ai-adapt-trigger{font-size:.68rem;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.2rem;}
+.wb-ai-adapt-action{font-size:.82rem;color:rgba(255,255,255,.78);line-height:1.55;}
+.wb-ai-adapt-action strong{color:#FDFAF4;}
+.wb-ai-adapt-tag{font-size:.65rem;font-weight:700;padding:.15rem .5rem;border-radius:100px;margin-left:auto;flex-shrink:0;margin-top:.1rem;}
+.wb-ai-adapt-tag.applied{background:rgba(107,174,107,.15);color:#6BAE6B;}
+.wb-ai-adapt-tag.pending{background:rgba(200,169,110,.15);color:#C8A96E;}
+
+/* ── SLEEP ANALYZER ── */
+.wb-sleep-wrap{background:#0A0A14;border-radius:20px;padding:1.75rem;margin-bottom:1.25rem;}
+.wb-sleep-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;}
+.wb-sleep-title{font-family:'Clash Display',sans-serif;font-size:1rem;font-weight:600;color:#FDFAF4;}
+.wb-sleep-score{font-family:'Clash Display',sans-serif;font-size:2rem;font-weight:700;color:#4A7AE8;}
+.wb-sleep-chart{display:flex;align-items:flex-end;gap:2px;height:80px;margin-bottom:1.25rem;}
+.wb-sleep-bar{flex:1;border-radius:3px 3px 0 0;position:relative;}
+.wb-sleep-stages{display:grid;grid-template-columns:repeat(4,1fr);gap:.875rem;}
+.wb-sleep-stage{background:rgba(255,255,255,.04);border-radius:12px;padding:.875rem;text-align:center;}
+.wb-sleep-stage-val{font-family:'Clash Display',sans-serif;font-size:1.1rem;font-weight:700;color:#FDFAF4;}
+.wb-sleep-stage-lbl{font-size:.62rem;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.07em;margin-top:.15rem;}
+.wb-sleep-stage-dot{width:8px;height:8px;border-radius:50%;margin:0 auto .4rem;}
+
+/* ── 30-DAY TREND CHART ── */
+.wb-trend{background:#0A0A08;border-radius:20px;padding:1.75rem;margin-bottom:1.25rem;}
+.wb-trend-tabs{display:flex;gap:.5rem;margin-bottom:1.5rem;}
+.wb-trend-tab{padding:.35rem .875rem;border-radius:100px;border:1px solid rgba(255,255,255,.1);background:transparent;font-size:.72rem;font-weight:600;color:rgba(255,255,255,.35);cursor:pointer;transition:all .2s;font-family:'Instrument Sans',sans-serif;}
+.wb-trend-tab.active{background:rgba(200,169,110,.15);border-color:rgba(200,169,110,.3);color:#C8A96E;}
+.wb-trend-chart{height:120px;display:flex;align-items:flex-end;gap:3px;}
+.wb-trend-bar{flex:1;border-radius:3px 3px 0 0;min-height:4px;transition:height .8s ease;position:relative;}
+.wb-trend-bar:hover .wb-trend-tooltip{display:block;}
+.wb-trend-tooltip{display:none;position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:#1A1A18;color:#FDFAF4;font-size:.6rem;padding:.25rem .5rem;border-radius:6px;white-space:nowrap;z-index:10;border:1px solid rgba(255,255,255,.1);}
+
+/* ── DEVICE CARDS ── */
+.wb-device-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.875rem;}
+.wb-dev-card{
+  background:#0F0F0D;border:1.5px solid rgba(255,255,255,.07);
+  border-radius:16px;padding:1.25rem;cursor:pointer;
+  transition:all .22s;display:flex;flex-direction:column;gap:.65rem;
+}
+.wb-dev-card:hover{border-color:rgba(200,169,110,.3);transform:translateY(-2px);}
+.wb-dev-card.connected{border-color:rgba(107,174,107,.35);background:rgba(107,174,107,.05);}
+.wb-dev-em{font-size:1.75rem;}
+.wb-dev-name{font-size:.88rem;font-weight:600;color:#FDFAF4;}
+.wb-dev-sub{font-size:.7rem;color:rgba(255,255,255,.3);line-height:1.5;}
+.wb-dev-status{display:flex;align-items:center;justify-content:space-between;margin-top:.25rem;}
+.wb-dev-badge{font-size:.62rem;font-weight:700;padding:.18rem .55rem;border-radius:100px;}
+.wb-dev-badge.on{background:rgba(107,174,107,.15);color:#6BAE6B;}
+.wb-dev-badge.off{background:rgba(255,255,255,.07);color:rgba(255,255,255,.35);}
+
+@media(max-width:640px){
+  .wb-metrics-grid{grid-template-columns:repeat(2,1fr)!important;}
+  .wb-rings-wrap{gap:1.25rem!important;}
+  .wb-ring-svg{width:80px!important;height:80px!important;}
+  .wb-ring-val{font-size:1rem!important;}
+  .wb-sleep-stages{grid-template-columns:repeat(2,1fr)!important;}
+  .wb-heatmap-grid{grid-template-columns:auto repeat(7,1fr);gap:.25rem!important;}
+}
 </style>
 </head>
 <body>
@@ -2479,46 +2677,323 @@ input.lr::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;ba
         </div>
 
         <!-- WEARABLE TRACKING PANEL -->
-        <div class="panel" id="c-wearable">
-          <div class="wearable-card">
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem;position:relative;z-index:1">
+        <!-- ═══════════════════════════════════════════
+             WEARABLE COMMAND CENTER
+        ═══════════════════════════════════════════ -->
+        <div class="panel" id="c-wearable" style="background:#0A0A08;margin:-1.75rem -2.25rem;padding:1.75rem 2.25rem;min-height:100vh;">
+
+          <!-- DEVICE STATUS BAR -->
+          <div class="wb-device-bar">
+            <div class="wb-device-icon">⌚</div>
+            <div>
+              <div class="wb-device-name">Apple Watch Series 9</div>
+              <div class="wb-device-meta">Last sync: 2 min ago · Tanger, Morocco · 8:42 PM</div>
+            </div>
+            <div class="wb-sync-pill"><span class="wb-sync-dot"></span>Live Syncing</div>
+            <div class="wb-battery">
+              <div class="wb-battery-bar"><div class="wb-battery-fill"></div></div>
+              <span class="wb-battery-pct">84%</span>
+            </div>
+          </div>
+
+          <!-- VITAL RINGS — THE HERO -->
+          <div class="wb-vitals-section">
+            <div class="wb-vitals-title">Today's Vitals — Active Rings</div>
+            <div class="wb-rings-wrap">
+              <!-- Move ring -->
+              <div class="wb-ring">
+                <div class="wb-ring-svg">
+                  <svg width="100" height="100" viewBox="0 0 100 100">
+                    <circle fill="none" stroke="rgba(194,75,58,.15)" stroke-width="9" cx="50" cy="50" r="40"/>
+                    <circle fill="none" stroke="#C24B3A" stroke-width="9" cx="50" cy="50" r="40"
+                      stroke-dasharray="251.3" stroke-dashoffset="40" stroke-linecap="round"/>
+                  </svg>
+                  <div class="wb-ring-center">
+                    <span class="wb-ring-val">847</span>
+                    <span class="wb-ring-unit">KCAL</span>
+                  </div>
+                </div>
+                <div class="wb-ring-label">Move</div>
+                <div class="wb-ring-status good">↑ 18% target</div>
+              </div>
+              <!-- Exercise ring -->
+              <div class="wb-ring">
+                <div class="wb-ring-svg" style="width:88px;height:88px">
+                  <svg width="88" height="88" viewBox="0 0 88 88">
+                    <circle fill="none" stroke="rgba(107,174,107,.15)" stroke-width="8" cx="44" cy="44" r="35"/>
+                    <circle fill="none" stroke="#6BAE6B" stroke-width="8" cx="44" cy="44" r="35"
+                      stroke-dasharray="219.9" stroke-dashoffset="66" stroke-linecap="round"/>
+                  </svg>
+                  <div class="wb-ring-center">
+                    <span class="wb-ring-val" style="font-size:1.05rem">42</span>
+                    <span class="wb-ring-unit">MIN</span>
+                  </div>
+                </div>
+                <div class="wb-ring-label">Exercise</div>
+                <div class="wb-ring-status good">70% goal</div>
+              </div>
+              <!-- Stand ring -->
+              <div class="wb-ring">
+                <div class="wb-ring-svg" style="width:76px;height:76px">
+                  <svg width="76" height="76" viewBox="0 0 76 76">
+                    <circle fill="none" stroke="rgba(74,90,200,.15)" stroke-width="8" cx="38" cy="38" r="30"/>
+                    <circle fill="none" stroke="#4A7AC8" stroke-width="8" cx="38" cy="38" r="30"
+                      stroke-dasharray="188.5" stroke-dashoffset="47" stroke-linecap="round"/>
+                  </svg>
+                  <div class="wb-ring-center">
+                    <span class="wb-ring-val" style="font-size:.95rem">10</span>
+                    <span class="wb-ring-unit">HRS</span>
+                  </div>
+                </div>
+                <div class="wb-ring-label">Stand</div>
+                <div class="wb-ring-status good">10/12 hrs</div>
+              </div>
+              <!-- Divider -->
+              <div style="width:1px;height:80px;background:rgba(255,255,255,.07);flex-shrink:0"></div>
+              <!-- VO2 Max -->
+              <div class="wb-ring">
+                <div class="wb-ring-svg">
+                  <svg width="100" height="100" viewBox="0 0 100 100">
+                    <circle fill="none" stroke="rgba(200,169,110,.12)" stroke-width="9" cx="50" cy="50" r="40"/>
+                    <circle fill="none" stroke="#C8A96E" stroke-width="9" cx="50" cy="50" r="40"
+                      stroke-dasharray="251.3" stroke-dashoffset="88" stroke-linecap="round"/>
+                  </svg>
+                  <div class="wb-ring-center">
+                    <span class="wb-ring-val">43.2</span>
+                    <span class="wb-ring-unit">VO2</span>
+                  </div>
+                </div>
+                <div class="wb-ring-label">VO2 Max</div>
+                <div class="wb-ring-status good">Above avg</div>
+              </div>
+              <!-- Readiness -->
+              <div class="wb-ring">
+                <div class="wb-ring-svg" style="width:88px;height:88px">
+                  <svg width="88" height="88" viewBox="0 0 88 88">
+                    <circle fill="none" stroke="rgba(164,90,200,.12)" stroke-width="8" cx="44" cy="44" r="35"/>
+                    <circle fill="none" stroke="#A45AC8" stroke-width="8" cx="44" cy="44" r="35"
+                      stroke-dasharray="219.9" stroke-dashoffset="99" stroke-linecap="round"/>
+                  </svg>
+                  <div class="wb-ring-center">
+                    <span class="wb-ring-val" style="font-size:1.05rem">55</span>
+                    <span class="wb-ring-unit">RDY</span>
+                  </div>
+                </div>
+                <div class="wb-ring-label">Readiness</div>
+                <div class="wb-ring-status warn">Low — rest day</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 8-METRIC LIVE GRID -->
+          <div class="wb-metrics-grid">
+            <div class="wb-metric fire">
+              <div class="wb-metric-icon">🔥</div>
+              <div class="wb-metric-val">847</div>
+              <div class="wb-metric-lbl">Active Calories</div>
+              <div class="wb-metric-delta pos">↑ 18% vs avg</div>
+            </div>
+            <div class="wb-metric sleep">
+              <div class="wb-metric-icon">😴</div>
+              <div class="wb-metric-val">5.8h</div>
+              <div class="wb-metric-lbl">Sleep Duration</div>
+              <div class="wb-metric-delta neg">↓ 1.2h below goal</div>
+            </div>
+            <div class="wb-metric steps">
+              <div class="wb-metric-icon">👣</div>
+              <div class="wb-metric-val">9,240</div>
+              <div class="wb-metric-lbl">Steps Today</div>
+              <div class="wb-metric-delta pos">↑ 92% of goal</div>
+            </div>
+            <div class="wb-metric heart">
+              <div class="wb-metric-icon">❤️</div>
+              <div class="wb-metric-val">62</div>
+              <div class="wb-metric-lbl">Resting HR (bpm)</div>
+              <div class="wb-metric-delta pos">Excellent zone</div>
+            </div>
+            <div class="wb-metric hrv">
+              <div class="wb-metric-icon">📈</div>
+              <div class="wb-metric-val">48 ms</div>
+              <div class="wb-metric-lbl">HRV Score</div>
+              <div class="wb-metric-delta warn">↓ Low recovery</div>
+            </div>
+            <div class="wb-metric o2">
+              <div class="wb-metric-icon">🩸</div>
+              <div class="wb-metric-val">98%</div>
+              <div class="wb-metric-lbl">Blood Oxygen</div>
+              <div class="wb-metric-delta pos">Optimal</div>
+            </div>
+            <div class="wb-metric stress">
+              <div class="wb-metric-icon">🧠</div>
+              <div class="wb-metric-val">32</div>
+              <div class="wb-metric-lbl">Stress Level</div>
+              <div class="wb-metric-delta pos">Low — relaxed</div>
+            </div>
+            <div class="wb-metric temp">
+              <div class="wb-metric-icon">🌡️</div>
+              <div class="wb-metric-val">+0.1°</div>
+              <div class="wb-metric-lbl">Skin Temp Delta</div>
+              <div class="wb-metric-delta neu">Within normal</div>
+            </div>
+          </div>
+
+          <!-- AI MEAL ADAPTATION -->
+          <div class="wb-ai-panel">
+            <div class="wb-ai-header">
+              <div class="wb-ai-badge">⚡ AI Active</div>
+              <div class="wb-ai-title">Today's Meal Adaptations — Applied Automatically</div>
+            </div>
+            <div class="wb-ai-adapts">
+              <div class="wb-ai-adapt-row green">
+                <div class="wb-ai-adapt-icon">🔥</div>
+                <div class="wb-ai-adapt-content">
+                  <div class="wb-ai-adapt-trigger">High Burn Detected — 847 kcal</div>
+                  <div class="wb-ai-adapt-action"><strong>Dinner upgraded to 680 kcal</strong> (was 560 kcal). Extra 120 kcal added as complex carbs + 15g protein to support muscle recovery after intense activity.</div>
+                </div>
+                <div class="wb-ai-adapt-tag applied">✓ Applied</div>
+              </div>
+              <div class="wb-ai-adapt-row red">
+                <div class="wb-ai-adapt-icon">😴</div>
+                <div class="wb-ai-adapt-content">
+                  <div class="wb-ai-adapt-trigger">Poor Sleep — 5.8h (target: 7–8h)</div>
+                  <div class="wb-ai-adapt-action"><strong>Tonight's dinner reformulated</strong> — turkey + chamomile broth + magnesium-rich greens added. L-tryptophan content raised to 320mg to improve sleep onset and duration tomorrow.</div>
+                </div>
+                <div class="wb-ai-adapt-tag applied">✓ Applied</div>
+              </div>
+              <div class="wb-ai-adapt-row gold">
+                <div class="wb-ai-adapt-icon">📈</div>
+                <div class="wb-ai-adapt-content">
+                  <div class="wb-ai-adapt-trigger">Low HRV — 48ms (below your avg 64ms)</div>
+                  <div class="wb-ai-adapt-action"><strong>Tomorrow's breakfast includes anti-inflammatory foods</strong> — turmeric, omega-3 salmon, and extra potassium. Training load recommendation: active recovery only.</div>
+                </div>
+                <div class="wb-ai-adapt-tag pending">⏳ Tomorrow</div>
+              </div>
+              <div class="wb-ai-adapt-row blue">
+                <div class="wb-ai-adapt-icon">💧</div>
+                <div class="wb-ai-adapt-content">
+                  <div class="wb-ai-adapt-trigger">9,240 Steps — High Activity Day</div>
+                  <div class="wb-ai-adapt-action"><strong>Lunch updated with +15g carbs</strong> (extra sweet potato portion) + electrolyte pack added to prevent glycogen depletion. Hydration target raised to 3.2L today.</div>
+                </div>
+                <div class="wb-ai-adapt-tag applied">✓ Applied</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SLEEP ANALYZER -->
+          <div class="wb-sleep-wrap">
+            <div class="wb-sleep-header">
               <div>
-                <div style="font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.35rem">Connected Device</div>
-                <div style="font-family:Clash Display,sans-serif;font-size:1.3rem;font-weight:600;color:#FDFAF4">Apple Watch Series 9</div>
-                <div style="font-size:.75rem;color:rgba(255,255,255,.4);margin-top:.15rem">Last sync: 2 min ago · Battery 84%</div>
+                <div style="font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:.35rem">Last Night's Sleep</div>
+                <div class="wb-sleep-title">5h 48min · 11:42 PM → 5:30 AM</div>
               </div>
-              <div style="background:rgba(107,174,107,.2);border:1px solid rgba(107,174,107,.3);border-radius:100px;padding:.35rem .875rem;font-size:.72rem;font-weight:700;color:#6BAE6B">● Connected</div>
-            </div>
-            <div class="wearable-metrics">
-              <div class="wm"><div class="wm-ic">🔥</div><div class="wm-val">847</div><div class="wm-lbl">Calories Burned</div><div class="wm-status good">Above average</div></div>
-              <div class="wm"><div class="wm-ic">😴</div><div class="wm-val">5.8h</div><div class="wm-lbl">Sleep Last Night</div><div class="wm-status bad">Below target</div></div>
-              <div class="wm"><div class="wm-ic">👣</div><div class="wm-val">9,240</div><div class="wm-lbl">Steps Today</div><div class="wm-status good">On track</div></div>
-              <div class="wm"><div class="wm-ic">❤️</div><div class="wm-val">62 bpm</div><div class="wm-lbl">Resting HR</div><div class="wm-status good">Excellent</div></div>
-            </div>
-            <div class="ai-adaptation">
-              <div class="ai-adapt-title">⚡ AI Menu Adaptation — Today</div>
-              <div class="ai-adapt-item"><span class="ai-adapt-ic">🔥</span><div class="ai-adapt-text"><strong>You burned 847 kcal</strong> — your dinner has been upgraded to 680 kcal (was 560 kcal) to support recovery.</div></div>
-              <div class="ai-adapt-item"><span class="ai-adapt-ic">😴</span><div class="ai-adapt-text"><strong>Sleep was poor (5.8h)</strong> — tonight's meal includes extra tryptophan: turkey + chamomile protein bowl added to your plan.</div></div>
-              <div class="ai-adapt-item"><span class="ai-adapt-ic">💧</span><div class="ai-adapt-text"><strong>High activity today</strong> — electrolyte water and extra 15g carbs added to your lunch automatically.</div></div>
-            </div>
-          </div>
-          <div class="row r2">
-            <div class="card">
-              <div class="cardh"><span class="cardt">Connect Your Device</span></div>
-              <div style="display:flex;flex-direction:column;gap:.65rem">
-                <div class="quiz-opt" onclick="connectDevice(this,'Apple Watch')"><span class="quiz-opt-icon">⌚</span><div><strong>Apple Watch</strong><div style="font-size:.75rem;color:#7A7870">Series 4+ · Health app sync</div></div><span class="badge bg" style="margin-left:auto">Connected</span></div>
-                <div class="quiz-opt" onclick="connectDevice(this,'Oura Ring')"><span class="quiz-opt-icon">💍</span><div><strong>Oura Ring</strong><div style="font-size:.75rem;color:#7A7870">Gen 3 · Sleep & recovery</div></div><span class="badge bgr" style="margin-left:auto">Connect</span></div>
-                <div class="quiz-opt" onclick="connectDevice(this,'Garmin')"><span class="quiz-opt-icon">🏃</span><div><strong>Garmin</strong><div style="font-size:.75rem;color:#7A7870">All models · Sports tracking</div></div><span class="badge bgr" style="margin-left:auto">Connect</span></div>
-                <div class="quiz-opt" onclick="connectDevice(this,'Xiaomi Band')"><span class="quiz-opt-icon">📿</span><div><strong>Xiaomi Band / Mi Watch</strong><div style="font-size:.75rem;color:#7A7870">Popular in Morocco · Mi Fit sync</div></div><span class="badge bgr" style="margin-left:auto">Connect</span></div>
-                <div class="quiz-opt" onclick="connectDevice(this,'Huawei Watch')"><span class="quiz-opt-icon">⌚</span><div><strong>Huawei Watch / Band</strong><div style="font-size:.75rem;color:#7A7870">Huawei Health sync</div></div><span class="badge bgr" style="margin-left:auto">Connect</span></div>
+              <div style="text-align:right">
+                <div class="wb-sleep-score">68</div>
+                <div style="font-size:.62rem;color:rgba(255,255,255,.25);text-transform:uppercase;letter-spacing:.07em">Sleep Score</div>
               </div>
             </div>
-            <div class="card">
-              <div class="cardh"><span class="cardt">Weekly Recovery Trend</span></div>
-              <div class="chart-area" id="wearableChart"></div>
-              <div style="margin-top:1rem;font-size:.8rem;color:#7A7870;line-height:1.6">AI is learning your patterns. After 14 days of wearable data, meal adaptation accuracy improves by <strong style="color:#C8A96E">~40%</strong>.</div>
+            <!-- Sleep hypnogram bars -->
+            <div class="wb-sleep-chart" id="wbSleepChart"></div>
+            <div class="wb-sleep-stages">
+              <div class="wb-sleep-stage">
+                <div class="wb-sleep-stage-dot" style="background:#4A7AC8"></div>
+                <div class="wb-sleep-stage-val">1h 12m</div>
+                <div class="wb-sleep-stage-lbl">Deep Sleep</div>
+              </div>
+              <div class="wb-sleep-stage">
+                <div class="wb-sleep-stage-dot" style="background:#6A9AE8"></div>
+                <div class="wb-sleep-stage-val">1h 48m</div>
+                <div class="wb-sleep-stage-lbl">REM Sleep</div>
+              </div>
+              <div class="wb-sleep-stage">
+                <div class="wb-sleep-stage-dot" style="background:rgba(255,255,255,.3)"></div>
+                <div class="wb-sleep-stage-val">2h 24m</div>
+                <div class="wb-sleep-stage-lbl">Core Sleep</div>
+              </div>
+              <div class="wb-sleep-stage">
+                <div class="wb-sleep-stage-dot" style="background:rgba(255,255,255,.08)"></div>
+                <div class="wb-sleep-stage-val">24m</div>
+                <div class="wb-sleep-stage-lbl">Awake</div>
+              </div>
             </div>
           </div>
+
+          <!-- 30-DAY TREND CHART -->
+          <div class="wb-trend">
+            <div style="font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:.875rem">30-Day Trends</div>
+            <div class="wb-trend-tabs">
+              <button class="wb-trend-tab active" onclick="wbSelectTrend('calories',this)">Calories</button>
+              <button class="wb-trend-tab" onclick="wbSelectTrend('sleep',this)">Sleep</button>
+              <button class="wb-trend-tab" onclick="wbSelectTrend('steps',this)">Steps</button>
+              <button class="wb-trend-tab" onclick="wbSelectTrend('hrv',this)">HRV</button>
+            </div>
+            <div class="wb-trend-chart" id="wbTrendChart"></div>
+            <div style="display:flex;justify-content:space-between;margin-top:.5rem">
+              <span style="font-size:.58rem;color:rgba(255,255,255,.18)">30 days ago</span>
+              <span style="font-size:.58rem;color:rgba(255,255,255,.18)">Today</span>
+            </div>
+          </div>
+
+          <!-- ACTIVITY HEATMAP -->
+          <div class="wb-heatmap">
+            <div class="wb-heatmap-title">Activity Heatmap — Last 4 Weeks</div>
+            <div class="wb-heatmap-grid" id="wbHeatmap"></div>
+            <div style="display:flex;align-items:center;gap:.65rem;margin-top:1rem;justify-content:flex-end">
+              <span style="font-size:.6rem;color:rgba(255,255,255,.2)">Less</span>
+              <div style="width:12px;height:12px;border-radius:3px" class="wb-hm-0"></div>
+              <div style="width:12px;height:12px;border-radius:3px" class="wb-hm-1"></div>
+              <div style="width:12px;height:12px;border-radius:3px" class="wb-hm-2"></div>
+              <div style="width:12px;height:12px;border-radius:3px" class="wb-hm-3"></div>
+              <div style="width:12px;height:12px;border-radius:3px" class="wb-hm-4"></div>
+              <span style="font-size:.6rem;color:rgba(255,255,255,.2)">More</span>
+            </div>
+          </div>
+
+          <!-- CONNECTED DEVICES -->
+          <div style="background:#0F0F0D;border-radius:20px;padding:1.75rem">
+            <div style="font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:1.25rem">Your Devices</div>
+            <div class="wb-device-grid">
+              <div class="wb-dev-card connected" onclick="showToast('Apple Watch already syncing ✓')">
+                <div class="wb-dev-em">⌚</div>
+                <div class="wb-dev-name">Apple Watch Series 9</div>
+                <div class="wb-dev-sub">HealthKit · Calories, sleep, HR, HRV, SpO2, temp</div>
+                <div class="wb-dev-status"><span class="wb-dev-badge on">● Active</span><span style="font-size:.6rem;color:rgba(255,255,255,.2)">2 min ago</span></div>
+              </div>
+              <div class="wb-dev-card" onclick="wbConnect(this,'Oura Ring')">
+                <div class="wb-dev-em">💍</div>
+                <div class="wb-dev-name">Oura Ring</div>
+                <div class="wb-dev-sub">Gen 3 · Best sleep tracking + readiness score</div>
+                <div class="wb-dev-status"><span class="wb-dev-badge off">Connect</span></div>
+              </div>
+              <div class="wb-dev-card" onclick="wbConnect(this,'Garmin')">
+                <div class="wb-dev-em">🏃</div>
+                <div class="wb-dev-name">Garmin</div>
+                <div class="wb-dev-sub">All models · VO2 max, training load, GPS</div>
+                <div class="wb-dev-status"><span class="wb-dev-badge off">Connect</span></div>
+              </div>
+              <div class="wb-dev-card" onclick="wbConnect(this,'Xiaomi Band')">
+                <div class="wb-dev-em">📿</div>
+                <div class="wb-dev-name">Xiaomi Band</div>
+                <div class="wb-dev-sub">Mi Band 6/7/8 · Mi Fit sync · Popular in Morocco</div>
+                <div class="wb-dev-status"><span class="wb-dev-badge off">Connect</span></div>
+              </div>
+              <div class="wb-dev-card" onclick="wbConnect(this,'Huawei Watch')">
+                <div class="wb-dev-em">⌚</div>
+                <div class="wb-dev-name">Huawei Watch</div>
+                <div class="wb-dev-sub">GT3/GT4 · Huawei Health · Stress + SpO2</div>
+                <div class="wb-dev-status"><span class="wb-dev-badge off">Connect</span></div>
+              </div>
+              <div class="wb-dev-card" onclick="wbConnect(this,'Samsung Watch')">
+                <div class="wb-dev-em">⌚</div>
+                <div class="wb-dev-name">Samsung Galaxy Watch</div>
+                <div class="wb-dev-sub">GW4/5/6 · BioActive sensor · Body composition</div>
+                <div class="wb-dev-status"><span class="wb-dev-badge off">Connect</span></div>
+              </div>
+            </div>
+            <div style="margin-top:1.25rem;background:rgba(200,169,110,.08);border:1px solid rgba(200,169,110,.15);border-radius:12px;padding:1rem 1.25rem;font-size:.78rem;color:rgba(255,255,255,.5);line-height:1.65">
+              💡 <strong style="color:#C8A96E">AI accuracy improves with more data.</strong> After 14 days of wearable sync, meal adaptation precision increases by ~40%. After 30 days, RIVARO predicts your needs before you feel them.
+            </div>
+          </div>
+
         </div>
 
         <!-- CHALLENGES PANEL -->
@@ -5377,6 +5852,137 @@ function bpRenderRefTable() {
   el.innerHTML = rows.join('');
 }
 
+
+// ════════════════════════════════════════════
+// WEARABLE COMMAND CENTER — JavaScript
+// ════════════════════════════════════════════
+
+// ── SLEEP HYPNOGRAM ──
+function renderWbSleepChart() {
+  var el = document.getElementById('wbSleepChart');
+  if (!el) return;
+  // Simulated sleep stages over ~6h (360 min)
+  // 0=awake, 1=light, 2=core, 3=deep, 4=REM
+  var stages = [
+    0,0,1,1,2,2,2,3,3,3,3,2,2,2,4,4,4,2,2,3,3,3,2,2,
+    4,4,4,4,2,2,2,1,1,3,3,3,2,2,2,4,4,4,2,2,0,0,1,1,
+    2,2,2,3,3,2,2,4,4,4,2,0
+  ];
+  var colors = {
+    0: 'rgba(255,255,255,.06)',
+    1: 'rgba(74,90,200,.25)',
+    2: 'rgba(74,90,200,.45)',
+    3: 'rgba(74,90,200,.85)',
+    4: 'rgba(106,154,232,.9)'
+  };
+  var heights = {0:15, 1:30, 2:55, 3:85, 4:70};
+  el.innerHTML = stages.map(function(s) {
+    return '<div class="wb-sleep-bar" style="background:' + colors[s] + ';height:' + heights[s] + '%;flex:1;border-radius:2px 2px 0 0;position:relative;">' +
+      '<div class="wb-trend-tooltip">' + ['Awake','Light','Core','Deep','REM'][s] + '</div>' +
+    '</div>';
+  }).join('');
+}
+
+// ── 30-DAY TREND DATA ──
+var WB_TREND_DATA = {
+  calories: {
+    vals: [720,810,650,890,760,840,780,920,680,750,810,770,890,650,740,810,760,920,840,680,750,810,760,847,790,820,760,900,840,847],
+    color: '#C24B3A', label: 'kcal burned', max: 1000
+  },
+  sleep: {
+    vals: [7.2,6.8,8.1,5.9,7.5,6.2,7.8,6.5,7.9,8.2,6.1,7.4,5.8,7.2,8.0,6.8,7.5,5.9,7.2,8.1,6.4,7.8,6.2,5.8,7.1,6.9,7.4,6.0,7.8,5.8],
+    color: '#4A7AC8', label: 'h sleep', max: 9
+  },
+  steps: {
+    vals: [8200,9400,7800,11200,8900,9800,8400,10500,7600,8900,9200,8700,11000,7400,8600,9400,8800,10800,9600,7800,8700,9200,8600,9240,8900,9400,8600,10200,9600,9240],
+    color: '#6BAE6B', label: 'steps', max: 12000
+  },
+  hrv: {
+    vals: [58,62,54,70,65,68,72,55,60,66,58,64,48,62,68,72,60,55,66,70,58,64,52,48,62,68,64,58,70,48],
+    color: '#C8A96E', label: 'ms HRV', max: 80
+  }
+};
+var wbTrendCurrent = 'calories';
+
+function wbSelectTrend(type, btn) {
+  document.querySelectorAll('.wb-trend-tab').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  wbTrendCurrent = type;
+  renderWbTrend(type);
+}
+
+function renderWbTrend(type) {
+  var el = document.getElementById('wbTrendChart');
+  if (!el) return;
+  var data = WB_TREND_DATA[type];
+  var max = data.max;
+  el.innerHTML = data.vals.map(function(v, i) {
+    var pct = Math.round((v / max) * 100);
+    var isToday = i === data.vals.length - 1;
+    var isWeekend = (i % 7 === 5 || i % 7 === 6);
+    var bg = isToday
+      ? 'linear-gradient(180deg,' + data.color + ',' + data.color + '88)'
+      : isWeekend
+        ? (data.color + '33')
+        : (data.color + '55');
+    return '<div class="wb-trend-bar" style="height:' + pct + '%;background:' + bg + ';' + (isToday ? 'box-shadow:0 0 8px ' + data.color + '66;' : '') + '">' +
+      '<div class="wb-trend-tooltip">' + v + ' ' + data.label + '</div>' +
+    '</div>';
+  }).join('');
+}
+
+// ── ACTIVITY HEATMAP ──
+function renderWbHeatmap() {
+  var el = document.getElementById('wbHeatmap');
+  if (!el) return;
+  var days = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+  var rows = [
+    { label: '🔥 Move',  data: [4,3,4,3,4,2,1, 4,4,3,3,4,1,2, 3,4,4,3,4,2,1, 3,4,3,4,3,2,1] },
+    { label: '🏃 Steps', data: [3,3,4,2,3,2,1, 3,4,3,3,3,2,1, 3,3,4,3,3,1,2, 2,3,3,3,3,2,1] },
+    { label: '😴 Sleep', data: [3,2,4,2,3,3,4, 3,3,2,3,2,3,4, 2,3,3,2,3,3,4, 3,2,3,2,3,3,1] },
+    { label: '❤️ HR',   data: [4,4,3,4,4,3,3, 4,3,4,4,3,4,3, 4,4,3,4,4,3,3, 4,4,4,3,4,3,4] },
+  ];
+  var colorClass = {
+    'move': ['wb-hm-0','wb-hm-1','wb-hm-2','wb-hm-3','wb-hm-4'],
+    'sleep': ['wb-hm-s0','wb-hm-s1','wb-hm-s2','wb-hm-s3','wb-hm-s4']
+  };
+
+  // Header row
+  var html = '<div></div>' + days.map(function(d){ return '<div class="wb-hm-day-lbl">' + d.substring(0,1) + '</div>'; }).join('');
+
+  rows.forEach(function(row, ri) {
+    html += '<div class="wb-hm-row-lbl">' + row.label + '</div>';
+    row.data.forEach(function(val, ci) {
+      var cls = (ri === 2) ? colorClass.sleep[val] : colorClass.move[val];
+      var dayName = days[ci % 7];
+      var week = Math.floor(ci / 7) + 1;
+      html += '<div class="wb-hm-cell ' + cls + '" title="W' + week + ' ' + dayName + '"></div>';
+    });
+  });
+
+  el.innerHTML = html;
+}
+
+// ── DEVICE CONNECT ──
+function wbConnect(el, name) {
+  var badge = el.querySelector('.wb-dev-badge');
+  if (badge && badge.classList.contains('on')) return;
+  badge.textContent = '...';
+  showToast('Connecting to ' + name + '...');
+  setTimeout(function() {
+    el.classList.add('connected');
+    badge.textContent = '● Active';
+    badge.className = 'wb-dev-badge on';
+    var sub = el.querySelector('.wb-dev-sub');
+    if (sub) sub.style.color = 'rgba(255,255,255,.45)';
+    showToast('✓ ' + name + ' connected! AI adaptation active.');
+    showNotif('⌚', name + ' Connected', 'RIVARO will now adapt your meals based on ' + name + ' data');
+  }, 1800);
+}
+
+// Override old connectDevice to use new wbConnect styling
+function connectDevice(el, name) { wbConnect(el.closest ? el.closest('.wb-dev-card') || el : el, name); }
+
 window.addEventListener('DOMContentLoaded', function() {
   renderMenu('all');
   renderKanban();
@@ -5393,6 +5999,9 @@ window.addEventListener('DOMContentLoaded', function() {
   renderLabDishes();
   renderB2BClients();
   bpRenderRefTable();
+  renderWbSleepChart();
+  renderWbTrend('calories');
+  renderWbHeatmap();
 });
 
 </script>
