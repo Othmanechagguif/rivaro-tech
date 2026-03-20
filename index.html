@@ -3761,6 +3761,71 @@ input.lr::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;ba
             </div>
 
             <!-- GYM MATCHING -->
+            <!-- WEARABLE DATA SNAPSHOT — read only, informational for coach -->
+            <div style="margin-bottom:1.5rem">
+              <div class="wb-section-divider">
+                <div class="wb-section-divider-line"></div>
+                <div class="wb-section-divider-label">⌚ Your Biometric Data — Live</div>
+                <div class="wb-section-divider-line"></div>
+              </div>
+              <div style="background:#0A0A08;border-radius:20px;padding:1.5rem;margin-top:1rem">
+
+                <!-- Device status -->
+                <div style="display:flex;align-items:center;gap:.875rem;margin-bottom:1.25rem;padding-bottom:1rem;border-bottom:1px solid rgba(255,255,255,.07)">
+                  <div style="width:40px;height:40px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0">⌚</div>
+                  <div style="flex:1">
+                    <div style="font-size:.85rem;font-weight:600;color:#FDFAF4">Apple Watch Series 9</div>
+                    <div style="font-size:.68rem;color:rgba(255,255,255,.3);margin-top:.1rem">Last sync: 2 min ago · Battery 84%</div>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:.65rem">
+                    <div style="display:flex;align-items:center;gap:.35rem;font-size:.68rem;font-weight:700;color:#6BAE6B">
+                      <span style="width:6px;height:6px;border-radius:50%;background:#6BAE6B;animation:bl 2s infinite;display:block"></span>Live
+                    </div>
+                    <button onclick="scConnectDevice()" style="padding:.32rem .8rem;border:1px solid rgba(200,169,110,.3);border-radius:8px;background:transparent;color:#C8A96E;font-size:.68rem;font-weight:700;cursor:pointer;font-family:sans-serif;transition:all .2s" onmouseover="this.style.background='rgba(200,169,110,.1)'" onmouseout="this.style.background='transparent'">Change</button>
+                  </div>
+                </div>
+
+                <!-- 4 metrics -->
+                <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:.65rem;margin-bottom:1.25rem">
+                  <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:.875rem;text-align:center;position:relative;overflow:hidden">
+                    <div style="position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#C24B3A,#E06050)"></div>
+                    <div style="font-size:1rem;margin-bottom:.25rem">🔥</div>
+                    <div style="font-family:'Clash Display',sans-serif;font-size:1.1rem;font-weight:700;color:#FDFAF4">847</div>
+                    <div style="font-size:.55rem;color:rgba(255,255,255,.28);text-transform:uppercase;letter-spacing:.06em;margin-top:.1rem">kcal burn</div>
+                  </div>
+                  <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:.875rem;text-align:center;position:relative;overflow:hidden">
+                    <div style="position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#4A5AC8,#6A7AE8)"></div>
+                    <div style="font-size:1rem;margin-bottom:.25rem">😴</div>
+                    <div style="font-family:'Clash Display',sans-serif;font-size:1.1rem;font-weight:700;color:#FDFAF4">5.8h</div>
+                    <div style="font-size:.55rem;color:rgba(255,255,255,.28);text-transform:uppercase;letter-spacing:.06em;margin-top:.1rem">sleep</div>
+                  </div>
+                  <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:.875rem;text-align:center;position:relative;overflow:hidden">
+                    <div style="position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#6BAE6B,#4A9A4A)"></div>
+                    <div style="font-size:1rem;margin-bottom:.25rem">👣</div>
+                    <div style="font-family:'Clash Display',sans-serif;font-size:1.1rem;font-weight:700;color:#FDFAF4">9,240</div>
+                    <div style="font-size:.55rem;color:rgba(255,255,255,.28);text-transform:uppercase;letter-spacing:.06em;margin-top:.1rem">steps</div>
+                  </div>
+                  <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:.875rem;text-align:center;position:relative;overflow:hidden">
+                    <div style="position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#C24B3A,#D87070)"></div>
+                    <div style="font-size:1rem;margin-bottom:.25rem">❤️</div>
+                    <div style="font-family:'Clash Display',sans-serif;font-size:1.1rem;font-weight:700;color:#FDFAF4">62</div>
+                    <div style="font-size:.55rem;color:rgba(255,255,255,.28);text-transform:uppercase;letter-spacing:.06em;margin-top:.1rem">bpm rest</div>
+                  </div>
+                </div>
+
+                <!-- 7-day chart -->
+                <div style="margin-bottom:1.25rem">
+                  <div style="font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:.5rem">7-Day Activity</div>
+                  <div style="display:flex;gap:3px;height:48px;align-items:flex-end" id="scWbChart"></div>
+                </div>
+
+                <!-- Coach insight row — no CTA, just coach context -->
+                <div style="background:rgba(200,169,110,.07);border:1px solid rgba(200,169,110,.15);border-radius:12px;padding:.875rem 1rem;font-size:.78rem;color:rgba(255,255,255,.55);line-height:1.6">
+                  🏋️ <strong style="color:#FDFAF4">Coach Adam sees this data.</strong> Your sleep averaged <strong style="color:#C8A96E">5.8h</strong> this week — Coach will adjust your weekly plan and dinner macros to prioritize recovery. Your 847 kcal burn day was above average — expect an adapted portion this evening.
+                </div>
+
+              </div>
+            </div>
             <div style="margin-bottom:1.5rem">
               <div style="font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:1rem">🏋️ Gyms near you — Tanger · SuperCoach rates</div>
               <div class="sc-gym-grid" id="scGymGrid"></div>
@@ -4838,6 +4903,55 @@ input.lr::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;ba
       <button class="trial-cta" onclick="closeTrialModal();sp('cust','c-supercoach',document.querySelector('.ni[onclick*=c-supercoach]'))">Go to SuperCoach →</button>
     </div>
 
+  </div>
+</div>
+
+
+<!-- ═══ SC CONNECT DEVICE MODAL ═══ -->
+<div class="modov" id="scConnectOv" style="z-index:3600">
+  <div class="modbox" style="max-width:400px;border-radius:22px;overflow:hidden;padding:0">
+    <div style="background:linear-gradient(135deg,#1A1A18,#0A1A0A);padding:1.5rem 1.75rem;display:flex;align-items:center;justify-content:space-between">
+      <div>
+        <div style="font-family:'Clash Display',sans-serif;font-size:1rem;font-weight:700;color:#FDFAF4">Connect Your Device</div>
+        <div style="font-size:.72rem;color:rgba(255,255,255,.35);margin-top:.15rem">Coach Adam will see your live biometrics</div>
+      </div>
+      <button onclick="closeScConnect()" style="width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.08);border:none;color:rgba(255,255,255,.5);cursor:pointer;font-size:.85rem">✕</button>
+    </div>
+    <div style="padding:1.25rem 1.75rem;background:#FDFAF4">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin-bottom:1.25rem">
+        <div onclick="scSelectDevice(this,'Apple Watch','⌚')" style="border:2px solid #E8E3D8;border-radius:14px;padding:.875rem;cursor:pointer;text-align:center;transition:all .2s;background:#FDFAF4" class="sc-dev-card">
+          <div style="font-size:1.5rem;margin-bottom:.4rem">⌚</div>
+          <div style="font-size:.78rem;font-weight:600;color:#1A1A18">Apple Watch</div>
+          <div style="font-size:.62rem;color:#7A7870;margin-top:.1rem">HealthKit</div>
+        </div>
+        <div onclick="scSelectDevice(this,'Oura Ring','💍')" style="border:2px solid #E8E3D8;border-radius:14px;padding:.875rem;cursor:pointer;text-align:center;transition:all .2s;background:#FDFAF4" class="sc-dev-card">
+          <div style="font-size:1.5rem;margin-bottom:.4rem">💍</div>
+          <div style="font-size:.78rem;font-weight:600;color:#1A1A18">Oura Ring</div>
+          <div style="font-size:.62rem;color:#7A7870;margin-top:.1rem">Sleep focus</div>
+        </div>
+        <div onclick="scSelectDevice(this,'Garmin','🏃')" style="border:2px solid #E8E3D8;border-radius:14px;padding:.875rem;cursor:pointer;text-align:center;transition:all .2s;background:#FDFAF4" class="sc-dev-card">
+          <div style="font-size:1.5rem;margin-bottom:.4rem">🏃</div>
+          <div style="font-size:.78rem;font-weight:600;color:#1A1A18">Garmin</div>
+          <div style="font-size:.62rem;color:#7A7870;margin-top:.1rem">Sports</div>
+        </div>
+        <div onclick="scSelectDevice(this,'Xiaomi Band','📿')" style="border:2px solid #E8E3D8;border-radius:14px;padding:.875rem;cursor:pointer;text-align:center;transition:all .2s;background:#FDFAF4" class="sc-dev-card">
+          <div style="font-size:1.5rem;margin-bottom:.4rem">📿</div>
+          <div style="font-size:.78rem;font-weight:600;color:#1A1A18">Xiaomi Band</div>
+          <div style="font-size:.62rem;color:#7A7870;margin-top:.1rem">Mi Fit</div>
+        </div>
+        <div onclick="scSelectDevice(this,'Huawei','⌚')" style="border:2px solid #E8E3D8;border-radius:14px;padding:.875rem;cursor:pointer;text-align:center;transition:all .2s;background:#FDFAF4" class="sc-dev-card">
+          <div style="font-size:1.5rem;margin-bottom:.4rem">⌚</div>
+          <div style="font-size:.78rem;font-weight:600;color:#1A1A18">Huawei</div>
+          <div style="font-size:.62rem;color:#7A7870;margin-top:.1rem">Health app</div>
+        </div>
+        <div onclick="scSelectDevice(this,'Samsung','⌚')" style="border:2px solid #E8E3D8;border-radius:14px;padding:.875rem;cursor:pointer;text-align:center;transition:all .2s;background:#FDFAF4" class="sc-dev-card">
+          <div style="font-size:1.5rem;margin-bottom:.4rem">⌚</div>
+          <div style="font-size:.78rem;font-weight:600;color:#1A1A18">Samsung</div>
+          <div style="font-size:.62rem;color:#7A7870;margin-top:.1rem">BioActive</div>
+        </div>
+      </div>
+      <div style="font-size:.72rem;color:#7A7870;text-align:center">Tap your device to connect instantly</div>
+    </div>
   </div>
 </div>
 
@@ -7441,6 +7555,52 @@ function renderScGyms() {
   }).join('');
 }
 
+
+function renderScWbChart() {
+  var el = document.getElementById('scWbChart');
+  if (!el) return;
+  var vals = [720,850,680,920,760,840,847];
+  var days = ['M','T','W','T','F','S','T'];
+  var max  = Math.max.apply(null, vals);
+  el.innerHTML = vals.map(function(v, i) {
+    var pct = Math.round(v / max * 100);
+    var isToday = i === vals.length - 1;
+    return '<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px">' +
+      '<div style="width:100%;border-radius:3px 3px 0 0;background:' +
+        (isToday ? 'linear-gradient(180deg,#C8A96E,#A8813E)' : 'rgba(200,169,110,.25)') +
+        ';height:' + pct + '%;min-height:4px;transition:height .6s ease"></div>' +
+      '<div style="font-size:.52rem;color:rgba(255,255,255,.2)">' + days[i] + '</div>' +
+    '</div>';
+  }).join('');
+}
+
+
+// ── SC CONNECT DEVICE ──
+function scConnectDevice() {
+  var ov = document.getElementById('scConnectOv');
+  ov.classList.add('open'); ov.style.display = 'flex';
+}
+function closeScConnect() {
+  var ov = document.getElementById('scConnectOv');
+  ov.classList.remove('open'); ov.style.display = 'none';
+}
+function scSelectDevice(el, name, icon) {
+  document.querySelectorAll('.sc-dev-card').forEach(function(d){
+    d.style.borderColor='#E8E3D8'; d.style.background='#FDFAF4';
+  });
+  el.style.borderColor = '#1A1A18'; el.style.background = '#1A1A18';
+  el.querySelector('div:nth-child(2)').style.color = '#C8A96E';
+  setTimeout(function() {
+    closeScConnect();
+    showToast('✓ ' + name + ' ' + icon + ' connected to SuperCoach!');
+    showNotif('⌚', name + ' Connected', 'Coach Adam can now see your live biometrics');
+  }, 600);
+}
+document.addEventListener('DOMContentLoaded', function() {
+  var ov = document.getElementById('scConnectOv');
+  if (ov) ov.addEventListener('click', function(e){ if(e.target===e.currentTarget) closeScConnect(); });
+});
+
 window.addEventListener('DOMContentLoaded', function() {
   var phoneSim = document.getElementById('wbPhoneSim');
   if (phoneSim) wbSimObserver.observe(phoneSim);
@@ -7530,6 +7690,52 @@ function renderScGyms() {
     '</div>';
   }).join('');
 }
+
+
+function renderScWbChart() {
+  var el = document.getElementById('scWbChart');
+  if (!el) return;
+  var vals = [720,850,680,920,760,840,847];
+  var days = ['M','T','W','T','F','S','T'];
+  var max  = Math.max.apply(null, vals);
+  el.innerHTML = vals.map(function(v, i) {
+    var pct = Math.round(v / max * 100);
+    var isToday = i === vals.length - 1;
+    return '<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px">' +
+      '<div style="width:100%;border-radius:3px 3px 0 0;background:' +
+        (isToday ? 'linear-gradient(180deg,#C8A96E,#A8813E)' : 'rgba(200,169,110,.25)') +
+        ';height:' + pct + '%;min-height:4px;transition:height .6s ease"></div>' +
+      '<div style="font-size:.52rem;color:rgba(255,255,255,.2)">' + days[i] + '</div>' +
+    '</div>';
+  }).join('');
+}
+
+
+// ── SC CONNECT DEVICE ──
+function scConnectDevice() {
+  var ov = document.getElementById('scConnectOv');
+  ov.classList.add('open'); ov.style.display = 'flex';
+}
+function closeScConnect() {
+  var ov = document.getElementById('scConnectOv');
+  ov.classList.remove('open'); ov.style.display = 'none';
+}
+function scSelectDevice(el, name, icon) {
+  document.querySelectorAll('.sc-dev-card').forEach(function(d){
+    d.style.borderColor='#E8E3D8'; d.style.background='#FDFAF4';
+  });
+  el.style.borderColor = '#1A1A18'; el.style.background = '#1A1A18';
+  el.querySelector('div:nth-child(2)').style.color = '#C8A96E';
+  setTimeout(function() {
+    closeScConnect();
+    showToast('✓ ' + name + ' ' + icon + ' connected to SuperCoach!');
+    showNotif('⌚', name + ' Connected', 'Coach Adam can now see your live biometrics');
+  }, 600);
+}
+document.addEventListener('DOMContentLoaded', function() {
+  var ov = document.getElementById('scConnectOv');
+  if (ov) ov.addEventListener('click', function(e){ if(e.target===e.currentTarget) closeScConnect(); });
+});
 
 window.addEventListener('DOMContentLoaded', function() {
   renderMenu('all');
