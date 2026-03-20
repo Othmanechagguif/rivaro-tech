@@ -3773,7 +3773,6 @@ input.lr::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;ba
                 <div style="font-size:.84rem;color:rgba(255,255,255,.38);margin-bottom:1.75rem;position:relative;z-index:1">7-day free trial · Real coach · Cancel anytime · First delivery in 24h</div>
                 <div class="wb-cta-buttons">
                   <button class="wb-cta-primary" onclick="startCoachTrial()">🚀 Start Free 7-Day Trial — from 2,800 MAD/mo</button>
-                  <button class="wb-cta-secondary" onclick="sp('cust','c-wearable',null)">⌚ See Wearable Plan instead</button>
                 </div>
               </div>
             </div>
@@ -3930,110 +3929,6 @@ input.lr::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;ba
           </div>
           </div>
 
-          <!-- ═══ WEARABLE CONNECT SECTION ═══ -->
-          <div class="card" style="background:#0F0F0D;border-color:rgba(255,255,255,.08)">
-            <div class="cardh" style="border-bottom:1px solid rgba(255,255,255,.07);padding-bottom:.875rem;margin-bottom:1.1rem">
-              <span class="cardt" style="color:#FDFAF4">⌚ Your Wearable</span>
-              <div id="st-wb-status" style="display:flex;align-items:center;gap:.4rem;font-size:.7rem;font-weight:700;color:#6BAE6B"><span style="width:6px;height:6px;border-radius:50%;background:#6BAE6B;animation:bl 2s infinite;display:block"></span>Connected</div>
-            </div>
-
-            <!-- CONNECTED DEVICE ROW -->
-            <div id="st-connected-row" style="display:flex;align-items:center;gap:.875rem;padding:.875rem;background:rgba(107,174,107,.07);border:1px solid rgba(107,174,107,.15);border-radius:12px;margin-bottom:1.1rem">
-              <div style="width:40px;height:40px;border-radius:12px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0">⌚</div>
-              <div style="flex:1">
-                <div style="font-size:.85rem;font-weight:600;color:#FDFAF4" id="st-dev-name">Apple Watch Series 9</div>
-                <div style="font-size:.7rem;color:rgba(255,255,255,.35);margin-top:.1rem">Last sync: 2 min ago · Battery 84%</div>
-              </div>
-              <button onclick="stDisconnectDevice()" style="padding:.3rem .75rem;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:transparent;color:rgba(255,255,255,.4);font-size:.68rem;cursor:pointer;font-family:sans-serif">Disconnect</button>
-            </div>
-
-            <!-- MINI LIVE DASHBOARD -->
-            <div id="st-mini-dashboard">
-              <div style="font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:.75rem">Today's Biometrics</div>
-
-              <!-- 4 key metrics -->
-              <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:.65rem;margin-bottom:1rem">
-                <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:.875rem;text-align:center;position:relative;overflow:hidden">
-                  <div style="position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#C24B3A,#E06050)"></div>
-                  <div style="font-size:1.1rem;margin-bottom:.3rem">🔥</div>
-                  <div style="font-family:'Clash Display',sans-serif;font-size:1.1rem;font-weight:700;color:#FDFAF4">847</div>
-                  <div style="font-size:.58rem;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.06em;margin-top:.12rem">kcal burn</div>
-                </div>
-                <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:.875rem;text-align:center;position:relative;overflow:hidden">
-                  <div style="position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#4A5AC8,#6A7AE8)"></div>
-                  <div style="font-size:1.1rem;margin-bottom:.3rem">😴</div>
-                  <div style="font-family:'Clash Display',sans-serif;font-size:1.1rem;font-weight:700;color:#FDFAF4">5.8h</div>
-                  <div style="font-size:.58rem;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.06em;margin-top:.12rem">sleep</div>
-                </div>
-                <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:.875rem;text-align:center;position:relative;overflow:hidden">
-                  <div style="position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#6BAE6B,#4A9A4A)"></div>
-                  <div style="font-size:1.1rem;margin-bottom:.3rem">👣</div>
-                  <div style="font-family:'Clash Display',sans-serif;font-size:1.1rem;font-weight:700;color:#FDFAF4">9,240</div>
-                  <div style="font-size:.58rem;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.06em;margin-top:.12rem">steps</div>
-                </div>
-                <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:.875rem;text-align:center;position:relative;overflow:hidden">
-                  <div style="position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#C24B3A,#D87070)"></div>
-                  <div style="font-size:1.1rem;margin-bottom:.3rem">❤️</div>
-                  <div style="font-family:'Clash Display',sans-serif;font-size:1.1rem;font-weight:700;color:#FDFAF4">62</div>
-                  <div style="font-size:.58rem;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.06em;margin-top:.12rem">bpm rest</div>
-                </div>
-              </div>
-
-              <!-- 7-day mini trend -->
-              <div style="margin-bottom:1rem">
-                <div style="font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:.5rem">7-Day Activity</div>
-                <div style="display:flex;gap:3px;height:48px;align-items:flex-end" id="stMiniChart"></div>
-              </div>
-
-            </div>
-
-            <!-- NOT CONNECTED STATE (hidden by default) -->
-            <div id="st-not-connected" style="display:none">
-              <div style="font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:.875rem">Connect a device to see your biometrics</div>
-              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:.65rem;margin-bottom:1rem">
-                <div onclick="stConnect(this,'Apple Watch','⌚')" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:.875rem;cursor:pointer;transition:all .2s;text-align:center" onmouseover="this.style.borderColor='rgba(200,169,110,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.07)'">
-                  <div style="font-size:1.5rem;margin-bottom:.4rem">⌚</div>
-                  <div style="font-size:.75rem;font-weight:600;color:#FDFAF4">Apple Watch</div>
-                  <div style="font-size:.62rem;color:rgba(255,255,255,.3);margin-top:.15rem">HealthKit</div>
-                </div>
-                <div onclick="stConnect(this,'Oura Ring','💍')" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:.875rem;cursor:pointer;transition:all .2s;text-align:center" onmouseover="this.style.borderColor='rgba(200,169,110,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.07)'">
-                  <div style="font-size:1.5rem;margin-bottom:.4rem">💍</div>
-                  <div style="font-size:.75rem;font-weight:600;color:#FDFAF4">Oura Ring</div>
-                  <div style="font-size:.62rem;color:rgba(255,255,255,.3);margin-top:.15rem">Sleep focus</div>
-                </div>
-                <div onclick="stConnect(this,'Garmin','🏃')" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:.875rem;cursor:pointer;transition:all .2s;text-align:center" onmouseover="this.style.borderColor='rgba(200,169,110,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.07)'">
-                  <div style="font-size:1.5rem;margin-bottom:.4rem">🏃</div>
-                  <div style="font-size:.75rem;font-weight:600;color:#FDFAF4">Garmin</div>
-                  <div style="font-size:.62rem;color:rgba(255,255,255,.3);margin-top:.15rem">Sports</div>
-                </div>
-                <div onclick="stConnect(this,'Xiaomi Band','📿')" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:.875rem;cursor:pointer;transition:all .2s;text-align:center" onmouseover="this.style.borderColor='rgba(200,169,110,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.07)'">
-                  <div style="font-size:1.5rem;margin-bottom:.4rem">📿</div>
-                  <div style="font-size:.75rem;font-weight:600;color:#FDFAF4">Xiaomi Band</div>
-                  <div style="font-size:.62rem;color:rgba(255,255,255,.3);margin-top:.15rem">Mi Fit</div>
-                </div>
-                <div onclick="stConnect(this,'Huawei','⌚')" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:.875rem;cursor:pointer;transition:all .2s;text-align:center" onmouseover="this.style.borderColor='rgba(200,169,110,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.07)'">
-                  <div style="font-size:1.5rem;margin-bottom:.4rem">⌚</div>
-                  <div style="font-size:.75rem;font-weight:600;color:#FDFAF4">Huawei</div>
-                  <div style="font-size:.62rem;color:rgba(255,255,255,.3);margin-top:.15rem">Health app</div>
-                </div>
-                <div onclick="stConnect(this,'Samsung','⌚')" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:.875rem;cursor:pointer;transition:all .2s;text-align:center" onmouseover="this.style.borderColor='rgba(200,169,110,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.07)'">
-                  <div style="font-size:1.5rem;margin-bottom:.4rem">⌚</div>
-                  <div style="font-size:.75rem;font-weight:600;color:#FDFAF4">Samsung</div>
-                  <div style="font-size:.62rem;color:rgba(255,255,255,.3);margin-top:.15rem">BioActive</div>
-                </div>
-              </div>
-              <!-- Upsell even without device -->
-              <div style="background:rgba(200,169,110,.07);border:1px solid rgba(200,169,110,.15);border-radius:12px;padding:1rem;display:flex;align-items:center;gap:.875rem;flex-wrap:wrap">
-                <div style="flex:1;min-width:180px">
-                  <div style="font-size:.78rem;font-weight:600;color:#FDFAF4;margin-bottom:.15rem">⌚ Connect + subscribe to Wearable plan</div>
-                  <div style="font-size:.7rem;color:rgba(255,255,255,.38)">AI adapts every meal from your real body data daily</div>
-                </div>
-                <button onclick="wcoSelect(1);openWearableSubscribe()" style="padding:.5rem 1rem;border:none;border-radius:100px;background:linear-gradient(135deg,#C8A96E,#A8813E);color:#1A1A18;font-family:'Clash Display',sans-serif;font-size:.75rem;font-weight:700;cursor:pointer;white-space:nowrap">
-                  See Plans →
-                </button>
-              </div>
-            </div>
-          </div>
 
         </div>
       </div>
