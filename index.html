@@ -74,7 +74,7 @@ section{padding:5.5rem 4rem;}
 .pcard{border-radius:22px;overflow:hidden;border:1px solid #E8E3D8;background:#FDFAF4;transition:all .3s;cursor:pointer;position:relative;}
 .pcard:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,.1);}
 .pcard.feat{border-color:#C8A96E;}
-.pimg{height:170px;display:flex;align-items:center;justify-content:center;font-size:4.5rem;background:linear-gradient(135deg,#F5F0E8,#EEE0C4);}
+.pimg{height:200px;overflow:hidden;position:relative;background:linear-gradient(135deg,#F5F0E8,#EEE0C4);}.pimg img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease;}.pcard:hover .pimg img{transform:scale(1.06);}.pimg-fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:4.5rem;}
 .pbdy{padding:1.35rem;}
 .pn{font-family:Clash Display,sans-serif;font-size:1.1rem;font-weight:600;color:#1A1A18;margin-bottom:.35rem;}
 .pk2{font-size:.73rem;color:#7A7870;margin-bottom:.875rem;}
@@ -4962,12 +4962,18 @@ input.lr::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;ba
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── DATA ──
 const PLANS=[
-  {n:'High Protein',e:'🥩',kc:'500–600',goal:'gain',badge:'Most Popular',pP:55,cP:35,fP:20,p:50,c:40,f:15},
-  {n:'Fat Loss',e:'🥗',kc:'350–450',goal:'lose',badge:null,pP:45,cP:25,fP:20,p:35,c:20,f:12},
-  {n:'Balanced',e:'🍱',kc:'500–600',goal:'maintain',badge:null,pP:35,cP:50,fP:25,p:30,c:50,f:18},
-  {n:'Low Carb',e:'🥑',kc:'450–550',goal:'lose',badge:null,pP:40,cP:15,fP:40,p:40,c:15,f:35},
-  {n:'Vegetarian',e:'🌿',kc:'400–500',goal:'veg',badge:null,pP:28,cP:55,fP:22,p:28,c:55,f:18},
-  {n:'Performance',e:'⚡',kc:'650–750',goal:'gain',badge:'New',pP:50,cP:60,fP:22,p:45,c:70,f:20},
+  {n:'High Protein',e:'🥩',kc:'500–600',goal:'gain',badge:'Most Popular',pP:55,cP:35,fP:20,p:50,c:40,f:15,
+   img:'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&q=85'},
+  {n:'Fat Loss',e:'🥗',kc:'350–450',goal:'lose',badge:null,pP:45,cP:25,fP:20,p:35,c:20,f:12,
+   img:'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=85'},
+  {n:'Balanced',e:'🍱',kc:'500–600',goal:'maintain',badge:null,pP:35,cP:50,fP:25,p:30,c:50,f:18,
+   img:'https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600&q=85'},
+  {n:'Low Carb',e:'🥑',kc:'450–550',goal:'lose',badge:null,pP:40,cP:15,fP:40,p:40,c:15,f:35,
+   img:'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=85'},
+  {n:'Vegetarian',e:'🌿',kc:'400–500',goal:'veg',badge:null,pP:28,cP:55,fP:22,p:28,c:55,f:18,
+   img:'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&q=85'},
+  {n:'Performance',e:'⚡',kc:'650–750',goal:'gain',badge:'New',pP:50,cP:60,fP:22,p:45,c:70,f:20,
+   img:'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=85'},
 ];
 const TEST=[
   {n:'Youssef M.',g:'Lost 8kg in 3 months',t:'The macro-matching is insane. I tell it 500 kcal, 50g protein and it just works.',e:'😊'},
