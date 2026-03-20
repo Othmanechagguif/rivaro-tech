@@ -1614,6 +1614,127 @@ input.lr::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;ba
   .wb-stats-bar{gap:1.5rem!important;}
   .wb-phone-sim{width:200px!important;}
 }
+
+/* ════════════════ SUPERCOACH PITCH ════════════════ */
+.sc-pitch-hero{background:linear-gradient(135deg,#1A1A18 0%,#1A0A0A 50%,#0A1A18 100%);padding:3rem 2rem;border-radius:20px;position:relative;overflow:hidden;margin-bottom:1.5rem;}
+.sc-pitch-hero::before{content:'';position:absolute;top:-80px;right:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(200,169,110,.1),transparent 65%);}
+.sc-pitch-hero::after{content:'';position:absolute;bottom:-60px;left:-60px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(107,174,107,.06),transparent 65%);}
+.sc-eyebrow{display:inline-flex;align-items:center;gap:.45rem;background:rgba(200,169,110,.15);border:1px solid rgba(200,169,110,.25);border-radius:100px;padding:.3rem .9rem;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#C8A96E;margin-bottom:1.1rem;position:relative;z-index:1;}
+.sc-pitch-hero h1{font-family:'Clash Display',sans-serif;font-size:clamp(1.75rem,3.5vw,2.75rem);font-weight:700;color:#FDFAF4;line-height:1.1;margin-bottom:.75rem;position:relative;z-index:1;}
+.sc-pitch-hero h1 em{font-family:'Instrument Serif',serif;font-style:italic;color:#C8A96E;}
+.sc-pitch-hero p{font-size:.88rem;color:rgba(255,255,255,.42);line-height:1.75;max-width:540px;margin-bottom:1.75rem;position:relative;z-index:1;}
+/* Why RIVARO vs others */
+.sc-vs-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem;}
+.sc-vs-card{border-radius:18px;overflow:hidden;}
+.sc-vs-hdr{padding:1rem 1.25rem;font-family:'Clash Display',sans-serif;font-size:.88rem;font-weight:700;}
+.sc-vs-card.bad .sc-vs-hdr{background:#F5F0E8;color:#B0A898;}
+.sc-vs-card.good .sc-vs-hdr{background:#1A1A18;color:#C8A96E;}
+.sc-vs-body{padding:1rem 1.25rem;background:#FDFAF4;}
+.sc-vs-card.good .sc-vs-body{background:#0F0F0D;}
+.sc-vs-row{display:flex;align-items:flex-start;gap:.6rem;margin-bottom:.5rem;font-size:.78rem;}
+.sc-vs-card.bad .sc-vs-row{color:#7A7870;}
+.sc-vs-card.good .sc-vs-row{color:rgba(255,255,255,.65);}
+.sc-vs-row::before{flex-shrink:0;margin-top:.05rem;}
+.sc-vs-card.bad .sc-vs-row::before{content:'✗';color:#C24B3A;}
+.sc-vs-card.good .sc-vs-row::before{content:'✓';color:#6BAE6B;font-weight:700;}
+/* Coach profile card */
+.sc-coach-card{background:linear-gradient(135deg,#1A1A18,#1A2A18);border-radius:20px;padding:1.75rem;display:flex;gap:1.5rem;align-items:flex-start;margin-bottom:1.5rem;}
+.sc-coach-av{width:72px;height:72px;border-radius:20px;background:linear-gradient(135deg,#C8A96E,#A8813E);display:flex;align-items:center;justify-content:center;font-size:2rem;flex-shrink:0;}
+.sc-coach-name{font-family:'Clash Display',sans-serif;font-size:1.15rem;font-weight:700;color:#FDFAF4;margin-bottom:.2rem;}
+.sc-coach-title{font-size:.75rem;color:rgba(255,255,255,.4);margin-bottom:.875rem;}
+.sc-coach-tags{display:flex;gap:.4rem;flex-wrap:wrap;}
+.sc-coach-tag{font-size:.62rem;font-weight:700;padding:.18rem .6rem;border-radius:100px;background:rgba(200,169,110,.12);border:1px solid rgba(200,169,110,.2);color:#C8A96E;}
+/* Transformation timeline */
+.sc-journey{display:flex;flex-direction:column;gap:0;margin:1.5rem 0;}
+.sc-journey-step{display:flex;gap:1rem;align-items:flex-start;padding-bottom:1.5rem;position:relative;}
+.sc-journey-step:not(:last-child)::before{content:'';position:absolute;left:18px;top:40px;bottom:0;width:2px;background:linear-gradient(180deg,rgba(200,169,110,.3),rgba(200,169,110,.05));}
+.sc-journey-dot{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#C8A96E,#A8813E);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;position:relative;z-index:1;box-shadow:0 4px 14px rgba(200,169,110,.25);}
+.sc-journey-week{font-size:.62rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:.18rem;}
+.sc-journey-title{font-family:'Clash Display',sans-serif;font-size:.92rem;font-weight:600;color:#FDFAF4;margin-bottom:.25rem;}
+.sc-journey-desc{font-size:.78rem;color:rgba(255,255,255,.42);line-height:1.55;}
+/* Testimonials */
+.sc-testi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;margin-bottom:1.5rem;}
+.sc-testi{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:1.25rem;}
+.sc-testi-quote{font-size:.8rem;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:.875rem;font-style:italic;}
+.sc-testi-name{font-family:'Clash Display',sans-serif;font-size:.82rem;font-weight:600;color:#FDFAF4;}
+.sc-testi-meta{font-size:.68rem;color:rgba(255,255,255,.3);margin-top:.15rem;}
+.sc-testi-result{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.65rem;}
+.sc-testi-pill{font-size:.62rem;font-weight:700;padding:.15rem .55rem;border-radius:100px;background:rgba(107,174,107,.12);color:#6BAE6B;border:1px solid rgba(107,174,107,.2);}
+/* Live demo chat */
+.sc-demo-wrap{background:#0A0A08;border-radius:20px;overflow:hidden;margin-bottom:1.5rem;}
+.sc-demo-hdr{background:linear-gradient(135deg,#C8A96E,#A8813E);padding:1.25rem 1.5rem;display:flex;align-items:center;gap:.875rem;}
+.sc-demo-av{width:44px;height:44px;border-radius:14px;background:#1A1A18;display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0;}
+.sc-demo-name{font-family:'Clash Display',sans-serif;font-size:.95rem;font-weight:700;color:#1A1A18;}
+.sc-demo-sub{font-size:.7rem;color:rgba(0,0,0,.5);margin-top:.1rem;}
+.sc-demo-msgs{height:280px;overflow-y:auto;padding:1.1rem;display:flex;flex-direction:column;gap:.75rem;background:#0A0A08;}
+.sc-demo-msgs::-webkit-scrollbar{width:3px;}
+.sc-demo-msgs::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);}
+/* Gym cards */
+.sc-gym-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.875rem;margin-bottom:1.5rem;}
+.sc-gym-card{background:#FDFAF4;border:1px solid #E8E3D8;border-radius:16px;padding:1.1rem;transition:all .22s;cursor:pointer;}
+.sc-gym-card:hover{border-color:#C8A96E;transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.08);}
+.sc-gym-name{font-family:'Clash Display',sans-serif;font-size:.92rem;font-weight:700;color:#1A1A18;margin-bottom:.2rem;}
+.sc-gym-dist{font-size:.7rem;color:#7A7870;margin-bottom:.5rem;}
+.sc-gym-tags{display:flex;gap:.3rem;flex-wrap:wrap;margin-bottom:.65rem;}
+.sc-gym-tag{font-size:.6rem;font-weight:600;padding:.12rem .42rem;border-radius:100px;background:#F5F0E8;color:#4A5240;}
+.sc-gym-price{display:flex;align-items:center;justify-content:space-between;}
+.sc-gym-rivaro{font-size:.72rem;font-weight:700;color:#6BAE6B;}
+/* CTA section */
+.sc-cta{text-align:center;padding:2.5rem;background:#1A1A18;border-radius:20px;position:relative;overflow:hidden;}
+.sc-cta::before{content:'';position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(200,169,110,.08),transparent 65%);}
+@media(max-width:640px){
+  .sc-vs-grid{grid-template-columns:1fr!important;}
+  .sc-coach-card{flex-direction:column!important;}
+  .sc-testi-grid{grid-template-columns:1fr!important;}
+  .sc-gym-grid{grid-template-columns:1fr!important;}
+}
+
+/* ── SUPERCOACH TRIAL MODAL ── */
+.trial-modal-ov{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(6px);z-index:4000;display:none;align-items:center;justify-content:center;padding:1rem;}
+.trial-modal-ov.open{display:flex;}
+.trial-modal{background:#FDFAF4;border-radius:24px;width:100%;max-width:480px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.4);}
+.trial-modal-hdr{background:linear-gradient(135deg,#1A1A18,#1A0A0A);padding:1.5rem 2rem;display:flex;align-items:center;justify-content:space-between;}
+.trial-modal-hdr-title{font-family:'Clash Display',sans-serif;font-size:1.1rem;font-weight:700;color:#FDFAF4;}
+.trial-modal-hdr-sub{font-size:.72rem;color:rgba(255,255,255,.38);margin-top:.15rem;}
+.trial-close{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.08);border:none;color:rgba(255,255,255,.5);cursor:pointer;font-size:.85rem;display:flex;align-items:center;justify-content:center;}
+/* Steps indicator */
+.trial-steps{display:flex;align-items:center;gap:.5rem;padding:1.25rem 2rem;background:#F5F0E8;border-bottom:1px solid #E8E3D8;}
+.trial-step-dot{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;transition:all .25s;flex-shrink:0;}
+.trial-step-dot.done{background:#1A1A18;color:#C8A96E;}
+.trial-step-dot.active{background:#C8A96E;color:#1A1A18;}
+.trial-step-dot.pending{background:#E8E3D8;color:#B0A898;}
+.trial-step-line{flex:1;height:2px;border-radius:2px;transition:all .25s;}
+.trial-step-line.done{background:#1A1A18;}
+.trial-step-line.pending{background:#E8E3D8;}
+.trial-step-lbl{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-top:.25rem;text-align:center;}
+/* Form fields */
+.trial-body{padding:1.75rem 2rem;}
+.trial-field{margin-bottom:1.1rem;}
+.trial-field label{display:block;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7A7870;margin-bottom:.45rem;}
+.trial-field input,.trial-field select{width:100%;padding:.75rem 1rem;border:1.5px solid #E8E3D8;border-radius:12px;font-size:.88rem;color:#1A1A18;background:#FDFAF4;font-family:'Instrument Sans',sans-serif;outline:none;transition:border-color .2s;box-sizing:border-box;}
+.trial-field input:focus,.trial-field select:focus{border-color:#C8A96E;}
+.trial-field-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;}
+/* Card visual */
+.card-preview{background:linear-gradient(135deg,#1A1A18,#2A1A0A);border-radius:14px;padding:1.25rem;margin-bottom:1.25rem;position:relative;overflow:hidden;}
+.card-preview::before{content:'';position:absolute;top:-20px;right:-20px;width:120px;height:120px;border-radius:50%;background:rgba(200,169,110,.08);}
+.card-preview-num{font-family:'Clash Display',sans-serif;font-size:1.05rem;font-weight:600;color:#FDFAF4;letter-spacing:.15em;margin-bottom:.875rem;}
+.card-preview-row{display:flex;justify-content:space-between;align-items:flex-end;}
+.card-preview-lbl{font-size:.55rem;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.18rem;}
+.card-preview-val{font-size:.82rem;font-weight:600;color:#FDFAF4;}
+.card-preview-brand{font-size:1.5rem;}
+/* Notice */
+.trial-notice{background:#FFF8EC;border:1px solid #F0D890;border-radius:10px;padding:.75rem 1rem;font-size:.72rem;color:#8A6220;margin-bottom:1.25rem;line-height:1.55;}
+/* CTA btn */
+.trial-cta{width:100%;padding:.875rem;border:none;border-radius:14px;background:linear-gradient(135deg,#1A1A18,#2A2A18);color:#FDFAF4;font-family:'Clash Display',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;transition:all .2s;}
+.trial-cta:hover{background:linear-gradient(135deg,#C8A96E,#A8813E);color:#1A1A18;}
+.trial-back{background:none;border:none;color:#7A7870;font-size:.78rem;cursor:pointer;font-family:'Instrument Sans',sans-serif;padding:.5rem 0;margin-top:.5rem;width:100%;text-align:center;}
+.trial-back:hover{color:#1A1A18;}
+@media(max-width:480px){
+  .trial-modal{border-radius:20px 20px 0 0;}
+  .trial-modal-ov{align-items:flex-end;padding:0;}
+  .trial-body{padding:1.25rem 1.5rem;}
+  .trial-field-row{grid-template-columns:1fr!important;}
+}
 </style>
 </head>
 <body>
@@ -2331,52 +2452,42 @@ input.lr::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;ba
         <h2>Choose your level</h2>
         <p class="lead" style="margin:0 auto">All plans include daily fresh meals. Upgrade anytime.</p>
       </div>
-      <div class="coach-tier-grid">
+      <div class="coach-tier-grid" style="grid-template-columns:repeat(2,1fr);max-width:720px;margin:0 auto">
+        <!-- Plan 1: SuperCoach — 2,800 MAD -->
         <div class="coach-tier">
-          <div class="coach-tier-name">Essential</div>
-          <div class="coach-tier-price">1,200 MAD</div>
-          <div class="coach-tier-period">/ month · 30 meals included</div>
+          <div class="tier-badge" style="background:#F5F0E8;color:#1A1A18">🌱 Beginner</div>
+          <div class="coach-tier-name">SuperCoach</div>
+          <div class="coach-tier-price">2,800 MAD</div>
+          <div class="coach-tier-period">/ month · Meals + full coaching</div>
           <div class="coach-tier-feats">
-            <div class="ct-feat">✓ 30 daily macro-precise meals</div>
-            <div class="ct-feat">✓ AI Nutritionist chat</div>
-            <div class="ct-feat">✓ Basic macro tracking</div>
-            <div class="ct-feat">✓ Meal rating & feedback</div>
-            <div class="ct-feat no">Wearable sync</div>
-            <div class="ct-feat no">SuperCoach access</div>
-            <div class="ct-feat no">Gym matching</div>
-          </div>
-          <button class="coach-tier-btn" onclick="openLoginModal()">Get Started</button>
-        </div>
-        <div class="coach-tier pop">
-          <div class="tier-badge">Most Popular</div>
-          <div class="coach-tier-name">Athlete</div>
-          <div class="coach-tier-price">2,100 MAD</div>
-          <div class="coach-tier-period">/ month · Best value for athletes</div>
-          <div class="coach-tier-feats">
-            <div class="ct-feat">✓ Everything in Essential</div>
-            <div class="ct-feat">✓ Wearable sync + AI meal adaptation</div>
-            <div class="ct-feat">✓ RIVARO Score daily</div>
-            <div class="ct-feat">✓ Challenges access + leaderboard</div>
-            <div class="ct-feat">✓ Budget meal optimizer</div>
-            <div class="ct-feat">✓ Athlete Mode macros</div>
-            <div class="ct-feat no">Real human SuperCoach</div>
-          </div>
-          <button class="coach-tier-btn" onclick="openLoginModal()">Start Athlete Plan</button>
-        </div>
-        <div class="coach-tier">
-          <div class="tier-badge" style="background:#1A1A18;color:#C8A96E">Premium</div>
-          <div class="coach-tier-name" style="color:#C8A96E">SuperCoach 👑</div>
-          <div class="coach-tier-price">3,800 MAD</div>
-          <div class="coach-tier-period">/ month · Complete transformation</div>
-          <div class="coach-tier-feats">
-            <div class="ct-feat">✓ Everything in Athlete</div>
-            <div class="ct-feat">✓ Real human coach — weekly video call</div>
-            <div class="ct-feat">✓ AI Coach Adam — daily check-in</div>
-            <div class="ct-feat">✓ Gym matching + discounted access</div>
-            <div class="ct-feat">✓ Monthly body composition report</div>
+            <div class="ct-feat">✓ 30 precision meals / month</div>
+            <div class="ct-feat">✓ Wearable tracking sync</div>
+            <div class="ct-feat">✓ AI adapts meals from biometrics</div>
+            <div class="ct-feat">✓ Weekly coach video call</div>
+            <div class="ct-feat">✓ AI Coach Adam — daily</div>
+            <div class="ct-feat">✓ Gym matching + discount</div>
+            <div class="ct-feat">✓ Monthly body report</div>
             <div class="ct-feat">✓ Priority kitchen queue</div>
           </div>
-          <button class="coach-tier-btn" style="background:#C8A96E;border-color:#C8A96E;color:#1A1A18" onclick="openLoginModal()">Start SuperCoach</button>
+          <button class="coach-tier-btn" onclick="startCoachTrial()">Start Free Trial</button>
+        </div>
+        <!-- Plan 2: SuperCoach Pro — 3,700 MAD -->
+        <div class="coach-tier pop">
+          <div class="tier-badge">👑 Pro</div>
+          <div class="coach-tier-name" style="color:#C8A96E">SuperCoach Pro</div>
+          <div class="coach-tier-price">3,700 MAD</div>
+          <div class="coach-tier-period">/ month · Everything + supplements</div>
+          <div class="coach-tier-feats">
+            <div class="ct-feat">✓ Everything in SuperCoach</div>
+            <div class="ct-feat">✓ 🥛 Monthly whey protein supply</div>
+            <div class="ct-feat">✓ 🥄 Monthly creatine monohydrate</div>
+            <div class="ct-feat">✓ 💊 Daily vitamins pack delivered</div>
+            <div class="ct-feat">✓ 🧪 Custom supplement plan by coach</div>
+            <div class="ct-feat">✓ Omega-3 capsules monthly</div>
+            <div class="ct-feat">✓ Pre-workout on training days</div>
+            <div class="ct-feat">✓ All supplements door-delivered</div>
+          </div>
+          <button class="coach-tier-btn" style="background:#C8A96E;border-color:#C8A96E;color:#1A1A18" onclick="startCoachTrial()">Start Free Trial</button>
         </div>
       </div>
     </div>
@@ -2416,6 +2527,7 @@ input.lr::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;ba
         <div class="ni" onclick="sp('cust','c-macros',this)"><span class="nic">📊</span><span>Macro Tracker</span></div>
         <div class="ni" onclick="sp('cust','c-orders',this)"><span class="nic">📦</span><span>Orders</span></div>
         <div class="ni" onclick="sp('cust','c-wearable',this)"><span class="nic">⌚</span><span>Wearable</span><span class="bd" style="background:#C8A96E"></span></div>
+        <div class="ni" onclick="sp('cust','c-supercoach',this)"><span class="nic">👑</span><span>SuperCoach</span><span class="bd" style="background:#C8A96E"></span></div>
         <div class="ni" onclick="sp('cust','c-bills',this)"><span class="nic">💳</span><span>Billing</span></div>
         <div class="ni" onclick="sp('cust','c-menu',this)"><span class="nic">🛒</span><span>Menu</span></div>
         <div class="ni" onclick="sp('cust','c-budget',this)"><span class="nic">💰</span><span>Budget Mode</span></div>
@@ -2429,7 +2541,6 @@ input.lr::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;ba
         <div class="ni" onclick="sp('cust','c-discover',this)"><span class="nic">🎵</span><span>Discover</span></div>
         <div class="ni" onclick="sp('cust','c-progress',this)"><span class="nic">📈</span><span>My Progress</span></div>
         <div class="ni" onclick="sp('cust','c-challenges',this)"><span class="nic">🏆</span><span>Challenges</span></div>
-        <div class="ni" onclick="sp('cust','c-supercoach',this)"><span class="nic">👑</span><span>SuperCoach</span></div>
         <span class="sbsec">Account</span>
         <div class="ni" onclick="sp('cust','c-settings',this)"><span class="nic">⚙️</span><span>Settings</span></div>
         <div class="ni" onclick="showView('landing');showToast('Logged out successfully')" style="color:rgba(255,255,255,.35)"><span class="nic">↩️</span><span>Log Out</span></div>
@@ -2890,7 +3001,7 @@ input.lr::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;ba
         <!-- ═══════════════════════════════════════════
              WEARABLE COMMAND CENTER
         ═══════════════════════════════════════════ -->
-        <div class="panel" id="c-wearable" style="background:#0A0A08;margin:-1.75rem -2.25rem;padding:0;min-height:100vh;">
+        <div class="panel" id="c-wearable" style="background:#0A0A08;margin:-1.75rem -2.25rem;padding:0;min-height:100vh;overflow:hidden;">
 
           <!-- ════════════════════════════════════════
                PITCH SECTION — Full scroll experience
@@ -3449,106 +3560,225 @@ input.lr::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;ba
         </div>
 
         <!-- SUPERCOACH PANEL -->
-        <div class="panel" id="c-supercoach">
-          <!-- Hero Banner -->
-          <div class="coach-hero">
-            <div class="coach-hero-tag">👑 Premium Feature</div>
-            <h2>Meet Your SuperCoach</h2>
-            <p>A real human coach + AI partner working together. Daily meal adaptation, weekly video calls, gym matching near you, and a full lifestyle transformation plan.</p>
-            <div style="display:flex;gap:1rem;margin-top:1.75rem;flex-wrap:wrap;position:relative;z-index:1">
-              <button class="checkout-btn" style="width:auto;padding:.75rem 1.75rem" onclick="startCoachTrial()">🚀 Start Free 7-Day Trial</button>
-              <button class="tbtn" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.7)" onclick="sp('cust','c-supercoach-chat',null);document.querySelector('#c-supercoach .coach-chat-wrap').scrollIntoView({behavior:'smooth'})">💬 Try AI Coach Demo</button>
-            </div>
-          </div>
+        <div class="panel" id="c-supercoach" style="background:#0A0A08;margin:-1.75rem -2.25rem;padding:0;min-height:100vh;overflow:hidden;">
+          <div style="padding:2rem 2.25rem 0">
 
-          <!-- Pricing Tiers -->
-          <div class="coach-tiers">
-            <div class="tier-card">
-              <div class="tier-name" style="color:#1A1A18">Essential</div>
-              <div class="tier-price">1,200 MAD</div>
-              <div class="tier-period">/ month</div>
-              <div class="tier-features">
-                <div class="tier-feat yes">✓ Daily macro-precise meals (30)</div>
-                <div class="tier-feat yes">✓ AI Nutritionist chat</div>
-                <div class="tier-feat yes">✓ Basic macro tracking</div>
-                <div class="tier-feat no">Wearable sync</div>
-                <div class="tier-feat no">SuperCoach</div>
-                <div class="tier-feat no">Gym matching</div>
+            <!-- PITCH HERO -->
+            <div class="sc-pitch-hero">
+              <div class="sc-eyebrow">👑 SuperCoach — Premium</div>
+              <h1>A real coach.<br><em>Daily. Personal.</em><br>Life-changing.</h1>
+              <p>Most coaching apps give you an algorithm. RIVARO gives you a real certified human coach + AI partner Coach Adam working together — every single day, personalized to your body, your goals, your schedule.</p>
+              <div style="display:flex;gap:.875rem;flex-wrap:wrap;position:relative;z-index:1">
+                <button class="wb-cta-primary" onclick="startCoachTrial()">🚀 Start Free 7-Day Trial</button>
+                <button class="wb-cta-secondary" onclick="document.getElementById('sc-chat-anchor').scrollIntoView({behavior:'smooth'})">💬 Talk to Coach Adam ↓</button>
               </div>
-              <button class="tier-btn" onclick="selectCoachTier('Essential',1200)">Select Plan</button>
-            </div>
-            <div class="tier-card featured">
-              <div class="tier-badge">Most Popular</div>
-              <div class="tier-name">Athlete</div>
-              <div class="tier-price">2,100 MAD</div>
-              <div class="tier-period">/ month · Best value</div>
-              <div class="tier-features">
-                <div class="tier-feat yes">✓ Everything in Essential</div>
-                <div class="tier-feat yes">✓ Wearable sync + AI adaptation</div>
-                <div class="tier-feat yes">✓ RIVARO Score daily</div>
-                <div class="tier-feat yes">✓ Challenges access</div>
-                <div class="tier-feat yes">✓ Budget meal optimizer</div>
-                <div class="tier-feat no">Real human SuperCoach</div>
+              <!-- Stats -->
+              <div class="wb-stats-bar" style="margin-top:2rem;margin-bottom:0">
+                <div class="wb-stat-item"><span class="wb-stat-num">2,800</span><span class="wb-stat-lbl">MAD / month</span></div>
+                <div class="wb-stat-item"><span class="wb-stat-num">7-day</span><span class="wb-stat-lbl">free trial</span></div>
+                <div class="wb-stat-item"><span class="wb-stat-num">Weekly</span><span class="wb-stat-lbl">video call</span></div>
+                <div class="wb-stat-item"><span class="wb-stat-num">24/7</span><span class="wb-stat-lbl">AI Coach Adam</span></div>
               </div>
-              <button class="tier-btn" onclick="selectCoachTier('Athlete',2100)">Select Plan</button>
             </div>
-            <div class="tier-card">
-              <div class="tier-name" style="color:#1A1A18">SuperCoach 👑</div>
-              <div class="tier-price">3,800 MAD</div>
-              <div class="tier-period">/ month · All-inclusive</div>
-              <div class="tier-features">
-                <div class="tier-feat yes">✓ Everything in Athlete</div>
-                <div class="tier-feat yes">✓ Real human coach (weekly call)</div>
-                <div class="tier-feat yes">✓ AI coach daily check-in</div>
-                <div class="tier-feat yes">✓ Gym matching near you</div>
-                <div class="tier-feat yes">✓ Monthly body report</div>
-                <div class="tier-feat yes">✓ Priority kitchen queue</div>
-              </div>
-              <button class="tier-btn" onclick="selectCoachTier('SuperCoach',3800)">Select Plan</button>
-            </div>
-          </div>
 
-          <!-- AI COACH DEMO CHAT -->
-          <div class="coach-chat-wrap">
-            <div class="coach-chat-hdr">
-              <div class="coach-av-lg">🏋️</div>
-              <div>
-                <div class="coach-name">Coach Adam — AI Simulation</div>
-                <div class="coach-subtitle">7-day free trial · SuperCoach preview · Online now</div>
+            <!-- WHY RIVARO vs OTHERS -->
+            <div style="margin-bottom:1.5rem">
+              <div style="font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.22);text-align:center;margin-bottom:1.1rem">Why RIVARO SuperCoach — not other services</div>
+              <div class="sc-vs-grid">
+                <div class="sc-vs-card bad">
+                  <div class="sc-vs-hdr">❌ Personal trainer alone</div>
+                  <div class="sc-vs-body">
+                    <div class="sc-vs-row">No nutrition plan — just training</div>
+                    <div class="sc-vs-row">You still figure out food yourself</div>
+                    <div class="sc-vs-row">1,500–3,000 MAD/month, no meals</div>
+                    <div class="sc-vs-row">No AI — offline between sessions</div>
+                    <div class="sc-vs-row">No body data tracking</div>
+                    <div class="sc-vs-row">No wearable integration</div>
+                  </div>
+                </div>
+                <div class="sc-vs-card good">
+                  <div class="sc-vs-hdr">✅ RIVARO SuperCoach</div>
+                  <div class="sc-vs-body">
+                    <div class="sc-vs-row">Real coach + 30 precision meals</div>
+                    <div class="sc-vs-row">Food handled — delivered daily</div>
+                    <div class="sc-vs-row">from 2,800 MAD — meals + coaching + wearable</div>
+                    <div class="sc-vs-row">AI Coach Adam — always available 24/7</div>
+                    <div class="sc-vs-row">Monthly body composition report</div>
+                    <div class="sc-vs-row">Gym matched and discounted near you</div>
+                  </div>
+                </div>
               </div>
-              <div style="margin-left:auto;background:rgba(107,174,107,.2);border:1px solid rgba(107,174,107,.3);border-radius:100px;padding:.3rem .85rem;font-size:.7rem;color:#6BAE6B;font-weight:700">● Live</div>
             </div>
-            <div class="coach-chat-msgs" id="coachMsgs">
-              <div class="am bot"><div class="amav" style="background:#C8A96E">🏋️</div><div class="amb"><strong>Salut Othmane! 💪 I'm Coach Adam.</strong><br><br>I've reviewed your profile: <strong>Muscle gain goal · High Protein plan · 14-day streak · RIVARO Score 82</strong>.<br><br>You're making solid progress. Today I want to focus on <strong>optimizing your post-workout nutrition window</strong> — this alone could accelerate your results by 30%. What time do you train?</div></div>
-            </div>
-            <div class="aichips" id="coachChips">
-              <button class="ach" onclick="sendCoachChip(this)">I train at 7 PM</button>
-              <button class="ach" onclick="sendCoachChip(this)">My progress feels slow</button>
-              <button class="ach" onclick="sendCoachChip(this)">Fix my recovery</button>
-              <button class="ach" onclick="sendCoachChip(this)">Build me a training plan</button>
-              <button class="ach" onclick="sendCoachChip(this)">How do I break a plateau?</button>
-            </div>
-            <div class="aiinrow">
-              <button class="voice-btn" onclick="toggleVoice('coachInp',this)" title="Voice input">🎤</button>
-              <input class="aiinp" id="coachInp" placeholder="Ask Coach Adam anything..." onkeydown="if(event.key==='Enter')sendCoachMsg()">
-              <button class="aisb" id="coachSend" onclick="sendCoachMsg()"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
-            </div>
-            <div class="coach-upgrade-banner" id="coachUpgradeBanner" style="display:none">
-              <div style="font-size:2rem">👑</div>
-              <div class="coach-upgrade-text">
-                <div class="coach-upgrade-title">Trial ends in 5 days</div>
-                <div class="coach-upgrade-sub">Upgrade to keep Coach Adam + get your real human coach + gym access</div>
-              </div>
-              <button class="coach-upgrade-btn" onclick="selectCoachTier('SuperCoach',3800)">Upgrade Now</button>
-            </div>
-          </div>
 
-          <!-- GYM MATCHING -->
-          <div class="card" style="margin-top:1.35rem">
-            <div class="cardh"><span class="cardt">🏋️ Gyms Near You — Tanger</span><button class="tbtn" onclick="refreshGyms()">📍 Update Location</button></div>
-            <div style="font-size:.82rem;color:#7A7870;margin-bottom:1.25rem">Gyms compatible with your SuperCoach plan. RIVARO negotiates discounted rates for subscribers.</div>
-            <div id="gymList"></div>
-          </div>
+            <!-- COACH ADAM PROFILE -->
+            <div class="sc-coach-card">
+              <div class="sc-coach-av">🏋️</div>
+              <div style="flex:1">
+                <div class="sc-coach-name">Coach Adam</div>
+                <div class="sc-coach-title">RIVARO SuperCoach · Certified Performance & Nutrition Coach</div>
+                <div style="font-size:.8rem;color:rgba(255,255,255,.5);line-height:1.65;margin-bottom:.875rem">
+                  Coach Adam combines 10+ years of coaching experience with RIVARO's AI system. He reviews your wearable data, tracks your progress weekly, and co-creates your meal plan with the kitchen — so your food and your training always work together.
+                </div>
+                <div class="sc-coach-tags">
+                  <span class="sc-coach-tag">🏋️ Strength Training</span>
+                  <span class="sc-coach-tag">🥗 Sports Nutrition</span>
+                  <span class="sc-coach-tag">📊 Body Composition</span>
+                  <span class="sc-coach-tag">🧘 Recovery Science</span>
+                  <span class="sc-coach-tag">⚡ Athletic Performance</span>
+                </div>
+              </div>
+              <div style="flex-shrink:0;text-align:right">
+                <div style="background:rgba(107,174,107,.12);border:1px solid rgba(107,174,107,.2);border-radius:100px;padding:.3rem .875rem;font-size:.7rem;font-weight:700;color:#6BAE6B;margin-bottom:.5rem">● Available now</div>
+                <div style="font-size:.65rem;color:rgba(255,255,255,.25)">Tanger, Morocco</div>
+              </div>
+            </div>
+
+            <!-- YOUR TRANSFORMATION JOURNEY -->
+            <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:1.75rem;margin-bottom:1.5rem">
+              <div style="font-family:'Clash Display',sans-serif;font-size:1.1rem;font-weight:700;color:#FDFAF4;text-align:center;margin-bottom:.4rem">Your 12-week transformation</div>
+              <div style="font-size:.8rem;color:rgba(255,255,255,.32);text-align:center;margin-bottom:1.75rem">What happens every week when you're on SuperCoach</div>
+              <div class="sc-journey">
+                <div class="sc-journey-step">
+                  <div class="sc-journey-dot">📋</div>
+                  <div>
+                    <div class="sc-journey-week">Week 1</div>
+                    <div class="sc-journey-title">Deep profile — Coach Adam reviews everything</div>
+                    <div class="sc-journey-desc">First 45-min video call. Coach Adam reviews your body stats, goals, schedule, training history and food preferences. AI builds your baseline macro profile. First meal plan delivered.</div>
+                  </div>
+                </div>
+                <div class="sc-journey-step">
+                  <div class="sc-journey-dot">🍽️</div>
+                  <div>
+                    <div class="sc-journey-week">Weeks 2–4</div>
+                    <div class="sc-journey-title">Daily AI coaching + weekly adjustments</div>
+                    <div class="sc-journey-desc">Coach Adam checks your data every week. AI adapts your meals daily based on wearable data. You chat with Coach Adam anytime through the app. Macros adjusted as your body responds.</div>
+                  </div>
+                </div>
+                <div class="sc-journey-step">
+                  <div class="sc-journey-dot">📊</div>
+                  <div>
+                    <div class="sc-journey-week">Month 2</div>
+                    <div class="sc-journey-title">First body composition report</div>
+                    <div class="sc-journey-desc">Full monthly report: weight change, muscle gain, body fat %, sleep improvement, macro compliance rate, and projected timeline. Coach Adam reviews results on video call and adjusts your program.</div>
+                  </div>
+                </div>
+                <div class="sc-journey-step">
+                  <div class="sc-journey-dot">🏋️</div>
+                  <div>
+                    <div class="sc-journey-week">Ongoing</div>
+                    <div class="sc-journey-title">Gym + meals + AI — the full ecosystem</div>
+                    <div class="sc-journey-desc">Your gym sessions, RIVARO meals, sleep data, and Coach Adam's weekly calls all work together. Your progress compounds. Most clients see visible results within 30 days.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- WHAT YOU GET — 6 BENEFITS -->
+            <div style="margin-bottom:1.5rem">
+              <div class="wb-section-divider">
+                <div class="wb-section-divider-line"></div>
+                <div class="wb-section-divider-label">Everything in your subscription</div>
+                <div class="wb-section-divider-line"></div>
+              </div>
+              <div class="wb-benefits" style="grid-template-columns:repeat(auto-fill,minmax(190px,1fr));margin:1rem 0 0">
+                <div class="wb-benefit"><div class="wb-benefit-icon">📹</div><div class="wb-benefit-title">Weekly Video Call</div><div class="wb-benefit-desc">45-min session with Coach Adam every week. Reviews your data, adjusts your plan, answers everything.</div></div>
+                <div class="wb-benefit"><div class="wb-benefit-icon">🤖</div><div class="wb-benefit-title">AI Coach Adam — Daily</div><div class="wb-benefit-desc">Chat anytime. Ask about training, nutrition, recovery, sleep. Coach Adam's AI is always on.</div></div>
+                <div class="wb-benefit"><div class="wb-benefit-icon">🍽️</div><div class="wb-benefit-title">30 Precision Meals</div><div class="wb-benefit-desc">Fresh daily meals designed by Coach Adam + RIVARO AI. Macros precise to ±5%. Delivered to your door.</div></div>
+                <div class="wb-benefit"><div class="wb-benefit-icon">🏋️</div><div class="wb-benefit-title">Gym Matching</div><div class="wb-benefit-desc">We find the best gym near you in Tanger. RIVARO negotiates a discounted membership rate for you.</div></div>
+                <div class="wb-benefit"><div class="wb-benefit-icon">📊</div><div class="wb-benefit-title">Monthly Body Report</div><div class="wb-benefit-desc">Full body composition analysis every month. Weight, muscle mass, fat %, recovery score, and projection.</div></div>
+                <div class="wb-benefit"><div class="wb-benefit-icon">⭐</div><div class="wb-benefit-title">Priority Everything</div><div class="wb-benefit-desc">First in kitchen queue, earliest delivery window, first access to new meals. VIP treatment.</div></div>
+              </div>
+            </div>
+
+            <!-- TESTIMONIALS -->
+            <div style="margin-bottom:1.5rem">
+              <div style="font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:1rem">Real clients · Real results</div>
+              <div class="sc-testi-grid">
+                <div class="sc-testi">
+                  <div class="sc-testi-quote">"Before SuperCoach I trained hard but never saw results. In 6 weeks Coach Adam showed me I was under-eating by 400 kcal on training days. RIVARO fixed it automatically. I gained 2.8kg of muscle in 2 months."</div>
+                  <div class="sc-testi-name">Youssef M.</div>
+                  <div class="sc-testi-meta">Tanger · Muscle gain · 3 months</div>
+                  <div class="sc-testi-result">
+                    <span class="sc-testi-pill">+2.8kg muscle</span>
+                    <span class="sc-testi-pill" style="background:rgba(200,169,110,.12);color:#C8A96E;border-color:rgba(200,169,110,.2)">-4.1kg fat</span>
+                  </div>
+                </div>
+                <div class="sc-testi">
+                  <div class="sc-testi-quote">"Coach Adam called me every Tuesday. He looked at my Apple Watch data and changed my dinner every time I slept badly. I didn't just lose weight — I started sleeping better, performing better. It's a system."</div>
+                  <div class="sc-testi-name">Nadia B.</div>
+                  <div class="sc-testi-meta">Tanger · Fat loss · 2 months</div>
+                  <div class="sc-testi-result">
+                    <span class="sc-testi-pill">-6.2kg in 8 weeks</span>
+                    <span class="sc-testi-pill" style="background:rgba(74,122,200,.1);color:#4A7AC8;border-color:rgba(74,122,200,.2)">+1.4h sleep avg</span>
+                  </div>
+                </div>
+                <div class="sc-testi">
+                  <div class="sc-testi-quote">"The gym they matched me with is 800m from my office. My meals arrive at the gym on training days. I don't think about food, training or recovery anymore. Everything is handled."</div>
+                  <div class="sc-testi-name">Karim A.</div>
+                  <div class="sc-testi-meta">Tanger · Athlete · 4 months</div>
+                  <div class="sc-testi-result">
+                    <span class="sc-testi-pill">VO2 Max +4.1</span>
+                    <span class="sc-testi-pill" style="background:rgba(200,169,110,.12);color:#C8A96E;border-color:rgba(200,169,110,.2)">+3.5kg muscle</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- LIVE AI COACH DEMO -->
+            <div id="sc-chat-anchor" style="margin-bottom:1.5rem">
+              <div style="font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:1rem">Try it now — free demo, no login needed</div>
+              <div class="sc-demo-wrap">
+                <div class="sc-demo-hdr">
+                  <div class="sc-demo-av">🏋️</div>
+                  <div>
+                    <div class="sc-demo-name">Coach Adam</div>
+                    <div class="sc-demo-sub">RIVARO SuperCoach · AI Simulation · Free trial — no commitment</div>
+                  </div>
+                  <div style="margin-left:auto;background:rgba(0,0,0,.15);border-radius:100px;padding:.28rem .8rem;font-size:.65rem;font-weight:700;color:rgba(0,0,0,.55)">● Live</div>
+                </div>
+                <div class="sc-demo-msgs" id="coachMsgs">
+                  <div class="am bot"><div class="amav" style="background:#C8A96E">🏋️</div><div class="amb" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1);color:rgba(255,255,255,.82);border-top-left-radius:4px"><strong>Salut! I'm Coach Adam 💪</strong><br><br>I've reviewed your RIVARO profile: <strong>High Protein plan · 2,100 kcal/day · 14-day streak · RIVARO Score 82</strong>.<br><br>You're doing well — but your sleep score (68%) is holding your muscle recovery back. Let's fix that together. What time do you train?</div></div>
+                </div>
+                <div style="display:flex;flex-wrap:wrap;gap:.38rem;padding:.65rem 1.25rem;border-top:1px solid rgba(255,255,255,.07)" id="coachChips">
+                  <button class="ach" style="background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.1);color:rgba(255,255,255,.6)" onclick="sendCoachChip(this)">I train at 7 PM</button>
+                  <button class="ach" style="background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.1);color:rgba(255,255,255,.6)" onclick="sendCoachChip(this)">My progress is slow</button>
+                  <button class="ach" style="background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.1);color:rgba(255,255,255,.6)" onclick="sendCoachChip(this)">Fix my recovery</button>
+                  <button class="ach" style="background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.1);color:rgba(255,255,255,.6)" onclick="sendCoachChip(this)">How fast can I gain muscle?</button>
+                </div>
+                <div style="padding:.875rem 1.25rem;border-top:1px solid rgba(255,255,255,.07);display:flex;gap:.6rem;background:#0A0908">
+                  <button class="voice-btn" style="background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.1)" onclick="toggleVoice('coachInp',this)">🎤</button>
+                  <input class="aiinp" id="coachInp" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.1);color:rgba(255,255,255,.8)" placeholder="Ask Coach Adam anything..." onkeydown="if(event.key==='Enter')sendCoachMsg()">
+                  <button class="aisb" id="coachSend" onclick="sendCoachMsg()" style="background:#C8A96E"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
+                </div>
+                <div style="background:rgba(200,169,110,.08);border-top:1px solid rgba(200,169,110,.15);padding:.875rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:.875rem;flex-wrap:wrap">
+                  <div>
+                    <div style="font-size:.75rem;font-weight:600;color:#FDFAF4;margin-bottom:.1rem">Ready for the real thing?</div>
+                    <div style="font-size:.68rem;color:rgba(255,255,255,.35)">Start your 7-day free trial — real coach, real meals, real results</div>
+                  </div>
+                  <button onclick="startCoachTrial()" style="padding:.55rem 1.1rem;border:none;border-radius:100px;background:linear-gradient(135deg,#C8A96E,#A8813E);color:#1A1A18;font-family:'Clash Display',sans-serif;font-size:.78rem;font-weight:700;cursor:pointer;white-space:nowrap">🚀 Start Free Trial</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- GYM MATCHING -->
+            <div style="margin-bottom:1.5rem">
+              <div style="font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:1rem">🏋️ Gyms near you — Tanger · SuperCoach rates</div>
+              <div class="sc-gym-grid" id="scGymGrid"></div>
+            </div>
+
+            <!-- FINAL CTA -->
+            <div class="sc-cta" style="margin-bottom:0">
+              <div style="position:relative;z-index:1">
+                <div style="font-family:'Clash Display',sans-serif;font-size:1.5rem;font-weight:700;color:#FDFAF4;margin-bottom:.5rem;position:relative;z-index:1">Ready to transform?</div>
+                <div style="font-size:.84rem;color:rgba(255,255,255,.38);margin-bottom:1.75rem;position:relative;z-index:1">7-day free trial · Real coach · Cancel anytime · First delivery in 24h</div>
+                <div class="wb-cta-buttons">
+                  <button class="wb-cta-primary" onclick="startCoachTrial()">🚀 Start Free 7-Day Trial — from 2,800 MAD/mo</button>
+                  <button class="wb-cta-secondary" onclick="sp('cust','c-wearable',null)">⌚ See Wearable Plan instead</button>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- end pitch padding -->
         </div>
 
 
@@ -3597,7 +3827,7 @@ input.lr::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;ba
         </div>
 
         <!-- SETTINGS -->
-        <div class="panel" id="c-settings">
+        <div class="panel" id="c-settings" style="background:#F5F0E8;">
 
           <!-- CURRENT SUBSCRIPTION HERO -->
           <div class="sub-hero">
@@ -3755,21 +3985,6 @@ input.lr::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;ba
                 <div style="display:flex;gap:3px;height:48px;align-items:flex-end" id="stMiniChart"></div>
               </div>
 
-              <!-- AI UPSELL CARD — data-driven -->
-              <div style="background:linear-gradient(135deg,rgba(200,169,110,.1),rgba(200,169,110,.05));border:1px solid rgba(200,169,110,.2);border-radius:14px;padding:1.1rem">
-                <div style="font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#C8A96E;margin-bottom:.5rem">🤖 AI Insight from Your Data</div>
-                <div style="font-size:.8rem;color:rgba(255,255,255,.65);line-height:1.6;margin-bottom:.875rem">
-                  Your sleep averaged <strong style="color:#FDFAF4">5.8h</strong> — below your 7h target. This is reducing your muscle recovery by ~20%.
-                  You burned <strong style="color:#FDFAF4">847 kcal</strong> today but your meals weren't adjusted for it.
-                  <strong style="color:#C8A96E">Wearable Intelligence would have fixed both automatically.</strong>
-                </div>
-                <div style="display:flex;align-items:center;justify-content:space-between;gap:.875rem;flex-wrap:wrap">
-                  <div style="font-size:.72rem;color:rgba(255,255,255,.35)">Unlock full meal adaptation</div>
-                  <button onclick="wcoSelect(1);openWearableSubscribe()" style="padding:.5rem 1.1rem;border:none;border-radius:100px;background:linear-gradient(135deg,#C8A96E,#A8813E);color:#1A1A18;font-family:'Clash Display',sans-serif;font-size:.75rem;font-weight:700;cursor:pointer;white-space:nowrap;transition:all .2s" onmouseover="this.style.transform='translateY(-1px)'" onmouseout="this.style.transform=''">
-                    ⚡ Upgrade — from 2,100 MAD
-                  </button>
-                </div>
-              </div>
             </div>
 
             <!-- NOT CONNECTED STATE (hidden by default) -->
@@ -4606,6 +4821,126 @@ input.lr::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;ba
         ✅ Subscribe Now
       </button>
       <div style="text-align:center;margin-top:.65rem;font-size:.72rem;color:#7A7870">First delivery in 24h · Secure payment · Cancel anytime</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ SUPERCOACH TRIAL MODAL ═══ -->
+<div class="trial-modal-ov" id="trialModalOv">
+  <div class="trial-modal">
+
+    <!-- Header -->
+    <div class="trial-modal-hdr">
+      <div>
+        <div class="trial-modal-hdr-title">👑 SuperCoach — Free 7-Day Trial</div>
+        <div class="trial-modal-hdr-sub">No charge for 7 days · Cancel anytime before trial ends</div>
+      </div>
+      <button class="trial-close" onclick="closeTrialModal()">✕</button>
+    </div>
+
+    <!-- Step indicators -->
+    <div class="trial-steps">
+      <div style="display:flex;flex-direction:column;align-items:center">
+        <div class="trial-step-dot active" id="tsd1">1</div>
+        <div class="trial-step-lbl" style="color:#C8A96E">Account</div>
+      </div>
+      <div class="trial-step-line pending" id="tsl1"></div>
+      <div style="display:flex;flex-direction:column;align-items:center">
+        <div class="trial-step-dot pending" id="tsd2">2</div>
+        <div class="trial-step-lbl" style="color:#B0A898">Payment</div>
+      </div>
+      <div class="trial-step-line pending" id="tsl2"></div>
+      <div style="display:flex;flex-direction:column;align-items:center">
+        <div class="trial-step-dot pending" id="tsd3">✓</div>
+        <div class="trial-step-lbl" style="color:#B0A898">Done</div>
+      </div>
+    </div>
+
+    <!-- STEP 1: Account -->
+    <div class="trial-body" id="trialStep1">
+      <div style="font-family:'Clash Display',sans-serif;font-size:1rem;font-weight:700;color:#1A1A18;margin-bottom:.25rem">Create your RIVARO account</div>
+      <div style="font-size:.78rem;color:#7A7870;margin-bottom:1.35rem">One account for all RIVARO services</div>
+      <div class="trial-field">
+        <label>Full Name</label>
+        <input type="text" id="trial-name" placeholder="Othmane Benchagra">
+      </div>
+      <div class="trial-field">
+        <label>Email</label>
+        <input type="email" id="trial-email" placeholder="you@example.com">
+      </div>
+      <div class="trial-field">
+        <label>Password</label>
+        <input type="password" id="trial-pass" placeholder="Create a secure password">
+      </div>
+      <div class="trial-field">
+        <label>Phone (for delivery updates)</label>
+        <input type="tel" id="trial-phone" placeholder="+212 6XX XXX XXX">
+      </div>
+      <div class="trial-notice">
+        🔒 Your data is secure. We use your email only for meal updates and coach communications. No spam.
+      </div>
+      <button class="trial-cta" onclick="trialStep1Next()">Continue to Payment →</button>
+    </div>
+
+    <!-- STEP 2: Card Info -->
+    <div class="trial-body" id="trialStep2" style="display:none">
+      <div style="font-family:'Clash Display',sans-serif;font-size:1rem;font-weight:700;color:#1A1A18;margin-bottom:.25rem">Add your payment card</div>
+      <div style="font-size:.78rem;color:#7A7870;margin-bottom:1.25rem">Your card won't be charged until after the 7-day free trial</div>
+      <!-- Card visual preview -->
+      <div class="card-preview" id="cardPreview">
+        <div class="card-preview-num" id="cardNum">•••• •••• •••• ••••</div>
+        <div class="card-preview-row">
+          <div>
+            <div class="card-preview-lbl">Card Holder</div>
+            <div class="card-preview-val" id="cardHolder">YOUR NAME</div>
+          </div>
+          <div>
+            <div class="card-preview-lbl">Expires</div>
+            <div class="card-preview-val" id="cardExp">MM/YY</div>
+          </div>
+          <div class="card-preview-brand" id="cardBrand">💳</div>
+        </div>
+      </div>
+      <div class="trial-field">
+        <label>Card Number</label>
+        <input type="text" id="trial-cardnum" placeholder="1234 5678 9012 3456" maxlength="19" oninput="formatCardNum(this)">
+      </div>
+      <div class="trial-field-row">
+        <div class="trial-field" style="margin-bottom:0">
+          <label>Expiry Date</label>
+          <input type="text" id="trial-expiry" placeholder="MM/YY" maxlength="5" oninput="formatExpiry(this)">
+        </div>
+        <div class="trial-field" style="margin-bottom:0">
+          <label>CVV</label>
+          <input type="text" id="trial-cvv" placeholder="123" maxlength="3">
+        </div>
+      </div>
+      <div style="margin-bottom:1.1rem"></div>
+      <div class="trial-notice">
+        ✅ <strong>Free for 7 days.</strong> After your trial, you'll be charged <strong>from 2,800 MAD/month</strong>. Cancel anytime before day 7 — no charge. Powered by CMI Secure Payment.
+      </div>
+      <button class="trial-cta" onclick="trialStep2Submit()">🚀 Start My Free Trial</button>
+      <button class="trial-back" onclick="trialGoBack()">← Back to account details</button>
+    </div>
+
+    <!-- STEP 3: Success -->
+    <div class="trial-body" id="trialStep3" style="display:none;text-align:center">
+      <div style="font-size:3.5rem;margin-bottom:1rem">🎉</div>
+      <div style="font-family:'Clash Display',sans-serif;font-size:1.2rem;font-weight:700;color:#1A1A18;margin-bottom:.4rem">Trial activated!</div>
+      <div style="font-size:.82rem;color:#7A7870;line-height:1.7;margin-bottom:1.5rem">
+        Your <strong style="color:#1A1A18">7-day free SuperCoach trial</strong> is live. Coach Adam will contact you within <strong style="color:#1A1A18">2 hours</strong> to schedule your first video call. Your first meal is scheduled for <strong style="color:#1A1A18">tomorrow morning</strong>.
+      </div>
+      <div style="background:#F5F0E8;border-radius:14px;padding:1.1rem;margin-bottom:1.25rem;text-align:left">
+        <div style="font-size:.68rem;font-weight:700;color:#7A7870;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.65rem">What happens next</div>
+        <div style="font-size:.78rem;color:#1A1A18;display:flex;flex-direction:column;gap:.45rem">
+          <div>📱 <strong>Today</strong> — Coach Adam sends you a WhatsApp intro</div>
+          <div>📅 <strong>Tomorrow</strong> — First video call (45 min)</div>
+          <div>🍽️ <strong>Day 2</strong> — First precision meal delivered</div>
+          <div>📊 <strong>Day 7</strong> — Trial review + decide to continue</div>
+        </div>
+      </div>
+      <button class="trial-cta" onclick="closeTrialModal();sp('cust','c-supercoach',document.querySelector('.ni[onclick*=c-supercoach]'))">Go to SuperCoach →</button>
     </div>
 
   </div>
@@ -5772,11 +6107,114 @@ function sendCoachChip(btn) {
   btn.remove();
   sendCoachMsg();
 }
+
+// ════════════════════════════════════════════
+// SUPERCOACH TRIAL MODAL — 2-step flow
+// ════════════════════════════════════════════
 function startCoachTrial() {
-  sp('cust', 'c-supercoach', document.querySelector('.ni[onclick*="c-supercoach"]'));
-  showToast('🚀 7-day SuperCoach trial started! Coach Adam is ready.');
-  showNotif('👑', 'Trial Started!', 'Coach Adam will be your AI partner for 7 days');
+  // Reset to step 1
+  document.getElementById('trialStep1').style.display = 'block';
+  document.getElementById('trialStep2').style.display = 'none';
+  document.getElementById('trialStep3').style.display = 'none';
+  // Reset step indicators
+  document.getElementById('tsd1').className = 'trial-step-dot active';
+  document.getElementById('tsd2').className = 'trial-step-dot pending';
+  document.getElementById('tsd3').className = 'trial-step-dot pending';
+  document.getElementById('tsl1').className = 'trial-step-line pending';
+  document.getElementById('tsl2').className = 'trial-step-line pending';
+  // Open modal
+  var ov = document.getElementById('trialModalOv');
+  ov.classList.add('open');
+  ov.style.display = 'flex';
 }
+
+function closeTrialModal() {
+  var ov = document.getElementById('trialModalOv');
+  ov.classList.remove('open');
+  ov.style.display = 'none';
+}
+
+function trialStep1Next() {
+  var name  = document.getElementById('trial-name').value.trim();
+  var email = document.getElementById('trial-email').value.trim();
+  var pass  = document.getElementById('trial-pass').value.trim();
+  var phone = document.getElementById('trial-phone').value.trim();
+  if (!name || !email || !pass || !phone) {
+    showToast('⚠️ Please fill in all fields');
+    return;
+  }
+  if (!email.includes('@')) {
+    showToast('⚠️ Please enter a valid email');
+    return;
+  }
+  // Pre-fill card holder name
+  document.getElementById('cardHolder').textContent = name.toUpperCase();
+  // Advance to step 2
+  document.getElementById('trialStep1').style.display = 'none';
+  document.getElementById('trialStep2').style.display = 'block';
+  // Update step indicators
+  document.getElementById('tsd1').className = 'trial-step-dot done';
+  document.getElementById('tsl1').className = 'trial-step-line done';
+  document.getElementById('tsd2').className = 'trial-step-dot active';
+  document.getElementById('tsd2').textContent = '2';
+}
+
+function trialGoBack() {
+  document.getElementById('trialStep2').style.display = 'none';
+  document.getElementById('trialStep1').style.display = 'block';
+  document.getElementById('tsd1').className = 'trial-step-dot active';
+  document.getElementById('tsl1').className = 'trial-step-line pending';
+  document.getElementById('tsd2').className = 'trial-step-dot pending';
+}
+
+function trialStep2Submit() {
+  var num    = document.getElementById('trial-cardnum').value.trim();
+  var expiry = document.getElementById('trial-expiry').value.trim();
+  var cvv    = document.getElementById('trial-cvv').value.trim();
+  if (!num || !expiry || !cvv) {
+    showToast('⚠️ Please fill in all card details');
+    return;
+  }
+  if (num.replace(/\s/g,'').length < 16) {
+    showToast('⚠️ Please enter a valid 16-digit card number');
+    return;
+  }
+  // Animate to success
+  document.getElementById('trialStep2').style.display = 'none';
+  document.getElementById('trialStep3').style.display = 'block';
+  document.getElementById('tsd2').className = 'trial-step-dot done';
+  document.getElementById('tsl2').className = 'trial-step-line done';
+  document.getElementById('tsd3').className = 'trial-step-dot done';
+  document.getElementById('tsd3').textContent = '✓';
+  showNotif('👑', 'SuperCoach Trial Started!', 'Coach Adam will contact you within 2 hours');
+}
+
+// Card number formatter — adds spaces every 4 digits
+function formatCardNum(el) {
+  var v = el.value.replace(/\D/g,'').substring(0,16);
+  el.value = v.match(/.{1,4}/g) ? v.match(/.{1,4}/g).join(' ') : v;
+  // Update preview
+  var disp = v.padEnd(16,'•');
+  document.getElementById('cardNum').textContent = 
+    disp.substring(0,4) + ' ' + disp.substring(4,8) + ' ' + disp.substring(8,12) + ' ' + disp.substring(12,16);
+  // Detect card brand
+  var brand = v[0]==='4' ? '💳 Visa' : v[0]==='5' ? '💳 Mastercard' : v.substring(0,2)==='37' ? '💳 Amex' : '💳';
+  document.getElementById('cardBrand').textContent = brand;
+}
+// Expiry formatter
+function formatExpiry(el) {
+  var v = el.value.replace(/\D/g,'');
+  if (v.length >= 2) v = v.substring(0,2) + '/' + v.substring(2,4);
+  el.value = v;
+  document.getElementById('cardExp').textContent = el.value || 'MM/YY';
+}
+
+// Close on overlay click
+document.addEventListener('DOMContentLoaded', function() {
+  var ov = document.getElementById('trialModalOv');
+  if (ov) ov.addEventListener('click', function(e){ if(e.target===e.currentTarget) closeTrialModal(); });
+});
+
 
 // ════════════════════════════════════════════
 // GYM MATCHING
@@ -7078,6 +7516,36 @@ function stDisconnectDevice() {
 
 // Init settings wearable on DOMContentLoaded
 
+
+// ════════════════════════════════════════════
+// SUPERCOACH — GYM GRID
+// ════════════════════════════════════════════
+var SC_GYMS = [
+  {name:'Golds Gym Tanger', dist:'1.2 km', tags:['Weights','Cardio','Pool'], original:'600 MAD/mo', rivaro:'480 MAD/mo', saving:'20%', em:'🏋️'},
+  {name:'FitLife Tanger Centre', dist:'0.8 km', tags:['CrossFit','Boxing','Yoga'], original:'500 MAD/mo', rivaro:'390 MAD/mo', saving:'22%', em:'🥊'},
+  {name:'Sport Club Malabata', dist:'2.1 km', tags:['Sea view','Spa','Weights'], original:'800 MAD/mo', rivaro:'599 MAD/mo', saving:'25%', em:'🌊'},
+  {name:'Pulse Gym Tanger', dist:'0.5 km', tags:['24/7','Machines','Classes'], original:'450 MAD/mo', rivaro:'340 MAD/mo', saving:'24%', em:'⚡'},
+];
+
+function gymToast(el) { showToast('📍 ' + el.getAttribute('data-gym') + ' — RIVARO rate applied ✓'); }
+function renderScGyms() {
+  var el = document.getElementById('scGymGrid');
+  if (!el) return;
+  el.innerHTML = SC_GYMS.map(function(g) {
+    return '<div class="sc-gym-card" onclick="gymToast(this)"  data-gym="' + g.name + '">' +
+      '<div style="font-size:1.75rem;margin-bottom:.5rem">' + g.em + '</div>' +
+      '<div class="sc-gym-name">' + g.name + '</div>' +
+      '<div class="sc-gym-dist">📍 ' + g.dist + ' from you</div>' +
+      '<div class="sc-gym-tags">' + g.tags.map(function(t){ return '<span class="sc-gym-tag">' + t + '</span>'; }).join('') + '</div>' +
+      '<div class="sc-gym-price">' +
+        '<div><div style="font-size:.68rem;color:#B0A898;text-decoration:line-through">' + g.original + '</div>' +
+          '<div class="sc-gym-rivaro">RIVARO rate: ' + g.rivaro + '</div></div>' +
+        '<div style="background:#E6F4E6;color:#2A6E2A;font-size:.68rem;font-weight:700;padding:.2rem .55rem;border-radius:100px">-' + g.saving + '</div>' +
+      '</div>' +
+    '</div>';
+  }).join('');
+}
+
 window.addEventListener('DOMContentLoaded', function() {
   var phoneSim = document.getElementById('wbPhoneSim');
   if (phoneSim) wbSimObserver.observe(phoneSim);
@@ -7137,6 +7605,36 @@ function stDisconnectDevice() {
 }
 
 // Init settings wearable on DOMContentLoaded
+
+
+// ════════════════════════════════════════════
+// SUPERCOACH — GYM GRID
+// ════════════════════════════════════════════
+var SC_GYMS = [
+  {name:'Golds Gym Tanger', dist:'1.2 km', tags:['Weights','Cardio','Pool'], original:'600 MAD/mo', rivaro:'480 MAD/mo', saving:'20%', em:'🏋️'},
+  {name:'FitLife Tanger Centre', dist:'0.8 km', tags:['CrossFit','Boxing','Yoga'], original:'500 MAD/mo', rivaro:'390 MAD/mo', saving:'22%', em:'🥊'},
+  {name:'Sport Club Malabata', dist:'2.1 km', tags:['Sea view','Spa','Weights'], original:'800 MAD/mo', rivaro:'599 MAD/mo', saving:'25%', em:'🌊'},
+  {name:'Pulse Gym Tanger', dist:'0.5 km', tags:['24/7','Machines','Classes'], original:'450 MAD/mo', rivaro:'340 MAD/mo', saving:'24%', em:'⚡'},
+];
+
+function gymToast(el) { showToast('📍 ' + el.getAttribute('data-gym') + ' — RIVARO rate applied ✓'); }
+function renderScGyms() {
+  var el = document.getElementById('scGymGrid');
+  if (!el) return;
+  el.innerHTML = SC_GYMS.map(function(g) {
+    return '<div class="sc-gym-card" onclick="gymToast(this)"  data-gym="' + g.name + '">' +
+      '<div style="font-size:1.75rem;margin-bottom:.5rem">' + g.em + '</div>' +
+      '<div class="sc-gym-name">' + g.name + '</div>' +
+      '<div class="sc-gym-dist">📍 ' + g.dist + ' from you</div>' +
+      '<div class="sc-gym-tags">' + g.tags.map(function(t){ return '<span class="sc-gym-tag">' + t + '</span>'; }).join('') + '</div>' +
+      '<div class="sc-gym-price">' +
+        '<div><div style="font-size:.68rem;color:#B0A898;text-decoration:line-through">' + g.original + '</div>' +
+          '<div class="sc-gym-rivaro">RIVARO rate: ' + g.rivaro + '</div></div>' +
+        '<div style="background:#E6F4E6;color:#2A6E2A;font-size:.68rem;font-weight:700;padding:.2rem .55rem;border-radius:100px">-' + g.saving + '</div>' +
+      '</div>' +
+    '</div>';
+  }).join('');
+}
 
 window.addEventListener('DOMContentLoaded', function() {
   renderMenu('all');
