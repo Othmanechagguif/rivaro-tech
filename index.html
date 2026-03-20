@@ -1404,6 +1404,216 @@ input.lr::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;ba
   .wb-sleep-stages{grid-template-columns:repeat(2,1fr)!important;}
   .wb-heatmap-grid{grid-template-columns:auto repeat(7,1fr);gap:.25rem!important;}
 }
+
+/* ── SUBSCRIPTION MANAGER ── */
+.sub-hero{background:linear-gradient(135deg,#1A1A18,#2A2A20);border-radius:20px;padding:1.75rem;margin-bottom:1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1.25rem;flex-wrap:wrap;}
+.sub-hero-left{}
+.sub-hero-plan{font-family:'Clash Display',sans-serif;font-size:1.4rem;font-weight:700;color:#FDFAF4;margin-bottom:.2rem;}
+.sub-hero-meta{font-size:.78rem;color:rgba(255,255,255,.4);}
+.sub-hero-price{text-align:right;}
+.sub-hero-amount{font-family:'Clash Display',sans-serif;font-size:2rem;font-weight:700;color:#C8A96E;}
+.sub-hero-period{font-size:.72rem;color:rgba(255,255,255,.3);}
+.sub-status-row{display:flex;align-items:center;gap:.65rem;margin-top:.875rem;flex-wrap:wrap;}
+.sub-pill{display:inline-flex;align-items:center;gap:.35rem;padding:.28rem .75rem;border-radius:100px;font-size:.68rem;font-weight:700;letter-spacing:.06em;}
+.sub-pill.active{background:rgba(107,174,107,.15);border:1px solid rgba(107,174,107,.25);color:#6BAE6B;}
+.sub-pill.addon{background:rgba(200,169,110,.12);border:1px solid rgba(200,169,110,.22);color:#C8A96E;}
+.sub-pill.off{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.4);}
+
+/* Plan selector cards */
+.plan-select-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.875rem;margin-bottom:1.25rem;}
+.plan-sel-card{border:2px solid #E8E3D8;border-radius:16px;padding:1.25rem;cursor:pointer;transition:all .22s;background:#FDFAF4;position:relative;}
+.plan-sel-card:hover{border-color:#C8A96E;transform:translateY(-2px);}
+.plan-sel-card.selected{border-color:#1A1A18;background:#1A1A18;}
+.plan-sel-card.selected .psc-name{color:#C8A96E;}
+.plan-sel-card.selected .psc-price{color:#FDFAF4;}
+.plan-sel-card.selected .psc-desc{color:rgba(255,255,255,.4);}
+.plan-sel-card.selected .psc-macros span{background:rgba(255,255,255,.08);color:rgba(255,255,255,.6);}
+.psc-check{position:absolute;top:.75rem;right:.75rem;width:20px;height:20px;border-radius:50%;border:2px solid #E8E3D8;background:transparent;transition:all .2s;display:flex;align-items:center;justify-content:center;font-size:.65rem;}
+.plan-sel-card.selected .psc-check{background:#C8A96E;border-color:#C8A96E;color:#1A1A18;}
+.psc-em{font-size:2rem;margin-bottom:.65rem;}
+.psc-name{font-family:'Clash Display',sans-serif;font-size:.95rem;font-weight:700;color:#1A1A18;margin-bottom:.2rem;}
+.psc-price{font-size:.82rem;font-weight:700;color:#C8A96E;margin-bottom:.35rem;}
+.psc-desc{font-size:.72rem;color:#7A7870;line-height:1.5;margin-bottom:.65rem;}
+.psc-macros{display:flex;gap:.3rem;flex-wrap:wrap;}
+.psc-macros span{font-size:.6rem;font-weight:600;padding:.12rem .4rem;border-radius:6px;background:#F5F0E8;color:#4A5240;}
+
+/* Wearable add-on toggle */
+.addon-card{border:2px solid #E8E3D8;border-radius:18px;padding:1.5rem;background:#FDFAF4;transition:all .25s;margin-bottom:1.25rem;}
+.addon-card.enabled{border-color:#1A1A18;background:#1A1A18;}
+.addon-header{display:flex;align-items:center;gap:1rem;}
+.addon-icon-wrap{width:52px;height:52px;border-radius:14px;background:#F5F0E8;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0;transition:all .25s;}
+.addon-card.enabled .addon-icon-wrap{background:rgba(255,255,255,.08);}
+.addon-title{font-family:'Clash Display',sans-serif;font-size:1rem;font-weight:700;color:#1A1A18;transition:color .25s;}
+.addon-card.enabled .addon-title{color:#FDFAF4;}
+.addon-sub{font-size:.75rem;color:#7A7870;margin-top:.15rem;transition:color .25s;}
+.addon-card.enabled .addon-sub{color:rgba(255,255,255,.4);}
+.addon-price{font-family:'Clash Display',sans-serif;font-size:1.1rem;font-weight:700;color:#C8A96E;margin-left:auto;flex-shrink:0;}
+/* Toggle switch */
+.toggle-wrap{display:flex;align-items:center;gap:.65rem;margin-left:auto;}
+.toggle{width:48px;height:26px;background:#E8E3D8;border-radius:100px;position:relative;cursor:pointer;transition:background .25s;flex-shrink:0;}
+.toggle.on{background:#1A1A18;}
+.addon-card.enabled .toggle{background:#C8A96E;}
+.toggle-knob{position:absolute;top:3px;left:3px;width:20px;height:20px;background:#FDFAF4;border-radius:50%;transition:transform .25s;box-shadow:0 1px 4px rgba(0,0,0,.2);}
+.toggle.on .toggle-knob{transform:translateX(22px);}
+.addon-features{display:grid;grid-template-columns:1fr 1fr;gap:.4rem;margin-top:1.1rem;display:none;}
+.addon-card.enabled .addon-features{display:grid;}
+.addon-feat{font-size:.72rem;display:flex;align-items:center;gap:.4rem;color:rgba(255,255,255,.55);}
+.addon-feat::before{content:'✓';color:#6BAE6B;font-weight:700;flex-shrink:0;}
+
+/* Goal selector */
+.goal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.75rem;margin-bottom:1.25rem;}
+.goal-card{border:2px solid #E8E3D8;border-radius:14px;padding:1rem;cursor:pointer;transition:all .2s;background:#FDFAF4;text-align:center;}
+.goal-card:hover{border-color:#C8A96E;}
+.goal-card.selected{border-color:#1A1A18;background:#1A1A18;}
+.goal-card.selected .gc-name{color:#C8A96E;}
+.goal-card.selected .gc-desc{color:rgba(255,255,255,.4);}
+.gc-em{font-size:1.75rem;margin-bottom:.5rem;}
+.gc-name{font-family:'Clash Display',sans-serif;font-size:.88rem;font-weight:700;color:#1A1A18;margin-bottom:.2rem;}
+.gc-desc{font-size:.68rem;color:#7A7870;line-height:1.4;}
+
+/* Delivery settings */
+.delivery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem;margin-bottom:1rem;}
+.dslot{border:1.5px solid #E8E3D8;border-radius:11px;padding:.75rem;text-align:center;cursor:pointer;transition:all .2s;background:#FDFAF4;}
+.dslot:hover{border-color:#C8A96E;}
+.dslot.selected{border-color:#1A1A18;background:#1A1A18;color:#FDFAF4;}
+.dslot-time{font-family:'Clash Display',sans-serif;font-size:.95rem;font-weight:700;color:inherit;}
+.dslot.selected .dslot-time{color:#C8A96E;}
+.dslot-label{font-size:.62rem;color:#7A7870;margin-top:.15rem;}
+.dslot.selected .dslot-label{color:rgba(255,255,255,.4);}
+
+/* Summary + confirm */
+.sub-summary{background:#F5F0E8;border-radius:16px;padding:1.25rem;margin-bottom:1.25rem;}
+.sub-summary-row{display:flex;align-items:center;justify-content:space-between;font-size:.84rem;color:#7A7870;margin-bottom:.5rem;}
+.sub-summary-row.total{font-size:1rem;font-weight:700;color:#1A1A18;margin-top:.65rem;padding-top:.65rem;border-top:1px solid #E8E3D8;margin-bottom:0;}
+.sub-confirm-btn{width:100%;padding:.95rem;border:none;border-radius:14px;background:linear-gradient(135deg,#1A1A18,#2A2A18);color:#FDFAF4;font-family:'Clash Display',sans-serif;font-size:1.05rem;font-weight:700;cursor:pointer;transition:all .2s;}
+.sub-confirm-btn:hover{background:linear-gradient(135deg,#C8A96E,#A8813E);color:#1A1A18;}
+
+/* Change notice */
+.sub-change-notice{background:#FFF8EC;border:1px solid #F0D890;border-radius:12px;padding:.875rem 1rem;font-size:.78rem;color:#8A6220;margin-top:.875rem;display:none;}
+.sub-change-notice.show{display:block;}
+
+@media(max-width:640px){
+  .plan-select-grid{grid-template-columns:1fr 1fr!important;}
+  .goal-grid{grid-template-columns:repeat(2,1fr)!important;}
+  .delivery-grid{grid-template-columns:1fr 1fr!important;}
+  .addon-features{grid-template-columns:1fr!important;}
+}
+
+/* ── WEARABLE PREMIUM PLAN CARDS ── */
+.plan-sel-card.wb-plan{border-color:#C8A96E;background:linear-gradient(135deg,#1A1A18,#1A2A18);}
+.plan-sel-card.wb-plan .psc-name{color:#C8A96E;}
+.plan-sel-card.wb-plan .psc-price{color:#FDFAF4;}
+.plan-sel-card.wb-plan .psc-desc{color:rgba(255,255,255,.45);}
+.plan-sel-card.wb-plan .psc-macros span{background:rgba(200,169,110,.12);color:rgba(200,169,110,.8);}
+.plan-sel-card.wb-plan .psc-check{border-color:rgba(200,169,110,.4);}
+.plan-sel-card.wb-plan.selected{border-color:#C8A96E;background:linear-gradient(135deg,#0A1A0A,#0A0A14);}
+.plan-sel-card.wb-plan.selected .psc-check{background:#C8A96E;border-color:#C8A96E;color:#1A1A18;}
+.plan-sel-card.wb-plan.selected .psc-name{color:#C8A96E;}
+.plan-sel-card.wb-plan .psc-badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:#C8A96E;color:#1A1A18;font-size:.58rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:.18rem .65rem;border-radius:100px;white-space:nowrap;}
+.plan-sel-card.wb-plan .psc-feats{display:flex;flex-direction:column;gap:.3rem;margin-top:.65rem;border-top:1px solid rgba(255,255,255,.08);padding-top:.65rem;}
+.plan-sel-card.wb-plan .psc-feat{font-size:.65rem;color:rgba(255,255,255,.45);display:flex;align-items:center;gap:.3rem;}
+.plan-sel-card.wb-plan .psc-feat::before{content:'✓';color:#C8A96E;font-weight:700;font-size:.6rem;}
+/* wearable plan section divider */
+.plan-section-divider{grid-column:1/-1;display:flex;align-items:center;gap:.875rem;margin:.5rem 0;}
+.plan-section-divider-line{flex:1;height:1px;background:#E8E3D8;}
+.plan-section-divider-label{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#7A7870;white-space:nowrap;padding:0 .25rem;}
+/* Wearable plan section — dark bg */
+.wb-plans-section{background:#0A0A08;border-radius:18px;padding:1.5rem;margin-bottom:1.25rem;}
+.wb-plans-section .plan-sel-card.wb-plan{margin-bottom:0;}
+
+.wco-dev{padding:.38rem .875rem;border:1.5px solid #E8E3D8;border-radius:100px;font-size:.75rem;font-weight:600;color:#7A7870;cursor:pointer;transition:all .2s;background:#FDFAF4;}
+.wco-dev:hover{border-color:#C8A96E;}
+.wco-dev.selected{border-color:#1A1A18;background:#1A1A18;color:#FDFAF4;}
+
+/* ════════════════ WEARABLE PITCH ════════════════ */
+/* Hero */
+.wb-pitch-hero{background:#0A0A08;padding:3rem 0 2rem;text-align:center;position:relative;overflow:hidden;}
+.wb-pitch-hero::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(107,174,107,.08),transparent 65%);}
+.wb-pitch-eyebrow{display:inline-flex;align-items:center;gap:.45rem;background:rgba(107,174,107,.12);border:1px solid rgba(107,174,107,.2);border-radius:100px;padding:.3rem .9rem;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6BAE6B;margin-bottom:1.25rem;}
+.wb-pitch-hero h1{font-family:'Clash Display',sans-serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:700;color:#FDFAF4;line-height:1.1;margin-bottom:.875rem;position:relative;}
+.wb-pitch-hero h1 em{font-family:'Instrument Serif',serif;font-style:italic;color:#C8A96E;}
+.wb-pitch-hero p{font-size:.9rem;color:rgba(255,255,255,.42);line-height:1.75;max-width:520px;margin:0 auto 2rem;}
+
+/* Stats bar */
+.wb-stats-bar{display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;margin-bottom:2.5rem;}
+.wb-stat-item{text-align:center;}
+.wb-stat-num{font-family:'Clash Display',sans-serif;font-size:1.75rem;font-weight:700;color:#C8A96E;display:block;}
+.wb-stat-lbl{font-size:.65rem;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.08em;margin-top:.15rem;}
+
+/* Simulation phone mockup */
+.wb-phone-sim{width:240px;background:#111;border-radius:36px;border:2px solid rgba(255,255,255,.12);overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.6),0 0 0 6px rgba(255,255,255,.04);position:relative;flex-shrink:0;}
+.wb-phone-notch{height:28px;background:#0A0A08;display:flex;align-items:center;justify-content:center;}
+.wb-phone-notch::after{content:'';width:80px;height:10px;background:#111;border-radius:0 0 12px 12px;}
+.wb-phone-screen{padding:1rem;background:#0A0A08;min-height:460px;}
+.wb-phone-time{font-family:'Clash Display',sans-serif;font-size:2rem;font-weight:300;color:#FDFAF4;text-align:center;margin-bottom:.25rem;}
+.wb-phone-date{font-size:.65rem;color:rgba(255,255,255,.3);text-align:center;margin-bottom:1rem;}
+.wb-notif-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:.875rem;margin-bottom:.65rem;transition:all .4s;opacity:0;transform:translateY(8px);}
+.wb-notif-card.show{opacity:1;transform:translateY(0);}
+.wb-notif-app{font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.35rem;display:flex;align-items:center;gap:.35rem;}
+.wb-notif-title{font-size:.78rem;font-weight:600;color:#FDFAF4;margin-bottom:.18rem;}
+.wb-notif-body{font-size:.68rem;color:rgba(255,255,255,.45);line-height:1.5;}
+.wb-notif-pill{display:inline-block;padding:.15rem .5rem;border-radius:100px;font-size:.58rem;font-weight:700;margin-top:.4rem;}
+.wb-notif-pill.green{background:rgba(107,174,107,.2);color:#6BAE6B;}
+.wb-notif-pill.gold{background:rgba(200,169,110,.2);color:#C8A96E;}
+.wb-notif-pill.blue{background:rgba(74,122,200,.2);color:#4A7AC8;}
+.wb-notif-pill.red{background:rgba(194,75,58,.15);color:#C24B3A;}
+
+/* How it works timeline */
+.wb-how-wrap{padding:2.5rem 0;}
+.wb-how-title{font-family:'Clash Display',sans-serif;font-size:1.3rem;font-weight:700;color:#FDFAF4;text-align:center;margin-bottom:.4rem;}
+.wb-how-sub{font-size:.82rem;color:rgba(255,255,255,.35);text-align:center;margin-bottom:2rem;}
+.wb-timeline{display:flex;flex-direction:column;gap:0;max-width:600px;margin:0 auto;}
+.wb-tl-item{display:flex;gap:1.25rem;align-items:flex-start;padding-bottom:1.75rem;position:relative;}
+.wb-tl-item:not(:last-child)::before{content:'';position:absolute;left:19px;top:42px;bottom:0;width:2px;background:linear-gradient(180deg,rgba(200,169,110,.3),rgba(200,169,110,.05));}
+.wb-tl-dot{width:40px;height:40px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:1.1rem;position:relative;z-index:1;}
+.wb-tl-dot.active{background:linear-gradient(135deg,#C8A96E,#A8813E);box-shadow:0 4px 16px rgba(200,169,110,.3);}
+.wb-tl-dot.passive{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);}
+.wb-tl-content{}
+.wb-tl-label{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:.2rem;}
+.wb-tl-title{font-family:'Clash Display',sans-serif;font-size:.95rem;font-weight:600;color:#FDFAF4;margin-bottom:.3rem;}
+.wb-tl-desc{font-size:.78rem;color:rgba(255,255,255,.42);line-height:1.6;}
+.wb-tl-tag{display:inline-block;background:rgba(107,174,107,.1);border:1px solid rgba(107,174,107,.2);border-radius:6px;padding:.18rem .6rem;font-size:.62rem;font-weight:700;color:#6BAE6B;margin-top:.4rem;}
+
+/* Benefit cards */
+.wb-benefits{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;margin:2rem 0;}
+.wb-benefit{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:1.25rem;}
+.wb-benefit-icon{font-size:1.75rem;margin-bottom:.65rem;}
+.wb-benefit-title{font-family:'Clash Display',sans-serif;font-size:.9rem;font-weight:600;color:#FDFAF4;margin-bottom:.3rem;}
+.wb-benefit-desc{font-size:.75rem;color:rgba(255,255,255,.38);line-height:1.6;}
+
+/* Transformation cards */
+.wb-transform-wrap{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin:2rem 0;}
+.wb-transform-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:18px;overflow:hidden;}
+.wb-transform-hdr{padding:1rem 1.25rem;background:rgba(255,255,255,.03);border-bottom:1px solid rgba(255,255,255,.06);font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.28);}
+.wb-transform-body{padding:1.25rem;}
+.wb-transform-metric{display:flex;align-items:center;justify-content:space-between;margin-bottom:.65rem;}
+.wb-transform-label{font-size:.78rem;color:rgba(255,255,255,.45);}
+.wb-transform-values{display:flex;align-items:center;gap:.5rem;}
+.wb-before{font-family:'Clash Display',sans-serif;font-size:.88rem;font-weight:600;color:rgba(194,75,58,.7);text-decoration:line-through;}
+.wb-arrow{font-size:.6rem;color:rgba(255,255,255,.2);}
+.wb-after{font-family:'Clash Display',sans-serif;font-size:.95rem;font-weight:700;color:#6BAE6B;}
+
+/* Section divider */
+.wb-section-divider{display:flex;align-items:center;gap:1rem;margin:2rem 0;}
+.wb-section-divider-line{flex:1;height:1px;background:rgba(255,255,255,.08);}
+.wb-section-divider-label{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.2);white-space:nowrap;}
+
+/* Scroll CTA */
+.wb-scroll-cta{text-align:center;padding:2.5rem 0 1.5rem;border-top:1px solid rgba(255,255,255,.07);margin-top:2rem;}
+.wb-scroll-cta-title{font-family:'Clash Display',sans-serif;font-size:1.4rem;font-weight:700;color:#FDFAF4;margin-bottom:.5rem;}
+.wb-scroll-cta-sub{font-size:.82rem;color:rgba(255,255,255,.35);margin-bottom:1.5rem;}
+.wb-cta-buttons{display:flex;gap:.875rem;justify-content:center;flex-wrap:wrap;}
+.wb-cta-primary{padding:.875rem 2rem;border:none;border-radius:100px;background:linear-gradient(135deg,#C8A96E,#A8813E);color:#1A1A18;font-family:'Clash Display',sans-serif;font-size:.95rem;font-weight:700;cursor:pointer;transition:all .25s;}
+.wb-cta-primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(200,169,110,.35);}
+.wb-cta-secondary{padding:.875rem 2rem;border:1.5px solid rgba(255,255,255,.15);border-radius:100px;background:transparent;color:rgba(255,255,255,.6);font-family:'Clash Display',sans-serif;font-size:.95rem;font-weight:700;cursor:pointer;transition:all .25s;}
+.wb-cta-secondary:hover{border-color:rgba(255,255,255,.35);color:#FDFAF4;}
+
+@media(max-width:640px){
+  .wb-transform-wrap{grid-template-columns:1fr!important;}
+  .wb-benefits{grid-template-columns:1fr 1fr!important;}
+  .wb-stats-bar{gap:1.5rem!important;}
+  .wb-phone-sim{width:200px!important;}
+}
 </style>
 </head>
 <body>
@@ -2204,18 +2414,18 @@ input.lr::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;ba
         <div class="ni active" onclick="sp('cust','c-home',this)"><span class="nic">🏠</span><span>Overview</span></div>
         <div class="ni" onclick="sp('cust','c-meals',this)"><span class="nic">🍽️</span><span>My Meal Plan</span></div>
         <div class="ni" onclick="sp('cust','c-macros',this)"><span class="nic">📊</span><span>Macro Tracker</span></div>
-        <div class="ni" onclick="sp('cust','c-orders',this)"><span class="nic">📦</span><span>Orders & Delivery</span></div>
-        <div class="ni" onclick="sp('cust','c-bills',this)"><span class="nic">💳</span><span>Billing</span><span class="bd"></span></div>
+        <div class="ni" onclick="sp('cust','c-orders',this)"><span class="nic">📦</span><span>Orders</span></div>
+        <div class="ni" onclick="sp('cust','c-wearable',this)"><span class="nic">⌚</span><span>Wearable</span><span class="bd" style="background:#C8A96E"></span></div>
+        <div class="ni" onclick="sp('cust','c-bills',this)"><span class="nic">💳</span><span>Billing</span></div>
         <div class="ni" onclick="sp('cust','c-menu',this)"><span class="nic">🛒</span><span>Menu</span></div>
         <div class="ni" onclick="sp('cust','c-budget',this)"><span class="nic">💰</span><span>Budget Mode</span></div>
-        <div class="ni" onclick="sp('cust','c-loyalty',this)"><span class="nic">⭐</span><span>Loyalty & Rewards</span></div>
+        <div class="ni" onclick="sp('cust','c-loyalty',this)"><span class="nic">⭐</span><span>Loyalty</span></div>
         <span class="sbsec">AI Tools</span>
         <div class="ni" onclick="sp('cust','c-ai',this)"><span class="nic">🤖</span><span>AI Nutritionist</span></div>
         <div class="ni" onclick="sp('cust','c-aiplan',this)"><span class="nic">📅</span><span>AI Meal Plan</span></div>
         <div class="ni" onclick="openAI('gen')"><span class="nic">✨</span><span>Meal Generator</span></div>
         <span class="sbsec">Performance</span>
         <div class="ni" onclick="sp('cust','c-score',this)"><span class="nic">🏅</span><span>RIVARO Score</span></div>
-        <div class="ni" onclick="sp('cust','c-wearable',this)"><span class="nic">⌚</span><span>Wearable</span></div>
         <div class="ni" onclick="sp('cust','c-discover',this)"><span class="nic">🎵</span><span>Discover</span></div>
         <div class="ni" onclick="sp('cust','c-progress',this)"><span class="nic">📈</span><span>My Progress</span></div>
         <div class="ni" onclick="sp('cust','c-challenges',this)"><span class="nic">🏆</span><span>Challenges</span></div>
@@ -2680,7 +2890,224 @@ input.lr::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;ba
         <!-- ═══════════════════════════════════════════
              WEARABLE COMMAND CENTER
         ═══════════════════════════════════════════ -->
-        <div class="panel" id="c-wearable" style="background:#0A0A08;margin:-1.75rem -2.25rem;padding:1.75rem 2.25rem;min-height:100vh;">
+        <div class="panel" id="c-wearable" style="background:#0A0A08;margin:-1.75rem -2.25rem;padding:0;min-height:100vh;">
+
+          <!-- ════════════════════════════════════════
+               PITCH SECTION — Full scroll experience
+          ════════════════════════════════════════ -->
+          <div style="padding:2rem 2.25rem 0">
+
+            <!-- HERO -->
+            <div class="wb-pitch-hero" style="border-radius:20px;padding:3rem 2rem 2.5rem;margin-bottom:1.5rem">
+              <div class="wb-pitch-eyebrow"><span>⌚</span> Wearable Intelligence</div>
+              <h1>Your body talks.<br><em>Every meal listens.</em></h1>
+              <p>Most people eat the same meals every day regardless of how they slept, how hard they trained, or how stressed they are. RIVARO changes that — completely.</p>
+              <!-- Stats -->
+              <div class="wb-stats-bar">
+                <div class="wb-stat-item"><span class="wb-stat-num">847</span><span class="wb-stat-lbl">kcal auto-adjusted today</span></div>
+                <div class="wb-stat-item"><span class="wb-stat-num">+40%</span><span class="wb-stat-lbl">better recovery</span></div>
+                <div class="wb-stat-item"><span class="wb-stat-num">14 days</span><span class="wb-stat-lbl">to see results</span></div>
+                <div class="wb-stat-item"><span class="wb-stat-num">6 devices</span><span class="wb-stat-lbl">compatible</span></div>
+              </div>
+              <!-- CTA -->
+              <div class="wb-cta-buttons" style="margin-bottom:0">
+                <button class="wb-cta-primary" onclick="openWearableSubscribe()">⚡ Subscribe Now — from 2,100 MAD</button>
+                <button class="wb-cta-secondary" onclick="document.getElementById('wb-dashboard-anchor').scrollIntoView({behavior:'smooth'})">See My Live Data ↓</button>
+              </div>
+            </div>
+
+            <!-- PHONE SIMULATION + BENEFITS -->
+            <div style="display:flex;gap:2rem;align-items:flex-start;flex-wrap:wrap;margin-bottom:2rem">
+              <!-- Phone mockup with live notifications -->
+              <div style="flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:.875rem">
+                <div style="font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:.25rem">Live example — 7:02 AM</div>
+                <div class="wb-phone-sim" id="wbPhoneSim">
+                  <div class="wb-phone-notch"></div>
+                  <div class="wb-phone-screen">
+                    <div class="wb-phone-time">07:02</div>
+                    <div class="wb-phone-date">Wednesday, March 19</div>
+                    <!-- Notifications appear one by one via JS -->
+                    <div class="wb-notif-card" id="wbn1">
+                      <div class="wb-notif-app">⌚ Apple Watch</div>
+                      <div class="wb-notif-title">Sleep detected: 5h 48min</div>
+                      <div class="wb-notif-body">Below your 7h target. HRV dropped to 48ms — low recovery score today.</div>
+                      <span class="wb-notif-pill red">Recovery: Low</span>
+                    </div>
+                    <div class="wb-notif-card" id="wbn2">
+                      <div class="wb-notif-app">🤖 RIVARO AI</div>
+                      <div class="wb-notif-title">Today's dinner updated</div>
+                      <div class="wb-notif-body">Poor sleep detected. Switching to turkey + magnesium bowl to improve tonight's recovery.</div>
+                      <span class="wb-notif-pill gold">Meal adapted</span>
+                    </div>
+                    <div class="wb-notif-card" id="wbn3">
+                      <div class="wb-notif-app">🔥 Activity</div>
+                      <div class="wb-notif-title">847 kcal burned at 6 PM</div>
+                      <div class="wb-notif-body">High burn day. Dinner upgraded to 680 kcal + 15g extra carbs added to lunch.</div>
+                      <span class="wb-notif-pill green">Portions upgraded</span>
+                    </div>
+                    <div class="wb-notif-card" id="wbn4">
+                      <div class="wb-notif-app">🍽️ RIVARO Kitchen</div>
+                      <div class="wb-notif-title">Your adapted meal is ready</div>
+                      <div class="wb-notif-body">Za'atar Turkey + Sweet Potato · 680 kcal · 58g protein · Delivery 7:30 PM</div>
+                      <span class="wb-notif-pill blue">Delivering now</span>
+                    </div>
+                  </div>
+                </div>
+                <div style="font-size:.65rem;color:rgba(255,255,255,.2);text-align:center;max-width:200px;line-height:1.5">Every morning RIVARO reads your watch and updates your meals before you even think about food.</div>
+              </div>
+
+              <!-- Benefits grid -->
+              <div style="flex:1;min-width:260px">
+                <div style="font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:1.1rem">Why it changes everything</div>
+                <div class="wb-benefits" style="grid-template-columns:1fr 1fr;margin:0;gap:.75rem">
+                  <div class="wb-benefit">
+                    <div class="wb-benefit-icon">😴</div>
+                    <div class="wb-benefit-title">Sleep = Better Food</div>
+                    <div class="wb-benefit-desc">Bad night? Your dinner shifts to tryptophan-rich foods that help you sleep deeper tomorrow.</div>
+                  </div>
+                  <div class="wb-benefit">
+                    <div class="wb-benefit-icon">🔥</div>
+                    <div class="wb-benefit-title">Burn More = Eat More</div>
+                    <div class="wb-benefit-desc">Intense training day? Calories and carbs auto-increase so you never under-recover.</div>
+                  </div>
+                  <div class="wb-benefit">
+                    <div class="wb-benefit-icon">❤️</div>
+                    <div class="wb-benefit-title">HRV Guides Recovery</div>
+                    <div class="wb-benefit-desc">Low heart rate variability means your body needs anti-inflammatory foods — AI adds them.</div>
+                  </div>
+                  <div class="wb-benefit">
+                    <div class="wb-benefit-icon">🧠</div>
+                    <div class="wb-benefit-title">Zero Thinking Required</div>
+                    <div class="wb-benefit-desc">You wake up. RIVARO already updated your meals. Nothing to calculate. Nothing to decide.</div>
+                  </div>
+                  <div class="wb-benefit">
+                    <div class="wb-benefit-icon">📈</div>
+                    <div class="wb-benefit-title">Results Compound</div>
+                    <div class="wb-benefit-desc">After 14 days, AI knows your patterns. After 30, it predicts your needs before you feel them.</div>
+                  </div>
+                  <div class="wb-benefit">
+                    <div class="wb-benefit-icon">⌚</div>
+                    <div class="wb-benefit-title">6 Devices Supported</div>
+                    <div class="wb-benefit-desc">Apple Watch, Oura Ring, Garmin, Xiaomi Band, Huawei, Samsung. Connect in 1 tap.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- HOW IT WORKS TIMELINE -->
+            <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:1.75rem;margin-bottom:1.5rem">
+              <div class="wb-how-title">How it works</div>
+              <div class="wb-how-sub">Every single day, automatically.</div>
+              <div class="wb-timeline">
+                <div class="wb-tl-item">
+                  <div class="wb-tl-dot active">😴</div>
+                  <div class="wb-tl-content">
+                    <div class="wb-tl-label">6:00 – 8:00 AM</div>
+                    <div class="wb-tl-title">Your watch reads the night</div>
+                    <div class="wb-tl-desc">As you wake up, your wearable syncs sleep duration, deep sleep %, HRV, resting heart rate and skin temperature to RIVARO.</div>
+                    <span class="wb-tl-tag">Automatic · No action needed</span>
+                  </div>
+                </div>
+                <div class="wb-tl-item">
+                  <div class="wb-tl-dot active">🤖</div>
+                  <div class="wb-tl-content">
+                    <div class="wb-tl-label">8:00 AM</div>
+                    <div class="wb-tl-title">AI analyzes and decides</div>
+                    <div class="wb-tl-desc">Our AI compares your data against your goals and baseline. It decides if your meals need more protein, more carbs, more anti-inflammatory foods, or a calorie adjustment.</div>
+                    <span class="wb-tl-tag">Decision in &lt;1 second</span>
+                  </div>
+                </div>
+                <div class="wb-tl-item">
+                  <div class="wb-tl-dot active">🍳</div>
+                  <div class="wb-tl-content">
+                    <div class="wb-tl-label">8:00 – 10:00 AM</div>
+                    <div class="wb-tl-title">Kitchen prepares your adapted meal</div>
+                    <div class="wb-tl-desc">Chef receives the updated macro targets. Your meal is cooked fresh to the new specs — different protein, adjusted portion, new ingredients if needed.</div>
+                    <span class="wb-tl-tag">Fresh · Precise to ±5%</span>
+                  </div>
+                </div>
+                <div class="wb-tl-item">
+                  <div class="wb-tl-dot active">📱</div>
+                  <div class="wb-tl-content">
+                    <div class="wb-tl-label">During the day</div>
+                    <div class="wb-tl-title">Activity updates lunch in real-time</div>
+                    <div class="wb-tl-desc">Burned more than expected during training? Your lunch gets +15g carbs. Steps through the roof? Electrolytes added. Low stress day? Dinner stays lean.</div>
+                    <span class="wb-tl-tag">Continuous · Live updates</span>
+                  </div>
+                </div>
+                <div class="wb-tl-item">
+                  <div class="wb-tl-dot active">🚚</div>
+                  <div class="wb-tl-content">
+                    <div class="wb-tl-label">7:30 PM</div>
+                    <div class="wb-tl-title">Your perfect meal arrives</div>
+                    <div class="wb-tl-desc">Built specifically for what your body needed today. Not yesterday. Not tomorrow. Today.</div>
+                    <span class="wb-tl-tag">Delivered fresh · Hot</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- BEFORE / AFTER TRANSFORMATION -->
+            <div style="margin-bottom:1.5rem">
+              <div class="wb-section-divider">
+                <div class="wb-section-divider-line"></div>
+                <div class="wb-section-divider-label">Real results after 30 days</div>
+                <div class="wb-section-divider-line"></div>
+              </div>
+              <div class="wb-transform-wrap">
+                <div class="wb-transform-card">
+                  <div class="wb-transform-hdr">📊 Without Wearable</div>
+                  <div class="wb-transform-body">
+                    <div class="wb-transform-metric"><span class="wb-transform-label">Sleep recovery</span><div class="wb-transform-values"><span class="wb-before">Ignored</span><span class="wb-arrow">→</span><span class="wb-after">Optimized</span></div></div>
+                    <div class="wb-transform-metric"><span class="wb-transform-label">Training day meals</span><div class="wb-transform-values"><span class="wb-before">Same meal</span><span class="wb-arrow">→</span><span class="wb-after">+20% carbs</span></div></div>
+                    <div class="wb-transform-metric"><span class="wb-transform-label">Bad sleep nights</span><div class="wb-transform-values"><span class="wb-before">No change</span><span class="wb-arrow">→</span><span class="wb-after">Sleep foods</span></div></div>
+                    <div class="wb-transform-metric"><span class="wb-transform-label">Muscle recovery</span><div class="wb-transform-values"><span class="wb-before">Slow</span><span class="wb-arrow">→</span><span class="wb-after">+40% faster</span></div></div>
+                    <div class="wb-transform-metric" style="margin-bottom:0"><span class="wb-transform-label">Nutrition waste</span><div class="wb-transform-values"><span class="wb-before">~30%</span><span class="wb-arrow">→</span><span class="wb-after">&lt;5%</span></div></div>
+                  </div>
+                </div>
+                <div class="wb-transform-card" style="border-color:rgba(107,174,107,.2)">
+                  <div class="wb-transform-hdr" style="background:rgba(107,174,107,.05);border-color:rgba(107,174,107,.1)">🏆 After 30 days with Wearable</div>
+                  <div class="wb-transform-body">
+                    <div style="display:flex;flex-direction:column;gap:.65rem">
+                      <div style="background:rgba(107,174,107,.08);border:1px solid rgba(107,174,107,.15);border-radius:10px;padding:.75rem">
+                        <div style="font-family:'Clash Display',sans-serif;font-size:.88rem;font-weight:600;color:#FDFAF4;margin-bottom:.2rem">Ahmed K. — Tanger</div>
+                        <div style="font-size:.72rem;color:rgba(255,255,255,.45);line-height:1.55">"In 3 weeks my sleep quality went from 5.8h average to 7.1h. The AI started adding magnesium and turkey to my dinners and I just… started sleeping better."</div>
+                        <div style="display:flex;gap:.35rem;margin-top:.5rem"><span style="font-size:.62rem;background:rgba(107,174,107,.12);color:#6BAE6B;padding:.12rem .45rem;border-radius:100px;font-weight:700">+1.3h sleep</span><span style="font-size:.62rem;background:rgba(200,169,110,.12);color:#C8A96E;padding:.12rem .45rem;border-radius:100px;font-weight:700">-3.2kg body fat</span></div>
+                      </div>
+                      <div style="background:rgba(107,174,107,.08);border:1px solid rgba(107,174,107,.15);border-radius:10px;padding:.75rem">
+                        <div style="font-family:'Clash Display',sans-serif;font-size:.88rem;font-weight:600;color:#FDFAF4;margin-bottom:.2rem">Sara M. — Athlete</div>
+                        <div style="font-size:.72rem;color:rgba(255,255,255,.45);line-height:1.55">"On my heavy training days RIVARO auto-adds carbs. On rest days it stays lean. I don't think about nutrition anymore. It thinks for me."</div>
+                        <div style="display:flex;gap:.35rem;margin-top:.5rem"><span style="font-size:.62rem;background:rgba(107,174,107,.12);color:#6BAE6B;padding:.12rem .45rem;border-radius:100px;font-weight:700">+2.1kg muscle</span><span style="font-size:.62rem;background:rgba(200,169,110,.12);color:#C8A96E;padding:.12rem .45rem;border-radius:100px;font-weight:700">VO2 Max +3.2</span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- FINAL CTA -->
+            <div class="wb-scroll-cta">
+              <div class="wb-scroll-cta-title">Ready to let your body drive?</div>
+              <div class="wb-scroll-cta-sub">Join RIVARO Wearable Intelligence. Cancel anytime. First delivery in 24h.</div>
+              <div class="wb-cta-buttons">
+                <button class="wb-cta-primary" onclick="openWearableSubscribe()">⚡ Subscribe Now — from 2,100 MAD</button>
+                <button class="wb-cta-secondary" onclick="switchToWearablePlan()">🔄 Switch My Current Plan</button>
+              </div>
+            </div>
+
+            <!-- DASHBOARD ANCHOR + DIVIDER -->
+            <div id="wb-dashboard-anchor" class="wb-section-divider" style="margin-top:0">
+              <div class="wb-section-divider-line"></div>
+              <div class="wb-section-divider-label">⌚ Your Live Wearable Dashboard</div>
+              <div class="wb-section-divider-line"></div>
+            </div>
+
+          </div><!-- end pitch padding wrap -->
+
+          <!-- ════════════════════════════════════════
+               LIVE DASHBOARD (existing content)
+          ════════════════════════════════════════ -->
+          <div style="padding:0 2.25rem 2.25rem">
 
           <!-- DEVICE STATUS BAR -->
           <div class="wb-device-bar">
@@ -2994,6 +3421,7 @@ input.lr::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;ba
             </div>
           </div>
 
+          </div><!-- end dashboard padding wrap -->
         </div>
 
         <!-- CHALLENGES PANEL -->
@@ -3170,16 +3598,228 @@ input.lr::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;ba
 
         <!-- SETTINGS -->
         <div class="panel" id="c-settings">
-          <div class="card"><div class="cardh"><span class="cardt">My Profile & Goals</span></div>
-            <div class="row r3" style="margin-bottom:0">
-              <div class="kpi"><div class="klb">Current Plan</div><div class="kv" style="font-size:1.2rem">High Protein</div></div>
-              <div class="kpi"><div class="klb">Daily Calories</div><div class="kv" style="font-size:1.2rem">2,100 kcal</div></div>
-              <div class="kpi"><div class="klb">Delivery Time</div><div class="kv" style="font-size:1.2rem">7:30 PM</div></div>
+
+          <!-- CURRENT SUBSCRIPTION HERO -->
+          <div class="sub-hero">
+            <div class="sub-hero-left">
+              <div style="font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.4rem">Active Subscription</div>
+              <div class="sub-hero-plan" id="sub-current-name">💪 High Protein</div>
+              <div class="sub-hero-meta" id="sub-current-meta">30 meals/month · 7 days/week · 1 meal/day · Delivery 7:30 PM</div>
+              <div class="sub-status-row">
+                <span class="sub-pill active">● Active</span>
+                <span class="sub-pill addon" id="sub-wearable-pill" style="display:none">⌚ Wearable+</span>
+                <span class="sub-pill off" id="sub-wearable-pill-off">⌚ No Wearable</span>
+                <span class="sub-pill addon" id="sub-goal-pill">🎯 Muscle Gain</span>
+              </div>
+            </div>
+            <div class="sub-hero-price">
+              <div class="sub-hero-amount" id="sub-total-display">1,650 MAD</div>
+              <div class="sub-hero-period">/ month · renews Apr 1</div>
+              <button class="tbtn pr" style="margin-top:.65rem;font-size:.75rem" onclick="showToast('Cancellation requested — active until Apr 1')">Cancel Plan</button>
             </div>
           </div>
-          <div class="card"><div class="cardh"><span class="cardt">Allergies & Exclusions</span></div>
-            <div style="display:flex;gap:.65rem;flex-wrap:wrap"><span class="badge br3">🥜 Nuts</span><span class="badge br3">🦐 Shellfish</span><button class="tbtn" onclick="showToast('Feature coming soon!')">+ Add exclusion</button></div>
+
+          <!-- SECTION 1: MEAL PLAN -->
+          <div class="card">
+            <div class="cardh">
+              <span class="cardt">1 — Choose Your Meal Plan</span>
+              <span style="font-size:.72rem;color:#7A7870">Changes apply next billing cycle</span>
+            </div>
+            <div class="plan-select-grid" id="planSelectGrid">
+              <div class="plan-sel-card" data-plan="vegetarian" data-price="35" data-name="Vegetarian" onclick="selectSubPlan(this)">
+                <div class="psc-check">✓</div>
+                <div class="psc-em">🌿</div>
+                <div class="psc-name">Vegetarian</div>
+                <div class="psc-price">35 MAD/meal</div>
+                <div class="psc-desc">Plant-based · All macros · Budget-friendly</div>
+                <div class="psc-macros"><span>420 kcal</span><span>22g prot</span></div>
+              </div>
+              <div class="plan-sel-card" data-plan="chicken" data-price="40" data-name="Chicken" onclick="selectSubPlan(this)">
+                <div class="psc-check">✓</div>
+                <div class="psc-em">🍗</div>
+                <div class="psc-name">Chicken</div>
+                <div class="psc-price">40 MAD/meal</div>
+                <div class="psc-desc">Lean · High protein · Best value</div>
+                <div class="psc-macros"><span>480 kcal</span><span>48g prot</span></div>
+              </div>
+              <div class="plan-sel-card" data-plan="balanced" data-price="38" data-name="Balanced" onclick="selectSubPlan(this)">
+                <div class="psc-check">✓</div>
+                <div class="psc-em">🥗</div>
+                <div class="psc-name">Balanced</div>
+                <div class="psc-price">38 MAD/meal</div>
+                <div class="psc-desc">Mix proteins · All macros · Variety</div>
+                <div class="psc-macros"><span>500 kcal</span><span>38g prot</span></div>
+              </div>
+              <div class="plan-sel-card selected" data-plan="highprotein" data-price="55" data-name="High Protein" onclick="selectSubPlan(this)">
+                <div class="psc-check">✓</div>
+                <div class="psc-em">💪</div>
+                <div class="psc-name">High Protein</div>
+                <div class="psc-price">55 MAD/meal</div>
+                <div class="psc-desc">Chicken + beef rotation · Muscle gain</div>
+                <div class="psc-macros"><span>520 kcal</span><span>54g prot</span></div>
+              </div>
+              <div class="plan-sel-card" data-plan="beef" data-price="49" data-name="Beef" onclick="selectSubPlan(this)">
+                <div class="psc-check">✓</div>
+                <div class="psc-em">🥩</div>
+                <div class="psc-name">Beef</div>
+                <div class="psc-price">49 MAD/meal</div>
+                <div class="psc-desc">Ground beef · Iron-rich · Strength</div>
+                <div class="psc-macros"><span>540 kcal</span><span>50g prot</span></div>
+              </div>
+              <div class="plan-sel-card" data-plan="athlete" data-price="57" data-name="Athlete" onclick="selectSubPlan(this)">
+                <div class="psc-check">✓</div>
+                <div class="psc-em">⚡</div>
+                <div class="psc-name">Athlete Mode</div>
+                <div class="psc-price">57 MAD/meal</div>
+                <div class="psc-desc">Salmon + beef · Max performance</div>
+                <div class="psc-macros"><span>640 kcal</span><span>62g prot</span></div>
+              </div>
+              <div class="plan-sel-card" data-plan="salmon" data-price="67" data-name="Salmon" onclick="selectSubPlan(this)">
+                <div class="psc-check">✓</div>
+                <div class="psc-em">🐟</div>
+                <div class="psc-name">Salmon</div>
+                <div class="psc-price">67 MAD/meal</div>
+                <div class="psc-desc">Premium · Omega-3 · Recovery</div>
+                <div class="psc-macros"><span>520 kcal</span><span>46g prot</span></div>
+              </div>
+            </div>
+
+            <!-- WEARABLE UPGRADE BUTTON -->
+            <div style="grid-column:1/-1;margin-top:.875rem">
+              <div style="background:linear-gradient(135deg,#0A1A0A,#0A0A14);border:1px solid rgba(200,169,110,.25);border-radius:16px;padding:1.25rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap">
+                <div>
+                  <div style="font-family:'Clash Display',sans-serif;font-size:.95rem;font-weight:700;color:#FDFAF4;margin-bottom:.2rem">⌚ Upgrade to Wearable Plan</div>
+                  <div style="font-size:.75rem;color:rgba(255,255,255,.38)">From 2,100 MAD/month · AI adapts every meal from your body data</div>
+                </div>
+                <button onclick="wcoSelect(1);openWearableSubscribe()" style="padding:.65rem 1.35rem;border:none;border-radius:100px;background:linear-gradient(135deg,#C8A96E,#A8813E);color:#1A1A18;font-family:'Clash Display',sans-serif;font-size:.82rem;font-weight:700;cursor:pointer;white-space:nowrap;transition:all .2s" onmouseover="this.style.transform='translateY(-1px)'" onmouseout="this.style.transform=''">
+                  See Plans →
+                </button>
+              </div>
+            </div>
+
           </div>
+          </div>
+
+          <!-- ═══ WEARABLE CONNECT SECTION ═══ -->
+          <div class="card" style="background:#0F0F0D;border-color:rgba(255,255,255,.08)">
+            <div class="cardh" style="border-bottom:1px solid rgba(255,255,255,.07);padding-bottom:.875rem;margin-bottom:1.1rem">
+              <span class="cardt" style="color:#FDFAF4">⌚ Your Wearable</span>
+              <div id="st-wb-status" style="display:flex;align-items:center;gap:.4rem;font-size:.7rem;font-weight:700;color:#6BAE6B"><span style="width:6px;height:6px;border-radius:50%;background:#6BAE6B;animation:bl 2s infinite;display:block"></span>Connected</div>
+            </div>
+
+            <!-- CONNECTED DEVICE ROW -->
+            <div id="st-connected-row" style="display:flex;align-items:center;gap:.875rem;padding:.875rem;background:rgba(107,174,107,.07);border:1px solid rgba(107,174,107,.15);border-radius:12px;margin-bottom:1.1rem">
+              <div style="width:40px;height:40px;border-radius:12px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0">⌚</div>
+              <div style="flex:1">
+                <div style="font-size:.85rem;font-weight:600;color:#FDFAF4" id="st-dev-name">Apple Watch Series 9</div>
+                <div style="font-size:.7rem;color:rgba(255,255,255,.35);margin-top:.1rem">Last sync: 2 min ago · Battery 84%</div>
+              </div>
+              <button onclick="stDisconnectDevice()" style="padding:.3rem .75rem;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:transparent;color:rgba(255,255,255,.4);font-size:.68rem;cursor:pointer;font-family:sans-serif">Disconnect</button>
+            </div>
+
+            <!-- MINI LIVE DASHBOARD -->
+            <div id="st-mini-dashboard">
+              <div style="font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:.75rem">Today's Biometrics</div>
+
+              <!-- 4 key metrics -->
+              <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:.65rem;margin-bottom:1rem">
+                <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:.875rem;text-align:center;position:relative;overflow:hidden">
+                  <div style="position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#C24B3A,#E06050)"></div>
+                  <div style="font-size:1.1rem;margin-bottom:.3rem">🔥</div>
+                  <div style="font-family:'Clash Display',sans-serif;font-size:1.1rem;font-weight:700;color:#FDFAF4">847</div>
+                  <div style="font-size:.58rem;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.06em;margin-top:.12rem">kcal burn</div>
+                </div>
+                <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:.875rem;text-align:center;position:relative;overflow:hidden">
+                  <div style="position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#4A5AC8,#6A7AE8)"></div>
+                  <div style="font-size:1.1rem;margin-bottom:.3rem">😴</div>
+                  <div style="font-family:'Clash Display',sans-serif;font-size:1.1rem;font-weight:700;color:#FDFAF4">5.8h</div>
+                  <div style="font-size:.58rem;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.06em;margin-top:.12rem">sleep</div>
+                </div>
+                <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:.875rem;text-align:center;position:relative;overflow:hidden">
+                  <div style="position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#6BAE6B,#4A9A4A)"></div>
+                  <div style="font-size:1.1rem;margin-bottom:.3rem">👣</div>
+                  <div style="font-family:'Clash Display',sans-serif;font-size:1.1rem;font-weight:700;color:#FDFAF4">9,240</div>
+                  <div style="font-size:.58rem;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.06em;margin-top:.12rem">steps</div>
+                </div>
+                <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:.875rem;text-align:center;position:relative;overflow:hidden">
+                  <div style="position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#C24B3A,#D87070)"></div>
+                  <div style="font-size:1.1rem;margin-bottom:.3rem">❤️</div>
+                  <div style="font-family:'Clash Display',sans-serif;font-size:1.1rem;font-weight:700;color:#FDFAF4">62</div>
+                  <div style="font-size:.58rem;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.06em;margin-top:.12rem">bpm rest</div>
+                </div>
+              </div>
+
+              <!-- 7-day mini trend -->
+              <div style="margin-bottom:1rem">
+                <div style="font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:.5rem">7-Day Activity</div>
+                <div style="display:flex;gap:3px;height:48px;align-items:flex-end" id="stMiniChart"></div>
+              </div>
+
+              <!-- AI UPSELL CARD — data-driven -->
+              <div style="background:linear-gradient(135deg,rgba(200,169,110,.1),rgba(200,169,110,.05));border:1px solid rgba(200,169,110,.2);border-radius:14px;padding:1.1rem">
+                <div style="font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#C8A96E;margin-bottom:.5rem">🤖 AI Insight from Your Data</div>
+                <div style="font-size:.8rem;color:rgba(255,255,255,.65);line-height:1.6;margin-bottom:.875rem">
+                  Your sleep averaged <strong style="color:#FDFAF4">5.8h</strong> — below your 7h target. This is reducing your muscle recovery by ~20%.
+                  You burned <strong style="color:#FDFAF4">847 kcal</strong> today but your meals weren't adjusted for it.
+                  <strong style="color:#C8A96E">Wearable Intelligence would have fixed both automatically.</strong>
+                </div>
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:.875rem;flex-wrap:wrap">
+                  <div style="font-size:.72rem;color:rgba(255,255,255,.35)">Unlock full meal adaptation</div>
+                  <button onclick="wcoSelect(1);openWearableSubscribe()" style="padding:.5rem 1.1rem;border:none;border-radius:100px;background:linear-gradient(135deg,#C8A96E,#A8813E);color:#1A1A18;font-family:'Clash Display',sans-serif;font-size:.75rem;font-weight:700;cursor:pointer;white-space:nowrap;transition:all .2s" onmouseover="this.style.transform='translateY(-1px)'" onmouseout="this.style.transform=''">
+                    ⚡ Upgrade — from 2,100 MAD
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- NOT CONNECTED STATE (hidden by default) -->
+            <div id="st-not-connected" style="display:none">
+              <div style="font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:.875rem">Connect a device to see your biometrics</div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:.65rem;margin-bottom:1rem">
+                <div onclick="stConnect(this,'Apple Watch','⌚')" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:.875rem;cursor:pointer;transition:all .2s;text-align:center" onmouseover="this.style.borderColor='rgba(200,169,110,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.07)'">
+                  <div style="font-size:1.5rem;margin-bottom:.4rem">⌚</div>
+                  <div style="font-size:.75rem;font-weight:600;color:#FDFAF4">Apple Watch</div>
+                  <div style="font-size:.62rem;color:rgba(255,255,255,.3);margin-top:.15rem">HealthKit</div>
+                </div>
+                <div onclick="stConnect(this,'Oura Ring','💍')" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:.875rem;cursor:pointer;transition:all .2s;text-align:center" onmouseover="this.style.borderColor='rgba(200,169,110,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.07)'">
+                  <div style="font-size:1.5rem;margin-bottom:.4rem">💍</div>
+                  <div style="font-size:.75rem;font-weight:600;color:#FDFAF4">Oura Ring</div>
+                  <div style="font-size:.62rem;color:rgba(255,255,255,.3);margin-top:.15rem">Sleep focus</div>
+                </div>
+                <div onclick="stConnect(this,'Garmin','🏃')" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:.875rem;cursor:pointer;transition:all .2s;text-align:center" onmouseover="this.style.borderColor='rgba(200,169,110,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.07)'">
+                  <div style="font-size:1.5rem;margin-bottom:.4rem">🏃</div>
+                  <div style="font-size:.75rem;font-weight:600;color:#FDFAF4">Garmin</div>
+                  <div style="font-size:.62rem;color:rgba(255,255,255,.3);margin-top:.15rem">Sports</div>
+                </div>
+                <div onclick="stConnect(this,'Xiaomi Band','📿')" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:.875rem;cursor:pointer;transition:all .2s;text-align:center" onmouseover="this.style.borderColor='rgba(200,169,110,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.07)'">
+                  <div style="font-size:1.5rem;margin-bottom:.4rem">📿</div>
+                  <div style="font-size:.75rem;font-weight:600;color:#FDFAF4">Xiaomi Band</div>
+                  <div style="font-size:.62rem;color:rgba(255,255,255,.3);margin-top:.15rem">Mi Fit</div>
+                </div>
+                <div onclick="stConnect(this,'Huawei','⌚')" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:.875rem;cursor:pointer;transition:all .2s;text-align:center" onmouseover="this.style.borderColor='rgba(200,169,110,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.07)'">
+                  <div style="font-size:1.5rem;margin-bottom:.4rem">⌚</div>
+                  <div style="font-size:.75rem;font-weight:600;color:#FDFAF4">Huawei</div>
+                  <div style="font-size:.62rem;color:rgba(255,255,255,.3);margin-top:.15rem">Health app</div>
+                </div>
+                <div onclick="stConnect(this,'Samsung','⌚')" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:.875rem;cursor:pointer;transition:all .2s;text-align:center" onmouseover="this.style.borderColor='rgba(200,169,110,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.07)'">
+                  <div style="font-size:1.5rem;margin-bottom:.4rem">⌚</div>
+                  <div style="font-size:.75rem;font-weight:600;color:#FDFAF4">Samsung</div>
+                  <div style="font-size:.62rem;color:rgba(255,255,255,.3);margin-top:.15rem">BioActive</div>
+                </div>
+              </div>
+              <!-- Upsell even without device -->
+              <div style="background:rgba(200,169,110,.07);border:1px solid rgba(200,169,110,.15);border-radius:12px;padding:1rem;display:flex;align-items:center;gap:.875rem;flex-wrap:wrap">
+                <div style="flex:1;min-width:180px">
+                  <div style="font-size:.78rem;font-weight:600;color:#FDFAF4;margin-bottom:.15rem">⌚ Connect + subscribe to Wearable plan</div>
+                  <div style="font-size:.7rem;color:rgba(255,255,255,.38)">AI adapts every meal from your real body data daily</div>
+                </div>
+                <button onclick="wcoSelect(1);openWearableSubscribe()" style="padding:.5rem 1rem;border:none;border-radius:100px;background:linear-gradient(135deg,#C8A96E,#A8813E);color:#1A1A18;font-family:'Clash Display',sans-serif;font-size:.75rem;font-weight:700;cursor:pointer;white-space:nowrap">
+                  See Plans →
+                </button>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </main>
@@ -3856,6 +4496,119 @@ input.lr::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;ba
     <div class="notif-toast-s" id="notifSub">Your meal is on the way!</div>
   </div>
   <button class="notif-toast-close" onclick="hideNotif()">✕</button>
+</div>
+
+
+<!-- ═══ WEARABLE CHECKOUT MODAL ═══ -->
+<div class="modov" id="wearableCheckoutOv" style="z-index:3500">
+  <div class="modbox" style="max-width:560px;padding:0;overflow:hidden;border-radius:24px">
+
+    <!-- Header -->
+    <div style="background:linear-gradient(135deg,#0A1A0A,#0A0A14);padding:1.75rem 2rem;display:flex;align-items:center;justify-content:space-between">
+      <div>
+        <div style="font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:.35rem">Premium Plans</div>
+        <div style="font-family:'Clash Display',sans-serif;font-size:1.3rem;font-weight:700;color:#FDFAF4">Wearable Intelligence</div>
+        <div style="font-size:.75rem;color:rgba(255,255,255,.38);margin-top:.15rem">Your body drives every meal · Cancel anytime</div>
+      </div>
+      <button onclick="closeWearableCheckout()" style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.5);cursor:pointer;font-size:.9rem;display:flex;align-items:center;justify-content:center">✕</button>
+    </div>
+
+    <!-- Plan cards -->
+    <div style="padding:1.5rem 2rem;background:#FDFAF4">
+      <div style="font-size:.68rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#7A7870;margin-bottom:1rem">Choose your plan</div>
+
+      <!-- Plan 1 — 2100 -->
+      <div id="wco-plan1" onclick="wcoSelect(1)" style="border:2px solid #C8A96E;border-radius:18px;padding:1.35rem;margin-bottom:.875rem;cursor:pointer;transition:all .22s;background:#1A1A18;position:relative">
+        <div style="position:absolute;top:-10px;left:1.25rem;background:#C8A96E;color:#1A1A18;font-size:.58rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:.18rem .75rem;border-radius:100px">Most Popular</div>
+        <div style="display:flex;align-items:flex-start;gap:1rem">
+          <div style="font-size:2rem;flex-shrink:0">⌚</div>
+          <div style="flex:1">
+            <div style="font-family:'Clash Display',sans-serif;font-size:1rem;font-weight:700;color:#C8A96E;margin-bottom:.2rem">Wearable Intelligence</div>
+            <div style="font-size:.78rem;color:rgba(255,255,255,.45);line-height:1.55;margin-bottom:.875rem">Full meal plan + AI adapts every meal from your biometrics daily</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.35rem">
+              <div style="font-size:.68rem;color:rgba(255,255,255,.5);display:flex;gap:.3rem"><span style="color:#6BAE6B">✓</span>30 precision meals/month</div>
+              <div style="font-size:.68rem;color:rgba(255,255,255,.5);display:flex;gap:.3rem"><span style="color:#6BAE6B">✓</span>Apple Watch, Oura, Garmin</div>
+              <div style="font-size:.68rem;color:rgba(255,255,255,.5);display:flex;gap:.3rem"><span style="color:#6BAE6B">✓</span>Sleep → meal reformulation</div>
+              <div style="font-size:.68rem;color:rgba(255,255,255,.5);display:flex;gap:.3rem"><span style="color:#6BAE6B">✓</span>Calories burned → portions</div>
+              <div style="font-size:.68rem;color:rgba(255,255,255,.5);display:flex;gap:.3rem"><span style="color:#6BAE6B">✓</span>RIVARO Score daily</div>
+              <div style="font-size:.68rem;color:rgba(255,255,255,.5);display:flex;gap:.3rem"><span style="color:#6BAE6B">✓</span>Wearable dashboard</div>
+            </div>
+          </div>
+          <div style="text-align:right;flex-shrink:0">
+            <div style="font-family:'Clash Display',sans-serif;font-size:1.5rem;font-weight:700;color:#C8A96E">2,100</div>
+            <div style="font-size:.68rem;color:rgba(255,255,255,.3)">MAD/month</div>
+            <div style="width:22px;height:22px;border-radius:50%;background:#C8A96E;border:2px solid #C8A96E;display:flex;align-items:center;justify-content:center;font-size:.7rem;color:#1A1A18;font-weight:700;margin-top:.5rem;margin-left:auto" id="wco-check1">✓</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Plan 2 — 3500 -->
+      <div id="wco-plan2" onclick="wcoSelect(2)" style="border:2px solid #E8E3D8;border-radius:18px;padding:1.35rem;margin-bottom:1.25rem;cursor:pointer;transition:all .22s;background:#FDFAF4">
+        <div style="display:flex;align-items:flex-start;gap:1rem">
+          <div style="font-size:2rem;flex-shrink:0">👑</div>
+          <div style="flex:1">
+            <div style="font-family:'Clash Display',sans-serif;font-size:1rem;font-weight:700;color:#1A1A18;margin-bottom:.2rem">Wearable Pro</div>
+            <div style="font-size:.78rem;color:#7A7870;line-height:1.55;margin-bottom:.875rem">Everything in Wearable Intelligence + body tracking, coaching check-in, and monthly supplements delivered.</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.35rem">
+              <div style="font-size:.68rem;color:#7A7870;display:flex;gap:.3rem"><span style="color:#C8A96E">✓</span>Everything in Wearable</div>
+              <div style="font-size:.68rem;color:#7A7870;display:flex;gap:.3rem"><span style="color:#C8A96E">✓</span>Monthly body report</div>
+              <div style="font-size:.68rem;color:#7A7870;display:flex;gap:.3rem"><span style="color:#C8A96E">✓</span>Coach weekly check-in</div>
+              <div style="font-size:.68rem;color:#7A7870;display:flex;gap:.3rem"><span style="color:#C8A96E">✓</span>Priority kitchen queue</div>
+              <div style="font-size:.68rem;color:#7A7870;display:flex;gap:.3rem"><span style="color:#C8A96E">✓</span>🥄 Creatine scoop/month</div>
+              <div style="font-size:.68rem;color:#7A7870;display:flex;gap:.3rem"><span style="color:#C8A96E">✓</span>💊 Daily vitamins pack</div>
+            </div>
+          </div>
+          <div style="text-align:right;flex-shrink:0">
+            <div style="font-family:'Clash Display',sans-serif;font-size:1.5rem;font-weight:700;color:#C8A96E">3,500</div>
+            <div style="font-size:.68rem;color:#7A7870">MAD/month</div>
+            <div style="width:22px;height:22px;border-radius:50%;border:2px solid #E8E3D8;display:flex;align-items:center;justify-content:center;font-size:.7rem;margin-top:.5rem;margin-left:auto" id="wco-check2"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Device picker -->
+      <div style="margin-bottom:1.25rem">
+        <div style="font-size:.68rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#7A7870;margin-bottom:.65rem">Your wearable device</div>
+        <div style="display:flex;flex-wrap:wrap;gap:.5rem" id="wcoDeviceGrid">
+          <div class="wco-dev selected" data-dev="Apple Watch" onclick="wcoDevice(this)">⌚ Apple Watch</div>
+          <div class="wco-dev" data-dev="Oura Ring" onclick="wcoDevice(this)">💍 Oura Ring</div>
+          <div class="wco-dev" data-dev="Garmin" onclick="wcoDevice(this)">🏃 Garmin</div>
+          <div class="wco-dev" data-dev="Xiaomi Band" onclick="wcoDevice(this)">📿 Xiaomi Band</div>
+          <div class="wco-dev" data-dev="Huawei Watch" onclick="wcoDevice(this)">⌚ Huawei</div>
+          <div class="wco-dev" data-dev="Samsung Watch" onclick="wcoDevice(this)">⌚ Samsung</div>
+        </div>
+      </div>
+
+      <!-- Goal -->
+      <div style="margin-bottom:1.25rem">
+        <div style="font-size:.68rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#7A7870;margin-bottom:.65rem">Your goal</div>
+        <div style="display:flex;flex-wrap:wrap;gap:.5rem" id="wcoGoalGrid">
+          <div class="wco-dev selected" data-goal="muscle" onclick="wcoGoal(this)">💪 Muscle Gain</div>
+          <div class="wco-dev" data-goal="lose" onclick="wcoGoal(this)">🔥 Fat Loss</div>
+          <div class="wco-dev" data-goal="athlete" onclick="wcoGoal(this)">⚡ Athlete</div>
+          <div class="wco-dev" data-goal="maintain" onclick="wcoGoal(this)">⚖️ Maintain</div>
+          <div class="wco-dev" data-goal="recomp" onclick="wcoGoal(this)">🎯 Recomp</div>
+          <div class="wco-dev" data-goal="recover" onclick="wcoGoal(this)">🧘 Recovery</div>
+        </div>
+      </div>
+
+      <!-- Total + CTA -->
+      <div style="background:#F5F0E8;border-radius:14px;padding:1.1rem 1.25rem;margin-bottom:1rem">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <div style="font-size:.78rem;color:#7A7870" id="wco-plan-label">⌚ Wearable Intelligence</div>
+            <div style="font-size:.72rem;color:#7A7870;margin-top:.15rem">30 meals · AI adaptation · Cancel anytime</div>
+          </div>
+          <div style="font-family:'Clash Display',sans-serif;font-size:1.35rem;font-weight:700;color:#1A1A18" id="wco-total">2,100 MAD</div>
+        </div>
+      </div>
+      <button onclick="confirmWearableCheckout()" style="width:100%;padding:.95rem;border:none;border-radius:14px;background:linear-gradient(135deg,#C8A96E,#A8813E);color:#1A1A18;font-family:'Clash Display',sans-serif;font-size:1.05rem;font-weight:700;cursor:pointer;transition:all .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
+        ✅ Subscribe Now
+      </button>
+      <div style="text-align:center;margin-top:.65rem;font-size:.72rem;color:#7A7870">First delivery in 24h · Secure payment · Cancel anytime</div>
+    </div>
+
+  </div>
 </div>
 
 <!-- ORDER MODAL -->
@@ -5983,6 +6736,408 @@ function wbConnect(el, name) {
 // Override old connectDevice to use new wbConnect styling
 function connectDevice(el, name) { wbConnect(el.closest ? el.closest('.wb-dev-card') || el : el, name); }
 
+
+// ════════════════════════════════════════════
+// SUBSCRIPTION MANAGER
+// ════════════════════════════════════════════
+var subState = {
+  plan:     'highprotein',
+  planName: 'High Protein',
+  planPrice: 55,
+  wearable:  false,
+  device:    'Apple Watch',
+  goal:      'muscle',
+  goalName:  'Muscle Gain',
+  delivery:  '7:30 PM',
+  meals:     30
+};
+var subOriginal = JSON.stringify(subState);
+
+var PLAN_MEALS = { vegetarian:30, chicken:30, balanced:30, highprotein:30, beef:30, athlete:30, salmon:30, wearable_base:30, wearable_pro:30 };
+var GOAL_NAMES = { muscle:'Muscle Gain', lose:'Lose Weight', maintain:'Maintain Weight', athlete:'Athlete Mode', recomp:'Body Recomp', recover:'Recovery' };
+
+function selectSubPlan(el) {
+  // Only deselect cards in the same section (meal plans or wearable plans)
+  document.querySelectorAll('#planSelectGrid .plan-sel-card').forEach(function(e){ e.classList.remove('selected'); });
+  el.classList.add('selected');
+  subState.plan      = el.getAttribute('data-plan');
+  subState.planName  = el.getAttribute('data-name');
+  subState.meals     = PLAN_MEALS[subState.plan] || 30;
+
+  var isWearablePlan = (subState.plan === 'wearable_base' || subState.plan === 'wearable_pro');
+
+  if (isWearablePlan) {
+    // Fixed total price — override per-meal logic
+    subState.planPrice    = 0; // not per-meal
+    subState.planTotal    = parseInt(el.getAttribute('data-price-total'));
+    subState.isWearable   = true;
+    // Show device selector
+    var devCard = document.getElementById('deviceSelectionCard');
+    if (devCard) devCard.style.display = 'block';
+    // Hide old addon section
+    var wearPill = document.getElementById('sub-wearable-pill');
+    var offPill  = document.getElementById('sub-wearable-pill-off');
+    if (wearPill) wearPill.style.display = 'inline-flex';
+    if (offPill)  offPill.style.display  = 'none';
+    subState.wearable = true;
+  } else {
+    subState.planPrice  = parseInt(el.getAttribute('data-price'));
+    subState.planTotal  = subState.meals * subState.planPrice;
+    subState.isWearable = false;
+    subState.wearable   = false;
+    var devCard = document.getElementById('deviceSelectionCard');
+    if (devCard) devCard.style.display = 'none';
+    var wearPill = document.getElementById('sub-wearable-pill');
+    var offPill  = document.getElementById('sub-wearable-pill-off');
+    if (wearPill) wearPill.style.display = 'none';
+    if (offPill)  offPill.style.display  = 'inline-flex';
+  }
+  updateSubSummary();
+}
+
+function toggleWearable() {
+  // Legacy — now handled by plan selection
+  var wbCard = document.querySelector('[data-plan="wearable_base"]');
+  if (wbCard) selectSubPlan(wbCard);
+}
+
+function selectDevice(el) {
+  el.closest('#deviceSelectSection').querySelectorAll('.plan-sel-card').forEach(function(e){ e.classList.remove('selected'); });
+  el.classList.add('selected');
+  subState.device = el.getAttribute('data-device');
+  showToast(subState.device + ' selected ✓');
+}
+
+function selectSubGoal(el) {
+  document.querySelectorAll('.goal-card').forEach(function(e){ e.classList.remove('selected'); });
+  el.classList.add('selected');
+  subState.goal     = el.getAttribute('data-goal');
+  subState.goalName = GOAL_NAMES[subState.goal] || subState.goal;
+  var pill = document.getElementById('sub-goal-pill');
+  if (pill) pill.textContent = '🎯 ' + subState.goalName;
+  updateSubSummary();
+}
+
+function selectDelivery(el) {
+  document.querySelectorAll('.dslot').forEach(function(e){ e.classList.remove('selected'); });
+  el.classList.add('selected');
+  subState.delivery = el.querySelector('.dslot-time').textContent;
+  updateSubSummary();
+}
+
+function updateSubSummary() {
+  var planTotal = subState.isWearable
+    ? (subState.planTotal || 0)
+    : (subState.meals * subState.planPrice);
+  var wearable  = (!subState.isWearable && subState.wearable) ? 199 : 0;
+  var total     = planTotal + wearable;
+
+  // Update hero
+  var heroName = document.getElementById('sub-current-name');
+  var heroMeta = document.getElementById('sub-current-meta');
+  var heroAmt  = document.getElementById('sub-total-display');
+  if (heroName) heroName.textContent = subState.planName;
+  if (heroMeta) heroMeta.textContent = subState.meals + ' meals/month · 7 days/week · 1 meal/day · Delivery ' + subState.delivery;
+  if (heroAmt)  heroAmt.textContent  = total.toLocaleString() + ' MAD';
+
+  // Update summary
+  var el;
+  el = document.getElementById('sum-plan-label');  if(el) el.textContent = subState.planName + ' · ' + subState.meals + ' meals';
+  el = document.getElementById('sum-plan-price');  if(el) el.textContent = planTotal.toLocaleString() + ' MAD';
+  el = document.getElementById('sum-goal-label');  if(el) el.textContent = subState.goalName;
+  el = document.getElementById('sum-delivery-label'); if(el) el.textContent = subState.delivery + ' daily';
+  el = document.getElementById('sum-meals-label'); if(el) el.textContent = subState.meals + ' meals (1/day · 7 days/wk)';
+  el = document.getElementById('sum-total');       if(el) el.textContent = total.toLocaleString() + ' MAD';
+
+  // wearable row removed — standalone plans only
+  // Update plan label to show wearable plan differently
+  var sumPlanLabel = document.getElementById('sum-plan-label');
+  if (sumPlanLabel) {
+    if (subState.isWearable) {
+      sumPlanLabel.textContent = (subState.plan === 'wearable_pro' ? '👑 ' : '⌚ ') + subState.planName;
+    } else {
+      sumPlanLabel.textContent = subState.planName + ' · ' + subState.meals + ' meals';
+    }
+  }
+
+  // Show change notice if something changed
+  var changed = JSON.stringify(subState) !== subOriginal;
+  var notice = document.getElementById('subChangeNotice');
+  if (notice) notice.classList.toggle('show', changed);
+}
+
+function confirmSubscriptionChanges() {
+  var planTotal = subState.meals * subState.planPrice;
+  var total     = planTotal + (subState.wearable ? 199 : 0);
+  subOriginal = JSON.stringify(subState);
+  document.getElementById('subChangeNotice').classList.remove('show');
+  showToast('✅ Subscription updated! Applies from April 1, 2026');
+  showNotif('💳', 'Subscription Updated', subState.planName + (subState.wearable ? ' + Wearable' : '') + ' · ' + total.toLocaleString() + ' MAD/month');
+  // Refresh billing amounts
+  var heroAmt = document.getElementById('sub-total-display');
+  if (heroAmt) heroAmt.textContent = total.toLocaleString() + ' MAD';
+}
+
+function removeAllergy(el) {
+  el.remove();
+  showToast('Exclusion removed ✓');
+}
+function addAllergy(name) {
+  var list = document.getElementById('allergyList');
+  if (!list) return;
+  if (list.querySelector('[data-al="' + name + '"]')) { showToast('Already added'); return; }
+  var span = document.createElement('span');
+  span.className = 'badge br3';
+  span.setAttribute('data-al', name);
+  span.style.cursor = 'pointer';
+  span.title = 'Click to remove';
+  span.textContent = name + ' ✕';
+  span.onclick = function(){ this.remove(); showToast('Removed: ' + name); };
+  list.appendChild(span);
+  showToast(name + ' exclusion added ✓');
+}
+
+
+// ── WEARABLE PAGE BUTTONS ──
+function openWearableSubscribe() {
+  // Open the wearable-specific checkout modal
+  document.getElementById('wearableCheckoutOv').classList.add('open');
+  document.getElementById('wearableCheckoutOv').style.display = 'flex';
+}
+function closeWearableCheckout() {
+  var ov = document.getElementById('wearableCheckoutOv');
+  ov.classList.remove('open');
+  ov.style.display = 'none';
+}
+// Close on overlay click
+document.addEventListener('DOMContentLoaded', function() {
+  var ov = document.getElementById('wearableCheckoutOv');
+  if (ov) ov.addEventListener('click', function(e){ if(e.target===e.currentTarget) closeWearableCheckout(); });
+});
+
+var wcoPlan = 1; // 1 = 2100, 2 = 3500
+var wcoSelectedDev  = 'Apple Watch';
+var wcoSelectedGoal = 'muscle';
+
+function wcoSelect(plan) {
+  wcoPlan = plan;
+  var p1 = document.getElementById('wco-plan1');
+  var p2 = document.getElementById('wco-plan2');
+  var c1 = document.getElementById('wco-check1');
+  var c2 = document.getElementById('wco-check2');
+  var label = document.getElementById('wco-plan-label');
+  var total = document.getElementById('wco-total');
+  if (plan === 1) {
+    p1.style.borderColor = '#C8A96E'; p1.style.background = '#1A1A18';
+    p2.style.borderColor = '#E8E3D8'; p2.style.background = '#FDFAF4';
+    c1.style.background = '#C8A96E'; c1.style.borderColor = '#C8A96E'; c1.style.color = '#1A1A18'; c1.textContent = '✓';
+    c2.style.background = 'transparent'; c2.style.borderColor = '#E8E3D8'; c2.textContent = '';
+    if (label) label.textContent = '⌚ Wearable Intelligence';
+    if (total) total.textContent = '2,100 MAD';
+  } else {
+    p2.style.borderColor = '#C8A96E'; p2.style.background = '#FDFAF4';
+    p1.style.borderColor = '#E8E3D8'; p1.style.background = '#0A0A08';
+    c2.style.background = '#C8A96E'; c2.style.borderColor = '#C8A96E'; c2.style.color = '#1A1A18'; c2.textContent = '✓';
+    c1.style.background = 'transparent'; c1.style.borderColor = 'rgba(200,169,110,.3)'; c1.textContent = '';
+    if (label) label.textContent = '👑 Wearable Pro';
+    if (total) total.textContent = '3,500 MAD';
+  }
+}
+function wcoDevice(el) {
+  document.querySelectorAll('#wcoDeviceGrid .wco-dev').forEach(function(e){ e.classList.remove('selected'); });
+  el.classList.add('selected');
+  wcoSelectedDev = el.getAttribute('data-dev');
+}
+function wcoGoal(el) {
+  document.querySelectorAll('#wcoGoalGrid .wco-dev').forEach(function(e){ e.classList.remove('selected'); });
+  el.classList.add('selected');
+  wcoSelectedGoal = el.getAttribute('data-goal');
+}
+function confirmWearableCheckout() {
+  var planName  = wcoPlan === 1 ? 'Wearable Intelligence' : 'Wearable Pro';
+  var planPrice = wcoPlan === 1 ? '2,100' : '3,500';
+  closeWearableCheckout();
+  showToast('🎉 ' + planName + ' activated! First delivery in 24h');
+  showNotif('⌚', 'Wearable Plan Active!', planName + ' · ' + planPrice + ' MAD/month · Device: ' + wcoSelectedDev);
+  // Also update the subscription state in settings
+  var planKey = wcoPlan === 1 ? 'wearable_base' : 'wearable_pro';
+  var el = document.querySelector('[data-plan="' + planKey + '"]');
+  if (el) selectSubPlan(el);
+  // Send WhatsApp confirmation
+  var msg = encodeURIComponent(
+    'Hello RIVARO! \n\nI just subscribed to ' + planName + ' (' + planPrice + ' MAD/month).\n' +
+    'My device: ' + wcoSelectedDev + '\n' +
+    'My goal: ' + wcoSelectedGoal + '\n\nPlease confirm my subscription. Thank you!'
+  );
+  setTimeout(function() {
+    window.open('https://wa.me/212600000000?text=' + msg, '_blank');
+  }, 1500);
+}
+
+function switchToWearablePlan() {
+  sp('cust', 'c-settings', document.querySelector('.ni[onclick*="c-settings"]'));
+  setTimeout(function() {
+    // Find and select the wearable_base plan card
+    var wbCard = document.querySelector('[data-plan="wearable_base"]');
+    if (wbCard) {
+      selectSubPlan(wbCard);
+      wbCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    showToast('⌚ Wearable Intelligence plan selected — confirm below!');
+  }, 400);
+}
+
+
+// ════════════════════════════════════════════
+// WEARABLE PITCH — Phone notification simulation
+// ════════════════════════════════════════════
+function runPhoneSimulation() {
+  var ids = ['wbn1','wbn2','wbn3','wbn4'];
+  ids.forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) el.classList.remove('show');
+  });
+  ids.forEach(function(id, i) {
+    setTimeout(function() {
+      var el = document.getElementById(id);
+      if (el) el.classList.add('show');
+    }, i * 1200);
+  });
+}
+
+// Run simulation when wearable panel becomes visible
+var wbSimObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      runPhoneSimulation();
+      // Loop every 8 seconds
+      if (!window._wbSimInterval) {
+        window._wbSimInterval = setInterval(runPhoneSimulation, 8000);
+      }
+    } else {
+      if (window._wbSimInterval) {
+        clearInterval(window._wbSimInterval);
+        window._wbSimInterval = null;
+      }
+    }
+  });
+}, { threshold: 0.1 });
+
+
+// ════════════════════════════════════════════
+// SETTINGS — WEARABLE CONNECT + MINI DASHBOARD
+// ════════════════════════════════════════════
+var stWearableConnected = true; // Apple Watch pre-connected for demo
+
+function stRenderMiniChart() {
+  var el = document.getElementById('stMiniChart');
+  if (!el) return;
+  var vals = [720,850,680,920,760,840,847];
+  var days = ['M','T','W','T','F','S','T'];
+  var max  = Math.max.apply(null, vals);
+  var colors = ['rgba(200,169,110,.4)','rgba(200,169,110,.4)','rgba(200,169,110,.4)',
+                'rgba(200,169,110,.4)','rgba(200,169,110,.4)','rgba(200,169,110,.25)',
+                'linear-gradient(180deg,#C8A96E,#A8813E)'];
+  el.innerHTML = vals.map(function(v, i) {
+    var pct = Math.round(v / max * 100);
+    var isToday = i === vals.length - 1;
+    return '<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px">' +
+      '<div style="width:100%;border-radius:3px 3px 0 0;height:' + pct + '%;background:' +
+        (isToday ? 'linear-gradient(180deg,#C8A96E,#A8813E)' : 'rgba(200,169,110,.3)') +
+        ';min-height:4px;transition:height .6s ease"></div>' +
+      '<div style="font-size:.52rem;color:rgba(255,255,255,.22)">' + days[i] + '</div>' +
+    '</div>';
+  }).join('');
+}
+
+function stConnect(el, name, icon) {
+  el.style.borderColor = 'rgba(107,174,107,.4)';
+  el.style.background  = 'rgba(107,174,107,.08)';
+  el.querySelector('div:last-child').textContent = 'Connecting...';
+  setTimeout(function() {
+    stWearableConnected = true;
+    document.getElementById('st-dev-name').textContent = name + ' ' + icon;
+    document.getElementById('st-connected-row').style.display = 'flex';
+    document.getElementById('st-mini-dashboard').style.display = 'block';
+    document.getElementById('st-not-connected').style.display = 'none';
+    document.getElementById('st-wb-status').innerHTML = '<span style="width:6px;height:6px;border-radius:50%;background:#6BAE6B;animation:bl 2s infinite;display:block"></span>Connected';
+    stRenderMiniChart();
+    showToast('✓ ' + name + ' connected! Your biometrics are now visible.');
+    showNotif('⌚', name + ' Connected', 'Your activity data is now syncing to RIVARO');
+  }, 1200);
+}
+
+function stDisconnectDevice() {
+  stWearableConnected = false;
+  document.getElementById('st-connected-row').style.display = 'none';
+  document.getElementById('st-mini-dashboard').style.display = 'none';
+  document.getElementById('st-not-connected').style.display = 'block';
+  document.getElementById('st-wb-status').innerHTML = '<span style="color:rgba(255,255,255,.3)">Not connected</span>';
+  showToast('Device disconnected');
+}
+
+// Init settings wearable on DOMContentLoaded
+
+window.addEventListener('DOMContentLoaded', function() {
+  var phoneSim = document.getElementById('wbPhoneSim');
+  if (phoneSim) wbSimObserver.observe(phoneSim);
+});
+
+
+// ════════════════════════════════════════════
+// SETTINGS — WEARABLE CONNECT + MINI DASHBOARD
+// ════════════════════════════════════════════
+var stWearableConnected = true; // Apple Watch pre-connected for demo
+
+function stRenderMiniChart() {
+  var el = document.getElementById('stMiniChart');
+  if (!el) return;
+  var vals = [720,850,680,920,760,840,847];
+  var days = ['M','T','W','T','F','S','T'];
+  var max  = Math.max.apply(null, vals);
+  var colors = ['rgba(200,169,110,.4)','rgba(200,169,110,.4)','rgba(200,169,110,.4)',
+                'rgba(200,169,110,.4)','rgba(200,169,110,.4)','rgba(200,169,110,.25)',
+                'linear-gradient(180deg,#C8A96E,#A8813E)'];
+  el.innerHTML = vals.map(function(v, i) {
+    var pct = Math.round(v / max * 100);
+    var isToday = i === vals.length - 1;
+    return '<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px">' +
+      '<div style="width:100%;border-radius:3px 3px 0 0;height:' + pct + '%;background:' +
+        (isToday ? 'linear-gradient(180deg,#C8A96E,#A8813E)' : 'rgba(200,169,110,.3)') +
+        ';min-height:4px;transition:height .6s ease"></div>' +
+      '<div style="font-size:.52rem;color:rgba(255,255,255,.22)">' + days[i] + '</div>' +
+    '</div>';
+  }).join('');
+}
+
+function stConnect(el, name, icon) {
+  el.style.borderColor = 'rgba(107,174,107,.4)';
+  el.style.background  = 'rgba(107,174,107,.08)';
+  el.querySelector('div:last-child').textContent = 'Connecting...';
+  setTimeout(function() {
+    stWearableConnected = true;
+    document.getElementById('st-dev-name').textContent = name + ' ' + icon;
+    document.getElementById('st-connected-row').style.display = 'flex';
+    document.getElementById('st-mini-dashboard').style.display = 'block';
+    document.getElementById('st-not-connected').style.display = 'none';
+    document.getElementById('st-wb-status').innerHTML = '<span style="width:6px;height:6px;border-radius:50%;background:#6BAE6B;animation:bl 2s infinite;display:block"></span>Connected';
+    stRenderMiniChart();
+    showToast('✓ ' + name + ' connected! Your biometrics are now visible.');
+    showNotif('⌚', name + ' Connected', 'Your activity data is now syncing to RIVARO');
+  }, 1200);
+}
+
+function stDisconnectDevice() {
+  stWearableConnected = false;
+  document.getElementById('st-connected-row').style.display = 'none';
+  document.getElementById('st-mini-dashboard').style.display = 'none';
+  document.getElementById('st-not-connected').style.display = 'block';
+  document.getElementById('st-wb-status').innerHTML = '<span style="color:rgba(255,255,255,.3)">Not connected</span>';
+  showToast('Device disconnected');
+}
+
+// Init settings wearable on DOMContentLoaded
+
 window.addEventListener('DOMContentLoaded', function() {
   renderMenu('all');
   renderKanban();
@@ -5999,6 +7154,7 @@ window.addEventListener('DOMContentLoaded', function() {
   renderLabDishes();
   renderB2BClients();
   bpRenderRefTable();
+  stRenderMiniChart();
   renderWbSleepChart();
   renderWbTrend('calories');
   renderWbHeatmap();
